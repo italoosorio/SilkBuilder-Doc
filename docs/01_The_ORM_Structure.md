@@ -66,13 +66,16 @@ This is an example of an ORM file.
 </orm>
 ```
 
-##The ORM Tag `<orm>`
+## The ORM Tag `<orm>`
+
 The ORM tags serves to define how SILK will access and operate the information in the database or databases. Each tag has several properties and can also old SQL commands. If the tag's property is boolean the accepted positive values are: "true", "yes", "1" and "on". Any other value will be consider as negative. 
 
 ### The RemoteService Property
-This property is located in the ORM root tag <orm>. It defines what service will be use to access a particular database server using the ORMOopsClickClass. The service is define in the "applicationContext.xml". If this property it is not included the service "SilkDBOService" is used as default. The recommendation is to create the service named "SilkDBOService" connected to the database server where silk tables are stored, and create other services, with different names, to connected to other database servers as needed. With a  setup on this way the "remoteService" property is only use when accessing the other database servers rather than the default one.
+
+This property is located in the ORM root tag `<orm>`. It defines what service will be use to access a particular database server using the ORMOopsClickClass. The service is define in the "applicationContext.xml". If this property it is not included the service "SilkDBOService" is used as default. The recommendation is to create the service named "SilkDBOService" connected to the database server where silk tables are stored, and create other services, with different names, to connected to other database servers as needed. With a  setup on this way the "remoteService" property is only use when accessing the other database servers rather than the default one.
 
 ## Te table tag `<table>`
+
 Defines what target table for the insert, update and delete actions. The table tag has the following properties:
 
 ### Properties
@@ -86,8 +89,9 @@ Defines what target table for the insert, update and delete actions. The table t
 	* **insertAuthorization**: This property store the expected keyword to grant authorization to insert records into the table.
 	* **updateAuthorization**: This property store the expected keyword to grant authorization to update records in the table.
 	* **deleteAuthorization**: This property store the expected keyword to grant authorization to delete records from the table.
-	* 
+
 ### Example:
+
 ```xml
 <!-- Access to a table with Primary key Auto -->
 
@@ -99,6 +103,7 @@ Defines what target table for the insert, update and delete actions. The table t
 <!-- Simple access to a table using a different server service bean -->
 <table name="customer" remoteService="mySqlDBOService"  />
 ```
+
 ## The column tag `<column>`
 
 Defines the fields used by the mapping. These should be the same fields returned by the select command. The properties are:
@@ -147,7 +152,8 @@ Defines the fields used by the mapping. These should be the same fields returned
 - **authorization**: This property store the expected keyword to grant authorization to operate in this column.
 
   
-## The sqlSelect tag '<sqlSelect>'
+## The sqlSelect tag `<sqlSelect>`
+
 This tag contains the select command used to retrieve the rows and fields to populate the dataProvider in the Flex client. It is possible to use parameters which are defined enclosing them with "[" and "]". These parameters are configured in the client as criteria values. It has the property name used to identify each select command.
 
 ### Example
@@ -179,7 +185,7 @@ This tag contains the select command used to retrieve the rows and fields to pop
 ## The pkSQL tag `<pkSQL>`
 This tag is necessary if the pkMode attribute is "SQL". This tag contains the select command necessary to create the primary key. It has to return a string field called "pk". Even if the primary key value is an integer in the database structure, is has to be converted to varchar in the select.
 
-###Example
+### Example
 ```
 <!-- Maybe not the best example, SQL Server -->
 <table name="customer" pkMode="SQL" />
@@ -192,7 +198,7 @@ This tag is necessary if the pkMode attribute is "SQL". This tag contains the se
 </pkSQL>
 ```
 
-## The sqlOperation tag ` <sqlOperation>`
+## The sqlOperation tag `<sqlOperation>`
 Contains the sql operation to be executed in a similar way as database triggers. The strong recommendation is to define database triggers to model business logic. You can also include parameters in the SQL operations in the same way as the `<select>` tag. These parameters will be processed by the criteria values and also the form field values. The tag properties are the following:
 
 ### Properties
@@ -203,13 +209,16 @@ Contains the sql operation to be executed in a similar way as database triggers.
 - **authorization**: This property store the expected keyword to grant authorization to execute the operation.
 - **reportZeroResult**: This is an optional property to display a message in the logs if the trigger did not process any row.  Value 1 activates it.
 
-## The sqlAuthorization tag ` <sqlAuthorization>`
+## The sqlAuthorization tag `<sqlAuthorization>`
+
 This tag stores the SQL select command which will validate the property keyword. This SQL should return a value of 1 for true or 0 for false with a column name "result". This SQL can received parameters. If an authorization tag's name is similar to the an authorization keyword, the SQL will be executed.
 
-###Properties
+### Properties
+
 - **Name**: This stores the name of authorization related to this sql.
 
 ## SQL Modifiers
+
 The SQL modifiers are values provided by the application to modify the SQL command. These modifiers are place in the SQL command and are replace by values before being executed. These could be parameters to filter the SQL command output or to modify the SQL output.
 - P{} : Parameters
 - $V{} : Code command changes

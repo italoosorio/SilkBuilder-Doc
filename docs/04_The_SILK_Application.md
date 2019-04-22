@@ -62,6 +62,7 @@ The DataProvider tag should be located as a child node of the layout tag Applica
 ```
 
 ### Tag Properties
+
 - **id**: Unique component identifier.
 - **objectName**: The local path to the .orm file without the file extension.
 - **targetList**: The DataGrid ID value which is going to be used to display the information. If the data is going to be used by a component FormItem with the type=ComboBox, the value should be in the format: "FormID->FieldName".
@@ -86,11 +87,13 @@ The DataProvider tag should be located as a child node of the layout tag Applica
 The DataProvider tag also creates a global JavaScript object. This object's name is the same as the DataProvider ID. This object can be accessed by the programer to use the DataProvider properties, methods and events.
 
 ### Properties
+
 - **jsonData**: Contains the Json string to populate the dataProvider as a stand alone data container.
 - **dataSource**: An array containing the objects (records) loaded from the database or a Json string. It gets filled after the loadData() method is triggered.
 - **criteria**: An array with the objects defining the criteria values to send to the server. These criteria values are configured in the ORM file during the SQL building process.
 
 ### Methods
+
 - **countItem(fieldName,value)**: Return the number of records when the fieldName contains a specific value.
 - **setCriteriaItem(fieldName,value,type)**: Adds an object to the criteria array. The value is always a string. They type by default is 'S'. The type values are the same as the types used in the ORM column.
 - **criteriaClean()**: Cleans the criteria array.
@@ -111,6 +114,7 @@ The DataProvider tag also creates a global JavaScript object. This object's name
 - **formSubmit()**: Submits the form items to the application server.
 
 ### Events
+
 - **afterLoad**: A function to be executed after the data has been loaded. This has to be a global function.
 - **afterOperation**: A function to be executed after the insert, update , delete or runOperation method. This has to be a global function. This is a . It receives as parameters the action executed and the operationName.
 - **beforeActionHandler**: A function to be executed before the actions insert, update, delete or runOperation take visual efect in the cliente componets.
@@ -144,6 +148,7 @@ This is the DataGrid Tag with its properties in their default value. These prope
 ```
 
 ### Location
+
 The DataGrid tag should be located as a child node of the layout tag silk:Content.
 
 ### Tag Example
@@ -157,6 +162,7 @@ The DataGrid tag should be located as a child node of the layout tag silk:Conten
 ```
 
 ### Properties
+
 - **id**: Unique component identifier.
 - **headerTarget**: A comma separated list of devices in which the column's header would be displayed. The default value is: "tablet,desktop".
 - **arrow**: If "true" is shows an arrow at the row's right side. The default value is "true".
@@ -193,7 +199,7 @@ The DataGrid tag also creates a global JavaScript object. This object's name is 
 - **setSearchValue(value)**: Sets the value in the search field and triggers the searching process.
 - **toggleEditable(editable)**: A function which activates of deactivates the editable columns. If not parameter is send the editable mode is reverse. The parameter should be true of false.
 
-###Events
+### Events
 
 - **clickAction**: A function to execute when the user clicks or taps in a row.
 - **insetAction**: A function to execute when the user clicks or taps in the inset button.
@@ -226,7 +232,7 @@ This is the Column Tag with its properties and their default values.
 
 The Column tag should be located as a child node of the tag DataGrid.
 
-### Tag example
+###  Tag example
 
 ```xml
 <silk:DataGrid >
@@ -306,6 +312,7 @@ The Form tag should be located as a child node of the layout tag silk:Content.
 ```
 
 ### Properties
+
 - id: Unique component identifier.
 - addBt: The ID of the button which will activate the form to the insert mode. This is usually a HeadItem component.
 - editBt: The ID of the button which will activate the form to the edit mode. This is usually a HeadItem component.
@@ -335,7 +342,7 @@ The Form tag also creates a global JavaScript object. This object's name is the 
 - **dataEntry**: Contains the form status. If true the form is in editable status, if false it is view status. 
 - **ignoreInteraction**: If true any visual interaction with the DataProvider and/or DataGrid will be ingnored. At this point the visual result is the developer responsability.
 
-###Methods
+### Methods
 
 - **acceptAction()**: Executes the Form's accept process.
 - **addAction()**: Executes the Form's insert process.
