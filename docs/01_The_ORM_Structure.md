@@ -1,4 +1,4 @@
-#The ORM Structure
+# The ORM Structure
 
 This document describes the ORM (Object Relational Mapping) Tags used to define the database integration. These should be included in a file with extension .orm inside the application folder.
 This is an example of an ORM file.
