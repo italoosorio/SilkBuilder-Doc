@@ -16,13 +16,23 @@ There are multiple ways to use a DataProvider in an application and it is up to 
 
 ### Constructor
 
-A DataProvider is connected to an ORM object. The ORM Object path has to be provided during the class instantiation. In order to easily recognize a DataProvider its suggested to add "DP" as the end of the object name.
+A DataProvider is connected to an ORM object. The ORM Object path has to be provided during the class instantiation. In order to easily recognize a DataProvider it is suggested to add the postfix "**DP**" at the end of the object name.
+
+If you know the exact location of the ORM file use this constructor.
 
 ```java
 DataProvider dataDP = DataProvider("/test/testPerson");
 ```
 
-In the example above the DataProvider dataDP is connected to the testPerson.orm object. All the operation are going to be related to this ORM Object configuration. Read the chapter The ORM Structure to understand how the ORM is configured.
+If you are using the the SILK-Builder environment to define a DataProvider in a Java code inside a JSP file use this constructor.
+
+```jsp
+<%
+  DataProvider dataDP = DataProvider("/Test/testPerson", session);
+%>
+```
+
+In the example above the DataProvider dataDP is connected to the testPerson.orm object. All the operation are going to be related to this ORM Object configuration. Read the chapter [The ORM Structure](.01_The_ORM_Structure.md) to understand how the ORM is configured.
 
 ### Call Select
 
