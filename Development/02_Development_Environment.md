@@ -2,13 +2,13 @@
 
 Development happens in the SilkBuilder web application. To access it you have to have the SilkBuilder url and the account credentials. All this has to be installed and setup by the SILK System Administrator.
 
-![Index_App](/Users/italo/Silk/GitHub/Documentation/SilkBuilder-Doc/docs/assets/SilkBuilder_login.png)
+![Index_App](assets/SilkBuilder_login.png)
 
 ## Dashboard
 
 After login in the the SilkBuilder dashboard is displayed. This screen layout changes based on the user's role. The example below show the admin layout.
 
-![Index_App](/Users/italo/Silk/GitHub/Documentation/SilkBuilder-Doc/docs/assets/SilkBuilder_dashboard.png)
+![Index_App](assets/SilkBuilder_dashboard.png)
 
 ## Systems
 
@@ -16,7 +16,7 @@ Before start developing applications using SilkBuilder a *System Holder* has to 
 
 Use the "Systems" button located in the SilkBuilder dashboard to setup the systems.
 
-![Index_App](/Users/italo/Silk/GitHub/Documentation/SilkBuilder-Doc/docs/assets/SilkBuilder_systems.png)
+![Index_App](assets/SilkBuilder_systems.png)
 
 Clicking in the "+" button will open the system editor to add a new system, and clicking the three-dots icon in the extreme left of a row will to edit the information.
 
@@ -29,7 +29,7 @@ Clicking in the "+" button will open the system editor to add a new system, and 
 * **Menu Link**: If required here goes the URL to the system's menu which is another application.
 * **Role List**: A comma separated list of role-name use for the simulated testing process.
 
-![Index_App](/Users/italo/Silk/GitHub/Documentation/SilkBuilder-Doc/docs/assets/SilkBuilder_Systems_edit.png)
+![Index_App](assets/SilkBuilder_Systems_edit.png)
 
 ## Target Host
 
@@ -44,19 +44,19 @@ A Target Host has the following information:
 * **Variables**: To be used to create ORM variable modifications (Not implemented yet).
 * **Private Key**: Use as authentication token during code upload from SilkBuilder to SilkClient.  
 
-![Index_App](/Users/italo/Silk/GitHub/Documentation/SilkBuilder-Doc/docs/assets/SilkBuilder_Systems_target.png)
+![Index_App](assets/SilkBuilder_Systems_target.png)
 
 # System's Elements
 
 Once the "System" and the "Target Hosts" has been configured then we are ready to start the *Silk Development* process. This starts by clicking the *Project* button in the *Dashboard* screen which provide access to the **Silk Builder IDE** application.
 
-![Index_App](/Users/italo/Silk/GitHub/Documentation/SilkBuilder-Doc/docs/assets/SilkBuilder_IDE.png)
+![Index_App](assets/SilkBuilder_IDE.png)
 
 The screen is divided in two panels. The first one shows the system's elements and the second one is the code container. The "System" combo box allows to move between the different systems and load its elements.
 
 A *System* hosts *Elements*. An *Element* is a container of other elements. To add a new *Element* click on the "**+**" button located in the top-left of the *Silk Builder IDE* panel. The "**i**" icon allow to open the element editor. Each *Element* has a UUID which will represent it when it gets deployed to *Silk Clients*.
 
-![SilkBuilder_IDE_element](/Users/italo/Silk/GitHub/Documentation/SilkBuilder-Doc/docs/assets/SilkBuilder_IDE_element.png)
+![SilkBuilder_IDE_element](assets/SilkBuilder_IDE_element.png)
 
 ## Elements
 
