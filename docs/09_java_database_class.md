@@ -26,13 +26,13 @@ DataProvider dataDP = DataProvider("/test/testPerson");
 
 If you are using the the SILK-Builder environment to define a DataProvider in a Java code inside a JSP file use this constructor.
 
-```jsp
+```text
 <%
   DataProvider dataDP = DataProvider("/Test/testPerson", session);
 %>
 ```
 
-In the example above the DataProvider dataDP is connected to the testPerson.orm object. All the operation are going to be related to this ORM Object configuration. Read the chapter [The ORM Structure](.01_The_ORM_Structure.md) to understand how the ORM is configured.
+In the example above the DataProvider dataDP is connected to the testPerson.orm object. All the operation are going to be related to this ORM Object configuration. Read the chapter [The ORM Structure](https://github.com/italoosorio/SilkBuilder-Doc/tree/114abd74d7dc54aed208ee35453af719b54ff910/docs/.01_The_ORM_Structure.md) to understand how the ORM is configured.
 
 ### Call Select
 
@@ -42,8 +42,7 @@ To extract information from the database the `select()` method is used. This met
 int totalRecords = dataDP.select();
 ```
 
-The `select()` method can received a selectName parameter, `select(selectName)`, which allows to call different SQL SELECT commands store in the ORM Object.
-For example:
+The `select()` method can received a selectName parameter, `select(selectName)`, which allows to call different SQL SELECT commands store in the ORM Object. For example:
 
 ```java
 int totalRecords = dataDP.select("onlyFemales");
@@ -61,7 +60,7 @@ There are several methods to extract the data from a record depending in how the
 String name = (String) dataDP.getItemAt(x,"name");
 ```
 
-There are method which will return data in specific types: `getStringItem()`, `getIntItem()`,  `getDoubleItem()`, `getLongItem()`, and `getDateItem()`. These are use in this way:
+There are method which will return data in specific types: `getStringItem()`, `getIntItem()`, `getDoubleItem()`, `getLongItem()`, and `getDateItem()`. These are use in this way:
 
 ```java
 Double name = dataDP.getDoubleAt(x,"monthlyIncome");
@@ -73,17 +72,19 @@ Ther are methods retuning string formatted values with parameters to support for
 String birthDate = dataDP.getDateStringItem(x,"birthDate");
 Below is example of a common loop for getting data from multiple rows. This is using the data specific methods.
 for( int x=0; x<totalRecords; x++ ){
-	String name = dataDP.getStringItem(x,"name");
-	int married = dataDP.getIntItem(x,"married");
-	Double monthtlyIncome = dataDP.getDoubleItem(x,"monthtlyIncome");
-	
+    String name = dataDP.getStringItem(x,"name");
+    int married = dataDP.getIntItem(x,"married");
+    Double monthtlyIncome = dataDP.getDoubleItem(x,"monthtlyIncome");
 
-	/*
-	 * Other operations
-	 */
+
+    /*
+     * Other operations
+     */
 }
 ```
+
 In the cases when the returned data is expected to be only one row the code could look like this:
+
 ```java
 String name = dataDP.getStringItem("name");
 int married = dataDP.getIntItem("married");
@@ -96,9 +97,9 @@ Double monthtlyIncome = dataDP.getDoubleItem("monthtlyIncome");
 
 Notice that in this case the method does not received the index, only the column. Under this conditions the method will always return the first row value. If the SQL SELECT does not return a row the method will return null.
 
-###  Call Insert
+### Call Insert
 
-To insert a record in the database the information has first be loaded in the `DataProvider` using the `setFormItem()` method, and later executing the `insert()` method. The `setFormItem()` method receives to parameters: column and value. The `insert()` method return an integer with the number of affected rows. The programer does not have to send the primary key except if the ORM Object table is configure to `pkMode="value"`. The generated primary key can be extracted using the same methods explained before.  It is a good practice to clean the form values using the method cleanForm() before loading values.
+To insert a record in the database the information has first be loaded in the `DataProvider` using the `setFormItem()` method, and later executing the `insert()` method. The `setFormItem()` method receives to parameters: column and value. The `insert()` method return an integer with the number of affected rows. The programer does not have to send the primary key except if the ORM Object table is configure to `pkMode="value"`. The generated primary key can be extracted using the same methods explained before. It is a good practice to clean the form values using the method cleanForm\(\) before loading values.
 
 The code to insert data looks like this:
 
@@ -141,3 +142,4 @@ int totalRecords = dataDP.delete();
 ## Requests Object
 
 ## Response Object
+
