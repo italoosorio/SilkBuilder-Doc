@@ -2,7 +2,9 @@
 
 
 
-## The App tag ```<silk:App>```
+## App tag ```<silk:App>```
+
+
 
 ```xml
 <%@ taglib uri="/WEB-INF/silk.tld" prefix="silk" %>
@@ -61,7 +63,7 @@ Using modules to organize code
 
 
 
-## The Module tag ```<silk:Module```
+## Module tag ```<silk:Module```
 
 ```xml
 <%@ taglib uri="/WEB-INF/silk.tld" prefix="silk" %>
@@ -83,7 +85,7 @@ Using modules to organize code
 </silk:Module >
 ```
 
-## The SILK tag ```<silk:Page>```
+## Page tag ```<silk:Page>```
 
 ```xml
 <silk:Page id="" stage="" returnPage=""
@@ -103,7 +105,7 @@ Using modules to organize code
 </silk:Page>
 ```
 
-## The Head tag ```silk:Head```
+## Head tag ```<silk:Head>```
 
 ```xml
 <silk:Head homeButton="" logoutButton="true" cssClass="" >
@@ -111,13 +113,13 @@ Using modules to organize code
 </silk:Head>
 ```
 
-## The HeadContent tag ```silk:HeadContent```
+## HeadContent tag ```<silk:HeadContent>```
 
 ```xml
 <silk:HeadContent></silk:HeadContent>
 ```
 
-## The Content tag ```silk:Content```
+## Content tag ```<silk:Content>```
 
 ```xml
 <silk:Content>

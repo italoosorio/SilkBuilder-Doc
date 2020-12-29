@@ -1,6 +1,6 @@
 # Silk Components Tag and Objects
 
-## The DataProvider tag `<silk:DataProvider>`
+## DataProvider tag ```<silk:DataProvider>```
 
 This tag is part of Silk Data Components.
 
@@ -11,7 +11,7 @@ This is the DataProvider Tag with its properties in their default value. These p
 ```xml
 <silk:DataProvider
 	id=""
-	servicePath=""
+	dc=""
 	autoLoad="true"
 	loadingOrder=""
 	selectName=""
@@ -86,7 +86,7 @@ The DataProvider tag also creates a global JavaScript object. This object's name
 - **loadCriteria**: A function to be executed before the loading process. The function will receive as parameter the calling DataProvider. This is usually used to load the criteria values using the criteriaAddItem() method. This has to a global a function.
 - **operateDataSource**: A function which executes before the DataGrid dataSource gets used by other components or the afterLoad event. It receives as a parameter the DataGrid dataSource and should returnd the transformed dataSource.
 
-## The silk:DataGrid tag `<silk:DataGrid>`
+## Table tag `<silk:Table>`
 
 The DataGrid component serves as a data visualizer and also to capture the user insteraction. The DataProvider uses the DataGrid to display  information loaded from the server.
 
@@ -519,3 +519,9 @@ The `<silk:ConfirmButton>` tag also creates a global JavaScript object. This obj
 - **onClick**: Triggers a function when the accept button is pressed.
 - **onReset**: Triggers a function when the component gets reset.
 - **validation**: Triggers a function which is used to validated if the component should operate. If the function returns "false" the component will ignore the user interaction. If the component returns "true" the process will run as normal.
+
+
+
+# Modal
+
+size: small, large, width, full
