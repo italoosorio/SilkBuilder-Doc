@@ -1,7 +1,5 @@
 # Tags
-The SilkBuilder Documentation
-
-This is the documentation on how to use SilkBuilder
+Silk Builder Application Tags.
 
 ## Topics:
 

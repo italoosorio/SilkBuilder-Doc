@@ -1,7 +1,5 @@
 # Development
-The SilkBuilder Documentation
-
-This is the documentation on how to use SilkBuilder
+Using this guides you will learn how to start developing using SilkBuilder.
 
 ## Topics:
 
