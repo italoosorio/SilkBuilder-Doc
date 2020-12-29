@@ -4,7 +4,7 @@ Documents
 --------
 
 * [Silk_Builder](01_Silk_Builder.md)
-* [Development Environment](02_Development_Environmnet.md)
+* [Development Environment](02_Development_Environment.md)
 * [Easy Application](03_Easy_Application.md)
 * [Simple Application](04_Simple_Application.md)
 * [Complex Application](05_Complex_Application.md)
