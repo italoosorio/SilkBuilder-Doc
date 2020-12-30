@@ -1,3 +1,3 @@
 # Simple Application
 
-Here goes
+Here goes too.

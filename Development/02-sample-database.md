@@ -1,6 +1,6 @@
 # Sample Database
 
-The sample applications included on this documentation use the tables *Person* and *Category*.
+The sample applications on this documentation required the use of the tables *Person* and *Category*.
 
 The table structure below is configured for the MSQL database server data types. You can modify these to other databases data types.
 

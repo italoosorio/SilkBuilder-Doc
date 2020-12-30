@@ -7,11 +7,10 @@ Before starting the process of building applications using SilkBuilder you shoul
 Using the SilkBuilder IDE select the *System* and click on the *Project*. Click on the top 
 
 1. Create application shell
-2. List table records
-3. Add a form
-4. Interact with the data
-
-
+2. The data provider
+3. List table records
+4. Add a form
+5. Interact with the data
 
 ## Application Shell
 

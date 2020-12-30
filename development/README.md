@@ -1,6 +1,6 @@
 # Development
 
-Using this guides you will learn how to start developing using SilkBuilder.
+Using this guides you will learn how to start developing applications using SilkBuilder.
 
 ## Topics:
 
