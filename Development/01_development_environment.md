@@ -18,7 +18,7 @@ Before start developing applications using SilkBuilder a _System Holder_ has to 
 
 Use the "Systems" button located in the SilkBuilder dashboard to setup the systems.
 
-![Index\_App](https://github.com/italoosorio/SilkBuilder-Doc/tree/114abd74d7dc54aed208ee35453af719b54ff910/Development/assets/SilkBuilder_systems.png)
+![Index\_App](../.gitbook/assets/SilkBuilder_systems.png)
 
 Clicking in the "+" button will open the system editor to add a new system, and clicking the three-dots icon in the extreme left of a row will to edit the information.
 
@@ -112,7 +112,7 @@ The _App Module_ helps to fraction the code in small modules for easy code manag
 
 #### 1.2.3 Private Data Outlet and Public Data Outlet
 
-The _Private Data Outlet_ and _Public Data Outlet_ exist provide configured access to the ORM. The functionality of a _Data Outlet_ is to shield the ORM. the _Data Outlet_ provides an extra layer of security by configuring what an application can or can't access from the ORM.
+The _Private Data Outlet_ and _Public Data Outlet_ exist to provide access to the ORM. The functionality of a _Data Outlet_ is to shield the ORM form unwanted access. This provides an extra layer of security by configuring what an application can or can't access from the ORM.
 
 A "Private Data Outlet" requires user authentication to operate. The _Public Data Access_ does not requires authentication.
 
