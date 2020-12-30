@@ -8,7 +8,6 @@
   * [Simple Application](development/04_simple_application.md)
   * [Complex Application](development/05_complex_application.md)
   * [System Environment](development/06_system_environment.md)
-  * [Tricks](development/07_tricks.md)
 * [Tags](tags/README.md)
   * [Application tags](tags/12_silk_application_tags.md)
   * [Components Tags](tags/13_silk_components_tag.md)

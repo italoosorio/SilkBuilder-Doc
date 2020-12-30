@@ -1,7 +1,5 @@
 # Development Environment
 
-## Development Environment
-
 Development happens in the SilkBuilder web application. To access it you have to have the SilkBuilder url and the account credentials. All this has to be installed and setup by the SILK System Administrator.
 
 ![Index\_App](../.gitbook/assets/SilkBuilder_login.png)
