@@ -29,5 +29,5 @@ CREATE TABLE Category (
 );
 ```
 
-Click on this [link](sample-tables.sql) to download a MySQL dump file which you can use to create and populate these tables.
+Click on this [link](sample-tables.sql) to download a MySQL dump file which you can use to create and populate these tables. You can modify this code to the database of your preference.
 
