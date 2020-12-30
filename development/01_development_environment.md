@@ -110,13 +110,13 @@ The _App Module_ helps to fraction the code in small modules for easy code manag
 
 ### 1.2.3 Private Data Outlet and Public Data Outlet
 
-The _Private Data Outlet_ and _Public Data Outlet_ exist to provide access to the ORM. The functionality of a _Data Outlet_ is to shield the ORM form unwanted access. This provides an extra layer of security by configuring what an application can or can't access from the ORM.
+The _Private Data Outlet_ and _Public Data Outlet_ elements exist to provide access to the ORM. The functionality of a _Data Outlet_ is to shield the ORM from unwanted access. This provides an extra layer of security by configuring what an application can or can't access from the ORM.
 
 A "Private Data Outlet" requires user authentication to operate. The _Public Data Access_ does not requires authentication.
 
 At execution time the _Data Outlet_ becomes a REST services. This service can be directly accessed by the user, a mobile app, desktop application, or by a web application. By sending the proper JSON structure to the _Data Outlet_, the REST service, the ORM will operate actions in the database. This makes the _Data Outlet_ a dangerous service if not configured properly.
 
-By properly creating and configuring multiple _Data Outlet_ the developer can shield the ORM's functionality and only provide what each user requires. The ORM structure can be very complex but this will never be directly accessible to the end user except by using a _Data Outlet_.
+By properly creating and configuring multiple _Data Outlet_ the developer can shield the ORM's functionality and only provide what each user requires. The ORM structure can be very complex but this will never be directly accessible by the end user except by using a _Data Outlet_.
 
 ### 1.2.5 Private Service and Public Service
 
