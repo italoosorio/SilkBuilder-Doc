@@ -2,7 +2,8 @@
 
 * [SilkBuilder](README.md)
 * [Development](development/README.md)
-  * [Development Environment](development/02_development_environment.md)
+  * [Development Environment](development/01_development_environment.md)
+  * [Sample Database](development/02_sample_database.md)
   * [Easy Application](development/03_easy_application.md)
   * [Simple Application](development/04_simple_application.md)
   * [Complex Application](development/05_complex_application.md)
