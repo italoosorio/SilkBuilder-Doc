@@ -18,7 +18,7 @@ Before start developing applications using SilkBuilder a _System Holder_ has to 
 
 Use the "Systems" button located in the SilkBuilder dashboard to setup the systems.
 
-![Systems Listing](../.gitbook/assets/SilkBuilder_systems.png)
+![Systems Listing](../.gitbook/assets/SilkBuilder_Systems.png)
 
 Clicking in the "+" button will open the system editor to add a new system, and clicking the three-dots icon in the extreme left of a row will to edit the information.
 
