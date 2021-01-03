@@ -1,6 +1,6 @@
 # Easy Application
 
-Before starting the process of building applications using SilkBuilder you should have the development environment ready. This means that you have created a *System* and the *Project* which will hold the application. Check this process [here](01_development_enviroment.md).
+Before starting the process of building applications using SilkBuilder you should have the development environment ready. This means that you have created a *System* and the *Project* which will hold the application. Check this process [here](development_enviroment.md).
 
 ## Setting the Application
 
