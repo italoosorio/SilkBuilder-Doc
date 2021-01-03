@@ -6,8 +6,8 @@ Using this guides you will learn how to start developing applications using Silk
 
 * [Development Enviroment](development_enviroment.md)
 * [System Elements](system_elements.md)
-* [Project and Data Model](project_data_model.md)
 * [Sample Database](sample_database.md)
+* [Project, Data Model, and ORM](project_data_model.md)
 * [Easy Application](easy_application.md)
 * [Simple Application](simple_application.md)
 * [Complex Application](complex_application.md)
