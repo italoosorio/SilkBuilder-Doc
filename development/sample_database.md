@@ -1,6 +1,6 @@
 # Sample Database
 
-The sample applications included on this documentation uses the tables *Person* and *Category*. The tables structure are configured using the ORM Element which you can check [here](project_data_model.md).
+The sample applications included on this documentation uses the tables *Person* and *Category*. The tables structure are configured using the ORM Element which you can check [here](project_data_model.md#creating-the-orm-elements).
 
 For the sample the tables are configured for the MSQL database server data types. You can modify these to other databases data types. The structures below is for referential purposes.
 
