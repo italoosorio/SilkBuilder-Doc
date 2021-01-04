@@ -2,37 +2,39 @@
 # Sample database to be used with SilkBuilder documentation
 # ************************************************************
 
-CREATE TABLE `Category` (
-  `categoryID` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `categoryName` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`categoryID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `Category` (`categoryID`, `categoryName`)
-VALUES
+create table Category (
+    categoryID int primary key auto_increment,
+    categoryName varchar(100) 
+)
+
+insert into Category (categoryID, categoryName)
+values
     (1,'Student'),
     (2,'Employee'),
     (3,'Self-Employed'),
     (4,'Unemployed');
 
 
-CREATE TABLE `Person` (
-  `personID` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) DEFAULT NULL,
-  `address` varchar(250) DEFAULT NULL,
-  `phone` varchar(20) DEFAULT NULL,
-  `email` varchar(50) DEFAULT NULL,
-  `categoryID` int(11) DEFAULT NULL,
-  `married` int(11) DEFAULT '0',
-  `birthDate` timestamp NULL DEFAULT NULL,
-  `monthlyIncome` decimal(10,2) DEFAULT NULL,
-  `comments` text,
-  PRIMARY KEY (`personID`),
-  KEY `categoryID` (`categoryID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `Person` (`personID`, `name`, `address`, `phone`, `email`, `categoryID`, `married`, `birthDate`, `monthlyIncome`, `comments`)
-VALUES
+create table Person (
+    personID int primary key auto_increment,
+    name varchar(100),
+    address varchar(250),
+    phone varchar(20),
+    email varchar(50),
+    categoryID int,
+    married tinyint default 0,
+    birthdate date,
+    monthlyIncome decimal(10,2),
+    comments text,
+    foreign key (categoryID) references Category (categoryID) on delete Set Null 
+)
+
+create index Person_categoryID on Person(categoryID)
+
+insert into Person (personID, name, address, phone, email, categoryID, married, birthdate, monthlyIncome, comments)
+values
     (4,'Cassady Logan 013','Ap #690-1472 Aliquam St.222','(730) 314-144','fringilla@Aliquamu.co.uk',4,1,'2013-11-05 17:20:00',7753.56,'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'),
     (5,'Sopoline Colon','916-9912 Auctor Ave\nSilver Spring, MD 90342','(466) 530-5619','id.ante.Nunc@vitaedolor.com',3,0,'2025-05-14 13:30:00',6151.00,'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'),
     (6,'Dakota Bush','9578 Facilisis Streetss','(763) 666-2326','eu.lacus@ante.net',2,0,'2002-06-13 01:00:00',5824.00,'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'),

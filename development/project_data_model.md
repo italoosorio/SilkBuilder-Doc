@@ -116,11 +116,13 @@ A data modeler ca use the ORMs to generate the SQL script to create its database
 
 ## ORM Configuration for the Person Table
 
-The ORM for the table Person is configured in the same way as the ORM for the table Category. The data below show the columns that need to be added.
+The ORM for the table Person is configured in the same way as the ORM for the table Category. The table name is "Person", it also uses "Auto increment by database", and the database schema is "`SampleDB".
+
+The table below show the columns that need to be added. Don't forget to add the description.
 
 | Column Name   | ORM Type  | DB Type       | Others                            |
 | ------------- | --------- | ------------- | --------------------------------- |
-| personID      | Integer   | int           | Check Primary Key                 |
+| personID      | Integer   | int           | Check "Primary Key"               |
 | name          | String    | varchar(100)  |                                   |
 | address       | String    | varchar(250)  |                                   |
 | phone         | String    | varchar(20)   |                                   |
@@ -131,3 +133,31 @@ The ORM for the table Person is configured in the same way as the ORM for the ta
 | monthlyIncome | Numeric   | decimal(10,2) |                                   |
 | comments      | String    | Text          |                                   |
 
+The extra step is to set the column "categoryID" as a "Foreign Key". For this process click on the "Foreign Key" tab (a) while editing the column. Enter the foreign key table (b) which is "Category" in our sample. Enter the foreign key column (c) which is "categoryID" in our case. There are fields to set the foreign key action. For this case the "FK on Delete" (d) is set to "Set Null". After this you could return to the "General" tab (e) to continue editing the column, or click on the "Submit" button (f) to save the information into the ORM structure. 
+
+![Foreign Key](../.gitbook/assets/sample_orm_person_11.jpg)
+
+This process is not related to the SilkBuilder functionality. Its objective is to help on the SQL creation and documentation. This change will be showed when the Create Table SQL code gets generated.
+
+![Create Table](../.gitbook/assets/sample_orm_person_12.jpg)
+
+After creating the columns the "default" has to be added. This is the select to be use in the sample.
+
+```sql
+select
+	p.personID,
+	p.name,
+	p.address,
+	p.phone,
+	p.email,
+	p.categoryID,
+	c.categoryName,
+	p.married,
+	p.birthdate,
+	p.monthlyIncome,
+	p.comments
+from `SampleDB`.Person p
+join `SampleDB`.Category c on p.categoryID=c.categoryID
+```
+
+With this the sample data model has been completed.	
