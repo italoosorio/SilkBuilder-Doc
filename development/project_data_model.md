@@ -141,7 +141,7 @@ This process is not related to the SilkBuilder functionality. Its objective is t
 
 ![Create Table](../.gitbook/assets/sample_orm_person_12.jpg)
 
-After creating the columns the "default" has to be added. This is the select to be use in the sample.
+After creating the columns the "default" select has to be added. This is the SQL select code to be use in the sample. Add this following the same process used in the ORM for the table Category.
 
 ```sql
 select
