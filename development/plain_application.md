@@ -80,8 +80,8 @@ To create a **plain** application remove the ```<silk:Screen/>``` and add the li
 
 ![App Code](../.gitbook/assets/sample_plain_4.jpg)
 
-After this click on the Run button and it will open new tab in the navigator with the URL https://mydomain/service/Sample/Person/Plain.
+After this click on the Run button and it will open new tab in the navigator with the URL ```https://mydomain/service/Sample/Person/Plain```.
 
 ![App Running](../.gitbook/assets/sample_plain_5.jpg)
 
-At this level the developer can add more HTML code, stylize using Bootstrap, and use JQuery to modify the DOM.
+At this level the developer can add more HTML code, stylize using Bootstrap, and use JQuery to add interaction.
