@@ -6,6 +6,7 @@
   * [System Elements](development/system_elements.md)
   * [Project, Data Model and ORM](development/project_data_model.md)
   * [Sample Database](development/sample_database.md)
+  * [Plain Application](development/plain_application.md)
   * [Easy Application](development/easy_application.md)
   * [Simple Application](development/simple_application.md)
   * [Complex Application](development/complex_application.md)

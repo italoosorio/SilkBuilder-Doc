@@ -34,6 +34,8 @@ Four our sample we need to create an ORM for the Person and Category tables.
 
 ![Category ORM Creation](../.gitbook/assets/sample_orm_category.jpg)
 
+The name of an ORM should not have spaces. It is recommended to user the *camelcase* convention on these.
+
 ## ORM Configuration for the Category Table
 
 To configure an ORM Element click on the arrow circle located at the right of the ORM element row (a). This will open the ORM Editor in a new Tab (b). 
