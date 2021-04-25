@@ -180,8 +180,6 @@ When using the *silk:Page* tag SilkBuilder will generate a JavaScript object whi
 | headerWidth | Deprecated                                                   |
 | tabsNav     | Returns the *silk:TabNav* which the page is using to be displayed. |
 
-
-
 ### Methods
 
 | Name            | Description                                                  |
@@ -192,8 +190,8 @@ When using the *silk:Page* tag SilkBuilder will generate a JavaScript object whi
 | mask(mode)      | Masks the page if the parameters is "true", or unmask the page if the parameters is "false". Masking a page creates a darker layer on other pages to limit interaction to only the selected page. This is the status when editing a form. |
 | maskProcess()   |                                                              |
 | goBack()        | Focuses the page configured using the tag property "returnPage". Otherwise it focuses the previous page in the pages list. This function uses the property "index" to find the previous page (index-1). |
-| setTitle(title) | Sets the pages title. The parameter is the new page title.   |
-| getTitle()      | Return the page title                                        |
+| setTitle(title) | Sets the pages title. The parameter is the new page title. This only works if the page is using the *silk:Head* tag. |
+| getTitle()      | Return the page title. This only works if the page is using the *silk:Head* tag. |
 | initPage()      | Initialized the page object. This is automatically executed during the application initialization. This could function could be used if a page is added at runtime and needs to be initialized. |
 
 ### Events
@@ -219,7 +217,7 @@ For the user each page would look like a "columns". It is the developers respons
 
 ![Multi Page Format](../.gitbook/assets/pages_hidden_pages.jpg)
 
-### The Layout Properties
+### Layout Properties
 
 This list shows the available layout properties and the window's width which triggers when it will be used.
 
@@ -234,7 +232,7 @@ This list shows the available layout properties and the window's width which tri
 
 When a page gets focused, or becomes "active", the data in the layout property commands how the pages will be displayed. When another page gets focused, then that particular page layout property takes the pages distribution authority. This allows the developer to have full control of pages behavior.
 
-### The Layout Template
+### Layout Template
 
 The layout properly requires data in a special format. This format uses the *silk:Page* stage attribute information to refer to the target page. The recommendation is to keep the names the "stage" attribute as short as possible. A single character or a dual character. The "stage" name is used to easy the layout configuration process, and if necessary to be able to change the page ID anytime without needing to re-configure the page's layout information.
 
@@ -257,17 +255,42 @@ The list below show samples on how to use the components  to create a configurat
 | A:500px,C:*:b       | Two pages will be showed. The first one has "A" as stage name, "500px" width, and no back button. The second page has "C" as stage name, "*" as width, and will show a back button. |
 | A:500px,B:*,C:600px | Three pages will be showed. The first one has "A" as stage name, "500px" width, and not back button. The second  page has "B" as stage name, "*" as width, and not back button. The third page has "C" as stage name, "600px" width, and not back button. |
 
+### Layout Examples
 
+```xml
+	<silk:Page id="filterListPage" stage="F1"
+		smLayout="F1"
+		mdLayout="F1"
+		rgLayout="F1:400px,A1"
+		lgLayout="F1:400px,A1"
+		xlLayout="F1:400px,A1:500px,B1"
+		xxLayout="F1:500px,A1:600px,B1"
+	>
+```
 
 
 
 ## Head tag `<silk:Head>`
 
-```markup
+The *silk:Head* tag defines the page header which is statically located at the top of the page. It will always be there even if the page is scrolled. The page head holds the page title, which is located in the center of the head, and interaction buttons at the left and right of the title.
+
+The "title" it is not a property but the "content" of the *silk:Head* tag. So, the title does not have to be necessarily just a "text".
+
+```xml
 <silk:Head homeButton="" logoutButton="true" cssClass="" >
     Title
 </silk:Head>
 ```
+
+### Properties
+
+| Name         | Description                                                  | Default | Required |
+| ------------ | ------------------------------------------------------------ | ------- | -------- |
+| homeButton   | Will add a button with a "home" icon to the top left of the header. | false   | Yes      |
+| logoutButton | Will add a button with a "lock" icon to the top left of the header. | false   | Yes      |
+| cssClass     | To add extra css classes to the header "div" wrapper to change it default appearance. | empty   | No       |
+
+### 
 
 ## HeadContent tag `<silk:HeadContent>`
 
