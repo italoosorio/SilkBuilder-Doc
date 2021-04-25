@@ -176,3 +176,153 @@ Executing the application will return a page showing the title "People List" cre
 
 ![Table visualization](../.gitbook/assets/sample_plain_8.jpg)
 
+## Adding a silk:Modal
+
+The *silk:Modal* component is use to popup dialog boxes. The "Plain" sample application will use the modal to show the person details when a row is clicked.
+
+Below is the sample code added the *silk:Modal* tag. The *silk:Table* has the extra property "targetPage" which sets the table's "click" event to show the page or modal indicated by the property. 
+
+```xml
+<%@ taglib uri="/WEB-INF/silk.tld" prefix="silk" %>
+<%@page contentType="text/html;charset=UTF-8"%>
+<silk:App>
+	
+	<h2>People List</h2>
+  	
+	<silk:Table id="personList" dataSource="personDP" targetPage="personModal">
+		<silk:Column title="Name" >{name}</silk:Column>
+		<silk:Column title="Address" >{address}</silk:Column>
+		<silk:Column title="Phone" >{phone}</silk:Column>
+	</silk:Table>
+	
+	<silk:Modal id="personModal" title="Person Info" closeButton="true" >
+		<silk:ModalBody>
+			A form will go here
+		</silk:ModalBody>
+	</silk:Modal>
+	
+	<silk:DataProvider id="personDP" servicePath="/Sample/Person/PersonOutlet" />
+	
+</silk:App>
+```
+
+Executing the application and clicking on any row will open the modal dialog with the title "Person Info" showing the text "A form will go here".
+
+![Opening Modal](../.gitbook/assets/sample_plain_9.jpg)
+
+## Adding a silk:Form and silk:Input
+
+The code below show the *silk:Form* tag added to the modal. It also show the *silk:Input* tags defining the form fields.
+
+```xml
+<%@ taglib uri="/WEB-INF/silk.tld" prefix="silk" %>
+<%@page contentType="text/html;charset=UTF-8"%>
+<silk:App>
+	
+	<h2>People List</h2>
+  	
+	<silk:Table id="personList" dataSource="personDP" targetPage="personModal">
+		<silk:Column title="Name" >{name}</silk:Column>
+		<silk:Column title="Address" >{address}</silk:Column>
+		<silk:Column title="Phone" >{phone}</silk:Column>
+	</silk:Table>
+	
+	<silk:Modal id="personModal" title="Person Info" closeButton="true" >
+		<silk:ModalBody>
+			<silk:Form id="personForm" dataSource="personList" >
+				<silk:Input id="name" type="text" label="Name" />
+				<silk:Input id="email" type="text" label="Email" />
+				<silk:Input id="phone" type="text" label="Phone" />
+				<silk:Input id="birthdate" type="date" label="Birthdate" />
+				<silk:Input id="address" type="text" label="Address" />
+				<silk:Input id="comments" type="text" label="Comments" />
+			</silk:Form>
+		</silk:ModalBody>
+	</silk:Modal>
+	
+	<silk:DataProvider id="personDP" servicePath="/Sample/Person/PersonOutlet" />
+	
+</silk:App>
+```
+
+The *silk:Form* component creates an HTML form to display the data fields from a list selected record. The properties used in the sample are:
+
+| Property   | Description                                                  |
+| ---------- | ------------------------------------------------------------ |
+| id         | The unique *Form* identifier. This has to be unique only in the running application. It is recommended to end the name of a *Form* with the postfix "Form" for easy understanding what type of object it is. This will become very useful when creating Javascript functions for extra interaction. |
+| dataSource | This is the object containing the records which the form will use . The form fields will be loaded automatically when the user selects the list rows. |
+
+The silk:Input component created the HTML Input used to display the fields from the selected list's record. The properties used in the sample are:
+
+| Property | Description                                                  |
+| -------- | ------------------------------------------------------------ |
+| id       | The name of the field to be displayed. This is has been defined in the dataSource. It has to be unique to the form. |
+| type     | What type of Input will be created. This is is used when the form is on editing mode. |
+| label    | The field title.                                             |
+
+Executing the application will show the person's information the modal window when the user clicks on a table row.
+
+![Showig Form](../.gitbook/assets/sample_plain_10.jpg)
+
+## Activating Editing
+
+Until now the application only displays information. To add data interaction (insert, update, delete) the code has to received some small changes.
+
+This is the updated code:
+
+```xml
+<%@ taglib uri="/WEB-INF/silk.tld" prefix="silk" %>
+<%@page contentType="text/html;charset=UTF-8"%>
+<silk:App>
+	
+	<h2>People List</h2>
+	
+	<silk:Button id="addPerson" label="Add person" />
+  	
+	<silk:Table id="personList" dataSource="personDP" targetPage="personModal">
+		<silk:Column title="Name" >{name}</silk:Column>
+		<silk:Column title="Address" >{address}</silk:Column>
+		<silk:Column title="Phone" >{phone}</silk:Column>
+	</silk:Table>
+	
+	<silk:Modal id="personModal" title="Person Info" closeButton="true" >
+		<silk:ModalBody>
+			<silk:Form id="personForm" dataSource="personList" 
+				buttonTarget="null,personModal"
+				insertBt="addPerson"
+			>
+				<silk:Input id="name" type="text" label="Name" />
+				<silk:Input id="email" type="text" label="Email" />
+				<silk:Input id="phone" type="text" label="Phone" />
+				<silk:Input id="birthdate" type="date" label="Birthdate" />
+				<silk:Input id="address" type="text" label="Address" />
+				<silk:Input id="comments" type="text" label="Comments" />
+				<silk:Input id="personID" type="hidden" />
+			</silk:Form>
+		</silk:ModalBody>
+	</silk:Modal>
+	
+	<silk:DataProvider id="personDP" servicePath="/Sample/Person/PersonOutlet" />
+	
+</silk:App>
+```
+
+A *silk:Button* component has been added after the H2 tags: ``<silk:Button id="addPerson" label="Add person" />``. The properties used in the sample are:
+
+| Properties | Description                                                  |
+| ---------- | ------------------------------------------------------------ |
+| id         | This is the Button unique identifier. This should be unique in the application. |
+| label      | The text displayed inside the button.                        |
+
+The silk:Form has two extra properties: ``buttonTarget="null,personModal"`` and ``insertBt="addPerson"``.
+
+| Properties   | Description                                                  |
+| ------------ | ------------------------------------------------------------ |
+| buttonTarget | This define where the interaction buttons are going to be located. In our sample the first one is null because an external button is going to be used as insert. The edit and delete buttons will be added to the modal. |
+| insertBt     | The name of the button which will trigger the "insert action". |
+
+And extra *silk:Input* has been aded. This is a hidden type which will be the record's ID holder: ``<silk:Input id="personID" type="hidden" />``.
+
+Now the application will have the options to add, edit, and remove people from the list.
+
+![Editing Records](../.gitbook/assets/sample_plain_11.jpg)
