@@ -13,6 +13,7 @@
   * [Report Application](development/report_application.md)
   * [System Environment](development/system_environment.md)
 * [Tags](tags/README.md)
+  * [Development Formats](tags/silk_development_formats.md)
   * [Application tags](tags/silk_application_tags.md)
   * [Components Tags](tags/silk_components_tag.md)
   * [Report Tags](tags/silk_report_tag.md)

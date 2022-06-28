@@ -7,4 +7,5 @@ Silk Builder Application Tags.
 * [Development Formats](silk_development_formats.md)
 * [Application Tags](silk_application_tags.md)
 * [Components Tag](silk_components_tag.md)
+* [Report Tags](silk_report_tag.md)
 
