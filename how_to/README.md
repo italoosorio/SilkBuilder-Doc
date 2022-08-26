@@ -1,6 +1,6 @@
 # How To
 
-## Documents
+## Topics:
 
 * [Pagination](pagination.md)
 

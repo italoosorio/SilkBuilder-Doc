@@ -12,11 +12,12 @@
   * [Complex Application](development/complex_application.md)
   * [Report Application](development/report_application.md)
   * [System Environment](development/system_environment.md)
-* [Tags](tags/README.md)
-  * [Development Formats](tags/silk_development_formats.md)
-  * [Application tags](tags/silk_application_tags.md)
-  * [Components Tags](tags/silk_components_tag.md)
-  * [Report Tags](tags/silk_report_tag.md)
+* [Silk Toolkit](toolkit/README.md)
+  * [Development Formats](toolkit/silk_development_formats.md)
+  * [Application tags](toolkit/silk_application_tags.md)
+  * [Components Tags](toolkit/silk_components_tag.md)
+  * [Javascript Objects](toolkit/silk_javascript_objects.md)
+  * [Report Tags](toolkit/silk_report_tag.md)
 * [Docs](docs/README.md)
   * [The ORM Structure](docs/the_orm_structure.md)
   * [SilkBuilder](docs/silk_builder.md)
@@ -25,5 +26,4 @@
   * [Report](docs/the_silk_report.md)
 * [How to](how_to/README.md)
   * [Pagination](how_to/pagination.md)
-
 
