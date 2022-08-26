@@ -23,4 +23,7 @@
   * [Silk Service](docs/silk_service.md)
   * [Java Database Class](docs/java_database_class.md)
   * [Report](docs/the_silk_report.md)
+* [How to](how_to/README.md)
+  * [Pagination](how_to/pagination.md)
+
 

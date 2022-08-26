@@ -1,84 +1,64 @@
-# 13\_SILK\_Components\_Tag
+# Components Tag and Objects
 
-## Silk Components Tag and Objects
+The SILK components tags and objects are tools use to visualize and interact with the application's data. These are use by the developer to implement the bussines logic required by the application.
 
-### DataProvider tag `<silk:DataProvider>`
+## DataProvider tag `<silk:DataProvider>`
 
-This tag is part of Silk Data Components.
+The *silk:DataProvider* component is use to extract data from a database. A DataProvider interfaces with a **Data Outlet** which is linked to an **Object Relational Mapping** (ORM) file which defines the data interaction. The DataProvider is also the repository of the information loaded from the database. The stored data can be access by other components.
 
-This component serves as inteface betwen the client and the server. A DataProvider is linked to an ORM file in the server which defines the data interaction. The DataProvider is also the repository for the information extracted from the server. The tags DataGrid and Form are build to interact with the DataProviders.
-
-This is the DataProvider Tag with its properties in their default value. These properties are used during the component intialization. The properties id and objectName are always required to connect to the server. The other properties should be used only when it is necesary to ovewrite their default value during the initialization process.
-
-```markup
+```xml
 <silk:DataProvider
     id=""
-    dc=""
+    servicePath=""
+    selectName="default"
     autoLoad="true"
-    loadingOrder=""
-    selectName=""
+    loadingOrder="000"
     treeData="false"
     markDeleted="false"
     isPublic="false"
     debugLevel="0"
     pkColumn=""
+    isPublic="false"
 />
 ```
 
-The DataProvider can also be used as a data container itself. In this case the DataProvider will host an array of Json objects which will be loaded during the initalization process. In this scenario the DataProvider will not interact with the server, so the objectName property is not necesary. The typical use for this scenario is to fill data into a ComboBox component.
+### Properties
 
-```markup
-<silk:DataProvider id="simpleList" pkColumn="id" >
-    {"id":1, "label":"Single"},
-    {"id":2, "label":"Married"}
+| Name         | Description                                                  | Default | Required |
+| ------------ | ------------------------------------------------------------ | ------- | -------- |
+| id           | Unique component identifier.                                 | Empty   | Yes      |
+| servicePath  | The path of the service providing the access to the data.    | Empty   | Yes      |
+| selectName   | The name of the Select tag in the ORM file to be used to load the data from the server. This is only necesary if the ORM file has multiple Select tags. | Empty   | No       |
+| autoLoad     | if _true_ the component will load the data from the server after being initialized. If _false_ the loading method will be trigger externally. The default value is _true_. | True    | No       |
+| loadingOrder | A numeric value which is used to sort the loading process off mutiple DataProviders. | 000     | No       |
+| treeData     | If _true_ it activates the support for hierarchical information or trees nodes. This requires the fields root, parent, and level in the tags column in theORM file. | False   | No       |
+| markDeleted  | if _true_ the delete action will change to update the field making the records as deleted. The records will be visually removed from the list. | False   | No       |
+| debugLevel   | A numeric value indicating the level of debuging to be displayed. | 0       | No       |
+| pkColumn     | The name of the columns used as primary key if the DataProvider has been created using static JSON data. | empty   | No       |
+| isPublic     | If true the data will be served from a public servicePath service. *This is only necessary when a private application is going to use a public service.* | false   | No       |
+
+The **silk:DataProvider** can also be used with pre-define data. In this case the DataProvider will host an array of Json objects which will be loaded during the initalization process. In this scenario the DataProvider will not interact with the server, so the servicePath property is not necesary. The typical use for this scenario is to store data which is only valid in the application domain.
+
+```xml
+<silk:DataProvider id="genderDP" pkColumn="id" >
+    {"id":"0", "label":"Single"},
+    {"id":"1", "label":"Married"}
 </silk:DataProvider>
 ```
 
-Even though the DataProvider component is built to use the DataGrid and Form components for data interaction, the DataProvider can be used as a stand alone component and it is possible to interact with the data it holds using JavaScript to access its methods and properties.
+### DataProvider JS Object
 
-#### Tag Properties
-
-* **id**: Unique component identifier.
-* **servicePath**: The path of the service providing the access to the data.
-* **autoLoad**: if _true_ the component will load the data from the server after being initialized. If _false_ the loading method will be trigger externally. The default value is _true_.
-* **loadingOrder**: A numeric value which is used to sort the loading process off mutiple DataProviders.
-* **selectName**: The name of the Select tag in the ORM file to be used to load the data from the server. This is only necesary if the ORM file has multiple Select tags.
-* **treeData**: If _true_ it activates the support for hierarchical information or trees nodes. This requires the fields root, parent, and level in the tags column in theORM file.
-* **markDeleted**: if _true_ the delete action will change to update the field making the records as deleted. The records will be visually removed from the list.
-* **debugLevel**: A numeric value indicating the level of debuging to be displayed.
-* **pkColumn**: The name of the columns used as primary key if the DataProvider has been created using static JSON data.
-* **isPublic**: If true the data will be served from a public servicePath service. This is only necessary when a private application is going to use a public service. 
-
-### DataProvider Object
-
-The DataProvider tag also creates a global JavaScript object. This object's name is the same as the DataProvider ID. This object can be accessed by the programer to use the DataProvider properties, methods and events.
-
-#### Properties
-
-* **jsonData**: Contains the Json string to populate the dataProvider as a stand alone data container.
-* **dataSource**: An array containing the objects \(records\) loaded from the database or a Json string. It gets filled after the loadData\(\) method is triggered.
-* **criteria**: An array with the objects defining the criteria values to send to the server. These criteria values are configured in the ORM file during the SQL building process.
+The **silk:DataProvider** tag also creates a JavaScript object wich. This object's name is the same as the DataProvider's ID. The object is used to accessed the DataProvider properties, methods and events programatically
 
 #### Methods
 
-* **countItem\(fieldName,value\)**: Return the number of records when the fieldName contains a specific value.
-* **setCriteriaItem\(fieldName,value,type\)**: Adds an object to the criteria array. The value is always a string. They type by default is 'S'. The type values are the same as the types used in the ORM column.
-* **criteriaClean\(\)**: Cleans the criteria array.
-* **findItem\(fieldName,value\)**: Returns the index position of a fieldName containing a specific value.
-* **getItemAt\(index,fieldName\)**: Returns the fieldName value at a specific index position.
-* **setItemAt\(index,fieldName,value\)**: Sets the value of the fieldName at a specific index position.
-* **getSelectedItem\(fieldName\)**: Returns the fieldName's value of the DataGrid's selected row.
-* **setSelectedItem\(fieldName,value\)**: Sets the fieldName's value of the DataGrid's selected row.
-* **getTotal\(\)**: Returns the total of records in the dataSource array.
-* **loadData\(\)**, **loadData\(selectName\)**: Triggers the loading data process. It could receive the selectName as a parameter to choose a different select from the ORM file.
-* **puch\(item\)**: Push an item object into the dataSource array.
-* **removeAll\(\)**: Remove all elements from the dataSource array.
-* **runOperation\(operationName\)**: Executes a sqlOperation defined in the ORM file. The operation will be selected using the provided name.
-* **formClean\(\)**: Cleans elements from formData object.
-* **formSetAction\(action\)**: Define de action forms item action. The parameter is a string with one of the following values: insert, update, delete.
-* **formSetValue\(field,value\)**: Defines the field's value in a form item. The first parameters is a string defining the target field. The second parameter is a string defining the fields' value.
-* **formAddItem\(\)**: Adds a new form item to the formData object. it also initializes a new form item to received new fields.
-* **formSubmit\(\)**: Submits the form items to the application server.
+| Name | Description |
+| ---- | ----------- |
+|      |             |
+|      |             |
+|      |             |
+
+
 
 #### Events
 
@@ -88,7 +68,7 @@ The DataProvider tag also creates a global JavaScript object. This object's name
 * **loadCriteria**: A function to be executed before the loading process. The function will receive as parameter the calling DataProvider. This is usually used to load the criteria values using the criteriaAddItem\(\) method. This has to a global a function.
 * **operateDataSource**: A function which executes before the DataGrid dataSource gets used by other components or the afterLoad event. It receives as a parameter the DataGrid dataSource and should returnd the transformed dataSource.
 
-### Table tag `<silk:Table>`
+## Table tag `<silk:Table>`
 
 The DataGrid component serves as a data visualizer and also to capture the user insteraction. The DataProvider uses the DataGrid to display information loaded from the server.
 
