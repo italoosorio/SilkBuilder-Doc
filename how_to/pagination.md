@@ -52,6 +52,7 @@ The *afterSelect* event received the *totalRows* and *totalPages* values from th
 pageDP.on("beforeSelect", function(){
   paginationBox.clean();
 	pagesDP.setParameter("pageSize", paginationBox.pageSize );
+  // Add other paramaters required by the process
 });
 
 pageDP.on("afterSelect", function(){
@@ -76,6 +77,15 @@ Set the DataProvider *listDP* events. Create of modity the *beforeSelect* event 
 listDP.on("beforeSelect", function(){
   listDP.setParameter("pageSize", paginationBox.pageSize);
   listDP.setParameter("pageStartRow", paginationBox.pageStartRow);
+  // Add other paramaters required by the process
 });
+```
+
+### Pagination and dpSearch
+
+The Table property *dpSearch* determins how text will be search in the table. To use it with pagination the property *dpSearch* should received the name of the *DataProvider* extracting the number of pages.
+
+```xml
+<silk:Table id="" dpSearch="pageDP" />
 ```
 
