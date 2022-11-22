@@ -26,4 +26,5 @@
   * [Report](docs/the_silk_report.md)
 * [How to](how_to/README.md)
   * [Pagination](how_to/pagination.md)
+  * [Mark Deleted](how_to/markDelted.md)
 
