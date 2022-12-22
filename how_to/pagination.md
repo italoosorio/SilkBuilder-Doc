@@ -83,7 +83,9 @@ listDP.on("beforeSelect", function(){
 
 ### Pagination and dpSearch
 
-The Table property *dpSearch* determins how text will be search in the table. To use it with pagination the property *dpSearch* should received the name of the *DataProvider* extracting the number of pages.
+The Table property *dpSearch* determins how text will be search in the table. If set to "true" the search will be executed in the DataProvider. This options, by default, will load the DataProvider filling the table. However, in pagination the DataProvider to be loaded is the one holding the pagination information.
+
+The *dpSearch* property can also received the name of a *DataProvider* to load a search. For pagination the *dpSearch* properlty should received the *DataProvider* containing the pagination information.
 
 ```xml
 <silk:Table id="" dpSearch="pageDP" />

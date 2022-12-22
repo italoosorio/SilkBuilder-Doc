@@ -1,8 +1,10 @@
 # Mark Records as Deleted
 
-Deleting a records does not necessarely mean to phisically remove it from the table. There are cases in which records have to be marked as deleted to be "removed" from the users "view" but it will still exist in the database for other kind of access, or for archiving/log purposes.
+Deleting a records does not necessarely mean to phisically remove it from the table. There are cases in which records have to be marked as deleted to be "removed" from the users "view" but it will still exist in the database for other kind of access, or for archiving/log purposes. To accomplished this kind of scenario the *silk:DataProvider* tag provides the property *markDeleted*.
 
-To accomplished this kind of scenario the *silk:DataProvider* tag provides the property *markDeleted*. By defaul this property is values **false**. I this case the *DataProvider* will execute a regular delete sql command.
+### The markDeleted Property
+
+By default, when not added, the *markDeleted* property values **false**. In this case the *DataProvider* will execute a regular *delete* sql command.
 
 ```xml
 <silk:DataProvider id="dataDP" servicePath="" markDeleted="true" />
@@ -14,10 +16,10 @@ To complete this process the *DataProvider* has to be "informed" of which column
 
 ```javascript
 dataDP.on("markDeleted",function(requestObject){
-  /*
-   * In this example the column 'archiveStatus' defines
-   * in the table the 'deleted' condition.
-   */
+	/*
+	 * In this example the column 'archiveStatus' defines
+	 * in the table the 'deleted' condition.
+	 */
 	request.setOperationItem("archiveStatus",1);
 });
 ```

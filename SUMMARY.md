@@ -25,6 +25,8 @@
   * [Java Database Class](docs/java_database_class.md)
   * [Report](docs/the_silk_report.md)
 * [How to](how_to/README.md)
+  * [Data Trees](how_to/tree.md)
   * [Pagination](how_to/pagination.md)
   * [Mark Deleted](how_to/mark_deleted.md)
+  * [Record Sync](how_to/sync_record_detail.md)
 
