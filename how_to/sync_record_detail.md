@@ -22,7 +22,7 @@ The solution for this is to retrieve these extra columns only when the form need
 
 For this to happen we have to use two *selects*. One returning the columns for the table, and another returning the extra columns only for the selected record.
 
-![Bulk Loading](../.gitbook/assets/recordsync_multiple.png)
+![Multiple Loading](../.gitbook/assets/recordsync_multiple.png)
 
 ## Record Sync Process
 

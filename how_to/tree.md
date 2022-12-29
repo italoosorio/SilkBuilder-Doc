@@ -10,14 +10,15 @@ To display a tree using SILK it is required for each record, or branch, in the t
 - The parent's unique identifier. It will be empty for the root branch.
 - The level. Even though the level can be determine by analysing the parental connection, SILK requires for this to exist in the database to faciliate the tree management. The level does not need to start in zero (0) but has to increase as the branches go deeper.
 
-A sample of a table storing a data tree will have this basic structure (mySQL):
+A sample of a table storing a data tree will have this basic structure:
 
 ```sql
+-- mySQL
 create table treeData (
 	branchID int primary key auto_increment,
-  parentID int,
-  level tinyint,
-  branchName varchar(100)
+	parentID int,
+	level tinyint,
+	branchName varchar(100)
 );
 create index treeData_parent on treeData(parentID);
 ```
