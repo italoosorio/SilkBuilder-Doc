@@ -3,6 +3,63 @@ The DataProvider Class provides properties, methods, and events to interface wit
 
 **Kind**: global class  
 
+* [DataProvider](#DataProvider)
+    * [new DataProvider(id, options)](#new_DataProvider_new)
+    * [.on](#DataProvider+on)
+    * [.selectObject](#DataProvider+selectObject)
+    * [.operationObject](#DataProvider+operationObject)
+    * [.sourceType](#DataProvider+sourceType)
+    * [.getService()](#DataProvider+getService)
+    * [.getSelectName()](#DataProvider+getSelectName)
+    * [.setSelectName(newSelectName)](#DataProvider+setSelectName)
+    * [.getPkColumn()](#DataProvider+getPkColumn)
+    * [.getPKValue()](#DataProvider+getPKValue)
+    * [.getOperationItem()](#DataProvider+getOperationItem)
+    * [.getSelectedItem(columnName)](#DataProvider+getSelectedItem)
+    * [.isTreeData()](#DataProvider+isTreeData)
+    * [.getIndex(pkValue)](#DataProvider+getIndex)
+    * [.getIndexItem(pkValue)](#DataProvider+getIndexItem)
+    * [.getIndexOf(columnName, value)](#DataProvider+getIndexOf)
+    * [.getIndexItemOf(columnName, value)](#DataProvider+getIndexItemOf)
+    * [.addComponent(component)](#DataProvider+addComponent)
+    * [.getComponents()](#DataProvider+getComponents)
+    * [.cleanParameters()](#DataProvider+cleanParameters)
+    * [.setParameter(column, value, type, secure)](#DataProvider+setParameter)
+    * [.cleanOperations(init)](#DataProvider+cleanOperations)
+    * [.setOperationAction(action, operation)](#DataProvider+setOperationAction)
+    * [.setOperationItem(column, value)](#DataProvider+setOperationItem)
+    * [.select(newSelectName)](#DataProvider+select)
+    * [.insert()](#DataProvider+insert)
+    * [.update(recordIndex)](#DataProvider+update)
+    * [.recordSync()](#DataProvider+recordSync)
+    * [.delete(recordIndex)](#DataProvider+delete)
+    * [.batch()](#DataProvider+batch)
+    * [.exec(operation)](#DataProvider+exec)
+    * [.getItemAt(index, column)](#DataProvider+getItemAt) ⇒ <code>Object</code>
+    * [.getItem(column)](#DataProvider+getItem)
+    * [.setItem(column, value)](#DataProvider+setItem)
+    * [.setItemAt(index, column, value)](#DataProvider+setItemAt)
+    * [.length()](#DataProvider+length)
+    * [.size()](#DataProvider+size)
+    * [.load(internalCall)](#DataProvider+load)
+    * [.clean()](#DataProvider+clean)
+    * ["Event:beforeLoad" ([action], [operation])](#DataProvider+Event_beforeLoad)
+    * ["Event:beforeSelect" ([selectName])](#DataProvider+Event_beforeSelect)
+    * ["Event:beforeRecordSync" ([selectName])](#DataProvider+Event_beforeRecordSync)
+    * ["Event:beforeInsert"](#DataProvider+Event_beforeInsert)
+    * ["Event:beforeUpdate"](#DataProvider+Event_beforeUpdate)
+    * ["Event:beforeDelete"](#DataProvider+Event_beforeDelete)
+    * ["Event:beforeBatch"](#DataProvider+Event_beforeBatch)
+    * ["Event:beforeExec" ([operation])](#DataProvider+Event_beforeExec)
+    * ["Event:afterLoad" ([action], [operation])](#DataProvider+Event_afterLoad)
+    * ["Event:afterSelect" ([selectName])](#DataProvider+Event_afterSelect)
+    * ["Event:afterInsert"](#DataProvider+Event_afterInsert)
+    * ["Event:afterUpdate"](#DataProvider+Event_afterUpdate)
+    * ["Event:afterDelete"](#DataProvider+Event_afterDelete)
+    * ["Event:afterBatch"](#DataProvider+Event_afterBatch)
+    * ["Event:afterExec" ([operation])](#DataProvider+Event_afterExec)
+    * ["Event:processLoadedData" (returnObject)](#DataProvider+Event_processLoadedData) ⇒ <code>Object</code>
+    * ["Event:error" (error)](#DataProvider+Event_error)
 
 <a name="new_DataProvider_new"></a>
 
@@ -25,7 +82,7 @@ Returns a DataProvider instance.
 
 <a name="DataProvider+on"></a>
 
-## on
+## dataProvider.on
 Extends the "on" method from the eventManager Class.
 
 **Kind**: instance property of [<code>DataProvider</code>](#DataProvider)  
@@ -37,19 +94,19 @@ Extends the "on" method from the eventManager Class.
 
 <a name="DataProvider+selectObject"></a>
 
-## selectObject
+## dataProvider.selectObject
 The ReturnObject containing the returned data from the database after a SELECT.
 
 **Kind**: instance property of [<code>DataProvider</code>](#DataProvider)  
 <a name="DataProvider+operationObject"></a>
 
-## operationObject
+## dataProvider.operationObject
 The ReturnObject contaiing the returned data after INSERT, UPDATE, DELETE, EXEC, BATCH.
 
 **Kind**: instance property of [<code>DataProvider</code>](#DataProvider)  
 <a name="DataProvider+sourceType"></a>
 
-## sourceType
+## dataProvider.sourceType
 Source Type:<br>
 SQL : From SQL database<br>
 Local : loaded using laodJSON method. Data is provided as part of the data provider.<br>
@@ -58,19 +115,19 @@ JSON : data form a JSON file.
 **Kind**: instance property of [<code>DataProvider</code>](#DataProvider)  
 <a name="DataProvider+getService"></a>
 
-## getService()
+## dataProvider.getService()
 Gets the service path.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
 <a name="DataProvider+getSelectName"></a>
 
-## getSelectName()
+## dataProvider.getSelectName()
 Gets the selectedName used to load data.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
 <a name="DataProvider+setSelectName"></a>
 
-## setSelectName(newSelectName)
+## dataProvider.setSelectName(newSelectName)
 Set a new selectName value
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
@@ -81,25 +138,25 @@ Set a new selectName value
 
 <a name="DataProvider+getPkColumn"></a>
 
-## getPkColumn()
+## dataProvider.getPkColumn()
 Gets the name of the primary key column.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
 <a name="DataProvider+getPKValue"></a>
 
-## getPKValue()
+## dataProvider.getPKValue()
 Gets the primary key value of the seleced data item.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
 <a name="DataProvider+getOperationItem"></a>
 
-## getOperationItem()
+## dataProvider.getOperationItem()
 Gets the operation Item.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
 <a name="DataProvider+getSelectedItem"></a>
 
-## getSelectedItem(columnName)
+## dataProvider.getSelectedItem(columnName)
 Gets the selected item based on the selecteIndex property. By default return the firt item if exists.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
@@ -110,13 +167,13 @@ Gets the selected item based on the selecteIndex property. By default return the
 
 <a name="DataProvider+isTreeData"></a>
 
-## isTreeData()
+## dataProvider.isTreeData()
 Return a boolean indicating if the data is set to be tree structured
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
 <a name="DataProvider+getIndex"></a>
 
-## getIndex(pkValue)
+## dataProvider.getIndex(pkValue)
 Returns the index position in the data array of the primay key provided
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
@@ -127,7 +184,7 @@ Returns the index position in the data array of the primay key provided
 
 <a name="DataProvider+getIndexItem"></a>
 
-## getIndexItem(pkValue)
+## dataProvider.getIndexItem(pkValue)
 Returns the item object of the primary key provided
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
@@ -138,7 +195,7 @@ Returns the item object of the primary key provided
 
 <a name="DataProvider+getIndexOf"></a>
 
-## getIndexOf(columnName, value)
+## dataProvider.getIndexOf(columnName, value)
 Returns the index position in the data array of the item matching the columnName and the value.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
@@ -150,7 +207,7 @@ Returns the index position in the data array of the item matching the columnName
 
 <a name="DataProvider+getIndexItemOf"></a>
 
-## getIndexItemOf(columnName, value)
+## dataProvider.getIndexItemOf(columnName, value)
 Returns the item object matching the columnName and the value.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
@@ -162,7 +219,7 @@ Returns the item object matching the columnName and the value.
 
 <a name="DataProvider+addComponent"></a>
 
-## addComponent(component)
+## dataProvider.addComponent(component)
 Adds a component to the components list.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
@@ -173,20 +230,20 @@ Adds a component to the components list.
 
 <a name="DataProvider+getComponents"></a>
 
-## getComponents()
+## dataProvider.getComponents()
 Returns the array containing the components which will be notify of changes in the data provider.<br>
 The component must have a load() function.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
 <a name="DataProvider+cleanParameters"></a>
 
-## cleanParameters()
+## dataProvider.cleanParameters()
 Cleans the parameter list from the requestObject.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
 <a name="DataProvider+setParameter"></a>
 
-## setParameter(column, value, type, secure)
+## dataProvider.setParameter(column, value, type, secure)
 Sets a parameter. If the parameter already exist it gets updated.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
@@ -200,7 +257,7 @@ Sets a parameter. If the parameter already exist it gets updated.
 
 <a name="DataProvider+cleanOperations"></a>
 
-## cleanOperations(init)
+## dataProvider.cleanOperations(init)
 Cleans the operation list and add a default select action
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
@@ -211,7 +268,7 @@ Cleans the operation list and add a default select action
 
 <a name="DataProvider+setOperationAction"></a>
 
-## setOperationAction(action, operation)
+## dataProvider.setOperationAction(action, operation)
 Sets the action for the operation object
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
@@ -223,7 +280,7 @@ Sets the action for the operation object
 
 <a name="DataProvider+setOperationItem"></a>
 
-## setOperationItem(column, value)
+## dataProvider.setOperationItem(column, value)
 Sets a column items to the operation object
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
@@ -235,7 +292,7 @@ Sets a column items to the operation object
 
 <a name="DataProvider+select"></a>
 
-## select(newSelectName)
+## dataProvider.select(newSelectName)
 Executes a SELECT request. If required parameters should be added before calling this method.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
@@ -246,13 +303,13 @@ Executes a SELECT request. If required parameters should be added before calling
 
 <a name="DataProvider+insert"></a>
 
-## insert()
+## dataProvider.insert()
 Executes an INSERT request. Operation items should be added before calling this method.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
 <a name="DataProvider+update"></a>
 
-## update(recordIndex)
+## dataProvider.update(recordIndex)
 Executes an UPDATE request. Operation items should be added before calling this method.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
@@ -263,14 +320,14 @@ Executes an UPDATE request. Operation items should be added before calling this 
 
 <a name="DataProvider+recordSync"></a>
 
-## recordSync()
+## dataProvider.recordSync()
 Executes the SELECT used to sync the loaded record with the new database record data. This will only affect the selected item.
 If the SELECT requires parameters these should be added using the "beforeRecordSync" event.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
 <a name="DataProvider+delete"></a>
 
-## delete(recordIndex)
+## dataProvider.delete(recordIndex)
 Executes a DELETE request. Operation items should be added before calling this method.<br>
 if markDeleted is true it will execute a delete in the local data, but an update in the database.
 
@@ -282,13 +339,13 @@ if markDeleted is true it will execute a delete in the local data, but an update
 
 <a name="DataProvider+batch"></a>
 
-## batch()
+## dataProvider.batch()
 Submits multiple operations loaded into the Operations array to perform a batch request.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
 <a name="DataProvider+exec"></a>
 
-## exec(operation)
+## dataProvider.exec(operation)
 Executes a ORM Operation. If this required parameters these should be added in the "beforeLoad" or "beforeExec" events.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
@@ -299,7 +356,7 @@ Executes a ORM Operation. If this required parameters these should be added in t
 
 <a name="DataProvider+getItemAt"></a>
 
-## getItemAt(index, column) ⇒ <code>Object</code>
+## dataProvider.getItemAt(index, column) ⇒ <code>Object</code>
 Gets the column's value at the provided position.
 If column is not provided returns the object a the provided position.
 
@@ -312,7 +369,7 @@ If column is not provided returns the object a the provided position.
 
 <a name="DataProvider+getItem"></a>
 
-## getItem(column)
+## dataProvider.getItem(column)
 Gets the column's value of the first item.
 If column is not provided returns the object item of the first position.
 
@@ -324,7 +381,7 @@ If column is not provided returns the object item of the first position.
 
 <a name="DataProvider+setItem"></a>
 
-## setItem(column, value)
+## dataProvider.setItem(column, value)
 Sets the column's value of the first item.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
@@ -336,7 +393,7 @@ Sets the column's value of the first item.
 
 <a name="DataProvider+setItemAt"></a>
 
-## setItemAt(index, column, value)
+## dataProvider.setItemAt(index, column, value)
 Sets the column's value of the array item defind by the index position.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
@@ -349,19 +406,19 @@ Sets the column's value of the array item defind by the index position.
 
 <a name="DataProvider+length"></a>
 
-## length()
+## dataProvider.length()
 Returns the number of records in the data array.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
 <a name="DataProvider+size"></a>
 
-## size()
+## dataProvider.size()
 Returns the number of records in the data array.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
 <a name="DataProvider+load"></a>
 
-## load(internalCall)
+## dataProvider.load(internalCall)
 Submits operations and loads result from the ORM service.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
@@ -372,7 +429,7 @@ Submits operations and loads result from the ORM service.
 
 <a name="DataProvider+clean"></a>
 
-## clean()
+## dataProvider.clean()
 Cleans the data from the returnObject.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  

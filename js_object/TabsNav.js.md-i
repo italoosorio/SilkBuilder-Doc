@@ -12,6 +12,16 @@ The TabNav Class provides properties, methods, and events to interface with the 
 | activePage | <code>String</code> | The active page's name being visualized. |
 
 
+* [TabsNav](#TabsNav)
+    * [new TabsNav()](#new_TabsNav_new)
+    * [.addPage(pageName, pageTitle)](#TabsNav+addPage)
+    * [.setActive(pageName)](#TabsNav+setActive)
+    * [.toggleTab(pageName, mode)](#TabsNav+toggleTab)
+    * [.hideTab(pageName)](#TabsNav+hideTab)
+    * [.showTab(pageName)](#TabsNav+showTab)
+    * [.render()](#TabsNav+render)
+    * [.show()](#TabsNav+show)
+    * [.exists(pageName)](#TabsNav+exists)
 
 <a name="new_TabsNav_new"></a>
 
@@ -20,7 +30,7 @@ Returns a TabNav instance.
 
 <a name="TabsNav+addPage"></a>
 
-## addPage(pageName, pageTitle)
+## tabsNav.addPage(pageName, pageTitle)
 Adds a new page to the Tab Navigator.
 
 **Kind**: instance method of [<code>TabsNav</code>](#TabsNav)  
@@ -32,7 +42,7 @@ Adds a new page to the Tab Navigator.
 
 <a name="TabsNav+setActive"></a>
 
-## setActive(pageName)
+## tabsNav.setActive(pageName)
 Activates the tab related to the provided page's name.
 
 **Kind**: instance method of [<code>TabsNav</code>](#TabsNav)  
@@ -43,7 +53,7 @@ Activates the tab related to the provided page's name.
 
 <a name="TabsNav+toggleTab"></a>
 
-## toggleTab(pageName, mode)
+## tabsNav.toggleTab(pageName, mode)
 Toglees the tab status of the provided page's name between active or inactive
 
 **Kind**: instance method of [<code>TabsNav</code>](#TabsNav)  
@@ -55,7 +65,7 @@ Toglees the tab status of the provided page's name between active or inactive
 
 <a name="TabsNav+hideTab"></a>
 
-## hideTab(pageName)
+## tabsNav.hideTab(pageName)
 Hides the tab of the provided page's name.
 
 **Kind**: instance method of [<code>TabsNav</code>](#TabsNav)  
@@ -66,7 +76,7 @@ Hides the tab of the provided page's name.
 
 <a name="TabsNav+showTab"></a>
 
-## showTab(pageName)
+## tabsNav.showTab(pageName)
 Unhides the tab of the provided page's name'
 
 **Kind**: instance method of [<code>TabsNav</code>](#TabsNav)  
@@ -77,19 +87,19 @@ Unhides the tab of the provided page's name'
 
 <a name="TabsNav+render"></a>
 
-## render()
+## tabsNav.render()
 Renders or re-generates the tabs HTML tags.
 
 **Kind**: instance method of [<code>TabsNav</code>](#TabsNav)  
 <a name="TabsNav+show"></a>
 
-## show()
+## tabsNav.show()
 Shows the page related to the active tab.
 
 **Kind**: instance method of [<code>TabsNav</code>](#TabsNav)  
 <a name="TabsNav+exists"></a>
 
-## exists(pageName)
+## tabsNav.exists(pageName)
 Returns true if the provided page's name exist in the pages list, otherwise it returns false.
 
 **Kind**: instance method of [<code>TabsNav</code>](#TabsNav)  

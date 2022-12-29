@@ -11,6 +11,37 @@ The Table Class provides properties, methods, and events to interface with the H
 | filterLoad | <code>function</code> | Function which evaluates if a row should be included in the table. If true is returned the row is added, false ignores the row. Get the paramters `index` and `item`. |
 
 
+* [Table](#Table)
+    * [new Table(id, dataSource, autoSelect, targetPage, header, treeData, iconOpen, iconClose, iconEmpy, collapsable, collapsedLevel, selectable, dpSearch, input)](#new_Table_new)
+    * [.on](#Table+on)
+    * [.getSearchText()](#Table+getSearchText) ⇒ <code>String</code>
+    * [.setSearchText()](#Table+setSearchText)
+    * [.clearSearchText()](#Table+clearSearchText)
+    * [.length()](#Table+length) ⇒ <code>Integer</code>
+    * [.isTreeData()](#Table+isTreeData) ⇒ <code>Boolean</code>
+    * [.getNoRoot()](#Table+getNoRoot) ⇒ <code>Boolean</code>
+    * [.setRootLabel()](#Table+setRootLabel)
+    * [.setTreeIcons(open, close, empty)](#Table+setTreeIcons)
+    * [.cleanColumns()](#Table+cleanColumns)
+    * [.cleanHeaders()](#Table+cleanHeaders)
+    * [.addColumn(column)](#Table+addColumn)
+    * [.getColumns()](#Table+getColumns) ⇒ <code>Array</code>
+    * [.buildHeaders()](#Table+buildHeaders)
+    * [.addComponent(component)](#Table+addComponent)
+    * [.getComponents()](#Table+getComponents)
+    * [.getDataSource()](#Table+getDataSource)
+    * [.load(action, index)](#Table+load)
+    * [.setInput()](#Table+setInput)
+    * [.getInputs()](#Table+getInputs)
+    * [.getChangedInputs()](#Table+getChangedInputs)
+    * [.refreshRow(trIndex, dpIndex)](#Table+refreshRow)
+    * [.getSelectedItem(columnName)](#Table+getSelectedItem) ⇒ <code>Object</code> \| <code>String</code>
+    * [.setSelectedItem()](#Table+setSelectedItem)
+    * [.getPkColumn()](#Table+getPkColumn) ⇒ <code>String</code>
+    * [.getPkValue()](#Table+getPkValue) ⇒ <code>String</code>
+    * ["Event:beforeLoad"](#Table+Event_beforeLoad)
+    * ["Event:afterLoad"](#Table+Event_afterLoad)
+    * ["Event:error"](#Table+Event_error)
 
 <a name="new_Table_new"></a>
 
@@ -37,7 +68,7 @@ Returns a Table instance.
 
 <a name="Table+on"></a>
 
-## on
+## table.on
 Extends the "on" method from the eventManager Class.
 
 **Kind**: instance property of [<code>Table</code>](#Table)  
@@ -49,49 +80,49 @@ Extends the "on" method from the eventManager Class.
 
 <a name="Table+getSearchText"></a>
 
-## getSearchText() ⇒ <code>String</code>
+## table.getSearchText() ⇒ <code>String</code>
 Get the text typed in the search text input.
 
 **Kind**: instance method of [<code>Table</code>](#Table)  
 <a name="Table+setSearchText"></a>
 
-## setSearchText()
+## table.setSearchText()
 Sets the text of the search text input.
 
 **Kind**: instance method of [<code>Table</code>](#Table)  
 <a name="Table+clearSearchText"></a>
 
-## clearSearchText()
+## table.clearSearchText()
 Clears the content of the search text input.
 
 **Kind**: instance method of [<code>Table</code>](#Table)  
 <a name="Table+length"></a>
 
-## length() ⇒ <code>Integer</code>
+## table.length() ⇒ <code>Integer</code>
 Returns the number of tabler rows.
 
 **Kind**: instance method of [<code>Table</code>](#Table)  
 <a name="Table+isTreeData"></a>
 
-## isTreeData() ⇒ <code>Boolean</code>
+## table.isTreeData() ⇒ <code>Boolean</code>
 Returns if the table is set to evaluate a tree data structure.
 
 **Kind**: instance method of [<code>Table</code>](#Table)  
 <a name="Table+getNoRoot"></a>
 
-## getNoRoot() ⇒ <code>Boolean</code>
+## table.getNoRoot() ⇒ <code>Boolean</code>
 Returns if the table should limit the root.
 
 **Kind**: instance method of [<code>Table</code>](#Table)  
 <a name="Table+setRootLabel"></a>
 
-## setRootLabel()
+## table.setRootLabel()
 Sets the root label if treeData is true;
 
 **Kind**: instance method of [<code>Table</code>](#Table)  
 <a name="Table+setTreeIcons"></a>
 
-## setTreeIcons(open, close, empty)
+## table.setTreeIcons(open, close, empty)
 Sets the tree icons. This overwrites the default icons.
 
 **Kind**: instance method of [<code>Table</code>](#Table)  
@@ -104,19 +135,19 @@ Sets the tree icons. This overwrites the default icons.
 
 <a name="Table+cleanColumns"></a>
 
-## cleanColumns()
+## table.cleanColumns()
 Clean the columns array.
 
 **Kind**: instance method of [<code>Table</code>](#Table)  
 <a name="Table+cleanHeaders"></a>
 
-## cleanHeaders()
+## table.cleanHeaders()
 Clean the headers from table.
 
 **Kind**: instance method of [<code>Table</code>](#Table)  
 <a name="Table+addColumn"></a>
 
-## addColumn(column)
+## table.addColumn(column)
 Adds a column object to the columns array. This also adds the header.
 
 **Kind**: instance method of [<code>Table</code>](#Table)  
@@ -127,19 +158,19 @@ Adds a column object to the columns array. This also adds the header.
 
 <a name="Table+getColumns"></a>
 
-## getColumns() ⇒ <code>Array</code>
+## table.getColumns() ⇒ <code>Array</code>
 Gets the columns array
 
 **Kind**: instance method of [<code>Table</code>](#Table)  
 <a name="Table+buildHeaders"></a>
 
-## buildHeaders()
+## table.buildHeaders()
 Generates the table's columns using the loaded Column objects.
 
 **Kind**: instance method of [<code>Table</code>](#Table)  
 <a name="Table+addComponent"></a>
 
-## addComponent(component)
+## table.addComponent(component)
 Adds a new component to the components array.
 
 **Kind**: instance method of [<code>Table</code>](#Table)  
@@ -150,19 +181,19 @@ Adds a new component to the components array.
 
 <a name="Table+getComponents"></a>
 
-## getComponents()
+## table.getComponents()
 Gets the loaded component array.
 
 **Kind**: instance method of [<code>Table</code>](#Table)  
 <a name="Table+getDataSource"></a>
 
-## getDataSource()
+## table.getDataSource()
 Gets a reference to the dataSource.
 
 **Kind**: instance method of [<code>Table</code>](#Table)  
 <a name="Table+load"></a>
 
-## load(action, index)
+## table.load(action, index)
 The method which load the data to fill the Table.
 
 **Kind**: instance method of [<code>Table</code>](#Table)  
@@ -174,19 +205,19 @@ The method which load the data to fill the Table.
 
 <a name="Table+setInput"></a>
 
-## setInput()
+## table.setInput()
 **Kind**: instance method of [<code>Table</code>](#Table)  
 <a name="Table+getInputs"></a>
 
-## getInputs()
+## table.getInputs()
 **Kind**: instance method of [<code>Table</code>](#Table)  
 <a name="Table+getChangedInputs"></a>
 
-## getChangedInputs()
+## table.getChangedInputs()
 **Kind**: instance method of [<code>Table</code>](#Table)  
 <a name="Table+refreshRow"></a>
 
-## refreshRow(trIndex, dpIndex)
+## table.refreshRow(trIndex, dpIndex)
 Reload the data for the selected row by default, or the indicated row.
 
 **Kind**: instance method of [<code>Table</code>](#Table)  
@@ -198,7 +229,7 @@ Reload the data for the selected row by default, or the indicated row.
 
 <a name="Table+getSelectedItem"></a>
 
-## getSelectedItem(columnName) ⇒ <code>Object</code> \| <code>String</code>
+## table.getSelectedItem(columnName) ⇒ <code>Object</code> \| <code>String</code>
 Returns the selected item object, or the column's' value if a columnName is provided.
 
 **Kind**: instance method of [<code>Table</code>](#Table)  
@@ -209,19 +240,19 @@ Returns the selected item object, or the column's' value if a columnName is prov
 
 <a name="Table+setSelectedItem"></a>
 
-## setSelectedItem()
+## table.setSelectedItem()
 Sets the value of the provided column in the selected row.
 
 **Kind**: instance method of [<code>Table</code>](#Table)  
 <a name="Table+getPkColumn"></a>
 
-## getPkColumn() ⇒ <code>String</code>
+## table.getPkColumn() ⇒ <code>String</code>
 Gets the data primary key.
 
 **Kind**: instance method of [<code>Table</code>](#Table)  
 <a name="Table+getPkValue"></a>
 
-## getPkValue() ⇒ <code>String</code>
+## table.getPkValue() ⇒ <code>String</code>
 Gets the primary key's value of the selected row.
 
 **Kind**: instance method of [<code>Table</code>](#Table)  

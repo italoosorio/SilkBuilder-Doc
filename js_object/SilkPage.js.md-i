@@ -12,6 +12,17 @@ The SilkPage Class provides properties, methods, and events to interface with th
 | isSingle | <code>Boolean</code> | Indicates if the page is being display alone. |
 
 
+* [SilkPage](#SilkPage)
+    * [new SilkPage(id, stage, width, screenSetup, returnPage, tabsNav)](#new_SilkPage_new)
+    * [.on(eventName, eventFunction)](#SilkPage+on)
+    * [.getID()](#SilkPage+getID) ⇒ <code>String</code>
+    * [.resize()](#SilkPage+resize)
+    * [.show()](#SilkPage+show)
+    * [.mask(mode)](#SilkPage+mask)
+    * [.goBack()](#SilkPage+goBack)
+    * [.setTitle(title)](#SilkPage+setTitle)
+    * [.getTitle()](#SilkPage+getTitle) ⇒ <code>String</code>
+    * ["Event:show"](#SilkPage+Event_show)
 
 <a name="new_SilkPage_new"></a>
 
@@ -30,7 +41,7 @@ Returns a SilkPage isntance.
 
 <a name="SilkPage+on"></a>
 
-## on(eventName, eventFunction)
+## silkPage.on(eventName, eventFunction)
 Extends the "on" method from the eventManager Class.
 
 **Kind**: instance method of [<code>SilkPage</code>](#SilkPage)  
@@ -42,26 +53,26 @@ Extends the "on" method from the eventManager Class.
 
 <a name="SilkPage+getID"></a>
 
-## getID() ⇒ <code>String</code>
+## silkPage.getID() ⇒ <code>String</code>
 Returns the page's name or unique identifier.
 
 **Kind**: instance method of [<code>SilkPage</code>](#SilkPage)  
 **Returns**: <code>String</code> - Unique identifier.  
 <a name="SilkPage+resize"></a>
 
-## resize()
+## silkPage.resize()
 Executes the resize of pages in reference to the active one.
 
 **Kind**: instance method of [<code>SilkPage</code>](#SilkPage)  
 <a name="SilkPage+show"></a>
 
-## show()
+## silkPage.show()
 Makes a page visible and the active one.
 
 **Kind**: instance method of [<code>SilkPage</code>](#SilkPage)  
 <a name="SilkPage+mask"></a>
 
-## mask(mode)
+## silkPage.mask(mode)
 Executes the page masking. The masking process isolates the page from other pages.
 
 **Kind**: instance method of [<code>SilkPage</code>](#SilkPage)  
@@ -72,13 +83,13 @@ Executes the page masking. The masking process isolates the page from other page
 
 <a name="SilkPage+goBack"></a>
 
-## goBack()
+## silkPage.goBack()
 Returns to the previous linked page, or to the set returned page.
 
 **Kind**: instance method of [<code>SilkPage</code>](#SilkPage)  
 <a name="SilkPage+setTitle"></a>
 
-## setTitle(title)
+## silkPage.setTitle(title)
 Sets the page title if the page is using a header.
 
 **Kind**: instance method of [<code>SilkPage</code>](#SilkPage)  
@@ -89,7 +100,7 @@ Sets the page title if the page is using a header.
 
 <a name="SilkPage+getTitle"></a>
 
-## getTitle() ⇒ <code>String</code>
+## silkPage.getTitle() ⇒ <code>String</code>
 Gets the page's title if the page is using a header.
 
 **Kind**: instance method of [<code>SilkPage</code>](#SilkPage)  

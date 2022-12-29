@@ -10,6 +10,19 @@ The Button Class provides properties, methods, and events to interface with the 
 | validationFunction | <code>funtion</code> | A function to be executed to validate if the click event should be triggered. Undefined by default. |
 
 
+* [Button](#Button)
+    * [new Button(buttonID, targetPage)](#new_Button_new)
+    * [.on](#Button+on)
+    * [.setLabel(label)](#Button+setLabel)
+    * [.getLabel()](#Button+getLabel) ⇒ <code>String</code>
+    * [.toggle(status)](#Button+toggle)
+    * [.hide()](#Button+hide)
+    * [.show()](#Button+show)
+    * [.disable(mode)](#Button+disable)
+    * [.enable(mode)](#Button+enable)
+    * [.click()](#Button+click)
+    * [.go()](#Button+go)
+    * ["Event:click"](#Button+Event_click)
 
 <a name="new_Button_new"></a>
 
@@ -24,7 +37,7 @@ Returns a Button instance.
 
 <a name="Button+on"></a>
 
-## on
+## button.on
 Extends the "on" method from the eventManager Class.
 
 **Kind**: instance property of [<code>Button</code>](#Button)  
@@ -36,7 +49,7 @@ Extends the "on" method from the eventManager Class.
 
 <a name="Button+setLabel"></a>
 
-## setLabel(label)
+## button.setLabel(label)
 Sets the button's label.
 
 **Kind**: instance method of [<code>Button</code>](#Button)  
@@ -47,13 +60,13 @@ Sets the button's label.
 
 <a name="Button+getLabel"></a>
 
-## getLabel() ⇒ <code>String</code>
+## button.getLabel() ⇒ <code>String</code>
 Gets the button's label.
 
 **Kind**: instance method of [<code>Button</code>](#Button)  
 <a name="Button+toggle"></a>
 
-## toggle(status)
+## button.toggle(status)
 Hides or shows the button based on the provided parameter.
 
 **Kind**: instance method of [<code>Button</code>](#Button)  
@@ -64,19 +77,19 @@ Hides or shows the button based on the provided parameter.
 
 <a name="Button+hide"></a>
 
-## hide()
+## button.hide()
 Hides the button
 
 **Kind**: instance method of [<code>Button</code>](#Button)  
 <a name="Button+show"></a>
 
-## show()
+## button.show()
 Shows the button
 
 **Kind**: instance method of [<code>Button</code>](#Button)  
 <a name="Button+disable"></a>
 
-## disable(mode)
+## button.disable(mode)
 Disables the button. Action changes based on the provided parameter.
 
 **Kind**: instance method of [<code>Button</code>](#Button)  
@@ -87,7 +100,7 @@ Disables the button. Action changes based on the provided parameter.
 
 <a name="Button+enable"></a>
 
-## enable(mode)
+## button.enable(mode)
 Enables the button. Action changes based on the provided parameter.
 
 **Kind**: instance method of [<code>Button</code>](#Button)  
@@ -98,13 +111,13 @@ Enables the button. Action changes based on the provided parameter.
 
 <a name="Button+click"></a>
 
-## click()
+## button.click()
 Fires the click action programatically.
 
 **Kind**: instance method of [<code>Button</code>](#Button)  
 <a name="Button+go"></a>
 
-## go()
+## button.go()
 Trigers the show method in the targetPage.
 
 **Kind**: instance method of [<code>Button</code>](#Button)  

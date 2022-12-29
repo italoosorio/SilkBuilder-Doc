@@ -12,6 +12,18 @@ The Modal Class provides properties, methods, and events to interface with the H
 | $footer | <code>Object</code> | jQuery object referencing to the modal's footer HTML tag. |
 
 
+* [Modal](#Modal)
+    * [new Modal(id)](#new_Modal_new)
+    * [.on](#Modal+on)
+    * [.show()](#Modal+show)
+    * [.hide()](#Modal+hide)
+    * [.open()](#Modal+open)
+    * [.close()](#Modal+close)
+    * [.setTitle(title)](#Modal+setTitle)
+    * [.getTitle()](#Modal+getTitle)
+    * [.setBody(content)](#Modal+setBody)
+    * ["Event:show"](#Modal+Event_show)
+    * ["Event:close"](#Modal+Event_close)
 
 <a name="new_Modal_new"></a>
 
@@ -25,7 +37,7 @@ Returns a Modal instance.
 
 <a name="Modal+on"></a>
 
-## on
+## modal.on
 Extends the "on" method from the eventManager Class.
 
 **Kind**: instance property of [<code>Modal</code>](#Modal)  
@@ -37,31 +49,31 @@ Extends the "on" method from the eventManager Class.
 
 <a name="Modal+show"></a>
 
-## show()
+## modal.show()
 Shows or opens the modal dialog.
 
 **Kind**: instance method of [<code>Modal</code>](#Modal)  
 <a name="Modal+hide"></a>
 
-## hide()
+## modal.hide()
 Hides the modal dialog.
 
 **Kind**: instance method of [<code>Modal</code>](#Modal)  
 <a name="Modal+open"></a>
 
-## open()
+## modal.open()
 Opens the modal dialgo. Similar to show.
 
 **Kind**: instance method of [<code>Modal</code>](#Modal)  
 <a name="Modal+close"></a>
 
-## close()
+## modal.close()
 Closes the modal dialgo. Similar to hide.
 
 **Kind**: instance method of [<code>Modal</code>](#Modal)  
 <a name="Modal+setTitle"></a>
 
-## setTitle(title)
+## modal.setTitle(title)
 Sets the header title of the modal dialog.
 
 **Kind**: instance method of [<code>Modal</code>](#Modal)  
@@ -72,13 +84,13 @@ Sets the header title of the modal dialog.
 
 <a name="Modal+getTitle"></a>
 
-## getTitle()
+## modal.getTitle()
 Gets the title of the modal dialog.
 
 **Kind**: instance method of [<code>Modal</code>](#Modal)  
 <a name="Modal+setBody"></a>
 
-## setBody(content)
+## modal.setBody(content)
 Sets the HTML content of the modal dialog.
 
 **Kind**: instance method of [<code>Modal</code>](#Modal)  

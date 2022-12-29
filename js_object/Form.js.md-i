@@ -14,6 +14,42 @@ The Form Class provides properties, methods, and events to interface with the Ta
 | submitBtValidation | <code>function</code> | Function to to decide if the submit button should be active. This should return a boolean. |
 
 
+* [Form](#Form)
+    * [new Form(id, options)](#new_Form_new)
+    * [.on](#Form+on)
+    * [.getEventList()](#Form+getEventList) ⇒ <code>Array</code>
+    * [.dispatchOnChange(Input)](#Form+dispatchOnChange)
+    * [.pushInput(input)](#Form+pushInput)
+    * [.setAction(action)](#Form+setAction)
+    * [.getAction()](#Form+getAction)
+    * [.getInputs()](#Form+getInputs) ⇒ <code>Array</code>
+    * [.getPage()](#Form+getPage) ⇒ <code>String</code>
+    * [.getSelectedItem()](#Form+getSelectedItem) ⇒ <code>Object</code>
+    * [.setMode([viewMode])](#Form+setMode)
+    * [.getMode()](#Form+getMode) ⇒ <code>Boolean</code>
+    * [.setInputMode(mode, [setPreviousData])](#Form+setInputMode)
+    * [.load()](#Form+load)
+    * [.fillInputValues()](#Form+fillInputValues)
+    * [.clean()](#Form+clean)
+    * [.getOperationList(action)](#Form+getOperationList) ⇒ <code>Object</code>
+    * [.setDialogTitle(title)](#Form+setDialogTitle)
+    * [.setInsert()](#Form+setInsert)
+    * [.setUpdate()](#Form+setUpdate)
+    * [.setDelete()](#Form+setDelete)
+    * [.doCancel()](#Form+doCancel)
+    * ["Event:change"](#Form+Event_change)
+    * ["Event:beforeModeChange"](#Form+Event_beforeModeChange)
+    * ["Event:afterModeChange"](#Form+Event_afterModeChange)
+    * ["Event:beforeLoad" (action)](#Form+Event_beforeLoad)
+    * ["Event:afterLoad" (action)](#Form+Event_afterLoad)
+    * ["Event:error"](#Form+Event_error)
+    * ["Event:beforeSubmit"](#Form+Event_beforeSubmit)
+    * ["Event:FormErrors" (inputList)](#Form+Event_FormErrors)
+    * ["Event:insert"](#Form+Event_insert)
+    * ["Event:update"](#Form+Event_update)
+    * ["Event:delete"](#Form+Event_delete)
+    * ["Event:cancel"](#Form+Event_cancel)
+    * ["Event:submit"](#Form+Event_submit)
 
 <a name="new_Form_new"></a>
 
@@ -43,7 +79,7 @@ Returns a DataProvider instance.
 
 <a name="Form+on"></a>
 
-## on
+## form.on
 Extends the "on" method from the eventManager Class.
 
 **Kind**: instance property of [<code>Form</code>](#Form)  
@@ -55,13 +91,13 @@ Extends the "on" method from the eventManager Class.
 
 <a name="Form+getEventList"></a>
 
-## getEventList() ⇒ <code>Array</code>
+## form.getEventList() ⇒ <code>Array</code>
 Returns the list of event loaded.
 
 **Kind**: instance method of [<code>Form</code>](#Form)  
 <a name="Form+dispatchOnChange"></a>
 
-## dispatchOnChange(Input)
+## form.dispatchOnChange(Input)
 Method used by Inputs to trigger the parent Form's change event.
 
 **Kind**: instance method of [<code>Form</code>](#Form)  
@@ -72,7 +108,7 @@ Method used by Inputs to trigger the parent Form's change event.
 
 <a name="Form+pushInput"></a>
 
-## pushInput(input)
+## form.pushInput(input)
 Adds an input object to the input array.
 
 **Kind**: instance method of [<code>Form</code>](#Form)  
@@ -83,7 +119,7 @@ Adds an input object to the input array.
 
 <a name="Form+setAction"></a>
 
-## setAction(action)
+## form.setAction(action)
 Sets the action form's action.
 
 **Kind**: instance method of [<code>Form</code>](#Form)  
@@ -94,31 +130,31 @@ Sets the action form's action.
 
 <a name="Form+getAction"></a>
 
-## getAction()
+## form.getAction()
 Gets the set form's action.
 
 **Kind**: instance method of [<code>Form</code>](#Form)  
 <a name="Form+getInputs"></a>
 
-## getInputs() ⇒ <code>Array</code>
+## form.getInputs() ⇒ <code>Array</code>
 Gets input array.
 
 **Kind**: instance method of [<code>Form</code>](#Form)  
 <a name="Form+getPage"></a>
 
-## getPage() ⇒ <code>String</code>
+## form.getPage() ⇒ <code>String</code>
 Gets the page's ID hosting the Form
 
 **Kind**: instance method of [<code>Form</code>](#Form)  
 <a name="Form+getSelectedItem"></a>
 
-## getSelectedItem() ⇒ <code>Object</code>
+## form.getSelectedItem() ⇒ <code>Object</code>
 Gets the select item in the Table or DataProvider.
 
 **Kind**: instance method of [<code>Form</code>](#Form)  
 <a name="Form+setMode"></a>
 
-## setMode([viewMode])
+## form.setMode([viewMode])
 Set the Form mode. True defines data entry mode. False defines read only mode.
 If parameter is not provided it sets read only.
 
@@ -130,13 +166,13 @@ If parameter is not provided it sets read only.
 
 <a name="Form+getMode"></a>
 
-## getMode() ⇒ <code>Boolean</code>
+## form.getMode() ⇒ <code>Boolean</code>
 Gets the Form's mode.
 
 **Kind**: instance method of [<code>Form</code>](#Form)  
 <a name="Form+setInputMode"></a>
 
-## setInputMode(mode, [setPreviousData])
+## form.setInputMode(mode, [setPreviousData])
 Scans the Form's inputs and change their mode.
 
 **Kind**: instance method of [<code>Form</code>](#Form)  
@@ -148,25 +184,25 @@ Scans the Form's inputs and change their mode.
 
 <a name="Form+load"></a>
 
-## load()
+## form.load()
 Loads the data from the data source into the Form's inputs.
 
 **Kind**: instance method of [<code>Form</code>](#Form)  
 <a name="Form+fillInputValues"></a>
 
-## fillInputValues()
+## form.fillInputValues()
 Fills the input with data from dataSource.
 
 **Kind**: instance method of [<code>Form</code>](#Form)  
 <a name="Form+clean"></a>
 
-## clean()
+## form.clean()
 Cleans the inputs values
 
 **Kind**: instance method of [<code>Form</code>](#Form)  
 <a name="Form+getOperationList"></a>
 
-## getOperationList(action) ⇒ <code>Object</code>
+## form.getOperationList(action) ⇒ <code>Object</code>
 Generates the operationList Object which the DataProvider will use to submit data to the server.
 
 **Kind**: instance method of [<code>Form</code>](#Form)  
@@ -177,7 +213,7 @@ Generates the operationList Object which the DataProvider will use to submit dat
 
 <a name="Form+setDialogTitle"></a>
 
-## setDialogTitle(title)
+## form.setDialogTitle(title)
 Sets the dialog title
 
 **Kind**: instance method of [<code>Form</code>](#Form)  
@@ -188,25 +224,25 @@ Sets the dialog title
 
 <a name="Form+setInsert"></a>
 
-## setInsert()
+## form.setInsert()
 Sets the Form an insert operation
 
 **Kind**: instance method of [<code>Form</code>](#Form)  
 <a name="Form+setUpdate"></a>
 
-## setUpdate()
+## form.setUpdate()
 Sets the Form an update operation
 
 **Kind**: instance method of [<code>Form</code>](#Form)  
 <a name="Form+setDelete"></a>
 
-## setDelete()
+## form.setDelete()
 Sets the Form a delete operation
 
 **Kind**: instance method of [<code>Form</code>](#Form)  
 <a name="Form+doCancel"></a>
 
-## doCancel()
+## form.doCancel()
 Operates a cancel operation.
 
 **Kind**: instance method of [<code>Form</code>](#Form)  
