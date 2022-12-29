@@ -10,8 +10,6 @@ Silk Builder Application Tags.
 
 * [Components Tag](silk_components_tag.md)
 
-* [Javascript Objects](silk_javascript_objects.md)
-
 * [Report Tags](silk_report_tag.md)
 
   

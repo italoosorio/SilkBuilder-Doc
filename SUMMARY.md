@@ -29,7 +29,7 @@
   * [Pagination](how_to/pagination.md)
   * [Mark Deleted](how_to/mark_deleted.md)
   * [Record Sync](how_to/sync_record_detail.md)
-* [JavaScript Object](js_object)
+* [JavaScript Objects](js_object)
   * [Button](js_object/Button.js.md)
   * [ChartJS](js_object/ChartJS.js.md)
   * [Column](js_object/Column.js.md)
