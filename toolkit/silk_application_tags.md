@@ -7,7 +7,7 @@ The *silk:App* tag defines a Silk Application and its used is required.  This ta
 ```xml
 <%@ taglib uri="/WEB-INF/silk.tld" prefix="silk" %>
 <%@page contentType="text/html;charset=UTF-8" %>
-<silk:App title="" template="" timeout="" role="" >
+<silk:App title="" template="" timeout="" role="" renderIf="" >
 	...
 </silk:App>
 ```
