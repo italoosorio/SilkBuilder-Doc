@@ -6,19 +6,21 @@ The list below shows the required properties.
 
 ## Properties
 This tag has the following properties.
-|Name|Description|Default|Required|
-|--|--|--|--|
-|id||Empty|No|
-|title||Empty|No|
-|titlePlace||Empty|No|
-|type||Empty|No|
-|dataSource||Empty|No|
-|labelColumn||Empty|No|
-|dataColumn||Empty|No|
-|backgroundColor||Empty|No|
-|grid||Empty|No|
-|legend||Empty|No|
-|parentList||Empty|No|
-|indexAxis||Empty|No|
-|tooltip||Empty|No|
-|dataLabels||Empty|No|
+|Name|Description|
+|--|--|
+|id|Default Value: *Empty*.|
+|title|Default Value: *Empty*.|
+|titlePlace|Default Value: *Empty*.|
+|type|Default Value: *Empty*.|
+|dataSource|Default Value: *Empty*.|
+|labelColumn|Default Value: *Empty*.|
+|dataColumn|Default Value: *Empty*.|
+|backgroundColor|Default Value: *Empty*.|
+|grid|Default Value: *Empty*.|
+|legend|Default Value: *Empty*.|
+|parentList|Default Value: *Empty*.|
+|indexAxis|Default Value: *Empty*.|
+|tooltip|Default Value: *Empty*.|
+|dataLabels|Default Value: *Empty*.|
+
+<sup>*</sup>Required property.

@@ -13,7 +13,6 @@ This documentation describes the use of SilkBuilder to develop web applications.
 * [Chart](Chart.md)
 * [CodeHolder](CodeHolder.md)
 * [Column](Column.md)
-* [Confirmation](Confirmation.md)
 * [Content](Content.md)
 * [DataProvider](DataProvider.md)
 * [Form](Form.md)

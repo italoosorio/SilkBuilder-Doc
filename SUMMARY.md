@@ -37,7 +37,6 @@
   * [Chart](tags/Chart.md)
   * [CodeHolder](tags/CodeHolder.md)
   * [Column](tags/Column.md)
-  * [Confirmation](tags/Confirmation.md)
   * [Content](tags/Content.md)
   * [DataProvider](tags/DataProvider.md)
   * [Form](tags/Form.md)

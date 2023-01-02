@@ -74,7 +74,7 @@ The DataGrid component serves as a data visualizer and also to capture the user 
 
 This is the DataGrid Tag with its properties in their default value. These properties are used during the componet intialization. The property id is always required. The other properties should be used only when it is necessary to ovewrite their default value during the initialization process.
 
-```markup
+```xml
 <silk:DataGrid
     id=""
     headerTarget="tablet,desktop"
@@ -100,7 +100,7 @@ The DataGrid tag should be located as a child node of the layout tag silk:Conten
 
 #### Tag Example
 
-```markup
+```xml
 ... </silk:Content> ...
     <silk:DataGrid id="directoryList" headerTarget="phone,tablet,desktop" >
  <silk:Columns ... /> <silk:columns ... />
@@ -153,11 +153,9 @@ The DataGrid tag also creates a global JavaScript object. This object's name is 
 
 ### The silk:Column tag `<silk:Column>`
 
-This component is a child of DataGrid. It is used to configure the columns displayed by the DataGrid. The Column content is formatted based on the template host by the component. The template can support any HTML tag and uses braces or curly brackets "{}" to enclose the name of data fields. The data fields will be replaced by values, from the DataProvider, at a displayed time. The template can have as many data fields as necessary.
+This component is a child of *silk:Table*. It is used to configure the columns displayed by the *silk:Table*. The *silk:Column* content is formatted based on the template contained in the component. The template can support any HTML tag and uses braces or curly brackets "{}" to enclose the name of data fields. The data fields will be replaced by values from the *silk:DataProvider* at a displayed time. The template can have as many data fields as necessary.
 
-Usually in phone devices the DataGrid will display only one column with a template contaning mulptile data fields. While in a desktop device each column will display only one data field. This behaivior is configured with the target property.
 
-This is the Column Tag with its properties and their default values.
 
 ```markup
 <silk:Column

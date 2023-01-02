@@ -6,7 +6,9 @@ The list below shows the required properties.
 
 ## Properties
 This tag has the following properties.
-|Name|Description|Default|Required|
-|--|--|--|--|
-|id||Empty|No|
-|title||Empty|No|
+|Name|Description|
+|--|--|
+|id|Default Value: *Empty*.|
+|title|Default Value: *Empty*.|
+
+<sup>*</sup>Required property.

@@ -4,7 +4,7 @@
 ## Tag Use
 Used as a container:
 ```xml
-<silk:HeadContent >
+<silk:HeadContent>
    Contains: Components
 </silk:HeadContent>
 ```
