@@ -21,16 +21,17 @@ Returns a Input instance.
 | --- | --- | --- | --- |
 | id | <code>String</code> |  | Unique identifier. |
 | type | <code>String</code> |  | The input type: text, textarea, code, html, date, time, datetime, select, numeric, integer, decimal, checkbox, button, options, radio, password, file, email, hidden. |
-| label | <code>String</code> |  | The input's label. |
+| label | <code>String</code> |  | The text used as input's label. |
 | options | <code>Object</code> |  | Object containing the Input configuration options. |
 | initValue | <code>String</code> |  | The value which the Input will hold when created. |
 | [options.columnID] | <code>String</code> |  | The dataSource column name if different from the id parameter. |
 | [options.description] | <code>String</code> |  | The input's description only show at editing mode. |
 | [options.width] | <code>String</code> |  | The width of the component in pixels or percentage. |
-| [options.height] | <code>String</code> | <code>200px</code> | THe hith of the component in case of the types: textarea, code, and html. |
+| [options.height] | <code>String</code> | <code>200px</code> | THe heigth of the component in case of the types: textarea, code, and html. |
+| [options.scrollHeight] | <code>String</code> |  | The height limit of the component in read mode before the content needs scrolling. |
 | [options.dataSource] | <code>String</code> |  | The dataProvider id in case of types: Select, options, and radio. |
-| [options.required] | <code>Boolean</code> | <code>false</code> | Expression to evaluate if the component shoudl be required. |
-| [options.editable] | <code>Boolean</code> | <code>true</code> | Expression to evaluate if the component should be editable. |
+| [options.required] | <code>Boolean</code> | <code>false</code> | The logic value or expression to determine if the component should be required before data submission. |
+| [options.editable] | <code>Boolean</code> | <code>true</code> | The logic value or JavaScript expression to determine if the component should be visible. |
 | [options.visible] | <code>Boolean</code> | <code>true</code> | Expression to evaluate if the component should be visible. |
 | [options.maxLength] | <code>Integer</code> |  | The number of characters the input will allow. |
 | [options.name] | <code>String</code> |  | The "name" of the input if used under a regular <form> html tag. |
@@ -48,11 +49,11 @@ Returns a Input instance.
 | [options.linkColumns] | <code>String</code> |  | Indicates the dataProvider's columns which will be updated in the dataSource. To use in select, options,and radio. |
 | [options.template] | <code>String</code> |  | A HTML schema defining the component read view. |
 | [options.target] | <code>String</code> |  | The HTML element in which the component will be rendered. |
-| [options.extraProperties] | <code>String</code> |  | To add extra properties to the input. |
-| [options.htmlConfigFile] | <code>String</code> | <code>/ckeditor-conf/bar-simple.js</code> | The Javascript file containing the custom configuration for CKEditor. To be used with type html. |
+| [options.extraProperties] | <code>String</code> |  | To add extra HTML properties to the input. |
+| [options.htmlConfigFile] | <code>String</code> | <code>/ckeditor-conf/bar-simple.js</code> | The JavaScript file containing the custom configuration for CKEditor. To be used with type "html". |
 | [options.stringList] | <code>String</code> |  | A JSON array which will serve as dataProvider for select, options, and radio. This array should contain objects with the properties value and label. |
 | [options.prompt] | <code>String</code> |  | Adds an extra options to the select usually use to request a value selection. |
-| [options.promptValue] | <code>String</code> |  | The value return by the select "promt" if the user selects it. |
+| [options.promptValue] | <code>String</code> |  | The value return by the select "prompt" if the user selects it. |
 | [options.filePreview] | <code>String</code> | <code>false</code> | If the component will show a button to preview an uploaded file. To use with type file. |
 | [options.fileDownload] | <code>String</code> | <code>false</code> | If the component will show a button to download an uploaded file. To use with type file. |
 | [options.filePreviewLabel] | <code>String</code> | <code>Preview</code> | The label of the preview button. To use with type file. |
@@ -60,9 +61,9 @@ Returns a Input instance.
 | [options.fileUploadLabel] | <code>String</code> | <code>Drag and drop file here, or click to select file.</code> | The label of the upload button. To use with type file. |
 | [options.filePreviewClass] | <code>String</code> | <code>btn-primary</code> | The preview button Bootstrap class. To use with type file. |
 | [options.fileDownloadClass] | <code>String</code> | <code>btn-primary</code> | The download button Bootstrap class. To use with type file. |
-| [options.filePreviewIcon] | <code>String</code> | <code>fas fa-file</code> | The preview button Fontaweson icon. To use with type file. |
-| [options.fileDownloadIcon] | <code>String</code> | <code>fas fa-file-download</code> | The download button Fontaweson icon. To use with type file. |
+| [options.filePreviewIcon] | <code>String</code> | <code>fas fa-file</code> | The preview button Font Awesome icon class. To use with type file. |
+| [options.fileDownloadIcon] | <code>String</code> | <code>fas fa-file-download</code> | The download button Font Awesome icon class. To use with type file. |
 | [options.uploadURL] | <code>String</code> |  | The URL of the service uploading the file. To use with type file. |
-| [options.fileTypeList] | <code>String</code> |  | String containg the comma separated list of accepted file extension. To use with type file. |
+| [options.fileTypeList] | <code>String</code> |  | String containing the comma separated list of accepted file extension. To use with type file. |
 | [options.fileSizeLimit] | <code>Integer</code> |  | The number of bytes allowed to upload. To use with type file. |
 

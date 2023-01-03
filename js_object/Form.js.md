@@ -26,7 +26,7 @@ Returns a DataProvider instance.
 | id | <code>String</code> |  | Unique identifier. |
 | options | <code>Object</code> |  | Object containing the DataProvider configuration options. |
 | [options.startMode] | <code>Boolean</code> | <code>false</code> | Starting mode: true editing, false read. |
-| [options.dialog] | <code>Boolean</code> | <code>false</code> | If dialog is false it activates the inputs mode and cancel the process to avoid showing the dialog bar. |
+| [options.dialog] | <code>Boolean</code> | <code>true</code> | If dialog is false it activates the inputs mode and cancel the process to avoid showing the dialog bar. |
 | [opsions.dataSource] | <code>String</code> |  | The ID of the Table or dataProvider. |
 | [options.insertBt] | <code>String</code> |  | The ID of the button use to activate an insert action. |
 | [options.updateBt] | <code>String</code> |  | The ID of the button use to activate an update action. |

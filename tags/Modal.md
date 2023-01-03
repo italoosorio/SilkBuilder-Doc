@@ -61,7 +61,7 @@ If the *silk:ModalFooter* will be used then it has to be added together with the
 
 ### Modal with not header.
 
-For this case the *title* property has not been added. The property *limitClose* is set to *true* to allow the modal close when clicking outside the dialog.
+For this case the *title* property has not been added. The property *limitClose* is set to *true* to allow closing the modal when clicking outside the dialog.
 
 ```xml
 <silk:Modal id="myModal" limitedClose="false" >
