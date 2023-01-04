@@ -172,18 +172,6 @@ The method which load the data to fill the Table.
 | action | <code>String</code> | Indicating what action to load: insert, update, delete. |
 | index | <code>Integer</code> | The position the data will be loaded. |
 
-<a name="Table+setInput"></a>
-
-## setInput()
-**Kind**: instance method of [<code>Table</code>](#Table)  
-<a name="Table+getInputs"></a>
-
-## getInputs()
-**Kind**: instance method of [<code>Table</code>](#Table)  
-<a name="Table+getChangedInputs"></a>
-
-## getChangedInputs()
-**Kind**: instance method of [<code>Table</code>](#Table)  
 <a name="Table+refreshRow"></a>
 
 ## refreshRow(trIndex, dpIndex)
