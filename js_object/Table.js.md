@@ -172,6 +172,31 @@ The method which load the data to fill the Table.
 | action | <code>String</code> | Indicating what action to load: insert, update, delete. |
 | index | <code>Integer</code> | The position the data will be loaded. |
 
+<a name="Table+setInputs"></a>
+
+## setInputs(inputStatus)
+Switch the column's input status, or will set the input to the provided status.
+This only works in columns set as input holders.
+
+**Kind**: instance method of [<code>Table</code>](#Table)  
+
+| Param | Description |
+| --- | --- |
+| inputStatus | The input status. |
+
+<a name="Table+getInputs"></a>
+
+## getInputs(inputProcessor) ⇒
+Returns an array containing row object holding the inputs' object.
+If a funcition is provided this will be executed for each row. The function will received an opbject containging the inputs as a parameter
+
+**Kind**: instance method of [<code>Table</code>](#Table)  
+**Returns**: Array  
+
+| Param | Description |
+| --- | --- |
+| inputProcessor | An optional function |
+
 <a name="Table+refreshRow"></a>
 
 ## refreshRow(trIndex, dpIndex)
