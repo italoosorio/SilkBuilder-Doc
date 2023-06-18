@@ -19,7 +19,7 @@ The Input Class provides properties, methods, and events to interface with the H
 <a name="new_Input_new"></a>
 
 ## new Input(id, type, label, options, initValue)
-Returns a Input instance.
+Returns an Input instance.
 
 
 | Param | Type | Default | Description |

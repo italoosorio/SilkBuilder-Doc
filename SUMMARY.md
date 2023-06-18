@@ -14,8 +14,6 @@
   * [Complex Application](development/complex_application.md)
   * [Report Application](development/report_application.md)
   * [System Environment](development/system_environment.md)
-* [Silk Toolkit](toolkit/README.md)
-  * 
 * [Docs](docs/README.md)
   * [The ORM Structure](docs/the_orm_structure.md)
   * [SilkBuilder](docs/silk_builder.md)
