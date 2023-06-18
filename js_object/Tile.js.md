@@ -6,7 +6,7 @@ The Tile Class provides properties, methods, and events to interface with the HT
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $tile | <code>Object</code> | jQuery object referencing to the tile HTML tag. |
+| $tile | <code>Object</code> | jQuery object referencing the Tile HTML tag. |
 
 
 
@@ -19,7 +19,7 @@ Returns a Tile instance.
 | Param | Type | Description |
 | --- | --- | --- |
 | id | <code>String</code> | Unique identifier. |
-| [option.dataSource] | <code>String</code> | Unique identifier of the dataProvider used to fill the table. |
+| [option.dataSource] | <code>String</code> | Unique identifier of the dataProvider used to fill the Tile. |
 | [option.columns] | <code>String</code> | The number of tiles to define a row's columns. All tiles will be group in rows. |
 | [option.rowClass] | <code>String</code> | The CSS class used by the row div. This only works when the column property is moren than 0. |
 | [option.content] | <code>String</code> | The HTML template used to generate the tile. |
@@ -83,7 +83,7 @@ Event triggered before the table content is loaded. Created with the ```Table.on
 <a name="Tile+Event_click"></a>
 
 ## "Event:click" (item, $content, dpIndex, rowIndex, event)
-Event triggered when a tile cell is clicked. Created with the ```Tile.on("click", function(){item,$content,dpIndex,rowIndex,event})``` method.
+Event triggered when a tile cell is clicked. Created with the ```Tile.on("click", function(item,$content,dpIndex,rowIndex,event){})``` method.
 
 **Kind**: event emitted by [<code>Tile</code>](#Tile)  
 

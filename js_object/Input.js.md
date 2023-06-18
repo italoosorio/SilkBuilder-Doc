@@ -302,7 +302,7 @@ sets the Input's dataSource using a JSON structure.The JSON's items shoudl have 
 <a name="Input+Event_modeChange"></a>
 
 ## "Event:modeChange" (mode, $text, $value)
-Event triggered when the Input's mode changes. Created with the ```Input.on("onChange", function(){mode,$text,$vale})``` method.
+Event triggered when the Input's mode changes. Created with the ```Input.on("onChange", function(mode,$text,$vale){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 
@@ -315,7 +315,7 @@ Event triggered when the Input's mode changes. Created with the ```Input.on("onC
 <a name="Input+Event_onValidation"></a>
 
 ## "Event:onValidation" (type, value)
-Event triggered when a Inputs is validated. Created with the ```Input.on("click", function(){type,value})``` method.
+Event triggered when a Inputs is validated. Created with the ```Input.on("click", function(type,value){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 
@@ -327,7 +327,7 @@ Event triggered when a Inputs is validated. Created with the ```Input.on("click"
 <a name="Input+Event_setValue"></a>
 
 ## "Event:setValue" (value, $value)
-Event triggered when the Input's value is set. Created with the ```Input.on("setValue", function(){value, $value})``` method.
+Event triggered when the Input's value is set. Created with the ```Input.on("setValue", function(value, $value){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 
@@ -339,7 +339,7 @@ Event triggered when the Input's value is set. Created with the ```Input.on("set
 <a name="Input+Event_getValue"></a>
 
 ## "Event:getValue" ($value)
-Event triggered when the Input's value is requested. Created with the ```Input.on("getValue", function(){$value})``` method.
+Event triggered when the Input's value is requested. Created with the ```Input.on("getValue", function($value){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 
@@ -350,7 +350,7 @@ Event triggered when the Input's value is requested. Created with the ```Input.o
 <a name="Input+Event_afterLoad"></a>
 
 ## "Event:afterLoad" ($value)
-Event triggered when the Input's value has been loaded from the dataSource. Created with the ```Input.on("afterLoad", function(){$value})``` method.
+Event triggered when the Input's value has been loaded from the dataSource. Created with the ```Input.on("afterLoad", function($value){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 
@@ -361,7 +361,7 @@ Event triggered when the Input's value has been loaded from the dataSource. Crea
 <a name="Input+Event_beforeUpload"></a>
 
 ## "Event:beforeUpload" (Input, formData, fileName, fileSize)
-Event triggered before a file is uploaded. Created with the ```Input.on("beforeUpload", function(){Input, formData, fileName, fileSize})``` method.
+Event triggered before a file is uploaded. Created with the ```Input.on("beforeUpload", function(Input, formData, fileName, fileSize){})``` method.
 Returnning false will cancel the update process.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
@@ -376,7 +376,7 @@ Returnning false will cancel the update process.
 <a name="Input+Event_afterUpload"></a>
 
 ## "Event:afterUpload" (Input, status, xhr)
-Event triggered after a file is uploaded. Created with the ```Input.on("afterUpload", function(){Input, status, xhr})``` method.
+Event triggered after a file is uploaded. Created with the ```Input.on("afterUpload", function(Input, status, xhr){})``` method.
 Returnning false will cancel the update process.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
@@ -390,7 +390,7 @@ Returnning false will cancel the update process.
 <a name="Input+Event_afterInit"></a>
 
 ## "Event:afterInit" (Input)
-Event triggered after the Input element has been initialized. Created with the ```Input.on("afterInit", function(){Input})``` method.
+Event triggered after the Input element has been initialized. Created with the ```Input.on("afterInit", function(Input){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 
@@ -401,7 +401,7 @@ Event triggered after the Input element has been initialized. Created with the `
 <a name="Input+Event_change"></a>
 
 ## "Event:change" (Input)
-Event triggered when the Input's value has changed. Created with the ```Input.on("change", function(){Input})``` method.
+Event triggered when the Input's value has changed. Created with the ```Input.on("change", function(Input){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 
@@ -412,7 +412,7 @@ Event triggered when the Input's value has changed. Created with the ```Input.on
 <a name="Input+Event_click"></a>
 
 ## "Event:click" (Input)
-Event triggered when a Button Input is clicked in data entry mode. Created with the ```Input.on("click", function(){Input})``` method.
+Event triggered when a Button Input is clicked in data entry mode. Created with the ```Input.on("click", function(Input){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 
@@ -423,7 +423,7 @@ Event triggered when a Button Input is clicked in data entry mode. Created with 
 <a name="Input+Event_keyup"></a>
 
 ## "Event:keyup" (event, Input)
-Event triggered at input's keyboard keyup event. Created with the ```Input.on("click", function(){even,Input})``` method.
+Event triggered at input's keyboard keyup event. Created with the ```Input.on("click", function(even,Input){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 
