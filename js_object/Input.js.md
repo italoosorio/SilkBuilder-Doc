@@ -6,10 +6,15 @@ The Input Class provides properties, methods, and events to interface with the H
 
 | Name | Type | Description |
 | --- | --- | --- |
-| id | <code>String</code> | The page's name and unique identifier. |
-| $page | <code>Object</code> | jQuery object referencing to the page HTML tag. |
-| $content | <code>Object</code> | jQuery object referencing to the page HTML tag. |
-| isSingle | <code>Boolean</code> | Indicates if the page is being display alone. |
+| columnID | <code>String</code> | The input's' unique identifier. This woudl be the name of the dataProvider coulumn if part of a Form tag. |
+| $input | <code>Object</code> | The JQuery reference to the SILK Input HTML structure. |
+| $filePreviewBt | <code>Object</code> | The JQuery reference to the preview button. |
+| $fileDownloadBt | <code>Object</code> | The JQuery reference to the donwload button. |
+| selectedIndex | <code>Integer</code> | The index of the last dataProvider's item in the case of types select and radio. |
+| validation | <code>function</code> | Function to validate the entered value. The function parameters are: type and entered value. |
+| loadFilter | <code>funciton</code> | Function to decide which item from dataSource should be loaded into a Select, radio, or options. Returns a boolean. |
+
+
 
 <a name="new_Input_new"></a>
 
@@ -37,7 +42,7 @@ Returns a Input instance.
 | [options.name] | <code>String</code> |  | The "name" of the input if used under a regular <form> html tag. |
 | [options.scriptValue] | <code>String</code> |  | Javascript expression returning the input's value. |
 | [options.scope] | <code>String</code> | <code>1</code> | The component end target. Check the setScope() method for values. |
-| [options.mask] | <code>String</code> |  | The input's entry mask or character filter. |
+| [options.mask] | <code>String</code> |  | The input's entry mask or character filter. (http://igorescobar.github.io/jQuery-Mask-Plugin/) |
 | [options.mode] | <code>Boolean</code> | <code>false</code> | True if editing, or false if read only. |
 | [options.placeholder] | <code>String</code> |  | The input's place holder or helping text showed inside the input. |
 | [options.form] | <code>String</code> |  | The Form ID the input will operate with. |
@@ -67,3 +72,375 @@ Returns a Input instance.
 | [options.fileTypeList] | <code>String</code> |  | String containing the comma separated list of accepted file extension. To use with type file. |
 | [options.fileSizeLimit] | <code>Integer</code> |  | The number of bytes allowed to upload. To use with type file. |
 
+<a name="Input+on"></a>
+
+## on
+Extends the "on" method from the eventManager Class.
+
+**Kind**: instance property of [<code>Input</code>](#Input)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| eventName | <code>String</code> | The event's name. |
+| eventFunction | <code>function</code> | The function to be triggered. |
+
+<a name="Input+focus"></a>
+
+## focus()
+The method to focused the input when in editable mode.
+
+**Kind**: instance method of [<code>Input</code>](#Input)  
+<a name="Input+openSelect"></a>
+
+## openSelect()
+Method to programatically open a HTML Select input element
+
+**Kind**: instance method of [<code>Input</code>](#Input)  
+<a name="Input+getPreviousValue"></a>
+
+## getPreviousValue() ⇒ <code>String</code>
+Method to return the original Input value before editing started.
+
+**Kind**: instance method of [<code>Input</code>](#Input)  
+<a name="Input+setPreviousValue"></a>
+
+## setPreviousValue(value)
+Method to set the Input's value before editing.
+
+**Kind**: instance method of [<code>Input</code>](#Input)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>String</code> | The value to apply. |
+
+<a name="Input+getInputID"></a>
+
+## getInputID() ⇒ <code>String</code>
+Returns the input element's ID.
+
+**Kind**: instance method of [<code>Input</code>](#Input)  
+<a name="Input+getItem"></a>
+
+## getItem() ⇒ <code>Object</code>
+Returns the selected data dataProvider's item, or the value if the column is provided.
+
+**Kind**: instance method of [<code>Input</code>](#Input)  
+<a name="Input+getType"></a>
+
+## getType() ⇒ <code>String</code>
+Returns the input's type.
+
+**Kind**: instance method of [<code>Input</code>](#Input)  
+<a name="Input+getLinkedColumns"></a>
+
+## getLinkedColumns() ⇒ <code>String</code>
+Return the linked columns. These are the columns which will be updated into the Form's target dataSource.
+
+**Kind**: instance method of [<code>Input</code>](#Input)  
+<a name="Input+setScope"></a>
+
+## setScope()
+Sets the Input's operational scope. The values are:
+0 : Force send
+1 : if changed go to DB (default)
+2 : if changed go to DataProvider only
+3 : Stay in form
+
+**Kind**: instance method of [<code>Input</code>](#Input)  
+<a name="Input+getScope"></a>
+
+## getScope() ⇒ <code>String</code>
+Returns the Input's operational scope.
+
+**Kind**: instance method of [<code>Input</code>](#Input)  
+<a name="Input+getRequired"></a>
+
+## getRequired() ⇒ <code>Boolean</code>
+Returns if the Input is required.
+
+**Kind**: instance method of [<code>Input</code>](#Input)  
+<a name="Input+getEditable"></a>
+
+## getEditable() ⇒ <code>Boolean</code>
+Returns if the Input is editable.
+
+**Kind**: instance method of [<code>Input</code>](#Input)  
+<a name="Input+getVisible"></a>
+
+## getVisible() ⇒ <code>Boolean</code>
+Returns if the input is visible.
+
+**Kind**: instance method of [<code>Input</code>](#Input)  
+<a name="Input+setVisible"></a>
+
+## setVisible(mode)
+Sets the Input's visible status.
+
+**Kind**: instance method of [<code>Input</code>](#Input)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| mode | <code>Boolean</code> | The visible status. |
+
+<a name="Input+setMask"></a>
+
+## setMask()
+Sets Input's mask method following http://igorescobar.github.io/jQuery-Mask-Plugin/docs.html
+
+**Kind**: instance method of [<code>Input</code>](#Input)  
+<a name="Input+setMode"></a>
+
+## setMode(viewMode, setPreviusValue)
+Sets the Input's interaction mode.
+
+**Kind**: instance method of [<code>Input</code>](#Input)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| viewMode | <code>Boolean</code> | True sets the input to editing, false sets the input tas read only. |
+| setPreviusValue | <code>Boolean</code> | If true (default) will set the previous value. |
+
+<a name="Input+getMode"></a>
+
+## getMode() ⇒ <code>Boolean</code>
+Returns the Input's mode.
+
+**Kind**: instance method of [<code>Input</code>](#Input)  
+<a name="Input+markRequired"></a>
+
+## markRequired()
+Marks the Input as required
+
+**Kind**: instance method of [<code>Input</code>](#Input)  
+<a name="Input+markMissing"></a>
+
+## markMissing()
+Marks the Input as data missing.
+
+**Kind**: instance method of [<code>Input</code>](#Input)  
+<a name="Input+markValidationError"></a>
+
+## markValidationError()
+Marks the Input as entry error.
+
+**Kind**: instance method of [<code>Input</code>](#Input)  
+<a name="Input+cleanClasses"></a>
+
+## cleanClasses()
+Cleans the Input from markers like required, missing, and error.
+
+**Kind**: instance method of [<code>Input</code>](#Input)  
+<a name="Input+validate"></a>
+
+## validate() ⇒ <code>Integer</code>
+Executes a validation process. Returns 0 if no errors and 1 if found errors.
+
+**Kind**: instance method of [<code>Input</code>](#Input)  
+<a name="Input+setValue"></a>
+
+## setValue(value)
+Changes the Input's stored value.
+
+**Kind**: instance method of [<code>Input</code>](#Input)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>String</code> | The new value. |
+
+<a name="Input+getValue"></a>
+
+## getValue() ⇒ <code>String</code>
+Returns the Input's stored value.
+
+**Kind**: instance method of [<code>Input</code>](#Input)  
+<a name="Input+getText"></a>
+
+## getText() ⇒ <code>String</code>
+Returns the Input's displayed read-only text.
+
+**Kind**: instance method of [<code>Input</code>](#Input)  
+<a name="Input+getLabel"></a>
+
+## getLabel() ⇒ <code>String</code>
+Returns the Input's displayed label.
+
+**Kind**: instance method of [<code>Input</code>](#Input)  
+<a name="Input+setLabel"></a>
+
+## setLabel(label)
+Sets the Input's label.
+
+**Kind**: instance method of [<code>Input</code>](#Input)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| label | <code>String</code> | The new label. |
+
+<a name="Input+hasChanged"></a>
+
+## hasChanged() ⇒ <code>Boolean</code>
+Returns if the Input value has changed.
+
+**Kind**: instance method of [<code>Input</code>](#Input)  
+<a name="Input+load"></a>
+
+## load()
+Executes loding of data from the dataSource into the Input.
+
+**Kind**: instance method of [<code>Input</code>](#Input)  
+<a name="Input+setStringList"></a>
+
+## setStringList(newList)
+sets the Input's dataSource using a JSON structure.The JSON's items shoudl have the value and label properties.
+
+**Kind**: instance method of [<code>Input</code>](#Input)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| newList | <code>String</code> | JSON array. |
+
+<a name="Input+Event_modeChange"></a>
+
+## "Event:modeChange" (mode, $text, $value)
+Event triggered when the Input's mode changes. Created with the ```Input.on("onChange", function(){mode,$text,$vale})``` method.
+
+**Kind**: event emitted by [<code>Input</code>](#Input)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| mode | <code>Boolean</code> | The set mode, |
+| $text | <code>Object</code> | JQuery reference to the input displayed text. |
+| $value | <code>Object</code> | JQuery reference to the inputs input HTML element. |
+
+<a name="Input+Event_onValidation"></a>
+
+## "Event:onValidation" (type, value)
+Event triggered when a Inputs is validated. Created with the ```Input.on("click", function(){type,value})``` method.
+
+**Kind**: event emitted by [<code>Input</code>](#Input)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>String</code> | The Input's type. |
+| value | <code>String</code> | The input's entered value. |
+
+<a name="Input+Event_setValue"></a>
+
+## "Event:setValue" (value, $value)
+Event triggered when the Input's value is set. Created with the ```Input.on("setValue", function(){value, $value})``` method.
+
+**Kind**: event emitted by [<code>Input</code>](#Input)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>String</code> | The value entered. |
+| $value | <code>Object</code> | The JQuery instance to the input HTML element. |
+
+<a name="Input+Event_getValue"></a>
+
+## "Event:getValue" ($value)
+Event triggered when the Input's value is requested. Created with the ```Input.on("getValue", function(){$value})``` method.
+
+**Kind**: event emitted by [<code>Input</code>](#Input)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| $value | <code>Object</code> | The JQuery instance to the input HTML element. |
+
+<a name="Input+Event_afterLoad"></a>
+
+## "Event:afterLoad" ($value)
+Event triggered when the Input's value has been loaded from the dataSource. Created with the ```Input.on("afterLoad", function(){$value})``` method.
+
+**Kind**: event emitted by [<code>Input</code>](#Input)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| $value | <code>Object</code> | The JQuery instance to the input HTML element. |
+
+<a name="Input+Event_beforeUpload"></a>
+
+## "Event:beforeUpload" (Input, formData, fileName, fileSize)
+Event triggered before a file is uploaded. Created with the ```Input.on("beforeUpload", function(){Input, formData, fileName, fileSize})``` method.
+Returnning false will cancel the update process.
+
+**Kind**: event emitted by [<code>Input</code>](#Input)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| Input | <code>Object</code> | Reference to the Input. |
+| formData | <code>Object</code> | The form used to upload the file. |
+| fileName | <code>String</code> | The name of the file to be uploaded. |
+| fileSize | <code>Integer</code> | The file's size. |
+
+<a name="Input+Event_afterUpload"></a>
+
+## "Event:afterUpload" (Input, status, xhr)
+Event triggered after a file is uploaded. Created with the ```Input.on("afterUpload", function(){Input, status, xhr})``` method.
+Returnning false will cancel the update process.
+
+**Kind**: event emitted by [<code>Input</code>](#Input)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| Input | <code>Object</code> | Reference to the Input. |
+| status | <code>Boolean</code> | The upload process status: true is success and fasle is failure. |
+| xhr | <code>Object</code> | The operation javascript object. |
+
+<a name="Input+Event_afterInit"></a>
+
+## "Event:afterInit" (Input)
+Event triggered after the Input element has been initialized. Created with the ```Input.on("afterInit", function(){Input})``` method.
+
+**Kind**: event emitted by [<code>Input</code>](#Input)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| Input | <code>Object</code> | Reference to the Input. |
+
+<a name="Input+Event_change"></a>
+
+## "Event:change" (Input)
+Event triggered when the Input's value has changed. Created with the ```Input.on("change", function(){Input})``` method.
+
+**Kind**: event emitted by [<code>Input</code>](#Input)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| Input | <code>Object</code> | Reference to the Input. |
+
+<a name="Input+Event_click"></a>
+
+## "Event:click" (Input)
+Event triggered when a Button Input is clicked in data entry mode. Created with the ```Input.on("click", function(){Input})``` method.
+
+**Kind**: event emitted by [<code>Input</code>](#Input)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| Input | <code>Object</code> | Reference to the Input. |
+
+<a name="Input+Event_keyup"></a>
+
+## "Event:keyup" (event, Input)
+Event triggered at input's keyboard keyup event. Created with the ```Input.on("click", function(){even,Input})``` method.
+
+**Kind**: event emitted by [<code>Input</code>](#Input)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>Object</code> | The Keyboard event. |
+| Input | <code>Object</code> | Reference to the Input. |
+
+<a name="Input+Event_clickPreview"></a>
+
+## "Event:clickPreview"
+Event triggered when input's preview button is clicked. Created with the ```Input.on("clickPreview", function(){})``` method.
+
+**Kind**: event emitted by [<code>Input</code>](#Input)  
+<a name="Input+Event_clickDownload"></a>
+
+## "Event:clickDownload"
+Event triggered when input's download button is clicked. Created with the ```Input.on("clickDownload", function(){})``` method.
+
+**Kind**: event emitted by [<code>Input</code>](#Input)  

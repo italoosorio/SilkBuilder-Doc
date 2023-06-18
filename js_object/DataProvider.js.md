@@ -23,6 +23,12 @@ Returns a DataProvider instance.
 | [options.pkColumn] | <code>String</code> |  | The primary key column of the table accesed. |
 | [option.detailDP] | <code>String</code> |  | The name of the DataProvider which contains the detail data of the selected record. |
 
+<a name="DataProvider+langID"></a>
+
+## langID
+The langID is use to overwrite the session loaded langID.
+
+**Kind**: instance property of [<code>DataProvider</code>](#DataProvider)  
 <a name="DataProvider+on"></a>
 
 ## on
@@ -56,6 +62,12 @@ Local : loaded using laodJSON method. Data is provided as part of the data provi
 JSON : data form a JSON file.
 
 **Kind**: instance property of [<code>DataProvider</code>](#DataProvider)  
+<a name="DataProvider+setTimeout"></a>
+
+## setTimeout()
+The number of milliseconds beore triggering a timeout error.
+
+**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
 <a name="DataProvider+getService"></a>
 
 ## getService()

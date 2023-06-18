@@ -20,7 +20,7 @@ dataDP.on("markDeleted",function(requestObject){
 	 * In this example the column 'archiveStatus' defines
 	 * in the table the 'deleted' condition.
 	 */
-	request.setOperationItem("archiveStatus",1);
+	dataDP.setOperationItem("archiveStatus",1);
 });
 ```
 

@@ -160,6 +160,19 @@ Gets the loaded component array.
 Gets a reference to the dataSource.
 
 **Kind**: instance method of [<code>Table</code>](#Table)  
+<a name="Table+filterLoad"></a>
+
+## filterLoad(index, item)
+Function which evaluates if a row should be included in the table.
+If true is returned the row is added, false ignores the row.
+
+**Kind**: instance method of [<code>Table</code>](#Table)  
+
+| Param | Description |
+| --- | --- |
+| index | The record index. |
+| item | The row object. |
+
 <a name="Table+load"></a>
 
 ## load(action, index)
@@ -188,7 +201,7 @@ This only works in columns set as input holders.
 
 ## getInputs(inputProcessor) ⇒
 Returns an array containing row object holding the inputs' object.
-If a funcition is provided this will be executed for each row. The function will received an opbject containging the inputs as a parameter
+If a function is provided this will be executed for each row. The function will received an opbject containging the inputs as a parameter
 
 **Kind**: instance method of [<code>Table</code>](#Table)  
 **Returns**: Array  
