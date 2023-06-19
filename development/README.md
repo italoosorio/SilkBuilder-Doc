@@ -1,13 +1,16 @@
 # Development
 
-Using this guides you will learn how to start developing applications using SilkBuilder. Check it.
+Using this guides you will learn how to start developing applications using SilkBuilder.
 
-## Topics:
+## SilkBuilder Environment
 
-* [Development Enviroment](development_enviroment.md)
+* [Development Enviroment](development_environment.md)
 * [System Elements](system_elements.md)
 * [Project, Data Model, and ORM](project_data_model.md)
 * [Development Formats](silk_development_formats.md)
+
+## SilkBuilder Development
+
 * [Sample Database](sample_database.md)
 * [Plain Application](plain_application.md)
 * [Easy Application](easy_application.md)
