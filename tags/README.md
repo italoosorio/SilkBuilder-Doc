@@ -2,7 +2,7 @@
 
 The SilkBuilder Documentation
 
-This documentation describes the use of SilkBuilder to develop web applications.
+This documentation describes the use of SilkBuilder Tags to develop web applications.
 
 ## Topics:
 
