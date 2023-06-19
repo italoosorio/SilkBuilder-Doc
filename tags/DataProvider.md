@@ -17,6 +17,7 @@ Used standalone:
     pkColumn=""
     detailDP=""
     recordSync=""
+    timeout=""
 />
 ```
 Used as a container:
@@ -34,12 +35,11 @@ Used as a container:
     pkColumn=""
     detailDP=""
     recordSync=""
+    timeout=""
 >
    Contains: JSON Object Array.
 </silk:DataProvider>
 ```
-The list below shows the required properties.
-
 ## Properties
 This tag has the following properties.
 |Name|Description|
@@ -56,6 +56,7 @@ This tag has the following properties.
 |pkColumn|The name of the columns used as primary key if the DataProvider has been created using static JSON data.<br>Default Value: *Empty*.|
 |detailDP|The *DataProvider* which will be loaded when clicking on an associated *silk:Table* row.<br>Default Value: *Empty*.|
 |recordSync|If _true_ if will load a ORM select containing extra columns for the selected record.<br>Default Value: *Empty*.|
+|timeout|Set the time the Ajax request will timeout if it does not receives an asnwer.<br>Default Value: *Empty*.|
 
 <sup>*</sup>Required property.
 ## JSON container

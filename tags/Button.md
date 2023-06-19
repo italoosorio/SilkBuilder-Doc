@@ -36,8 +36,6 @@ Used as a container:
    Contains: Silk:ButtonItems
 </silk:Button>
 ```
-The list below shows the required properties.
-
 ## Properties
 This tag has the following properties.
 |Name|Description|

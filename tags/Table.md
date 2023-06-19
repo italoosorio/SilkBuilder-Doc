@@ -30,8 +30,6 @@ Used as a container:
    Contains: silk:Column components.
 </silk:Table>
 ```
-The list below shows the required properties.
-
 ## Properties
 This tag has the following properties.
 |Name|Description|

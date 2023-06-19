@@ -6,8 +6,6 @@ Copyright © 2013 Italo Osorio
 http://silk.oopsclick.com
 
 ## Tag Use
-The list below shows the required properties.
-
 ## Properties
 This tag has the following properties.
 |Name|Description|
@@ -19,5 +17,6 @@ This tag has the following properties.
 |cssClass|Default Value: *Empty*.|
 |rowClass|Default Value: *Empty*.|
 |renderer|Default Value: *Empty*.|
+|tag|Default Value: *Empty*.|
 
 <sup>*</sup>Required property.

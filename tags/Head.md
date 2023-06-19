@@ -15,8 +15,6 @@ Used as a container:
    Contains: Title of the header and optionally silk:Button tags.
 </silk:Head>
 ```
-The list below shows the required properties.
-
 ## Properties
 This tag has the following properties.
 |Name|Description|

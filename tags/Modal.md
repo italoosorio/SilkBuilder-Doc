@@ -16,8 +16,6 @@ Used as a container:
    Contains: silk:ModalBody and silk:ModalFooter
 </silk:Modal>
 ```
-The list below shows the required properties.
-
 ## Properties
 This tag has the following properties.
 |Name|Description|

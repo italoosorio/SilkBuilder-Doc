@@ -25,8 +25,6 @@ Used as a container:
    Contains: Template containing {fields} and HTML components.
 </silk:Column>
 ```
-The list below shows the required properties.
-
 ## Properties
 This tag has the following properties.
 |Name|Description|

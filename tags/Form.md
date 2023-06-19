@@ -32,8 +32,6 @@ Used as a container:
    Contains: silk:Input and HTML components.
 </silk:Form>
 ```
-The list below shows the required properties.
-
 ## Properties
 This tag has the following properties.
 |Name|Description|
