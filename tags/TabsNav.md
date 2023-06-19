@@ -1,11 +1,17 @@
 # silk:TabsNav Tag
-@author italo
+This tag defines a Silk TabsNav component. This tag groups the  silk Pages which will share a single location and provide tab navigation. This tag will be referenced in the "tabsNav" property of the Silk Page tag.
 
 ## Tag Use
+Used standalone:
+```xml
+<silk:TabsNav
+    id=""
+/>
+```
 ## Properties
 This tag has the following properties.
 |Name|Description|
 |--|--|
-|id|Default Value: *Empty*.|
+|id<sup>*</sup>|The pagination's unique identifier.<br>Default Value: *Empty*.|
 
 <sup>*</sup>Required property.

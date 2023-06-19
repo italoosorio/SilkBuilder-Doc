@@ -2,6 +2,15 @@
 The *silk:ButtonItem* defines the sub-buttons for a "Drop-down Button". Adding a *silk:ButtonItem* to a *silk:Button* converts it into a "Drop-down Button".
 
 ## Tag Use
+Used standalone:
+```xml
+<silk:ButtonItem
+    id=""
+    label=""
+    icon=""
+    targetPage=""
+/>
+```
 ## Properties
 This tag has the following properties.
 |Name|Description|
