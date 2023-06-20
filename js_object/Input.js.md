@@ -436,7 +436,7 @@ Event triggered at input's keyboard keyup event. Created with the ```Input.on("c
 <a name="Input+Event_timer"></a>
 
 ## "Event:timer" (value, Input)
-Event triggered when the Input's data entry timer concludes. Created with the ```Input.on("timer", function(Input){})``` method.
+Event triggered when the Input's data entry timer concludes. Created with the ```Input.on("timer", function(value, Input){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 
