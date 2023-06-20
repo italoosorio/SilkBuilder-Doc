@@ -1,12 +1,18 @@
-# The ORM Structure
+# SilkBuilder Object Relational Mapping
+
+This document describes the ORM \(Object Relational Mapping\) structure which is used to define the database integration. 
+
+## SilkBuilder IDE Interface
+
+The SilkBuilder IDE provides a graphical interface to configure ORM files. This can be find there: [Project, Data Model, and ORM](project_data_model.md).
+
+This document is provided as an explanation for advance user who want to understand how SilkBuilder communicates with database servers.
 
 ## The ORM Structure
 
-This document describes the ORM \(Object Relational Mapping\) structure which is used to define the database integration. This is an example of an ORM file.
+SilkBuilder provides a series of tags to define how to access and operate the information in the database or databases, and even the file system. Each tag has several properties and SQL commands holders. If the tag's property is boolean the accepted positive values are: "true", "yes", "1" and "on". Any other value will be consider as false.
 
-Silk provides a series of tags to define how to access and operate the information in the database or databases, and even the file system. Each tag has several properties and SQL commands holders. If the tag's property is boolean the accepted positive values are: "true", "yes", "1" and "on". Any other value will be consider as false.
-
-```markup
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE ormObject>
 <orm remoteService="" queryType="" >
@@ -73,7 +79,7 @@ Silk provides a series of tags to define how to access and operate the informati
 
 The ORM tag defines the root node for the ORM XML structure. It has two properties: remoteService and queryType.
 
-```markup
+```xml
 <orm remoteService="" queryType="" >
   ...
 </orm>
@@ -90,7 +96,7 @@ The ORM tag defines the root node for the ORM XML structure. It has two properti
 
 Defines what target table for the insert, update and delete actions.
 
-```markup
+```xml
 <table 
     name=""
     pkMode=""
@@ -116,7 +122,7 @@ Defines what target table for the insert, update and delete actions.
 
 #### Example:
 
-```markup
+```xml
 <!-- Access to a table with Primary key Auto -->
 
 <table name="customer"  />
@@ -132,7 +138,7 @@ Defines what target table for the insert, update and delete actions.
 
 Defines the fields used by the mapping. These should be the same fields returned by the select command.
 
-```markup
+```xml
 <column
     name=""
     type=""
@@ -187,7 +193,7 @@ Defines the fields used by the mapping. These should be the same fields returned
 
 This tag contains the select command used to retrieve the rows and fields to populate the dataProvider in the Flex client. It is possible to use parameters which are defined enclosing them with "\[" and "\]". These parameters are configured in the client as criteria values. It has the property name used to identify each select command.
 
-```markup
+```xml
 <sqlSelect name="" >
     <![CDATA[
         ... SQL Select command
@@ -197,7 +203,7 @@ This tag contains the select command used to retrieve the rows and fields to pop
 
 #### Example
 
-```markup
+```xml
   <!-- simple select call, will be name default --> 
   <sqlSelect >
       <![CDATA[
@@ -226,7 +232,7 @@ This tag contains the select command used to retrieve the rows and fields to pop
 
 This tag is necessary if the pkMode attribute is "SQL". This tag contains the select command necessary to create the primary key. It has to return a string field called "pk". Even if the primary key value is an integer in the database structure, is has to be converted to varchar in the select.
 
-```markup
+```xml
 <pkSql>
     <![CDATA[
         ... SQL Select command returning PK value
@@ -236,7 +242,7 @@ This tag is necessary if the pkMode attribute is "SQL". This tag contains the se
 
 #### Example
 
-```markup
+```xml
 <!-- Maybe not the best example, SQL Server -->
 <table name="customer" pkMode="SQL" />
 <pkSQL>
@@ -252,7 +258,7 @@ This tag is necessary if the pkMode attribute is "SQL". This tag contains the se
 
 Contains the sql operation to be executed in a similar way as database triggers. You can also include parameters in the SQL operations in the same way as the `<select>` tag. These parameters will be processed by the criteria values and also the form field values.
 
-```markup
+```xml
 <sqlOperation
     name=""
     action=""
@@ -280,7 +286,7 @@ The recommendation is to define database triggers, function, and store procedure
 
 This tag stores the SQL select command which will validate the property keyword. This SQL should return a value of 1 for true or 0 for false with a column name "result". This SQL can received parameters. If an authorization tag's name is similar to the an authorization keyword, the SQL will be executed.
 
-```markup
+```xml
 <sqlAuthorization name="" >
     <![CDATA[
         ... SQL Select with authorization
@@ -311,7 +317,7 @@ The parameter will be converted into **Name Parameters** before being executed b
 
 In the example below the parameter is used to filter the query result by the provided age.
 
-```markup
+```xml
 <sqlSelect>
     <![CDATA[
         Select
@@ -324,7 +330,7 @@ In the example below the parameter is used to filter the query result by the pro
 
 In the next example the parameter is used to decide which column will be returned.
 
-```markup
+```xml
 <sqlSelect>
     <![CDATA[
         Select
@@ -344,7 +350,7 @@ This modifier receives a value which is directly applied to the SQL code before 
 
 In this example the value is used to determine the query order. The value could be "fullName" or "age,fullName".
 
-```markup
+```xml
 <sqlSelect>
     <![CDATA[
         Select
@@ -357,7 +363,7 @@ In this example the value is used to determine the query order. The value could 
 
 in this other example the value is used to dinamically decided what colums to return. The values could be "age, phone", or "emailAddress, birthday".
 
-```markup
+```xml
 <sqlSelect>
     <![CDATA[
         Select
@@ -376,7 +382,7 @@ To avoid the danger of SQL Injection common SQL keywords like "select", "update"
 
 This modifier sets the column to be translated. This wraps the column into the translation function set during Silk setup. This is to be used with columns setup with the _translation_ property to "xml", "true" or "1".
 
-```text
+```sql
 Select
     $T{columnToTranslate} as columnToTranslate
 from table
@@ -384,7 +390,7 @@ from table
 
 To translate column which had been setup with the _translation_ property to "column" or "2".
 
-```text
+```sql
 select
     columnToTranslate_$G{lang}
 from table
@@ -392,7 +398,9 @@ from table
 
 ## Querying the File System
 
-```markup
+The ORM can be used to "query" the file system. Once setup a folder can be query like a "database".
+
+```xml
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE ormObject>
 <orm queryType="folder" >
@@ -428,8 +436,3 @@ from table
 
 </orm>
 ```
-
-```text
-
-```
-

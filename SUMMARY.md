@@ -1,12 +1,12 @@
 # Table of contents
 
 * [SilkBuilder](README.md)
-* [Development](development/README.md)
+* [SilkBuilder Environment](development/README.md)
   * [Development Environment](development/development_environment.md)
   * [System Elements](development/system_elements.md)
   * [Project, Data Model and ORM](development/project_data_model.md)
   * [Development Formats](development/silk_development_formats.md)
-  * [Development Formats](toolkit/silk_development_formats.md)
+* [Silk Builder Development](development/README.md)
   * [Sample Database](development/sample_database.md)
   * [Plain Application](development/plain_application.md)
   * [Easy Application](development/easy_application.md)

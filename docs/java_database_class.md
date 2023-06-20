@@ -26,7 +26,7 @@ DataProvider dataDP = DataProvider("/test/testPerson");
 
 If you are using the the SILK-Builder environment to define a DataProvider in a Java code inside a JSP file use this constructor.
 
-```text
+```java
 <%
   DataProvider dataDP = DataProvider("/Test/testPerson", session);
 %>

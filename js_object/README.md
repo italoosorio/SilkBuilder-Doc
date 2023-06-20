@@ -1,8 +1,6 @@
-# JavaScript Object
+# SilkBuilder JavaScript Object
 
-The SilkBuilder Documentation
-
-This documentation describes the use of SilkBuilder to develop web applications.
+The SilkBuilder JavaScript Objects are companion objects use to extent the functionality of SilkBuilder Tags. The objects, or JavaScript Classes, contain methods and events wich can be used to intereact with the component created by the SilkBuilder Tags. This documentation describes the use of SilkBuilder JavaScript Objects to develop web applications.
 
 ## Topics:
 * [Button](Button.js.md)

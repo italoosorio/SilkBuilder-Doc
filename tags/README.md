@@ -1,10 +1,8 @@
-# Silk Tags
+# SilkBuilder Tags
 
-The SilkBuilder Documentation
+The SilkBuilder Tags are JSP Custom tagk which can be used together with HTML tags. These are build to provide programaticall shorcuts to typical app operation. This documentation describes the use of SilkBuilder Tags to develop web applications.
 
-This documentation describes the use of SilkBuilder Tags to develop web applications.
-
-## Topics:
+## Tag List:
 
 * [App](App.md)
 * [AppHeader](AppHeader.md)

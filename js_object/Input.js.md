@@ -71,6 +71,7 @@ Returns an Input instance.
 | [options.uploadURL] | <code>String</code> |  | The URL of the service uploading the file. To use with type file. |
 | [options.fileTypeList] | <code>String</code> |  | String containing the comma separated list of accepted file extension. To use with type file. |
 | [options.fileSizeLimit] | <code>Integer</code> |  | The number of bytes allowed to upload. To use with type file. |
+| [options.timer] | <code>Integer</code> | <code>0</code> | The number of milliseconds before trigerint the "timer" even when entering data. |
 
 <a name="Input+on"></a>
 
@@ -430,6 +431,18 @@ Event triggered at input's keyboard keyup event. Created with the ```Input.on("c
 | Param | Type | Description |
 | --- | --- | --- |
 | event | <code>Object</code> | The Keyboard event. |
+| Input | <code>Object</code> | Reference to the Input. |
+
+<a name="Input+Event_timer"></a>
+
+## "Event:timer" (value, Input)
+Event triggered when the Input's data entry timer concludes. Created with the ```Input.on("timer", function(Input){})``` method.
+
+**Kind**: event emitted by [<code>Input</code>](#Input)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>String</code> | The input stored value. |
 | Input | <code>Object</code> | Reference to the Input. |
 
 <a name="Input+Event_clickPreview"></a>
