@@ -1,19 +1,10 @@
-# Development
+# SilkBuilder Development Environment
 
-Using this guides you will learn how to start developing applications using SilkBuilder.
-
-## SilkBuilder Environment
+Using this guides you will learn how to set the SilkBuilder enviroment to start developing applications.
 
 * [Development Enviroment](development_environment.md)
 * [System Elements](system_elements.md)
 * [Project, Data Model, and ORM](project_data_model.md)
 * [Development Formats](silk_development_formats.md)
 
-## SilkBuilder Development
-
-* [Sample Database](sample_database.md)
-* [Plain Application](plain_application.md)
-* [Easy Application](easy_application.md)
-* [Simple Application](simple_application.md)
-* [Complex Application](complex_application.md)
 * [System Environment](system_environment.md)
