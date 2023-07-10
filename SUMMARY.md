@@ -25,6 +25,8 @@
   * [Pagination](how_to/pagination.md)
   * [Mark Deleted](how_to/mark_deleted.md)
   * [Record Sync](how_to/sync_record_detail.md)
+  * [Server Code Logic](how_to/server_code_logic.md)
+  * [Client Template](how_to/client_template.md)
 * [Silk Tags](tags)
   * [App](tags/App.md)
   * [AppHeader](tags/AppHeader.md)

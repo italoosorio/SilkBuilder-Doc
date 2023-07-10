@@ -25,6 +25,7 @@ Used as a container:
     searchable="false"
     dpSearch="false"
     input="false"
+    renderIf=""
     init="true"
 >
    Contains: silk:Column components.
@@ -54,6 +55,7 @@ This tag has the following properties.
 |searchable|Opens a text input to filter the table data based on the entered text. By default it filter the loaded data. When *dpSearch="true"* it will search in the database.<br>Default Value: *false*.|
 |dpSearch|Indicates if the search process will happen in the loaded data or will trigger a new data load.<br>Default Value: *false*.|
 |input|Indicates if the table will initialize in "data entry" mode.<br>Default Value: *false*.|
+|renderIf|A logic condition determining if the application should be executed. It accepted model variables. The explanation on how to use the logic statement is found in <a href="how_to/server_code_logic.md">Server Code Logic</a> documentation.<br>Default Value: *Empty*.|
 |init|Indicates if the table should initialize at creation time. This property should be set to *true* if it will be initialized programmatically.<br>Default Value: *true*.|
 
 <sup>*</sup>Required property.

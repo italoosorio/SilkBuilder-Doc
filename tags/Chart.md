@@ -15,6 +15,7 @@ Used standalone:
     backgroundColor="#1886C1"
     grid="true"
     legend="false"
+    renderIf=""
     parentList=""
     indexAxis="x"
     tooltip="false"
@@ -35,6 +36,7 @@ This tag has the following properties.
 |backgroundColor|Sets the chart background color.<br>Default Value: *#1886C1*.|
 |grid|Sets if chart will show a grid.<br>Default Value: *true*.|
 |legend|Sets if the char will show the legend.<br>Default Value: *false*.|
+|renderIf|The logic sentence which will define if the button should be rendered. The explanation on how to use the logic statement is found in <a href="how_to/server_code_logic.md">Server Code Logic</a> documentation.<br>Default Value: *Empty*.|
 |parentList|Set the list which will trigger the loading process<br>Default Value: *Empty*.|
 |indexAxis|Sets the chart index axis.<br>Default Value: *x*.|
 |tooltip|Sets if the tool tips will be displayed<br>Default Value: *false*.|

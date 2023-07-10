@@ -21,6 +21,7 @@ Used as a container:
     valueColumn=""
     labelColumn=""
     idColumn=""
+    renderIf=""
 >
    Contains: Template containing {fields} and HTML components.
 </silk:Column>
@@ -45,6 +46,7 @@ This tag has the following properties.
 |valueColumn|The name of the data column which will filled the input.<br>Default Value: *Empty*.|
 |labelColumn|The name of the data column use as input label.<br>Default Value: *Empty*.|
 |idColumn|The input identifier which will be used to extract the entered data.<br>Default Value: *Empty*.|
+|renderIf|A logic condition determining if the application should be executed. It accepted model variables. The explanation on how to use the logic statement is found in <a href="how_to/server_code_logic.md">Server Code Logic</a> documentation.<br>Default Value: *Empty*.|
 
 <sup>*</sup>Required property.
 

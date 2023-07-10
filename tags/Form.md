@@ -26,6 +26,7 @@ Used as a container:
     insertMessage="Created"
     updateMessage="Edited"
     deleteMessage="Deleted"
+    renderIf=""
     init="true"
     cssClass=""
 >
@@ -48,13 +49,14 @@ This tag has the following properties.
 |mode|Defines the initial status of the Form. If *true* it will initialize as editable.<br>Default Value: *false*.|
 |dialog|If property is false it activates the inputs mode and cancel the process to avoid showing the dialog bar.<br>Default Value: *true*.|
 |buttonTarget|A comma separated list of page use to place the auto generated action buttons. These button will be placed in the page's header.<br>The order is the following: page for the insert button, page for the edit button, and page for the delete button.<br>Only including the insert page will default this page for the other buttons.<br>Including the insert and edit page will default the edit page as the target for the delete button.<br>Sending the value *none* or *null* for any page will not generate that button.<br>This example will only generate the edit button: *buttonTarget="none,formPage,none"*.<br>Default Value: *Empty*.|
-|buttonTest|The logical sentences defining if the actions buttons will be added.<br>These follows the same order as the *buttonTarget* property.<br>Default Value: *Empty*.|
+|buttonTest|The logical sentences defining if the actions buttons will be added. The explanation on how to use the logic statement is found in <a href="how_to/server_code_logic.md">Server Code Logic</a> documentation.<br>These follows the same order as the *buttonTarget* property but separated by a pipe symbol: "|".<br>Default Value: *Empty*.|
 |insertTitle|The text to show in the dialog bar when operating an insert.<br>Default Value: *Adding*.|
 |updateTitle|The text to show in the dialog bar when operating an update.<br>Default Value: *Editing*.|
 |deleteTitle|The text to show in the dialog bar when operating a delete.<br>Default Value: *Deleting*.|
 |insertMessage|The message to show after operating an insert.<br>Default Value: *Created*.|
 |updateMessage|The message to show after operating an update.<br>Default Value: *Edited*.|
 |deleteMessage|The message to show after operating a delete.<br>Default Value: *Deleted*.|
+|renderIf|A logic condition determining if the application should be executed. It accepted model variables. The explanation on how to use the logic statement is found in <a href="how_to/server_code_logic.md">Server Code Logic</a> documentation.<br>Default Value: *Empty*.|
 |init|Defines if the component will be initialized after being created.<br>Default Value: *true*.|
 |cssClass|The CSS class or classes to be added to the Form.<br>Default Value: *Empty*.|
 

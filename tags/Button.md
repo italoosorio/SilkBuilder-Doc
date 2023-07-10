@@ -48,7 +48,7 @@ This tag has the following properties.
 |width|Sets the button's fixed width. By default the button's width will changed based on their content.<br>Default Value: *Empty*.|
 |cssClass|The classes to stylized the button. It expects Bootstrap classes. The button already has the "btn" class and is initialized with "btn-primary".<br>Default Value: *btn-primary*.|
 |cssStyle|To add extra styling using CSS styling elements.<br>Default Value: *Empty*.|
-|renderIf|The logic sentence which will define if the button should be rendered.<br>Default Value: *Empty*.|
+|renderIf|The logic sentence which will define if the button should be rendered. The explanation on how to use the logic statement is found in <a href="how_to/server_code_logic.md">Server Code Logic</a> documentation.<br>Default Value: *Empty*.|
 |extraProperties|To add extra HTML properties not defined by the *silk:Button* component.<br>Default Value: *Empty*.|
 |group|Adds Bootstrap classes to group the button.<br>Default Value: *false*.|
 
