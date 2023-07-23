@@ -16,6 +16,7 @@ Used as a container:
     treeData="undefined"
     rootLabel=""
     noRoot="false"
+    multiRoot="false"
     iconOpen="far fa-folder-open fa-lg"
     iconClose="far fa-folder  fa-lg"
     iconEmpty="far fa-file fa-lg"
@@ -46,6 +47,7 @@ This tag has the following properties.
 |treeData|If the table should process the data as a data tree. This value is usually inherit from the *DataProvider* but can be overwrite with this property is necessary.<br>Default Value: *undefined*.|
 |rootLabel|Set the label/name of the tree's root. This only works if *dataProvider* is set to *treeData="true"*.<br>Default Value: *Empty*.|
 |noRoot|Sets the root to be treated like a "regular row". Only works in data tree mode.<br>Default Value: *false*.|
+|multiRoot|Sets the tree to support multiple root branches. Only works in data tree mode and when noRoot is true.<br>Default Value: *false*.|
 |iconOpen|The Font Awesome classes defining the open branch icon. Only works in data tree mode.<br>Default Value: *far fa-folder-open fa-lg*.|
 |iconClose|The Font Awesome classes defining the close branch icon. Only works in data tree mode.<br>Default Value: *far fa-folder  fa-lg*.|
 |iconEmpty|The Font Awesome classes defining the empty branch icon. Only works in data tree mode.<br>Default Value: *far fa-file fa-lg*.|

@@ -58,19 +58,19 @@ To support record syncing an extra *select* has to be added to the ORM. This new
 </sqlSelect>
 ```
 
-The recordSync *select* has to return only the record to synchronize and include the table's primary key.
+The recordSync *select* has to return the columns to synchronize, and/or the extra columns to add, and it should include the table's primary key.
 
 If using the SilkBuilder these *selects* will be added using the IDE interface.
 
-## The silk:DataProvider
+## The silk:DataProvider tag
 
-In the *silk:dataProvider* tag the property "selectName" is set to the name of *select* which will load the records for the table, and the property *recordSync* as to be set to "true".
+If the record syncronication will be called programatically there is not change to be applied to the *DataProvider* tag. In the example below the selectName is using "list", it is important to check that the syncronization select is called "list-recordSync"
 
 ```xml
 <silk:DataProvider id="personDP" servicePath="/--/--/outlet" selectName="list" recordSync="true" />
 ```
 
-The method *beforeRecordSync* is used to configure the parameters need to execute the *select* returnig the extra columns.
+The method *beforeRecordSync* is used to configure the parameters need to execute the *select* returnig the extra columns. This is the place to setup the table's primary key value use to get the syncrionication data.
 
 ```javascript
 personDP.on("beforeRecordSync",function(){
@@ -78,13 +78,29 @@ personDP.on("beforeRecordSync",function(){
 });
 ```
 
-## The silk:Table and silk:Form
-
-There are not change needed for the *silk:Table* or *silk:Form*. When the user clicks on a table row the *recordSync* process will be executed and after the new coumns had been added the *silk:Form* will be refreshed to show newly added records data.
-
 ## The recordSync method
 
-If the *silk:DataProvider* is being used alone or with other components and is also configured with ```recordSync="true"``` then the mothod *recordSync* can be executed to retrieve the extra columns. In this case the property *seletedIndex* has to be setup to point at the target record.
+The *dataProvider* provides the method *recordSync* to trigger the record syncronication process.
+
+```javascript
+personDP.recordSync();
+```
+
+> **Calling this method will update any componect connected to the *dataProvider* like Tables, Forms, and Inputs.**
+
+## Auto Syncronization
+
+The syncronization can be configured to happen automatically when a *Table* row is clicked. This is configured by adding the *recordSync* property to the *DataProvider* tag and setting it to "true".
+
+```xml
+<silk:DataProvider id="personDP" servicePath="/--/--/outlet" selectName="list" recordSync="true" />
+```
+
+After this every time the user clicks in a table's row the data will be syncronized and the form, if connected, will also load the syncronized data.
+
+## No Components
+
+If the *silk:DataProvider* is being used alone without other components then before using the mothod *recordSync* the *selectedIndex* of data being affected has to be setup first.
 
 ```javascript
 personDP.selectedIndex = 10;

@@ -12,6 +12,7 @@ Used as a container:
     size=""
     centered="true"
     limitedClose="true"
+    bodyMargin="true"
     renderIf=""
 >
    Contains: silk:ModalBody and silk:ModalFooter
@@ -28,6 +29,7 @@ This tag has the following properties.
 |size|Defines the modal size. The values are: small, large, width, and full.<br>The "width" value will create a model contained in the width of the page.<br>The "full" modal will complete cover the screen width and height.<br>Default Value: *Empty*.|
 |centered|Centers the modal in the navigator screen.<br>Default Value: *true*.|
 |limitedClose|Define if the modal will not close when the user clicks outside the modal dialog.<br>By default the modal only closes when click on the "X" icon or when a close modal button is added.<br>Default Value: *true*.|
+|bodyMargin|Removes the modal's body margin. This helps when a table is embedded in a modal.<br>Default Value: *true*.|
 |renderIf|A logic condition determining if the application should be executed. It accepted model variables. The explanation on how to use the logic statement is found in <a href="how_to/server_code_logic.md">Server Code Logic</a> documentation.<br>Default Value: *Empty*.|
 
 <sup>*</sup>Required property.

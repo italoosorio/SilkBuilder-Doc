@@ -15,13 +15,14 @@ The ChartJS Class provides properties, methods, and events to interface with the
 
 <a name="new_ChartJS_new"></a>
 
-## new ChartJS(id)
+## new ChartJS(id, option)
 Returns a ChartJS instance.
 
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | id | <code>String</code> |  | Unique identifier. |
+| option | <code>Object</code> |  | Object containing the configuration. |
 | [option.chartType] | <code>String</code> | <code>bar</code> | The chart type from https://www.chartjs.org/docs/latest/charts/area.html. The default value is "bar". |
 | [option.dataSource] | <code>String</code> |  | Unique identifier of the dataProvider used to fill the Chart. |
 | [option.labelColumn] | <code>String</code> |  | The name of the column which defines the char's labels. |

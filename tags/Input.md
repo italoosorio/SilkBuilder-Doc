@@ -50,6 +50,7 @@ Used standalone:
     fileTypeList=""
     fileSizeLimit=""
     renderIf=""
+    targetPage=""
     timer=""
 />
 ```
@@ -100,6 +101,7 @@ This tag has the following properties.
 |fileTypeList|String containing the comma separated list of accepted file extension. To use with type file.<br>Default Value: *Empty*.|
 |fileSizeLimit|The number of bytes allowed to upload. To use with type file.<br>Default Value: *Empty*.|
 |renderIf|The logic expression to determine if the input will be rendered in the server side. The explanation on how to use the logic statement is found in <a href="how_to/server_code_logic.md">Server Code Logic</a> documentation.<br>Default Value: *Empty*.|
+|targetPage|The *silk:Page*'s identifier which will be selected/show when the input is clicked when type is 'button'.<br>Default Value: *Empty*.|
 |timer|Sets data entry timer which will trigger the "timer" event.<br>Default Value: *Empty*.|
 
 <sup>*</sup>Required property.

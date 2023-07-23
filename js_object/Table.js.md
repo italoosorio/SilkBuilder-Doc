@@ -14,26 +14,30 @@ The Table Class provides properties, methods, and events to interface with the H
 
 <a name="new_Table_new"></a>
 
-## new Table(id, dataSource, autoSelect, targetPage, header, treeData, iconOpen, iconClose, iconEmpy, collapsable, collapsedLevel, selectable, dpSearch, input)
+## new Table(id, option)
 Returns a Table instance.
 
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | id | <code>String</code> |  | Unique identifier. |
-| dataSource | <code>String</code> |  | Unique identifier of the dataProvider used to fill the table. |
-| autoSelect | <code>Boolean</code> | <code>true</code> | If true the table will automatically load the data from the dataProvider. If false is will wait for the load command. |
-| targetPage | <code>String</code> |  | Unique identifier of the page which will become active when a row is selected. |
-| header | <code>String</code> | <code>fixed</code> | Defines the header location:  `fixed` Attaches the header to the top of the page. `inline` Attaches the header to the top of the table location. `none` No header. |
-| treeData | <code>Boolean</code> | <code>false</code> | Indicates if the data should be treated as a tree structure. If the dataProvider is selected as treeData=true then the table inherets the value. |
-| iconOpen | <code>String</code> |  | The icon showing an open branch if treeData if true. The default value is `fas fa-minus-square` from Fontawesome. |
-| iconClose | <code>String</code> |  | The icon showing a close branch if treeData if true. The default value is `fas fa-plus-square` from Fontawesome. |
-| iconEmpy | <code>String</code> |  | The icon showing an end branch if treeData if true. Empty by default. |
-| collapsable | <code>Integer</code> |  | Indicates the tree can collapose. |
-| collapsedLevel | <code>Integer</code> |  | Indicates the number of open levels. Other levels will remain closed. |
-| selectable | <code>Boolean</code> | <code>true</code> | If true the row will change color when selected. |
-| dpSearch | <code>Boolean</code> | <code>false</code> | If false the search is done in the loaded data. If true the search leads to a dataProvider reload. It can also received the name of the DataProvider to be loaded. |
-| input | <code>Boolean</code> | <code>false</code> | If true it will create input fields for the configured columns. |
+| option | <code>Object</code> |  | Object containing the configuration. |
+| [option.dataSource] | <code>String</code> |  | Unique identifier of the dataProvider used to fill the table. |
+| [option.autoSelect] | <code>Boolean</code> | <code>true</code> | If true the table will automatically load the data from the dataProvider. If false is will wait for the load command. |
+| [option. targetPage] | <code>String</code> |  | Unique identifier of the page which will become active when a row is selected. |
+| [option.header] | <code>String</code> | <code>fixed</code> | Defines the header location:  `fixed` Attaches the header to the top of the page. `inline` Attaches the header to the top of the table location. `none` No header. |
+| [option.treeData] | <code>Boolean</code> | <code>false</code> | Indicates if the data should be treated as a tree structure. If the dataProvider is selected as treeData=true then the table inherets the value. |
+| [option.rootLabel] | <code>String</code> |  | The label used to display in the root row. |
+| [option.noRoot] | <code>Boolean</code> | <code>false</code> | Defines if the Root will be an editable row. Default is NO. |
+| [option.multiRoot] | <code>Boolean</code> | <code>false</code> | Defines if tree will support multiple root branches. Default is NO, just one root. |
+| [option.iconOpen] | <code>String</code> |  | The icon showing an open branch if treeData if true. The default value is `fas fa-minus-square` from Fontawesome. |
+| [option.iconClose] | <code>String</code> |  | The icon showing a close branch if treeData if true. The default value is `fas fa-plus-square` from Fontawesome. |
+| [option.iconEmpy] | <code>String</code> |  | The icon showing an end branch if treeData if true. Empty by default. |
+| [option.collapsable] | <code>Integer</code> |  | Indicates the tree can collapose. |
+| [option.collapsedLevel] | <code>Integer</code> |  | Indicates the number of open levels. Other levels will remain closed. |
+| [option.selectable] | <code>Boolean</code> | <code>true</code> | If true the row will change color when selected. |
+| [option.dpSearch] | <code>Boolean</code> | <code>false</code> | If false the search is done in the loaded data. If true the search leads to a dataProvider reload. It can also received the name of the DataProvider to be loaded. |
+| [option.input] | <code>Boolean</code> | <code>false</code> | If true it will create input fields for the configured columns. |
 
 <a name="Table+on"></a>
 
@@ -251,6 +255,23 @@ Gets the data primary key.
 Gets the primary key's value of the selected row.
 
 **Kind**: instance method of [<code>Table</code>](#Table)  
+<a name="Table+selectRow"></a>
+
+## selectRow(index)
+Select table row bases on the table row index
+
+**Kind**: instance method of [<code>Table</code>](#Table)  
+
+| Param | Description |
+| --- | --- |
+| index | The table row index |
+
+<a name="Table+selectUp"></a>
+
+## selectUp()
+Selects the row up from the currently selected row.
+
+**Kind**: instance method of [<code>Table</code>](#Table)  
 <a name="Table+Event_beforeLoad"></a>
 
 ## "Event:beforeLoad"
@@ -269,3 +290,16 @@ Event triggered after the table content is loaded. Created with the ```Table.on(
 Event triggered after an error. Created with the ```Table.on("error", function(){})``` method.
 
 **Kind**: event emitted by [<code>Table</code>](#Table)  
+<a name="Table+Event_click"></a>
+
+## "Event:click" (coldIndex, dbIndex, mouseEvent)
+Event triggered when a row is clicked. Created with the ```Table.on("click", function(colIndex, dpIndex, mouseEvent){})``` method.
+
+**Kind**: event emitted by [<code>Table</code>](#Table)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| coldIndex | <code>Integer</code> | The column clicked. The first one is 0. |
+| dbIndex | <code>Integer</code> | The dataProvider index of the selected row. |
+| mouseEvent | <code>Object</code> | The mouse click even object. |
+

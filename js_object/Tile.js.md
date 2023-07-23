@@ -12,13 +12,14 @@ The Tile Class provides properties, methods, and events to interface with the HT
 
 <a name="new_Tile_new"></a>
 
-## new Tile(id)
+## new Tile(id, option)
 Returns a Tile instance.
 
 
 | Param | Type | Description |
 | --- | --- | --- |
 | id | <code>String</code> | Unique identifier. |
+| option | <code>Object</code> | Object containing the configuration. |
 | [option.dataSource] | <code>String</code> | Unique identifier of the dataProvider used to fill the Tile. |
 | [option.columns] | <code>String</code> | The number of tiles to define a row's columns. All tiles will be group in rows. |
 | [option.rowClass] | <code>String</code> | The CSS class used by the row div. This only works when the column property is moren than 0. |
