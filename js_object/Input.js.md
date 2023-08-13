@@ -300,10 +300,10 @@ Sets the Input's visible status.
 Executes a validation process. Returns 0 if no errors and 1 if found errors.
 
 **Kind**: instance method of [<code>Input</code>](#Input)  
-<a name=Input+on_afterInit"></a>
+<a name="Input+Event_afterInit"></a>
 
-## on:afterInit" (Input)
-on triggered after the Input element has been initialized. Created with the ```Input.on(afterInit", function(Input){})``` method.
+## on:afterInit (Input)
+Event triggered after the Input element has been initialized. Created with the ```Input.on("afterInit", function(Input){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 
@@ -311,10 +311,10 @@ on triggered after the Input element has been initialized. Created with the ```I
 | --- | --- | --- |
 | Input | <code>Object</code> | Reference to the Input. |
 
-<a name=Input+on_afterLoad"></a>
+<a name="Input+Event_afterLoad"></a>
 
-## on:afterLoad" ($value)
-on triggered when the Input's value has been loaded from the dataSource. Created with the ```Input.on(afterLoad", function($value){})``` method.
+## on:afterLoad ($value)
+Event triggered when the Input's value has been loaded from the dataSource. Created with the ```Input.on("afterLoad", function($value){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 
@@ -322,10 +322,10 @@ on triggered when the Input's value has been loaded from the dataSource. Created
 | --- | --- | --- |
 | $value | <code>Object</code> | The JQuery instance to the input HTML element. |
 
-<a name=Input+on_afterUpload"></a>
+<a name="Input+Event_afterUpload"></a>
 
-## on:afterUpload" (Input, status, xhr)
-on triggered after a file is uploaded. Created with the ```Input.on(afterUpload", function(Input, status, xhr){})``` method.
+## on:afterUpload (Input, status, xhr)
+Event triggered after a file is uploaded. Created with the ```Input.on("afterUpload", function(Input, status, xhr){})``` method.
 Returnning false will cancel the update process.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
@@ -336,10 +336,10 @@ Returnning false will cancel the update process.
 | status | <code>Boolean</code> | The upload process status: true is success and fasle is failure. |
 | xhr | <code>Object</code> | The operation javascript object. |
 
-<a name=Input+on_beforeUpload"></a>
+<a name="Input+Event_beforeUpload"></a>
 
-## on:beforeUpload" (Input, formData, fileName, fileSize)
-on triggered before a file is uploaded. Created with the ```Input.on(beforeUpload", function(Input, formData, fileName, fileSize){})``` method.
+## on:beforeUpload (Input, formData, fileName, fileSize)
+Event triggered before a file is uploaded. Created with the ```Input.on("beforeUpload", function(Input, formData, fileName, fileSize){})``` method.
 Returnning false will cancel the update process.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
@@ -351,21 +351,10 @@ Returnning false will cancel the update process.
 | fileName | <code>String</code> | The name of the file to be uploaded. |
 | fileSize | <code>Integer</code> | The file's size. |
 
-<a name=Input+on_change"></a>
+<a name="Input+Event_change"></a>
 
-## on:change" (Input)
-on triggered when the Input's value has changed. Created with the ```Input.on(change", function(Input){})``` method.
-
-**Kind**: event emitted by [<code>Input</code>](#Input)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| Input | <code>Object</code> | Reference to the Input. |
-
-<a name=Input+on_click"></a>
-
-## on:click" (Input)
-on triggered when a Button Input is clicked in data entry mode. Created with the ```Input.on(click", function(Input){})``` method.
+## on:change (Input)
+Event triggered when the Input's value has changed. Created with the ```Input.on("change", function(Input){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 
@@ -373,22 +362,33 @@ on triggered when a Button Input is clicked in data entry mode. Created with the
 | --- | --- | --- |
 | Input | <code>Object</code> | Reference to the Input. |
 
-<a name=Input+on_clickDownload"></a>
+<a name="Input+Event_click"></a>
 
-## on:clickDownload"
-on triggered when input's download button is clicked. Created with the ```Input.on(clickDownload", function(){})``` method.
-
-**Kind**: event emitted by [<code>Input</code>](#Input)  
-<a name=Input+on_clickPreview"></a>
-
-## on:clickPreview"
-on triggered when input's preview button is clicked. Created with the ```Input.on(clickPreview", function(){})``` method.
+## on:click (Input)
+Event triggered when a Button Input is clicked in data entry mode. Created with the ```Input.on("click", function(Input){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
-<a name=Input+on_getValue"></a>
 
-## on:getValue" ($value)
-on triggered when the Input's value is requested. Created with the ```Input.on(getValue", function($value){})``` method.
+| Param | Type | Description |
+| --- | --- | --- |
+| Input | <code>Object</code> | Reference to the Input. |
+
+<a name="Input+Event_clickDownload"></a>
+
+## on:clickDownload
+Event triggered when input's download button is clicked. Created with the ```Input.on("clickDownload", function(){})``` method.
+
+**Kind**: event emitted by [<code>Input</code>](#Input)  
+<a name="Input+Event_clickPreview"></a>
+
+## on:clickPreview
+Event triggered when input's preview button is clicked. Created with the ```Input.on("clickPreview", function(){})``` method.
+
+**Kind**: event emitted by [<code>Input</code>](#Input)  
+<a name="Input+Event_getValue"></a>
+
+## on:getValue ($value)
+Event triggered when the Input's value is requested. Created with the ```Input.on("getValue", function($value){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 
@@ -396,10 +396,10 @@ on triggered when the Input's value is requested. Created with the ```Input.on(g
 | --- | --- | --- |
 | $value | <code>Object</code> | The JQuery instance to the input HTML element. |
 
-<a name=Input+on_keyup"></a>
+<a name="Input+Event_keyup"></a>
 
-## on:keyup" (event, Input)
-on triggered at input's keyboard keyup event. Created with the ```Input.on(click", function(even,Input){})``` method.
+## on:keyup (event, Input)
+Event triggered at input's keyboard keyup event. Created with the ```Input.on("click", function(even,Input){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 
@@ -408,10 +408,10 @@ on triggered at input's keyboard keyup event. Created with the ```Input.on(click
 | event | <code>Object</code> | The Keyboard event. |
 | Input | <code>Object</code> | Reference to the Input. |
 
-<a name=Input+on_modeChange"></a>
+<a name="Input+Event_modeChange"></a>
 
-## on:modeChange" (mode, $text, $value)
-on triggered when the Input's mode changes. Created with the ```Input.on(onChange", function(mode,$text,$vale){})``` method.
+## on:modeChange (mode, $text, $value)
+Event triggered when the Input's mode changes. Created with the ```Input.on("onChange", function(mode,$text,$vale){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 
@@ -421,10 +421,10 @@ on triggered when the Input's mode changes. Created with the ```Input.on(onChang
 | $text | <code>Object</code> | JQuery reference to the input displayed text. |
 | $value | <code>Object</code> | JQuery reference to the inputs input HTML element. |
 
-<a name=Input+on_onValidation"></a>
+<a name="Input+Event_onValidation"></a>
 
-## on:onValidation" (type, value)
-on triggered when a Inputs is validated. Created with the ```Input.on(click", function(type,value){})``` method.
+## on:onValidation (type, value)
+Event triggered when a Inputs is validated. Created with the ```Input.on("click", function(type,value){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 
@@ -433,10 +433,10 @@ on triggered when a Inputs is validated. Created with the ```Input.on(click", fu
 | type | <code>String</code> | The Input's type. |
 | value | <code>String</code> | The input's entered value. |
 
-<a name=Input+on_setValue"></a>
+<a name="Input+Event_setValue"></a>
 
-## on:setValue" (value, $value)
-on triggered when the Input's value is set. Created with the ```Input.on(setValue", function(value, $value){})``` method.
+## on:setValue (value, $value)
+Event triggered when the Input's value is set. Created with the ```Input.on("setValue", function(value, $value){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 
@@ -445,10 +445,10 @@ on triggered when the Input's value is set. Created with the ```Input.on(setValu
 | value | <code>String</code> | The value entered. |
 | $value | <code>Object</code> | The JQuery instance to the input HTML element. |
 
-<a name=Input+on_timer"></a>
+<a name="Input+Event_timer"></a>
 
-## on:timer" (value, Input)
-on triggered when the Input's data entry timer concludes. Created with the ```Input.on(timer", function(value, Input){})``` method.
+## on:timer (value, Input)
+Event triggered when the Input's data entry timer concludes. Created with the ```Input.on("timer", function(value, Input){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 

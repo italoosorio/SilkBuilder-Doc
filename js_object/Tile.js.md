@@ -57,22 +57,10 @@ Extends the "on" method from the eventManager Class.
 | eventName | <code>String</code> | The event's name. |
 | eventFunction | <code>function</code> | The function to be triggered. |
 
-<a name=Tile+on_afterLoad"></a>
+<a name="Tile+Event_afterLoad"></a>
 
-## on:afterLoad" (action, operationIndex)
-on triggered before the table content is loaded. Created with the ```Table.on(beforeLoad", function(){})``` method.
-
-**Kind**: event emitted by [<code>Tile</code>](#Tile)  
-
-| Param | Description |
-| --- | --- |
-| action | The executed action. |
-| operationIndex | The index affecting the dataProvider. |
-
-<a name=Tile+on_beforeLoad"></a>
-
-## on:beforeLoad" (action, operationIndex)
-on triggered before the table content is loaded. Created with the ```Table.on(beforeLoad", function(){})``` method.
+## on:afterLoad (action, operationIndex)
+Event triggered before the table content is loaded. Created with the ```Table.on("beforeLoad", function(){})``` method.
 
 **Kind**: event emitted by [<code>Tile</code>](#Tile)  
 
@@ -81,10 +69,22 @@ on triggered before the table content is loaded. Created with the ```Table.on(be
 | action | The executed action. |
 | operationIndex | The index affecting the dataProvider. |
 
-<a name=Tile+on_click"></a>
+<a name="Tile+Event_beforeLoad"></a>
 
-## on:click" (item, $content, dpIndex, rowIndex, event)
-on triggered when a tile cell is clicked. Created with the ```Tile.on(click", function(item,$content,dpIndex,rowIndex,event){})``` method.
+## on:beforeLoad (action, operationIndex)
+Event triggered before the table content is loaded. Created with the ```Table.on("beforeLoad", function(){})``` method.
+
+**Kind**: event emitted by [<code>Tile</code>](#Tile)  
+
+| Param | Description |
+| --- | --- |
+| action | The executed action. |
+| operationIndex | The index affecting the dataProvider. |
+
+<a name="Tile+Event_click"></a>
+
+## on:click (item, $content, dpIndex, rowIndex, event)
+Event triggered when a tile cell is clicked. Created with the ```Tile.on("click", function(item,$content,dpIndex,rowIndex,event){})``` method.
 
 **Kind**: event emitted by [<code>Tile</code>](#Tile)  
 

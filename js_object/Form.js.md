@@ -79,9 +79,9 @@ Fills the input with data from dataSource.
 Gets the set form's action.
 
 **Kind**: instance method of [<code>Form</code>](#Form)  
-<a name=Form+getonList"></a>
+<a name="Form+getEventList"></a>
 
-## getonList() ⇒ <code>Array</code>
+## getEventList() ⇒ <code>Array</code>
 Returns the list of event loaded.
 
 **Kind**: instance method of [<code>Form</code>](#Form)  
@@ -213,27 +213,10 @@ If parameter is not provided it sets read only.
 Sets the Form an update operation
 
 **Kind**: instance method of [<code>Form</code>](#Form)  
-<a name=Form+on_afterLoad"></a>
+<a name="Form+Event_afterLoad"></a>
 
-## on:afterLoad" (action)
-on triggered after the Form load the data from dataSource. Created with the ```Form.on(afterLoad", function(){})``` method.
-
-**Kind**: event emitted by [<code>Form</code>](#Form)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| action | <code>String</code> | The executed action. |
-
-<a name=Form+on_afterModeChange"></a>
-
-## on:afterModeChange"
-on triggered before the mode (editing, reading) changes. Created with the ```Form.on(afterModeChange", function(){})``` method.
-
-**Kind**: event emitted by [<code>Form</code>](#Form)  
-<a name=Form+on_beforeLoad"></a>
-
-## on:beforeLoad" (action)
-on triggered before the Form load the data from dataSource. Created with the ```Form.on(beforeLoad", function(){})``` method.
+## on:afterLoad (action)
+Event triggered after the Form load the data from dataSource. Created with the ```Form.on("afterLoad", function(){})``` method.
 
 **Kind**: event emitted by [<code>Form</code>](#Form)  
 
@@ -241,46 +224,63 @@ on triggered before the Form load the data from dataSource. Created with the ```
 | --- | --- | --- |
 | action | <code>String</code> | The executed action. |
 
-<a name=Form+on_beforeModeChange"></a>
+<a name="Form+Event_afterModeChange"></a>
 
-## on:beforeModeChange"
-on triggered before the mode (editing, reading) changes. Created with the ```Form.on(beforeModeChange", function(){})``` method.
-
-**Kind**: event emitted by [<code>Form</code>](#Form)  
-<a name=Form+on_beforeSubmit"></a>
-
-## on:beforeSubmit"
-on triggered before data is submited. If it return false the process is canceled. Created with the ```Form.on(beforeSubmit", function(){})``` method.
+## on:afterModeChange
+Event triggered before the mode (editing, reading) changes. Created with the ```Form.on("afterModeChange", function(){})``` method.
 
 **Kind**: event emitted by [<code>Form</code>](#Form)  
-<a name=Form+on_cancel"></a>
+<a name="Form+Event_beforeLoad"></a>
 
-## on:cancel"
-on triggered before the Form is set for a cancel. If function return false the process is canceled. Created with the ```Form.on(cancel", function(){})``` method.
-
-**Kind**: event emitted by [<code>Form</code>](#Form)  
-<a name=Form+on_change"></a>
-
-## on:change"
-on triggered inputs values change. Created with the ```Form.on(change", function(){})``` method.
+## on:beforeLoad (action)
+Event triggered before the Form load the data from dataSource. Created with the ```Form.on("beforeLoad", function(){})``` method.
 
 **Kind**: event emitted by [<code>Form</code>](#Form)  
-<a name=Form+on_delete"></a>
 
-## on:delete"
-on triggered before the Form is set for a delete. If function return false the process is canceled. Created with the ```Form.on(delete", function(){})``` method.
+| Param | Type | Description |
+| --- | --- | --- |
+| action | <code>String</code> | The executed action. |
+
+<a name="Form+Event_beforeModeChange"></a>
+
+## on:beforeModeChange
+Event triggered before the mode (editing, reading) changes. Created with the ```Form.on("beforeModeChange", function(){})``` method.
 
 **Kind**: event emitted by [<code>Form</code>](#Form)  
-<a name=Form+on_error"></a>
+<a name="Form+Event_beforeSubmit"></a>
 
-## on:error"
-on triggered after an error loading the data. Created with the ```Form.on(error", function(){})``` method.
+## on:beforeSubmit
+Event triggered before data is submited. If it return false the process is canceled. Created with the ```Form.on("beforeSubmit", function(){})``` method.
 
 **Kind**: event emitted by [<code>Form</code>](#Form)  
-<a name=Form+on_FormErrors"></a>
+<a name="Form+Event_cancel"></a>
 
-## on:FormErrors" (inputList)
-on triggered when Form's inputs have errors.  Created with the ```Form.on(formErrors", function(){})``` method.
+## on:cancel
+Event triggered before the Form is set for a cancel. If function return false the process is canceled. Created with the ```Form.on("cancel", function(){})``` method.
+
+**Kind**: event emitted by [<code>Form</code>](#Form)  
+<a name="Form+Event_change"></a>
+
+## on:change
+Event triggered inputs values change. Created with the ```Form.on("change", function(){})``` method.
+
+**Kind**: event emitted by [<code>Form</code>](#Form)  
+<a name="Form+Event_delete"></a>
+
+## on:delete
+Event triggered before the Form is set for a delete. If function return false the process is canceled. Created with the ```Form.on("delete", function(){})``` method.
+
+**Kind**: event emitted by [<code>Form</code>](#Form)  
+<a name="Form+Event_error"></a>
+
+## on:error
+Event triggered after an error loading the data. Created with the ```Form.on("error", function(){})``` method.
+
+**Kind**: event emitted by [<code>Form</code>](#Form)  
+<a name="Form+Event_FormErrors"></a>
+
+## on:FormErrors (inputList)
+Event triggered when Form's inputs have errors.  Created with the ```Form.on("formErrors", function(){})``` method.
 
 **Kind**: event emitted by [<code>Form</code>](#Form)  
 
@@ -288,22 +288,22 @@ on triggered when Form's inputs have errors.  Created with the ```Form.on(formEr
 | --- | --- | --- |
 | inputList | <code>Array</code> | The list of iputs with errors. |
 
-<a name=Form+on_insert"></a>
+<a name="Form+Event_insert"></a>
 
-## on:insert"
-on triggered before the Form is set for an insert. If function return false the process is canceled. Created with the ```Form.on(insert", function(){})``` method.
-
-**Kind**: event emitted by [<code>Form</code>](#Form)  
-<a name=Form+on_submit"></a>
-
-## on:submit"
-on triggered before the Form is set for a submit. If function return false the process is canceled. Created with the ```Form.on(submit", function(){})``` method.
+## on:insert
+Event triggered before the Form is set for an insert. If function return false the process is canceled. Created with the ```Form.on("insert", function(){})``` method.
 
 **Kind**: event emitted by [<code>Form</code>](#Form)  
-<a name=Form+on_update"></a>
+<a name="Form+Event_submit"></a>
 
-## on:update"
-on triggered before the Form is set for an update. If function return false the process is canceled. Created with the ```Form.on(update", function(){})``` method.
+## on:submit
+Event triggered before the Form is set for a submit. If function return false the process is canceled. Created with the ```Form.on("submit", function(){})``` method.
+
+**Kind**: event emitted by [<code>Form</code>](#Form)  
+<a name="Form+Event_update"></a>
+
+## on:update
+Event triggered before the Form is set for an update. If function return false the process is canceled. Created with the ```Form.on("update", function(){})``` method.
 
 **Kind**: event emitted by [<code>Form</code>](#Form)  
 

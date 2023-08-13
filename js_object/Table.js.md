@@ -283,22 +283,22 @@ Sorts the data by the provided column
 | --- | --- | --- |
 | column | <code>String</code> | Column to sort |
 
-<a name=Table+on_afterLoad"></a>
+<a name="Table+Event_afterLoad"></a>
 
-## on:afterLoad"
-on triggered after the table content is loaded. Created with the ```Table.on(afterLoad", function(){})``` method.
-
-**Kind**: event emitted by [<code>Table</code>](#Table)  
-<a name=Table+on_beforeLoad"></a>
-
-## on:beforeLoad"
-on triggered before the table content is loaded. Created with the ```Table.on(beforeLoad", function(){})``` method.
+## on:afterLoad
+Event triggered after the table content is loaded. Created with the ```Table.on("afterLoad", function(){})``` method.
 
 **Kind**: event emitted by [<code>Table</code>](#Table)  
-<a name=Table+on_click"></a>
+<a name="Table+Event_beforeLoad"></a>
 
-## on:click" (coldIndex, dbIndex, mouseEvent)
-on triggered when a row is clicked. Created with the ```Table.on(click", function(colIndex, dpIndex, mouseEvent){})``` method.
+## on:beforeLoad
+Event triggered before the table content is loaded. Created with the ```Table.on("beforeLoad", function(){})``` method.
+
+**Kind**: event emitted by [<code>Table</code>](#Table)  
+<a name="Table+Event_click"></a>
+
+## on:click (coldIndex, dbIndex, mouseEvent)
+Event triggered when a row is clicked. Created with the ```Table.on("click", function(colIndex, dpIndex, mouseEvent){})``` method.
 
 **Kind**: event emitted by [<code>Table</code>](#Table)  
 
@@ -306,12 +306,12 @@ on triggered when a row is clicked. Created with the ```Table.on(click", functio
 | --- | --- | --- |
 | coldIndex | <code>Integer</code> | The column clicked. The first one is 0. |
 | dbIndex | <code>Integer</code> | The dataProvider index of the selected row. |
-| mouseon | <code>Object</code> | The mouse click even object. |
+| mouseEvent | <code>Object</code> | The mouse click even object. |
 
-<a name=Table+on_error"></a>
+<a name="Table+Event_error"></a>
 
-## on:error"
-on triggered after an error. Created with the ```Table.on(error", function(){})``` method.
+## on:error
+Event triggered after an error. Created with the ```Table.on("error", function(){})``` method.
 
 **Kind**: event emitted by [<code>Table</code>](#Table)  
 

@@ -87,22 +87,22 @@ Sets the header title of the modal dialog.
 Shows or opens the modal dialog.
 
 **Kind**: instance method of [<code>Modal</code>](#Modal)  
-<a name=Modal+on_beforeShow"></a>
+<a name="Modal+Event_beforeShow"></a>
 
-## on:beforeShow"
-on triggered before the Modal is showed. Created with the ```Modal.on(beforeShow", function(){})``` method.
-
-**Kind**: event emitted by [<code>Modal</code>](#Modal)  
-<a name=Modal+on_close"></a>
-
-## on:close"
-on triggered when the Modal is hide or closed. Created with the ```Modal.on(close", function(){})``` method.
+## on:beforeShow
+Event triggered before the Modal is showed. Created with the ```Modal.on("beforeShow", function(){})``` method.
 
 **Kind**: event emitted by [<code>Modal</code>](#Modal)  
-<a name=Modal+on_show"></a>
+<a name="Modal+Event_close"></a>
 
-## on:show"
-on triggered when the Modal is showed. Created with the ```Modal.on(show", function(){})``` method.
+## on:close
+Event triggered when the Modal is hide or closed. Created with the ```Modal.on("close", function(){})``` method.
+
+**Kind**: event emitted by [<code>Modal</code>](#Modal)  
+<a name="Modal+Event_show"></a>
+
+## on:show
+Event triggered when the Modal is showed. Created with the ```Modal.on("show", function(){})``` method.
 
 **Kind**: event emitted by [<code>Modal</code>](#Modal)  
 

@@ -417,22 +417,22 @@ Executes an UPDATE request. Operation items should be added before calling this 
 | --- | --- | --- |
 | recordIndex | <code>ingeger</code> | (optional) The index of the item to be updated |
 
-<a name=DataProvider+on_afterBatch"></a>
+<a name="DataProvider+Event_afterBatch"></a>
 
-## on:afterBatch"
-on triggered after the batch action is executed. Created with the ```DataProvider.on(afterBatch", function(){})``` method.
-
-**Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
-<a name=DataProvider+on_afterDelete"></a>
-
-## on:afterDelete"
-on triggered after the delete action is executed. Created with the ```DataProvider.on(afterDelete", function(){})``` method.
+## on:afterBatch
+Event triggered after the batch action is executed. Created with the ```DataProvider.on("afterBatch", function(){})``` method.
 
 **Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
-<a name=DataProvider+on_afterExec"></a>
+<a name="DataProvider+Event_afterDelete"></a>
 
-## on:afterExec" ([operation])
-on triggered after the exec action is executed. Created with the ```DataProvider.on(afterExec", function(){})``` method.
+## on:afterDelete
+Event triggered after the delete action is executed. Created with the ```DataProvider.on("afterDelete", function(){})``` method.
+
+**Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
+<a name="DataProvider+Event_afterExec"></a>
+
+## on:afterExec ([operation])
+Event triggered after the exec action is executed. Created with the ```DataProvider.on("afterExec", function(){})``` method.
 
 **Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
 
@@ -440,16 +440,16 @@ on triggered after the exec action is executed. Created with the ```DataProvider
 | --- | --- | --- |
 | [operation] | <code>String</code> | The operation to be executed. |
 
-<a name=DataProvider+on_afterInsert"></a>
+<a name="DataProvider+Event_afterInsert"></a>
 
-## on:afterInsert"
-on triggered after the insert action is executed. Created with the ```DataProvider.on(afterInsert", function(){})``` method.
+## on:afterInsert
+Event triggered after the insert action is executed. Created with the ```DataProvider.on("afterInsert", function(){})``` method.
 
 **Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
-<a name=DataProvider+on_afterLoad"></a>
+<a name="DataProvider+Event_afterLoad"></a>
 
-## on:afterLoad" ([action], [operation])
-on triggered after the load action is executed. Created with the ```DataProvider.on(afterLoad", function(action,operation){})``` method.
+## on:afterLoad ([action], [operation])
+Event triggered after the load action is executed. Created with the ```DataProvider.on("afterLoad", function(action,operation){})``` method.
 
 **Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
 
@@ -458,10 +458,10 @@ on triggered after the load action is executed. Created with the ```DataProvider
 | [action] | <code>String</code> | The action to be executed. |
 | [operation] | <code>String</code> | The operation to be executed. |
 
-<a name=DataProvider+on_afterSelect"></a>
+<a name="DataProvider+Event_afterSelect"></a>
 
-## on:afterSelect" ([selectName])
-on triggered after the select action is executed. Created with the ```DataProvider.on(afterSelect", function(selectName){})``` method.
+## on:afterSelect ([selectName])
+Event triggered after the select action is executed. Created with the ```DataProvider.on("afterSelect", function(selectName){})``` method.
 
 **Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
 
@@ -469,28 +469,28 @@ on triggered after the select action is executed. Created with the ```DataProvid
 | --- | --- | --- |
 | [selectName] | <code>String</code> | The name of the select with in the ORM to be executed. |
 
-<a name=DataProvider+on_afterUpdate"></a>
+<a name="DataProvider+Event_afterUpdate"></a>
 
-## on:afterUpdate"
-on triggered after the update action is executed. Created with the ```DataProvider.on(afterUpdate", function(){})``` method.
-
-**Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
-<a name=DataProvider+on_beforeBatch"></a>
-
-## on:beforeBatch"
-on triggered before the batch action is executed. Created with the ```DataProvider.on(beforeBatch", function(){})``` method.
+## on:afterUpdate
+Event triggered after the update action is executed. Created with the ```DataProvider.on("afterUpdate", function(){})``` method.
 
 **Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
-<a name=DataProvider+on_beforeDelete"></a>
+<a name="DataProvider+Event_beforeBatch"></a>
 
-## on:beforeDelete"
-on triggered before the delete action is executed. Created with the ```DataProvider.on(beforeDelete", function(){})``` method.
+## on:beforeBatch
+Event triggered before the batch action is executed. Created with the ```DataProvider.on("beforeBatch", function(){})``` method.
 
 **Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
-<a name=DataProvider+on_beforeExec"></a>
+<a name="DataProvider+Event_beforeDelete"></a>
 
-## on:beforeExec" ([operation])
-on triggered before the exec action is executed. Created with the ```DataProvider.on(beforeExec", function(){})``` method.
+## on:beforeDelete
+Event triggered before the delete action is executed. Created with the ```DataProvider.on("beforeDelete", function(){})``` method.
+
+**Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
+<a name="DataProvider+Event_beforeExec"></a>
+
+## on:beforeExec ([operation])
+Event triggered before the exec action is executed. Created with the ```DataProvider.on("beforeExec", function(){})``` method.
 
 **Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
 
@@ -498,16 +498,16 @@ on triggered before the exec action is executed. Created with the ```DataProvide
 | --- | --- | --- |
 | [operation] | <code>String</code> | The operation to be executed. |
 
-<a name=DataProvider+on_beforeInsert"></a>
+<a name="DataProvider+Event_beforeInsert"></a>
 
-## on:beforeInsert"
-on triggered before the insert action is executed. Created with the ```DataProvider.on(beforeInsert", function(){})``` method.
+## on:beforeInsert
+Event triggered before the insert action is executed. Created with the ```DataProvider.on("beforeInsert", function(){})``` method.
 
 **Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
-<a name=DataProvider+on_beforeLoad"></a>
+<a name="DataProvider+Event_beforeLoad"></a>
 
-## on:beforeLoad" ([action], [operation])
-on triggered before the load action is executed. Created with the ```DataProvider.on(beforeLoad", function(action,operation){})``` method.
+## on:beforeLoad ([action], [operation])
+Event triggered before the load action is executed. Created with the ```DataProvider.on("beforeLoad", function(action,operation){})``` method.
 
 **Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
 
@@ -516,21 +516,10 @@ on triggered before the load action is executed. Created with the ```DataProvide
 | [action] | <code>String</code> | The action to be executed. |
 | [operation] | <code>String</code> | The operation to be executed. |
 
-<a name=DataProvider+on_beforeRecordSync"></a>
+<a name="DataProvider+Event_beforeRecordSync"></a>
 
-## on:beforeRecordSync" ([selectName])
-on triggered before the record sync action is executed. Created with the ```DataProvider.on(beforeRecordSync", function(selectName){})``` method.
-
-**Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| [selectName] | <code>String</code> | The name of the select with in the ORM to be executed. |
-
-<a name=DataProvider+on_beforeSelect"></a>
-
-## on:beforeSelect" ([selectName])
-on triggered before the select action is executed. Created with the ```DataProvider.on(beforeSelect", function(selectName){})``` method.
+## on:beforeRecordSync ([selectName])
+Event triggered before the record sync action is executed. Created with the ```DataProvider.on("beforeRecordSync", function(selectName){})``` method.
 
 **Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
 
@@ -538,16 +527,27 @@ on triggered before the select action is executed. Created with the ```DataProvi
 | --- | --- | --- |
 | [selectName] | <code>String</code> | The name of the select with in the ORM to be executed. |
 
-<a name=DataProvider+on_beforeUpdate"></a>
+<a name="DataProvider+Event_beforeSelect"></a>
 
-## on:beforeUpdate"
-on triggered before the update action is executed. Created with the ```DataProvider.on(beforeUpdate", function(){})``` method.
+## on:beforeSelect ([selectName])
+Event triggered before the select action is executed. Created with the ```DataProvider.on("beforeSelect", function(selectName){})``` method.
 
 **Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
-<a name=DataProvider+on_error"></a>
 
-## on:error" (error)
-on triggered when an error has occurred. Created with the ```DataProvider.on(error", function(errorObject){})``` method.
+| Param | Type | Description |
+| --- | --- | --- |
+| [selectName] | <code>String</code> | The name of the select with in the ORM to be executed. |
+
+<a name="DataProvider+Event_beforeUpdate"></a>
+
+## on:beforeUpdate
+Event triggered before the update action is executed. Created with the ```DataProvider.on("beforeUpdate", function(){})``` method.
+
+**Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
+<a name="DataProvider+Event_error"></a>
+
+## on:error (error)
+Event triggered when an error has occurred. Created with the ```DataProvider.on("error", function(errorObject){})``` method.
 If the event returns an object this will replaced the existing returnObject.
 
 **Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
@@ -556,10 +556,10 @@ If the event returns an object this will replaced the existing returnObject.
 | --- | --- | --- |
 | error | <code>Object</code> | The returned error object. |
 
-<a name=DataProvider+on_processLoadedData"></a>
+<a name="DataProvider+Event_processLoadedData"></a>
 
-## on:processLoadedData" (returnObject) ⇒ <code>Object</code>
-on triggered when the extracted data is being processed. Created with the ```DataProvider.on(processLoadedData", function(returnObject){})``` method.
+## on:processLoadedData (returnObject) ⇒ <code>Object</code>
+Event triggered when the extracted data is being processed. Created with the ```DataProvider.on("processLoadedData", function(returnObject){})``` method.
 If the event returns an object this will replaced the existing returnObject.
 
 **Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  

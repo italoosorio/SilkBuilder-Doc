@@ -94,10 +94,10 @@ Sets the page title if the page is using a header.
 Makes a page visible and the active one.
 
 **Kind**: instance method of [<code>SilkPage</code>](#SilkPage)  
-<a name=SilkPage+on_show"></a>
+<a name="SilkPage+Event_show"></a>
 
-## on:show"
-on triggered when the page becomes active. Created with the ```SilkPage.on(show", function(){})``` method.
+## on:show
+Event triggered when the page becomes active. Created with the ```SilkPage.on("show", function(){})``` method.
 
 **Kind**: event emitted by [<code>SilkPage</code>](#SilkPage)  
 

@@ -49,10 +49,10 @@ Extends the "on" method from the eventManager Class.
 | eventName | <code>String</code> | The event's name. |
 | eventFunction | <code>function</code> | The function to be triggered. |
 
-<a name=Pagination+on_click"></a>
+<a name="Pagination+Event_click"></a>
 
-## on:click"
-on triggered when a page button is clicked. Created with the ```Pagination.on(click", function(){})``` method.
+## on:click
+Event triggered when a page button is clicked. Created with the ```Pagination.on("click", function(){})``` method.
 
 **Kind**: event emitted by [<code>Pagination</code>](#Pagination)  
 

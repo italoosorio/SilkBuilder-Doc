@@ -86,22 +86,22 @@ Method to toggle the chart between hidden and displayed.
 | --- | --- |
 | mode | True is show, false is hide. |
 
-<a name=ChartJS+on_afterLoad"></a>
+<a name="ChartJS+Event_afterLoad"></a>
 
-## on:afterLoad"
-on triggered after ChartJS has loaded data. Created with the ```ChartJS.on(afterLoad", function(){})``` method.
-
-**Kind**: event emitted by [<code>ChartJS</code>](#ChartJS)  
-<a name=ChartJS+on_beforeLoad"></a>
-
-## on:beforeLoad"
-on triggered before the ChartJS loads data. Created with the ```ChartJS.on(beforeLoad", function(){})``` method.
+## on:afterLoad
+Event triggered after ChartJS has loaded data. Created with the ```ChartJS.on("afterLoad", function(){})``` method.
 
 **Kind**: event emitted by [<code>ChartJS</code>](#ChartJS)  
-<a name=ChartJS+on_click"></a>
+<a name="ChartJS+Event_beforeLoad"></a>
 
-## on:click" (index, value, label)
-on triggered when a ChartJS data segment is clicked. Created with the ```ChartJS.on(click", function(index,value,label){})``` method.
+## on:beforeLoad
+Event triggered before the ChartJS loads data. Created with the ```ChartJS.on("beforeLoad", function(){})``` method.
+
+**Kind**: event emitted by [<code>ChartJS</code>](#ChartJS)  
+<a name="ChartJS+Event_click"></a>
+
+## on:click (index, value, label)
+Event triggered when a ChartJS data segment is clicked. Created with the ```ChartJS.on("click", function(index,value,label){})``` method.
 
 **Kind**: event emitted by [<code>ChartJS</code>](#ChartJS)  
 
@@ -111,10 +111,10 @@ on triggered when a ChartJS data segment is clicked. Created with the ```ChartJS
 | value | <code>Numeric</code> | The numeric value of the selected element. |
 | label | <code>String</code> | The label of the selected element. |
 
-<a name=ChartJS+on_resize"></a>
+<a name="ChartJS+Event_resize"></a>
 
-## on:resize" (size)
-on triggered when a ChartJS get resized. Created with the ```ChartJS.on(resize", function(size){})``` method.
+## on:resize (size)
+Event triggered when a ChartJS get resized. Created with the ```ChartJS.on("resize", function(size){})``` method.
 
 **Kind**: event emitted by [<code>ChartJS</code>](#ChartJS)  
 

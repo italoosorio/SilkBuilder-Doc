@@ -108,10 +108,10 @@ Hides or shows the button based on the provided parameter.
 | --- | --- | --- |
 | status | <code>boolean</code> | True shows and false hides. |
 
-<a name=Button+on_click"></a>
+<a name="Button+Event_click"></a>
 
-## on:click"
-on triggered when the Button is clicked. Created with the ```Button.on(click", function(){})``` method.
+## on:click
+Event triggered when the Button is clicked. Created with the ```Button.on("click", function(){})``` method.
 
 **Kind**: event emitted by [<code>Button</code>](#Button)  
 
