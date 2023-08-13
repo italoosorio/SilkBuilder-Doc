@@ -16,3 +16,4 @@ The SilkBuilder JavaScript Objects are companion objects use to extent the funct
 * [Table](Table.js.md)
 * [TabsNav](TabsNav.js.md)
 * [Tile](Tile.js.md)
+* [Utility Functions](silkUtils.md)

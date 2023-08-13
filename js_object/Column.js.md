@@ -7,3 +7,4 @@ The Column Class provides properties, methods, and events to interface with the 
 ## new Column()
 Returns a Column instance.
 
+

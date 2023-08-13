@@ -71,6 +71,7 @@
   * [Table](js_object/Table.js.md)
   * [TabsNav](js_object/TabsNav.js.md)
   * [Tile](js_object/Tile.js.md)
+  * [Utility Functions](js_object/silkUtils.md)
 
 
 

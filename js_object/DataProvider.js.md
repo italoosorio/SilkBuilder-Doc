@@ -23,107 +23,74 @@ Returns a DataProvider instance.
 | [options.pkColumn] | <code>String</code> |  | The primary key column of the table accesed. |
 | [option.detailDP] | <code>String</code> |  | The name of the DataProvider which contains the detail data of the selected record. |
 
-<a name="DataProvider+langID"></a>
+<a name="DataProvider+addComponent"></a>
 
-## langID
-The langID is use to overwrite the session loaded langID.
-
-**Kind**: instance property of [<code>DataProvider</code>](#DataProvider)  
-<a name="DataProvider+on"></a>
-
-## on
-Extends the "on" method from the eventManager Class.
-
-**Kind**: instance property of [<code>DataProvider</code>](#DataProvider)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| eventName | <code>String</code> | The event's name. |
-| eventFunction | <code>function</code> | The function to be triggered. |
-
-<a name="DataProvider+selectObject"></a>
-
-## selectObject
-The ReturnObject containing the returned data from the database after a SELECT.
-
-**Kind**: instance property of [<code>DataProvider</code>](#DataProvider)  
-<a name="DataProvider+operationObject"></a>
-
-## operationObject
-The ReturnObject contaiing the returned data after INSERT, UPDATE, DELETE, EXEC, BATCH.
-
-**Kind**: instance property of [<code>DataProvider</code>](#DataProvider)  
-<a name="DataProvider+sourceType"></a>
-
-## sourceType
-Source Type:<br>
-SQL : From SQL database<br>
-Local : loaded using laodJSON method. Data is provided as part of the data provider.<br>
-JSON : data form a JSON file.
-
-**Kind**: instance property of [<code>DataProvider</code>](#DataProvider)  
-<a name="DataProvider+setTimeout"></a>
-
-## setTimeout()
-The number of milliseconds beore triggering a timeout error.
+## addComponent(component)
+Adds a component to the components list.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
-<a name="DataProvider+getService"></a>
 
-## getService()
-Gets the service path.
+| Param | Description |
+| --- | --- |
+| component | The component to be added |
+
+<a name="DataProvider+batch"></a>
+
+## batch()
+Submits multiple operations loaded into the Operations array to perform a batch request.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
-<a name="DataProvider+getSelectName"></a>
+<a name="DataProvider+clean"></a>
 
-## getSelectName()
-Gets the selectedName used to load data.
+## clean()
+Cleans the data from the returnObject.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
-<a name="DataProvider+setSelectName"></a>
+<a name="DataProvider+cleanOperations"></a>
 
-## setSelectName(newSelectName)
-Set a new selectName value
+## cleanOperations(init)
+Cleans the operation list and add a default select action
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| newSelectName | <code>String</code> | The new select name. |
+| init | <code>boolean</code> | (optional) Defaul is false. If the init parameter is true it will initialize an empty select action. This is used to initialze the request object as "select". |
 
-<a name="DataProvider+getPkColumn"></a>
+<a name="DataProvider+cleanParameters"></a>
 
-## getPkColumn()
-Gets the name of the primary key column.
-
-**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
-<a name="DataProvider+getPKValue"></a>
-
-## getPKValue()
-Gets the primary key value of the seleced data item.
+## cleanParameters()
+Cleans the parameter list from the requestObject.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
-<a name="DataProvider+getOperationItem"></a>
+<a name="DataProvider+delete"></a>
 
-## getOperationItem()
-Gets the operation Item.
-
-**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
-<a name="DataProvider+getSelectedItem"></a>
-
-## getSelectedItem(columnName)
-Gets the selected item based on the selecteIndex property. By default return the firt item if exists.
+## delete(recordIndex)
+Executes a DELETE request. Operation items should be added before calling this method.<br>
+if markDeleted is true it will execute a delete in the local data, but an update in the database.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| columnName | <code>String</code> | The column to return. If not provided return the item object. |
+| recordIndex | <code>ingeger</code> | (optional) The index of the item to be deleted |
 
-<a name="DataProvider+isTreeData"></a>
+<a name="DataProvider+exec"></a>
 
-## isTreeData()
-Return a boolean indicating if the data is set to be tree structured
+## exec(operation)
+Executes a ORM Operation. If this required parameters these should be added in the "beforeLoad" or "beforeExec" events.
+
+**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| operation | <code>String</code> | The operation name in the ORM object to be executed. |
+
+<a name="DataProvider+getComponents"></a>
+
+## getComponents()
+Returns the array containing the components which will be notify of changes in the data provider.<br>
+The component must have a load() function.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
 <a name="DataProvider+getIndex"></a>
@@ -148,18 +115,6 @@ Returns the item object of the primary key provided
 | --- | --- | --- |
 | pkValue | <code>String</code> | The primary key value to search for. |
 
-<a name="DataProvider+getIndexOf"></a>
-
-## getIndexOf(columnName, value)
-Returns the index position in the data array of the item matching the columnName and the value.
-
-**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| columnName | <code>String</code> | The column name use to filter |
-| value | <code>Object</code> | The value use to filter. |
-
 <a name="DataProvider+getIndexItemOf"></a>
 
 ## getIndexItemOf(columnName, value)
@@ -172,142 +127,29 @@ Returns the item object matching the columnName and the value.
 | columnName | <code>String</code> | The column name use to filter |
 | value | <code>Object</code> | The value use to filter. |
 
-<a name="DataProvider+addComponent"></a>
+<a name="DataProvider+getIndexOf"></a>
 
-## addComponent(component)
-Adds a component to the components list.
-
-**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
-
-| Param | Description |
-| --- | --- |
-| component | The component to be added |
-
-<a name="DataProvider+getComponents"></a>
-
-## getComponents()
-Returns the array containing the components which will be notify of changes in the data provider.<br>
-The component must have a load() function.
-
-**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
-<a name="DataProvider+cleanParameters"></a>
-
-## cleanParameters()
-Cleans the parameter list from the requestObject.
-
-**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
-<a name="DataProvider+setParameter"></a>
-
-## setParameter(column, value, type, secure)
-Sets a parameter. If the parameter already exist it gets updated.
+## getIndexOf(columnName, value)
+Returns the index position in the data array of the item matching the columnName and the value.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| column | <code>String</code> | The column name |
-| value | <code>Object</code> | The value |
-| type | <code>String</code> | (optional) One character value (S,I,N,D,T) to force data convertion |
-| secure | <code>booelan</code> | (optional) To inndicates if the value is encrypted. To overwrite what has been define in the ORM. |
+| columnName | <code>String</code> | The column name use to filter |
+| value | <code>Object</code> | The value use to filter. |
 
-<a name="DataProvider+cleanOperations"></a>
+<a name="DataProvider+getItem"></a>
 
-## cleanOperations(init)
-Cleans the operation list and add a default select action
-
-**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| init | <code>boolean</code> | (optional) Defaul is false. If the init parameter is true it will initialize an empty select action. This is used to initialze the request object as "select". |
-
-<a name="DataProvider+setOperationAction"></a>
-
-## setOperationAction(action, operation)
-Sets the action for the operation object
+## getItem(column)
+Gets the column's value of the first item.
+If column is not provided returns the object item of the first position.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| action | <code>String</code> | The action to execute: select, insert, update, delete, exec, batch. |
-| operation | <code>String</code> | (optional) The name of the operation when action is set to exec. |
-
-<a name="DataProvider+setOperationItem"></a>
-
-## setOperationItem(column, value)
-Sets a column items to the operation object
-
-**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
-
-| Param | Description |
-| --- | --- |
-| column | The column name |
-| value | The value |
-
-<a name="DataProvider+select"></a>
-
-## select(newSelectName)
-Executes a SELECT request. If required parameters should be added before calling this method.
-
-**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| newSelectName | <code>String</code> | (optional) The name of the select to be used fro the ORM. |
-
-<a name="DataProvider+insert"></a>
-
-## insert()
-Executes an INSERT request. Operation items should be added before calling this method.
-
-**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
-<a name="DataProvider+update"></a>
-
-## update(recordIndex)
-Executes an UPDATE request. Operation items should be added before calling this method.
-
-**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| recordIndex | <code>ingeger</code> | (optional) The index of the item to be updated |
-
-<a name="DataProvider+recordSync"></a>
-
-## recordSync()
-Executes the SELECT used to sync the loaded record with the new database record data. This will only affect the selected item.
-If the SELECT requires parameters these should be added using the "beforeRecordSync" event.
-
-**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
-<a name="DataProvider+delete"></a>
-
-## delete(recordIndex)
-Executes a DELETE request. Operation items should be added before calling this method.<br>
-if markDeleted is true it will execute a delete in the local data, but an update in the database.
-
-**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| recordIndex | <code>ingeger</code> | (optional) The index of the item to be deleted |
-
-<a name="DataProvider+batch"></a>
-
-## batch()
-Submits multiple operations loaded into the Operations array to perform a batch request.
-
-**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
-<a name="DataProvider+exec"></a>
-
-## exec(operation)
-Executes a ORM Operation. If this required parameters these should be added in the "beforeLoad" or "beforeExec" events.
-
-**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| operation | <code>String</code> | The operation name in the ORM object to be executed. |
+| column | <code>String</code> | (optional) Column name which value will be returned |
 
 <a name="DataProvider+getItemAt"></a>
 
@@ -322,18 +164,131 @@ If column is not provided returns the object a the provided position.
 | index | <code>Integer</code> | Data index position to be returned |
 | column | <code>String</code> | (optional) Column name which value will be returned |
 
-<a name="DataProvider+getItem"></a>
+<a name="DataProvider+getOperationItem"></a>
 
-## getItem(column)
-Gets the column's value of the first item.
-If column is not provided returns the object item of the first position.
+## getOperationItem()
+Gets the operation Item.
+
+**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
+<a name="DataProvider+getPkColumn"></a>
+
+## getPkColumn()
+Gets the name of the primary key column.
+
+**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
+<a name="DataProvider+getPKValue"></a>
+
+## getPKValue()
+Gets the primary key value of the seleced data item.
+
+**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
+<a name="DataProvider+getSelectedItem"></a>
+
+## getSelectedItem(columnName)
+Gets the selected item based on the selecteIndex property. By default return the firt item if exists.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| column | <code>String</code> | (optional) Column name which value will be returned |
+| columnName | <code>String</code> | The column to return. If not provided return the item object. |
 
+<a name="DataProvider+getSelectName"></a>
+
+## getSelectName()
+Gets the selectedName used to load data.
+
+**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
+<a name="DataProvider+getService"></a>
+
+## getService()
+Gets the service path.
+
+**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
+<a name="DataProvider+getSortColumn"></a>
+
+## getSortColumn() ⇒ <code>String</code>
+Returns sorting column
+
+**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
+**Returns**: <code>String</code> - - Column name  
+<a name="DataProvider+insert"></a>
+
+## insert()
+Executes an INSERT request. Operation items should be added before calling this method.
+
+**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
+<a name="DataProvider+isTreeData"></a>
+
+## isTreeData()
+Return a boolean indicating if the data is set to be tree structured
+
+**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
+<a name="DataProvider+langID"></a>
+
+## langID
+The langID is use to overwrite the session loaded langID.
+
+**Kind**: instance property of [<code>DataProvider</code>](#DataProvider)  
+<a name="DataProvider+length"></a>
+
+## length()
+Returns the number of records in the data array.
+
+**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
+<a name="DataProvider+load"></a>
+
+## load(internalCall)
+Submits operations and loads result from the ORM service.
+
+**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| internalCall | <code>boolean</code> | True if call internally within the DataProvider |
+
+<a name="DataProvider+on"></a>
+
+## on
+Extends the "on" method from the eventManager Class.
+
+**Kind**: instance property of [<code>DataProvider</code>](#DataProvider)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| eventName | <code>String</code> | The event's name. |
+| eventFunction | <code>function</code> | The function to be triggered. |
+
+<a name="DataProvider+operationObject"></a>
+
+## operationObject
+The ReturnObject contaiing the returned data after INSERT, UPDATE, DELETE, EXEC, BATCH.
+
+**Kind**: instance property of [<code>DataProvider</code>](#DataProvider)  
+<a name="DataProvider+recordSync"></a>
+
+## recordSync()
+Executes the SELECT used to sync the loaded record with the new database record data. This will only affect the selected item.
+If the SELECT requires parameters these should be added using the "beforeRecordSync" event.
+
+**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
+<a name="DataProvider+select"></a>
+
+## select(newSelectName)
+Executes a SELECT request. If required parameters should be added before calling this method.
+
+**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| newSelectName | <code>String</code> | (optional) The name of the select to be used fro the ORM. |
+
+<a name="DataProvider+selectObject"></a>
+
+## selectObject
+The ReturnObject containing the returned data from the database after a SELECT.
+
+**Kind**: instance property of [<code>DataProvider</code>](#DataProvider)  
 <a name="DataProvider+setItem"></a>
 
 ## setItem(column, value)
@@ -359,10 +314,70 @@ Sets the column's value of the array item defind by the index position.
 | column | <code>String</code> | The target column. |
 | value | <code>Stting</code> | The value. |
 
-<a name="DataProvider+length"></a>
+<a name="DataProvider+setOperationAction"></a>
 
-## length()
-Returns the number of records in the data array.
+## setOperationAction(action, operation)
+Sets the action for the operation object
+
+**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| action | <code>String</code> | The action to execute: select, insert, update, delete, exec, batch. |
+| operation | <code>String</code> | (optional) The name of the operation when action is set to exec. |
+
+<a name="DataProvider+setOperationItem"></a>
+
+## setOperationItem(column, value)
+Sets a column items to the operation object
+
+**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
+
+| Param | Description |
+| --- | --- |
+| column | The column name |
+| value | The value |
+
+<a name="DataProvider+setParameter"></a>
+
+## setParameter(column, value, type, secure)
+Sets a parameter. If the parameter already exist it gets updated.
+
+**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| column | <code>String</code> | The column name |
+| value | <code>Object</code> | The value |
+| type | <code>String</code> | (optional) One character value (S,I,N,D,T) to force data convertion |
+| secure | <code>booelan</code> | (optional) To inndicates if the value is encrypted. To overwrite what has been define in the ORM. |
+
+<a name="DataProvider+setSelectName"></a>
+
+## setSelectName(newSelectName)
+Set a new selectName value
+
+**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| newSelectName | <code>String</code> | The new select name. |
+
+<a name="DataProvider+setSortColumn"></a>
+
+## setSortColumn(column)
+Sets sorting column
+
+**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| column | <code>String</code> | Column name |
+
+<a name="DataProvider+setTimeout"></a>
+
+## setTimeout()
+The number of milliseconds beore triggering a timeout error.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
 <a name="DataProvider+size"></a>
@@ -371,27 +386,70 @@ Returns the number of records in the data array.
 Returns the number of records in the data array.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
-<a name="DataProvider+load"></a>
+<a name="DataProvider+sort"></a>
 
-## load(internalCall)
-Submits operations and loads result from the ORM service.
+## sort(column)
+Sorts the data by the provided column
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| internalCall | <code>boolean</code> | True if call internally within the DataProvider |
+| column | <code>String</code> | Column to sort |
 
-<a name="DataProvider+clean"></a>
+<a name="DataProvider+sourceType"></a>
 
-## clean()
-Cleans the data from the returnObject.
+## sourceType
+Source Type:<br>
+SQL : From SQL database<br>
+Local : loaded using laodJSON method. Data is provided as part of the data provider.<br>
+JSON : data form a JSON file.
+
+**Kind**: instance property of [<code>DataProvider</code>](#DataProvider)  
+<a name="DataProvider+update"></a>
+
+## update(recordIndex)
+Executes an UPDATE request. Operation items should be added before calling this method.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
-<a name="DataProvider+Event_beforeLoad"></a>
 
-## "Event:beforeLoad" ([action], [operation])
-Event triggered before the load action is executed. Created with the ```DataProvider.on("beforeLoad", function(action,operation){})``` method.
+| Param | Type | Description |
+| --- | --- | --- |
+| recordIndex | <code>ingeger</code> | (optional) The index of the item to be updated |
+
+<a name=DataProvider+on_afterBatch"></a>
+
+## on:afterBatch"
+on triggered after the batch action is executed. Created with the ```DataProvider.on(afterBatch", function(){})``` method.
+
+**Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
+<a name=DataProvider+on_afterDelete"></a>
+
+## on:afterDelete"
+on triggered after the delete action is executed. Created with the ```DataProvider.on(afterDelete", function(){})``` method.
+
+**Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
+<a name=DataProvider+on_afterExec"></a>
+
+## on:afterExec" ([operation])
+on triggered after the exec action is executed. Created with the ```DataProvider.on(afterExec", function(){})``` method.
+
+**Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [operation] | <code>String</code> | The operation to be executed. |
+
+<a name=DataProvider+on_afterInsert"></a>
+
+## on:afterInsert"
+on triggered after the insert action is executed. Created with the ```DataProvider.on(afterInsert", function(){})``` method.
+
+**Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
+<a name=DataProvider+on_afterLoad"></a>
+
+## on:afterLoad" ([action], [operation])
+on triggered after the load action is executed. Created with the ```DataProvider.on(afterLoad", function(action,operation){})``` method.
 
 **Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
 
@@ -400,21 +458,10 @@ Event triggered before the load action is executed. Created with the ```DataProv
 | [action] | <code>String</code> | The action to be executed. |
 | [operation] | <code>String</code> | The operation to be executed. |
 
-<a name="DataProvider+Event_beforeSelect"></a>
+<a name=DataProvider+on_afterSelect"></a>
 
-## "Event:beforeSelect" ([selectName])
-Event triggered before the select action is executed. Created with the ```DataProvider.on("beforeSelect", function(selectName){})``` method.
-
-**Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| [selectName] | <code>String</code> | The name of the select with in the ORM to be executed. |
-
-<a name="DataProvider+Event_beforeRecordSync"></a>
-
-## "Event:beforeRecordSync" ([selectName])
-Event triggered before the record sync action is executed. Created with the ```DataProvider.on("beforeRecordSync", function(selectName){})``` method.
+## on:afterSelect" ([selectName])
+on triggered after the select action is executed. Created with the ```DataProvider.on(afterSelect", function(selectName){})``` method.
 
 **Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
 
@@ -422,34 +469,28 @@ Event triggered before the record sync action is executed. Created with the ```D
 | --- | --- | --- |
 | [selectName] | <code>String</code> | The name of the select with in the ORM to be executed. |
 
-<a name="DataProvider+Event_beforeInsert"></a>
+<a name=DataProvider+on_afterUpdate"></a>
 
-## "Event:beforeInsert"
-Event triggered before the insert action is executed. Created with the ```DataProvider.on("beforeInsert", function(){})``` method.
-
-**Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
-<a name="DataProvider+Event_beforeUpdate"></a>
-
-## "Event:beforeUpdate"
-Event triggered before the update action is executed. Created with the ```DataProvider.on("beforeUpdate", function(){})``` method.
+## on:afterUpdate"
+on triggered after the update action is executed. Created with the ```DataProvider.on(afterUpdate", function(){})``` method.
 
 **Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
-<a name="DataProvider+Event_beforeDelete"></a>
+<a name=DataProvider+on_beforeBatch"></a>
 
-## "Event:beforeDelete"
-Event triggered before the delete action is executed. Created with the ```DataProvider.on("beforeDelete", function(){})``` method.
-
-**Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
-<a name="DataProvider+Event_beforeBatch"></a>
-
-## "Event:beforeBatch"
-Event triggered before the batch action is executed. Created with the ```DataProvider.on("beforeBatch", function(){})``` method.
+## on:beforeBatch"
+on triggered before the batch action is executed. Created with the ```DataProvider.on(beforeBatch", function(){})``` method.
 
 **Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
-<a name="DataProvider+Event_beforeExec"></a>
+<a name=DataProvider+on_beforeDelete"></a>
 
-## "Event:beforeExec" ([operation])
-Event triggered before the exec action is executed. Created with the ```DataProvider.on("beforeExec", function(){})``` method.
+## on:beforeDelete"
+on triggered before the delete action is executed. Created with the ```DataProvider.on(beforeDelete", function(){})``` method.
+
+**Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
+<a name=DataProvider+on_beforeExec"></a>
+
+## on:beforeExec" ([operation])
+on triggered before the exec action is executed. Created with the ```DataProvider.on(beforeExec", function(){})``` method.
 
 **Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
 
@@ -457,10 +498,16 @@ Event triggered before the exec action is executed. Created with the ```DataProv
 | --- | --- | --- |
 | [operation] | <code>String</code> | The operation to be executed. |
 
-<a name="DataProvider+Event_afterLoad"></a>
+<a name=DataProvider+on_beforeInsert"></a>
 
-## "Event:afterLoad" ([action], [operation])
-Event triggered after the load action is executed. Created with the ```DataProvider.on("afterLoad", function(action,operation){})``` method.
+## on:beforeInsert"
+on triggered before the insert action is executed. Created with the ```DataProvider.on(beforeInsert", function(){})``` method.
+
+**Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
+<a name=DataProvider+on_beforeLoad"></a>
+
+## on:beforeLoad" ([action], [operation])
+on triggered before the load action is executed. Created with the ```DataProvider.on(beforeLoad", function(action,operation){})``` method.
 
 **Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
 
@@ -469,10 +516,10 @@ Event triggered after the load action is executed. Created with the ```DataProvi
 | [action] | <code>String</code> | The action to be executed. |
 | [operation] | <code>String</code> | The operation to be executed. |
 
-<a name="DataProvider+Event_afterSelect"></a>
+<a name=DataProvider+on_beforeRecordSync"></a>
 
-## "Event:afterSelect" ([selectName])
-Event triggered after the select action is executed. Created with the ```DataProvider.on("afterSelect", function(selectName){})``` method.
+## on:beforeRecordSync" ([selectName])
+on triggered before the record sync action is executed. Created with the ```DataProvider.on(beforeRecordSync", function(selectName){})``` method.
 
 **Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
 
@@ -480,45 +527,39 @@ Event triggered after the select action is executed. Created with the ```DataPro
 | --- | --- | --- |
 | [selectName] | <code>String</code> | The name of the select with in the ORM to be executed. |
 
-<a name="DataProvider+Event_afterInsert"></a>
+<a name=DataProvider+on_beforeSelect"></a>
 
-## "Event:afterInsert"
-Event triggered after the insert action is executed. Created with the ```DataProvider.on("afterInsert", function(){})``` method.
-
-**Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
-<a name="DataProvider+Event_afterUpdate"></a>
-
-## "Event:afterUpdate"
-Event triggered after the update action is executed. Created with the ```DataProvider.on("afterUpdate", function(){})``` method.
-
-**Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
-<a name="DataProvider+Event_afterDelete"></a>
-
-## "Event:afterDelete"
-Event triggered after the delete action is executed. Created with the ```DataProvider.on("afterDelete", function(){})``` method.
-
-**Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
-<a name="DataProvider+Event_afterBatch"></a>
-
-## "Event:afterBatch"
-Event triggered after the batch action is executed. Created with the ```DataProvider.on("afterBatch", function(){})``` method.
-
-**Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
-<a name="DataProvider+Event_afterExec"></a>
-
-## "Event:afterExec" ([operation])
-Event triggered after the exec action is executed. Created with the ```DataProvider.on("afterExec", function(){})``` method.
+## on:beforeSelect" ([selectName])
+on triggered before the select action is executed. Created with the ```DataProvider.on(beforeSelect", function(selectName){})``` method.
 
 **Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [operation] | <code>String</code> | The operation to be executed. |
+| [selectName] | <code>String</code> | The name of the select with in the ORM to be executed. |
 
-<a name="DataProvider+Event_processLoadedData"></a>
+<a name=DataProvider+on_beforeUpdate"></a>
 
-## "Event:processLoadedData" (returnObject) ⇒ <code>Object</code>
-Event triggered when the extracted data is being processed. Created with the ```DataProvider.on("processLoadedData", function(returnObject){})``` method.
+## on:beforeUpdate"
+on triggered before the update action is executed. Created with the ```DataProvider.on(beforeUpdate", function(){})``` method.
+
+**Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
+<a name=DataProvider+on_error"></a>
+
+## on:error" (error)
+on triggered when an error has occurred. Created with the ```DataProvider.on(error", function(errorObject){})``` method.
+If the event returns an object this will replaced the existing returnObject.
+
+**Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| error | <code>Object</code> | The returned error object. |
+
+<a name=DataProvider+on_processLoadedData"></a>
+
+## on:processLoadedData" (returnObject) ⇒ <code>Object</code>
+on triggered when the extracted data is being processed. Created with the ```DataProvider.on(processLoadedData", function(returnObject){})``` method.
 If the event returns an object this will replaced the existing returnObject.
 
 **Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
@@ -527,15 +568,4 @@ If the event returns an object this will replaced the existing returnObject.
 | --- | --- | --- |
 | returnObject | <code>Object</code> | The return objected to be operated. |
 
-<a name="DataProvider+Event_error"></a>
-
-## "Event:error" (error)
-Event triggered when an error has occurred. Created with the ```DataProvider.on("error", function(errorObject){})``` method.
-If the event returns an object this will replaced the existing returnObject.
-
-**Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| error | <code>Object</code> | The returned error object. |
 
