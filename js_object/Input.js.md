@@ -421,18 +421,6 @@ Event triggered when the Input's mode changes. Created with the ```Input.on("onC
 | $text | <code>Object</code> | JQuery reference to the input displayed text. |
 | $value | <code>Object</code> | JQuery reference to the inputs input HTML element. |
 
-<a name="Input+Event_onValidation"></a>
-
-## on:onValidation (type, value)
-Event triggered when a Inputs is validated. Created with the ```Input.on("click", function(type,value){})``` method.
-
-**Kind**: event emitted by [<code>Input</code>](#Input)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| type | <code>String</code> | The Input's type. |
-| value | <code>String</code> | The input's entered value. |
-
 <a name="Input+Event_setValue"></a>
 
 ## on:setValue (value, $value)
@@ -456,5 +444,17 @@ Event triggered when the Input's data entry timer concludes. Created with the ``
 | --- | --- | --- |
 | value | <code>String</code> | The input stored value. |
 | Input | <code>Object</code> | Reference to the Input. |
+
+<a name="Input+Event_validation"></a>
+
+## on:validation (type, value)
+Event triggered when a Inputs is validated. Created with the ```Input.on("validation", function(type,value){})``` method.
+
+**Kind**: event emitted by [<code>Input</code>](#Input)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>String</code> | The Input's type. |
+| value | <code>String</code> | The input's entered value. |
 
 
