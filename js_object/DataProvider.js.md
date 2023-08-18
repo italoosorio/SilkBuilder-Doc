@@ -208,7 +208,22 @@ Gets the service path.
 <a name="DataProvider+getSortColumn"></a>
 
 ## getSortColumn() ⇒ <code>String</code>
-Returns sorting column
+Returns the sorting column name.
+
+**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
+**Returns**: <code>String</code> - - Column name  
+<a name="DataProvider+getSortDirection"></a>
+
+## getSortDirection() ⇒ <code>Integer</code>
+Gets the sorting direction. 1 is accedant, and -1 descendant.
+
+**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
+**Returns**: <code>Integer</code> - - Sorting Direction  
+<a name="DataProvider+getSQLSortColumn"></a>
+
+## getSQLSortColumn() ⇒ <code>String</code>
+Returns the sorting column name with added SQL key words 'asc' or 'desc' based on the sorting direction.
+If the sorting column is composite ("column, column") it will return the composite column without the SQL direction key words.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
 **Returns**: <code>String</code> - - Column name  
@@ -389,7 +404,7 @@ Returns the number of records in the data array.
 <a name="DataProvider+sort"></a>
 
 ## sort(column)
-Sorts the data by the provided column
+Sorts the data by the provided column. This does not work if the dataProvider is set to treeData="true".
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
 

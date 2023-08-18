@@ -27,6 +27,7 @@
   * [Record Sync](how_to/sync_record_detail.md)
   * [Server Code Logic](how_to/server_code_logic.md)
   * [Client Template](how_to/client_template.md)
+  * [Sort Data Columns](how_to/sort_data_columns.md)
 * [Silk Tags](tags)
   * [App](tags/App.md)
   * [AppHeader](tags/AppHeader.md)

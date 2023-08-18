@@ -1,4 +1,4 @@
-# Client Template
+# Content Template
 
 Some Silk Tags use thier content to define temples to show the data combine with HTML. Thes tag are:
 

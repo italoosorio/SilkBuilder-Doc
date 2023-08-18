@@ -16,10 +16,12 @@ Used as a container:
     cssClass=""
     draggable="false"
     more="false"
+    ordering="false"
     icon=""
     inputType=""
     valueColumn=""
     labelColumn=""
+    sortColumn=""
     idColumn=""
     renderIf=""
 >
@@ -41,10 +43,12 @@ This tag has the following properties.
 |cssClass|A CSS class to stylized the column.<br>Default Value: *Empty*.|
 |draggable|Defines if the column will listen to drag events. This will also show the "drag" icon.<br>Default Value: *false*.|
 |more|When set to "true" this will set the column to show the "menu" icon.<br>Default Value: *false*.|
+|ordering|When set to "true" this will set the column to show the "menu" icon.<br>Default Value: *false*.|
 |icon|Defines the Font Awesome icon class to show together with the column's content.<br>Default Value: *Empty*.|
 |inputType|The input type use when the *silk:Table* is in "input" status. The values are: text, integer, decimal(x).<br>Default Value: *Empty*.|
 |valueColumn|The name of the data column which will filled the input.<br>Default Value: *Empty*.|
 |labelColumn|The name of the data column use as input label.<br>Default Value: *Empty*.|
+|sortColumn|The column to sort the dataProvider. This does not work if the dataProvider is set to treeData="true".<br>Default Value: *Empty*.|
 |idColumn|The input identifier which will be used to extract the entered data.<br>Default Value: *Empty*.|
 |renderIf|A logic condition determining if the application should be executed. It accepted model variables. The explanation on how to use the logic statement is found in <a href="how_to/server_code_logic.md">Server Code Logic</a> documentation.<br>Default Value: *Empty*.|
 
