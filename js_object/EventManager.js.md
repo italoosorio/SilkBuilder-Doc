@@ -1,17 +1,18 @@
 # EventManager
-The Event Manager Class stores and trigger event objects. An event object is componsed by a property called eventName which stores the event's name, and the function which will be executed at trigger time.
+ The Event Manager Class stores and trigger event objects. An event object is componsed by a property called eventName which stores the event's name, and the function which will be executed at trigger time.
 
 **Kind**: global class  
 
 
-<a name="new_EventManager_new"></a>
+## Methods and Event
+ <a name="_new"></a>
 
-## new EventManager()
+### new EventManager()
 Returns an instance of EventManager.
 
 <a name="EventManager+dispatch"></a>
 
-## dispatch(eventName, paramX) ⇒ <code>Object</code>
+### dispatch(eventName, paramX) ⇒ <code>Object</code>
 Triggers or executes the function of the provided event's name. It received up to 10 parameters. If the event has been entered multiple times these are executed in the order or entrance.
 
 **Kind**: instance method of [<code>EventManager</code>](#EventManager)  
@@ -24,7 +25,7 @@ Triggers or executes the function of the provided event's name. It received up t
 
 <a name="EventManager+eventExists"></a>
 
-## eventExists(eventName) ⇒ <code>boolean</code>
+### eventExists(eventName) ⇒ <code>boolean</code>
 Returns true if the provided event's name exist in the array. Otherwise returns false.
 
 **Kind**: instance method of [<code>EventManager</code>](#EventManager)  
@@ -36,14 +37,14 @@ Returns true if the provided event's name exist in the array. Otherwise returns 
 
 <a name="EventManager+getList"></a>
 
-## getList() ⇒ <code>Array</code>
+### getList() ⇒ <code>Array</code>
 Gets the array of event objects registered.
 
 **Kind**: instance method of [<code>EventManager</code>](#EventManager)  
 **Returns**: <code>Array</code> - A list or event objects  
 <a name="EventManager+on"></a>
 
-## on(eventName, eventFunction)
+### on(eventName, eventFunction)
 Adds an event object to the event array. An event can be added multiple times.
 
 **Kind**: instance method of [<code>EventManager</code>](#EventManager)  
