@@ -7,19 +7,19 @@ This tag executes at server time during the HTML generation of the application b
 Used as a container:
 ```xml
 <silk:If
-    renderIf=""
-    test=""
-    negation=""
+  renderIf=""
+  test=""
+  negation=""
 >
    Contains: Other HTML and/or Silk components.
 </silk:If>
 ```
-## Properties
-This tag has the following properties.
-|Name|Description|
-|--|--|
-|renderIf|The logic statement use to restrict access to this code. The explanation on how to use the logic statement is found in <a href="how_to/server_code_logic.md">Server Code Logic</a> documentation.<br>Default Value: *Empty*.|
-|test|Default Value: *Empty*.|
-|negation|If set to true the logic statement result from the *renderIf* property will be negated. This is like saying "not renderIf".<br>Default Value: *Empty*.|
 
+## Properties 
 <sup>*</sup>Required property.
+### renderIf
+The logic statement use to restrict access to this code. The explanation on how to use the logic statement is found in <a href="how_to/server_code_logic.md">Server Code Logic</a> documentation.<br>Default Value: *Empty*.
+### test
+Default Value: *Empty*.
+### negation
+If set to true the logic statement result from the *renderIf* property will be negated. This is like saying "not renderIf".<br>Default Value: *Empty*.

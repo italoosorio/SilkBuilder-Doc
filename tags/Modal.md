@@ -5,34 +5,40 @@ The *silk:Modal* component helps to create a manageable Bootstrap modal element.
 Used as a container:
 ```xml
 <silk:Modal
-    id=""
-    title=""
-    closeButton="false"
-    helpButton="false"
-    size=""
-    centered="true"
-    limitedClose="true"
-    bodyMargin="true"
-    renderIf=""
+  id=""
+  title=""
+  closeButton="false"
+  helpButton="false"
+  size=""
+  centered="true"
+  limitedClose="true"
+  bodyMargin="true"
+  renderIf=""
 >
    Contains: silk:ModalBody and silk:ModalFooter
 </silk:Modal>
 ```
-## Properties
-This tag has the following properties.
-|Name|Description|
-|--|--|
-|id|The modal's unique identifier.<br>Default Value: *Empty*.|
-|title|The text which will be used as the modal's title. if not included the modal is displayed without the top header bar.<br>Default Value: *Empty*.|
-|closeButton|Set the "X" icon in the top right corner of the modal's header bar. The modal is rendered without the "X" close icon, it is expected that the close action will be programmed.<br>Default Value: *false*.|
-|helpButton|Sets an "?" icon which the user can click to get extra help. It uses a Font Awesome "fas fa-question-circle fa-sm" icon class.<br>Default Value: *false*.|
-|size|Defines the modal size. The values are: small, large, width, and full.<br>The "width" value will create a model contained in the width of the page.<br>The "full" modal will complete cover the screen width and height.<br>Default Value: *Empty*.|
-|centered|Centers the modal in the navigator screen.<br>Default Value: *true*.|
-|limitedClose|Define if the modal will not close when the user clicks outside the modal dialog.<br>By default the modal only closes when click on the "X" icon or when a close modal button is added.<br>Default Value: *true*.|
-|bodyMargin|Removes the modal's body margin. This helps when a table is embedded in a modal.<br>Default Value: *true*.|
-|renderIf|A logic condition determining if the application should be executed. It accepted model variables. The explanation on how to use the logic statement is found in <a href="how_to/server_code_logic.md">Server Code Logic</a> documentation.<br>Default Value: *Empty*.|
 
+## Properties 
 <sup>*</sup>Required property.
+### id
+The modal's unique identifier.<br>Default Value: *Empty*.
+### title
+The text which will be used as the modal's title. if not included the modal is displayed without the top header bar.<br>Default Value: *Empty*.
+### closeButton
+Set the "X" icon in the top right corner of the modal's header bar. The modal is rendered without the "X" close icon, it is expected that the close action will be programmed.<br>Default Value: *false*.
+### helpButton
+Sets an "?" icon which the user can click to get extra help. It uses a Font Awesome "fas fa-question-circle fa-sm" icon class.<br>Default Value: *false*.
+### size
+Defines the modal size. The values are: small, large, width, and full.<br>The "width" value will create a model contained in the width of the page.<br>The "full" modal will complete cover the screen width and height.<br>Default Value: *Empty*.
+### centered
+Centers the modal in the navigator screen.<br>Default Value: *true*.
+### limitedClose
+Define if the modal will not close when the user clicks outside the modal dialog.<br>By default the modal only closes when click on the "X" icon or when a close modal button is added.<br>Default Value: *true*.
+### bodyMargin
+Removes the modal's body margin. This helps when a table is embedded in a modal.<br>Default Value: *true*.
+### renderIf
+A logic condition determining if the application should be executed. It accepted model variables. The explanation on how to use the logic statement is found in <a href="how_to/server_code_logic.md">Server Code Logic</a> documentation.<br>Default Value: *Empty*.
 ## Modal Implementation
 The silk:Modal can be implemented in these ways.
 

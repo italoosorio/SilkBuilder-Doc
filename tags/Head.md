@@ -7,21 +7,22 @@ The "title" it is not a property but the "content" of the *silk:Head* tag. So, t
 Used as a container:
 ```xml
 <silk:Head
-    homeButton="false"
-    logoutButton="false"
-    helpButton="false"
-    cssClass=""
+  homeButton="false"
+  logoutButton="false"
+  helpButton="false"
+  cssClass=""
 >
    Contains: Title of the header and optionally silk:Button tags.
 </silk:Head>
 ```
-## Properties
-This tag has the following properties.
-|Name|Description|
-|--|--|
-|homeButton|Will add a button with a "home" icon to the top left of the header.<br>Default Value: *false*.|
-|logoutButton|Will add a button with a "lock" icon to the top left of the header.<br>Default Value: *false*.|
-|helpButton|Will add a help icon to display interface explanation.<br>Default Value: *false*.|
-|cssClass|To add extra  classes to the header "DIV" wrapper to change it default appearance.<br>Default Value: *Empty*.|
 
+## Properties 
 <sup>*</sup>Required property.
+### homeButton
+Will add a button with a "home" icon to the top left of the header.<br>Default Value: *false*.
+### logoutButton
+Will add a button with a "lock" icon to the top left of the header.<br>Default Value: *false*.
+### helpButton
+Will add a help icon to display interface explanation.<br>Default Value: *false*.
+### cssClass
+To add extra  classes to the header "DIV" wrapper to change it default appearance.<br>Default Value: *Empty*.

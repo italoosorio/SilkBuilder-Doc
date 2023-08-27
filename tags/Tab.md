@@ -5,17 +5,16 @@ This tag defines a Silk Tab component which will be used host TabItem tags.
 Used as a container:
 ```xml
 <silk:Tab
-    id=""
-    cssClass=""
+  id=""
+  cssClass=""
 >
    Contains: TabItem
 </silk:Tab>
 ```
-## Properties
-This tag has the following properties.
-|Name|Description|
-|--|--|
-|id<sup>*</sup>|The Tab's unique identifier.<br>Default Value: *Empty*.|
-|cssClass|Set the custom CSS class for tab HTML component.<br>Default Value: *Empty*.|
 
+## Properties 
 <sup>*</sup>Required property.
+### id<sup>*</sup>
+The Tab's unique identifier.<br>Default Value: *Empty*.
+### cssClass
+Set the custom CSS class for tab HTML component.<br>Default Value: *Empty*.

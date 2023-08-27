@@ -5,13 +5,11 @@ This tag defines a Silk TabsNav component. This tag groups the  silk Pages which
 Used standalone:
 ```xml
 <silk:TabsNav
-    id=""
+  id=""
 />
 ```
-## Properties
-This tag has the following properties.
-|Name|Description|
-|--|--|
-|id<sup>*</sup>|The pagination's unique identifier.<br>Default Value: *Empty*.|
 
+## Properties 
 <sup>*</sup>Required property.
+### id<sup>*</sup>
+The pagination's unique identifier.<br>Default Value: *Empty*.

@@ -28,6 +28,7 @@
   * [Server Code Logic](how_to/server_code_logic.md)
   * [Content Template](how_to/content_template.md)
   * [Sort Data Columns](how_to/sort_data_columns.md)
+  * [Form Input File](how_to/form_file.md)
 * [Silk Tags](tags)
   * [App](tags/App.md)
   * [AppHeader](tags/AppHeader.md)
