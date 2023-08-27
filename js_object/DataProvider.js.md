@@ -405,7 +405,7 @@ Returns the number of records in the data array.
 <a name="DataProvider+sort"></a>
 
 ### sort(column)
-Sorts the data by the provided column. This does not work if the is set to treeData="true".
+Sorts the data by the provided column. This does not work if the dataProvider is set to treeData="true".
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
 

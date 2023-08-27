@@ -6,7 +6,7 @@
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $| <code>Object</code> | jQuery object referencing to the HTML tag. |
+| $button | <code>Object</code> | jQuery object referencing to the button HTML tag. |
 | validationFunction | <code>funtion</code> | A function to be executed to validate if the click event should be triggered. Undefined by default. |
 
 
@@ -14,14 +14,14 @@
 ## Methods and Event
  <a name="_new"></a>
 
-### new Button(D, targetPage)
+### new Button(buttonID, targetPage)
 Returns a Button instance.
 
 
 | Param | Type | Description |
 | --- | --- | --- |
-| D | <code>String</code> | Button's name and unique identifier. |
-| targetPage | <code>String</code> | Optional. The page which wil be show when is clicked. |
+| buttonID | <code>String</code> | Button's name and unique identifier. |
+| targetPage | <code>String</code> | Optional. The page which wil be show when button is clicked. |
 
 <a name="Button+click"></a>
 
@@ -54,7 +54,7 @@ Enables the  Action changes based on the provided parameter.
 <a name="Button+getLabel"></a>
 
 ### getLabel() ⇒ <code>String</code>
-Gets the s label.
+Gets the button's label.
 
 **Kind**: instance method of [<code>Button</code>](#Button)  
 <a name="Button+go"></a>
@@ -84,7 +84,7 @@ Extends the "on" method from the eventManager Class.
 <a name="Button+setLabel"></a>
 
 ### setLabel(label)
-Sets the s label.
+Sets the button's label.
 
 **Kind**: instance method of [<code>Button</code>](#Button)  
 
@@ -101,7 +101,7 @@ Shows the button
 <a name="Button+toggle"></a>
 
 ### toggle(status)
-Hides or shows the based on the provided parameter.
+Hides or shows the button based on the provided parameter.
 
 **Kind**: instance method of [<code>Button</code>](#Button)  
 

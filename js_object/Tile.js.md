@@ -6,7 +6,7 @@
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $| <code>Object</code> | jQuery object referencing the Tile HTML tag. |
+| $tile | <code>Object</code> | jQuery object referencing the Tile HTML tag. |
 
 
 
@@ -22,10 +22,10 @@ Returns a Tile instance.
 | id | <code>String</code> | Unique identifier. |
 | option | <code>Object</code> | Object containing the configuration. |
 | [option.dataSource] | <code>String</code> | Unique identifier of the dataProvider used to fill the Tile. |
-| [option.columns] | <code>String</code> | The number of  to define a row's columns. All  will be group in rows. |
+| [option.columns] | <code>String</code> | The number of tiles to define a row's columns. All tiles will be group in rows. |
 | [option.rowClass] | <code>String</code> | The CSS class used by the row div. This only works when the column property is moren than 0. |
 | [option.content] | <code>String</code> | The HTML template used to generate the  |
-| [option.rendererFn] | <code>String</code> | The function which re-process the generated s HTML. |
+| [option.rendererFn] | <code>String</code> | The function which re-process the generated tile's HTML. |
 
 <a name="Tile+filterLoad"></a>
 
@@ -85,7 +85,7 @@ Event triggered before the table content is loaded. Created with the ```Table.on
 <a name="Tile+Event_click"></a>
 
 ### on:click (item, $content, dpIndex, rowIndex, event)
-Event triggered when a cell is clicked. Created with the ```Tile.on("click", function(item,$content,dpIndex,rowIndex,event){})``` method.
+Event triggered when a tile cell is clicked. Created with the ```Tile.on("click", function(item,$content,dpIndex,rowIndex,event){})``` method.
 
 **Kind**: event emitted by [<code>Tile</code>](#Tile)  
 

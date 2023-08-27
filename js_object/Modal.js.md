@@ -6,10 +6,10 @@
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $| <code>Object</code> | jQuery object referencing to the HTML tag. |
-| $header | <code>Object</code> | jQuery object referencing to the s header HTML tag. |
-| $body | <code>Object</code> | jQuery object referencing to the s body HTML tag. |
-| $footer | <code>Object</code> | jQuery object referencing to the s footer HTML tag. |
+| $modal | <code>Object</code> | jQuery object referencing to the modal HTML tag. |
+| $header | <code>Object</code> | jQuery object referencing to the modal's header HTML tag. |
+| $body | <code>Object</code> | jQuery object referencing to the modal's body HTML tag. |
+| $footer | <code>Object</code> | jQuery object referencing to the modal's footer HTML tag. |
 
 
 
@@ -27,19 +27,19 @@ Returns a Modal instance.
 <a name="Modal+close"></a>
 
 ### close()
-Closes the dialgo. Similar to hide.
+Closes the modal dialgo. Similar to hide.
 
 **Kind**: instance method of [<code>Modal</code>](#Modal)  
 <a name="Modal+getTitle"></a>
 
 ### getTitle()
-Gets the title of the dialog.
+Gets the title of the modal dialog.
 
 **Kind**: instance method of [<code>Modal</code>](#Modal)  
 <a name="Modal+hide"></a>
 
 ### hide()
-Hides the dialog.
+Hides the modal dialog.
 
 **Kind**: instance method of [<code>Modal</code>](#Modal)  
 <a name="Modal+on"></a>
@@ -57,13 +57,13 @@ Extends the "on" method from the eventManager Class.
 <a name="Modal+open"></a>
 
 ### open()
-Opens the dialgo. Similar to show.
+Opens the modal dialgo. Similar to show.
 
 **Kind**: instance method of [<code>Modal</code>](#Modal)  
 <a name="Modal+setBody"></a>
 
 ### setBody(content)
-Sets the HTML content of the dialog.
+Sets the HTML content of the modal dialog.
 
 **Kind**: instance method of [<code>Modal</code>](#Modal)  
 
@@ -74,18 +74,18 @@ Sets the HTML content of the dialog.
 <a name="Modal+setTitle"></a>
 
 ### setTitle(title)
-Sets the header title of the dialog.
+Sets the header title of the modal dialog.
 
 **Kind**: instance method of [<code>Modal</code>](#Modal)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| title | <code>String</code> | The new s header title. |
+| title | <code>String</code> | The new modal's header title. |
 
 <a name="Modal+show"></a>
 
 ### show()
-Shows or opens the dialog.
+Shows or opens the modal dialog.
 
 **Kind**: instance method of [<code>Modal</code>](#Modal)  
 <a name="Modal+Event_beforeShow"></a>

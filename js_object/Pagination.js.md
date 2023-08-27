@@ -6,15 +6,15 @@
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $| <code>Object</code> | jQuery object referencing the HTML tag. |
+| $pagination | <code>Object</code> | jQuery object referencing the pagination HTML tag. |
 | currentPage | <code>Integer</code> | The index of selected page |
 | totalRows | <code>Integer</code> | The total rows return by the query. |
 | totalPages | <code>Integer</code> | The total generated pages. |
 | $pageStartRow | <code>Integer</code> | The page starting the pages list view. |
 | $pageSize | <code>Integer</code> | The number of items per page. |
 | $showPages | <code>Integer</code> | Number of pages to be displayed |
-| $leftArrow | <code>Object</code> | jQuery object referencing the s left arrow. |
-| $rightArrow | <code>Object</code> | jQuery object referencing the s right arrow. |
+| $leftArrow | <code>Object</code> | jQuery object referencing the pagination's left arrow. |
+| $rightArrow | <code>Object</code> | jQuery object referencing the pagination's right arrow. |
 
 
 
@@ -29,13 +29,13 @@ Returns a Pagination instance.
 | --- | --- | --- | --- |
 | id | <code>String</code> |  | Unique identifier. |
 | size | <code>Integer</code> | <code>500</code> | The number of garget items per page. |
-| pages | <code>Integer</code> | <code>10</code> | The number of pages listed in the bar. |
-| label | <code>String</code> | <code>Records</code> | Optional label. |
+| pages | <code>Integer</code> | <code>10</code> | The number of pages listed in the pagination bar. |
+| label | <code>String</code> | <code>Records</code> | Optional pagination label. |
 
 <a name="Pagination+clean"></a>
 
 ### clean()
-Method to clean the container.
+Method to clean the pagination container.
 
 **Kind**: instance method of [<code>Pagination</code>](#Pagination)  
 <a name="Pagination+on"></a>

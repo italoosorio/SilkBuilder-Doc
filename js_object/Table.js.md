@@ -6,8 +6,8 @@
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $| <code>Object</code> | jQuery object referencing to the HTML tag. |
-| $earchInput | <code>Object</code> | jQuery object referencing the search text input element. |
+| $table | <code>Object</code> | jQuery object referencing to the table HTML tag. |
+| $tableSearchInput | <code>Object</code> | jQuery object referencing the search text input element. |
 | filterLoad | <code>function</code> | Function which evaluates if a row should be included in the  If true is returned the row is added, false ignores the row. Get the paramters `index` and `item`. |
 
 
@@ -24,19 +24,19 @@ Returns a Table instance.
 | id | <code>String</code> |  | Unique identifier. |
 | option | <code>Object</code> |  | Object containing the configuration. |
 | [option.dataSource] | <code>String</code> |  | Unique identifier of the dataProvider used to fill the  |
-| [option.autoSelect] | <code>Boolean</code> | <code>true</code> | If true the will automatically load the data from the dataProvider. If false is will wait for the load command. |
+| [option.autoSelect] | <code>Boolean</code> | <code>true</code> | If true the table will automatically load the data from the dataProvider. If false is will wait for the load command. |
 | [option. targetPage] | <code>String</code> |  | Unique identifier of the page which will become active when a row is selected. |
-| [option.header] | <code>String</code> | <code>fixed</code> | Defines the header location:  `fixed` Attaches the header to the top of the page. `inline` Attaches the header to the top of the location. `none` No header. |
-| [option.treeData] | <code>Boolean</code> | <code>false</code> | Indicates if the data should be treated as a tree structure. If the dataProvider is selected as treeData=true then the inherets the value. |
+| [option.header] | <code>String</code> | <code>fixed</code> | Defines the header location:  `fixed` Attaches the header to the top of the page. `inline` Attaches the header to the top of the table location. `none` No header. |
+| [option.treeData] | <code>Boolean</code> | <code>false</code> | Indicates if the data should be treated as a tree structure. If the dataProvider is selected as treeData=true then the table inherets the value. |
 | [option.rootLabel] | <code>String</code> |  | The label used to display in the root row. |
-| [option.noRoot] | <code>Boolean</code> | <code>false</code> | Defines if the Root will be an edirow. Default is NO. |
+| [option.noRoot] | <code>Boolean</code> | <code>false</code> | Defines if the Root will be an editable row. Default is NO. |
 | [option.multiRoot] | <code>Boolean</code> | <code>false</code> | Defines if tree will support multiple root branches. Default is NO, just one root. |
 | [option.iconOpen] | <code>String</code> |  | The icon showing an open branch if treeData if true. The default value is `fas fa-minus-square` from Fontawesome. |
 | [option.iconClose] | <code>String</code> |  | The icon showing a close branch if treeData if true. The default value is `fas fa-plus-square` from Fontawesome. |
 | [option.iconEmpy] | <code>String</code> |  | The icon showing an end branch if treeData if true. Empty by default. |
 | [option.collapsable] | <code>Integer</code> |  | Indicates the tree can collapose. |
 | [option.collapsedLevel] | <code>Integer</code> |  | Indicates the number of open levels. Other levels will remain closed. |
-| [option.selec | <code>Boolean</code> | <code>true</code> | If true the row will change color when selected. |
+| [option.selectable] | <code>Boolean</code> | <code>true</code> | If true the row will change color when selected. |
 | [option.dpSearch] | <code>Boolean</code> | <code>false</code> | If false the search is done in the loaded data. If true the search leads to a dataProvider reload. It can also received the name of the DataProvider to be loaded. |
 | [option.input] | <code>Boolean</code> | <code>false</code> | If true it will create input fields for the configured columns. |
 
@@ -65,7 +65,7 @@ Adds a new component to the components array.
 <a name="Table+buildHeaders"></a>
 
 ### buildHeaders()
-Generates the s columns using the loaded Column objects.
+Generates the table's columns using the loaded Column objects.
 
 **Kind**: instance method of [<code>Table</code>](#Table)  
 <a name="Table+cleanColumns"></a>
@@ -133,7 +133,7 @@ If a function is provided this will be executed for each row. The function will 
 <a name="Table+getNoRoot"></a>
 
 ### getNoRoot() ⇒ <code>Boolean</code>
-Returns if the should limit the root.
+Returns if the table should limit the root.
 
 **Kind**: instance method of [<code>Table</code>](#Table)  
 <a name="Table+getPkColumn"></a>
@@ -168,13 +168,13 @@ Returns the selected item object, or the column's' value if a columnName is prov
 <a name="Table+isTreeData"></a>
 
 ### isTreeData() ⇒ <code>Boolean</code>
-Returns if the is set to evaluate a tree data structure.
+Returns if the table is set to evaluate a tree data structure.
 
 **Kind**: instance method of [<code>Table</code>](#Table)  
 <a name="Table+length"></a>
 
 ### length() ⇒ <code>Integer</code>
-Returns the number of  rows.
+Returns the number of tabler rows.
 
 **Kind**: instance method of [<code>Table</code>](#Table)  
 <a name="Table+load"></a>
@@ -210,19 +210,19 @@ Reload the data for the selected row by default, or the indicated row.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| trIndex | <code>Integer</code> | The row index within the row. |
+| trIndex | <code>Integer</code> | The row index within the table row. |
 | dpIndex | <code>Integer</code> | The row index in the dataProvider. |
 
 <a name="Table+selectRow"></a>
 
 ### selectRow(index)
-Select row bases on the row index
+Select table row bases on the table row index
 
 **Kind**: instance method of [<code>Table</code>](#Table)  
 
 | Param | Description |
 | --- | --- |
-| index | The row index |
+| index | The table row index |
 
 <a name="Table+selectUp"></a>
 
@@ -287,13 +287,13 @@ Sorts the data by the provided column
 <a name="Table+Event_afterLoad"></a>
 
 ### on:afterLoad
-Event triggered after the content is loaded. Created with the ```Table.on("afterLoad", function(){})``` method.
+Event triggered after the table content is loaded. Created with the ```Table.on("afterLoad", function(){})``` method.
 
 **Kind**: event emitted by [<code>Table</code>](#Table)  
 <a name="Table+Event_beforeLoad"></a>
 
 ### on:beforeLoad
-Event triggered before the content is loaded. Created with the ```Table.on("beforeLoad", function(){})``` method.
+Event triggered before the table content is loaded. Created with the ```Table.on("beforeLoad", function(){})``` method.
 
 **Kind**: event emitted by [<code>Table</code>](#Table)  
 <a name="Table+Event_click"></a>

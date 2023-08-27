@@ -6,8 +6,8 @@
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $| <code>Object</code> | jQuery object referencing to the HTML tag. |
-| mask | <code>Boolean</code> | Indicates if the s mas is active. |
+| $form | <code>Object</code> | jQuery object referencing to the form HTML tag. |
+| mask | <code>Boolean</code> | Indicates if the form's mas is active. |
 | insertBt | <code>Object</code> | The Button object to initiate an insert if provided. |
 | updateBt | <code>Object</code> | The Button object to initiate an update if provided. |
 | deleteBt | <code>Object</code> | The Button object to initiate a delete if provided. |
@@ -77,7 +77,7 @@ Fills the input with data from dataSource.
 <a name="Form+getAction"></a>
 
 ### getAction()
-Gets the set s action.
+Gets the set form's action.
 
 **Kind**: instance method of [<code>Form</code>](#Form)  
 <a name="Form+getEventList"></a>
@@ -153,7 +153,7 @@ Adds an input object to the input array.
 <a name="Form+setAction"></a>
 
 ### setAction(action)
-Sets the action s action.
+Sets the action form's action.
 
 **Kind**: instance method of [<code>Form</code>](#Form)  
 
@@ -281,7 +281,7 @@ Event triggered after an error loading the data. Created with the ```Form.on("er
 <a name="Form+Event_FormErrors"></a>
 
 ### on:FormErrors (inputList)
-Event triggered when Form's inputs have errors.  Created with the ```Form.on("rrors", function(){})``` method.
+Event triggered when Form's inputs have errors.  Created with the ```Form.on("formErrors", function(){})``` method.
 
 **Kind**: event emitted by [<code>Form</code>](#Form)  
 

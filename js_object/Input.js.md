@@ -6,8 +6,8 @@
 
 | Name | Type | Description |
 | --- | --- | --- |
-| columnID | <code>String</code> | The s' unique identifier. This woudl be the name of the dataProvider coulumn if part of a Form tag. |
-| $| <code>Object</code> | The JQuery reference to the SILK Input HTML structure. |
+| columnID | <code>String</code> | The input's' unique identifier. This woudl be the name of the dataProvider coulumn if part of a Form tag. |
+| $input | <code>Object</code> | The JQuery reference to the SILK Input HTML structure. |
 | $filePreviewBt | <code>Object</code> | The JQuery reference to the preview button. |
 | $fileDownloadBt | <code>Object</code> | The JQuery reference to the donwload button. |
 | selectedIndex | <code>Integer</code> | The index of the last dataProvider's item in the case of types select and radio. |
@@ -26,12 +26,12 @@ Returns an Input instance.
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | id | <code>String</code> |  | Unique identifier. |
-| type | <code>String</code> |  | The type: text, textarea, code, html, date, time, datetime, select, numeric, integer, decimal, checkbox, button, options, radio, password, file, email, hidden. |
-| label | <code>String</code> |  | The text used as s label. |
+| type | <code>String</code> |  | The input type: text, textarea, code, html, date, time, datetime, select, numeric, integer, decimal, checkbox, button, options, radio, password, file, email, hidden. |
+| label | <code>String</code> |  | The text used as input's label. |
 | options | <code>Object</code> |  | Object containing the Input configuration options. |
 | initValue | <code>String</code> |  | The value which the Input will hold when created. |
 | [options.columnID] | <code>String</code> |  | The dataSource column name if different from the id parameter. |
-| [options.description] | <code>String</code> |  | The s description only show at editing mode. |
+| [options.description] | <code>String</code> |  | The input's description only show at editing mode. |
 | [options.width] | <code>String</code> |  | The width of the component in pixels or percentage. |
 | [options.height] | <code>String</code> | <code>200px</code> | THe heigth of the component in case of the types: textarea, code, and html. |
 | [options.scrollHeight] | <code>String</code> |  | The height limit of the component in read mode before the content needs scrolling. |
@@ -39,17 +39,17 @@ Returns an Input instance.
 | [options.required] | <code>Boolean</code> | <code>false</code> | The logic value or expression to determine if the component should be required before data submission. |
 | [options.editable] | <code>Boolean</code> | <code>true</code> | The logic value or JavaScript expression to determine if the component should be visible. |
 | [options.visible] | <code>Boolean</code> | <code>true</code> | Expression to evaluate if the component should be visible. |
-| [options.maxLength] | <code>Integer</code> |  | The number of characters the will allow. |
-| [options.name] | <code>String</code> |  | The "name" of the if used under a regular <form> html tag. |
-| [options.scriptValue] | <code>String</code> |  | Javascript expression returning the s value. |
+| [options.maxLength] | <code>Integer</code> |  | The number of characters the input will allow. |
+| [options.name] | <code>String</code> |  | The "name" of the input if used under a regular <form> html tag. |
+| [options.scriptValue] | <code>String</code> |  | Javascript expression returning the input's value. |
 | [options.scope] | <code>String</code> | <code>1</code> | The component end target. Check the setScope() method for values. |
-| [options.mask] | <code>String</code> |  | The s entry mask or character filter. (http://igorescobar.github.io/jQuery-Mask-Plugin/) |
+| [options.mask] | <code>String</code> |  | The input's entry mask or character filter. (http://igorescobar.github.io/jQuery-Mask-Plugin/) |
 | [options.mode] | <code>Boolean</code> | <code>false</code> | True if editing, or false if read only. |
-| [options.placeholder] | <code>String</code> |  | The s place holder or helping text showed inside the  |
-| [options.form] | <code>String</code> |  | The Form ID the will operate with. |
+| [options.placeholder] | <code>String</code> |  | The input's place holder or helping text showed inside the  |
+| [options.form] | <code>String</code> |  | The Form ID the input will operate with. |
 | [options.block] | <code>Boolean</code> | <code>false</code> | If the component is the end of a block. Next Inputs will start in a new line. |
-| [options.cssClass] | <code>String</code> |  | The extra CSS classes to use with the element. |
-| [options.lass] | <code>String</code> |  | Extra CSS classes affecting the component. |
+| [options.cssClass] | <code>String</code> |  | The extra CSS classes to use with the input element. |
+| [options.inputClass] | <code>String</code> |  | Extra CSS classes affecting the component. |
 | [options.valueColumn] | <code>String</code> |  | Indicates the dataProvider's column containing the value to use in select, options, and radio. |
 | [options.labelColumn] | <code>String</code> | <code>label</code> | Indicates the dataProvider's column containing the label to use in select, options, and radio. |
 | [options.linkColumns] | <code>String</code> |  | Indicates the dataProvider's columns which will be updated in the dataSource. To use in select, options,and radio. |
@@ -83,7 +83,7 @@ Cleans the Input from markers like required, missing, and error.
 <a name="Input+focus"></a>
 
 ### focus()
-The method to focused the when in editable mode.
+The method to focused the input when in editable mode.
 
 **Kind**: instance method of [<code>Input</code>](#Input)  
 <a name="Input+getEditable"></a>
@@ -95,7 +95,7 @@ Returns if the Input is editable.
 <a name="Input+getInputID"></a>
 
 ### getInputID() ⇒ <code>String</code>
-Returns the element's ID.
+Returns the input element's ID.
 
 **Kind**: instance method of [<code>Input</code>](#Input)  
 <a name="Input+getItem"></a>
@@ -149,7 +149,7 @@ Returns the Input's displayed read-only text.
 <a name="Input+getType"></a>
 
 ### getType() ⇒ <code>String</code>
-Returns the s type.
+Returns the input's type.
 
 **Kind**: instance method of [<code>Input</code>](#Input)  
 <a name="Input+getValue"></a>
@@ -161,7 +161,7 @@ Returns the Input's stored value.
 <a name="Input+getVisible"></a>
 
 ### getVisible() ⇒ <code>Boolean</code>
-Returns if the is visible.
+Returns if the input is visible.
 
 **Kind**: instance method of [<code>Input</code>](#Input)  
 <a name="Input+hasChanged"></a>
@@ -209,7 +209,7 @@ Extends the "on" method from the eventManager Class.
 <a name="Input+openSelect"></a>
 
 ### openSelect()
-Method to programatically open a HTML Select element
+Method to programatically open a HTML Select input element
 
 **Kind**: instance method of [<code>Input</code>](#Input)  
 <a name="Input+setLabel"></a>
@@ -238,7 +238,7 @@ Sets the Input's interaction mode.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| viewMode | <code>Boolean</code> | True sets the to editing, false sets the tas read only. |
+| viewMode | <code>Boolean</code> | True sets the input to editing, false sets the input tas read only. |
 | setPreviusValue | <code>Boolean</code> | If true (default) will set the previous value. |
 
 <a name="Input+setPreviousValue"></a>
@@ -321,7 +321,7 @@ Event triggered when the Input's value has been loaded from the dataSource. Crea
 
 | Param | Type | Description |
 | --- | --- | --- |
-| $value | <code>Object</code> | The JQuery instance to the HTML element. |
+| $value | <code>Object</code> | The JQuery instance to the input HTML element. |
 
 <a name="Input+Event_afterUpload"></a>
 
@@ -377,13 +377,13 @@ Event triggered when a Button Input is clicked in data entry mode. Created with 
 <a name="Input+Event_clickDownload"></a>
 
 ### on:clickDownload
-Event triggered when s download button is clicked. Created with the ```Input.on("clickDownload", function(){})``` method.
+Event triggered when input's download button is clicked. Created with the ```Input.on("clickDownload", function(){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 <a name="Input+Event_clickPreview"></a>
 
 ### on:clickPreview
-Event triggered when s preview button is clicked. Created with the ```Input.on("clickPreview", function(){})``` method.
+Event triggered when input's preview button is clicked. Created with the ```Input.on("clickPreview", function(){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 <a name="Input+Event_getValue"></a>
@@ -395,12 +395,12 @@ Event triggered when the Input's value is requested. Created with the ```Input.o
 
 | Param | Type | Description |
 | --- | --- | --- |
-| $value | <code>Object</code> | The JQuery instance to the HTML element. |
+| $value | <code>Object</code> | The JQuery instance to the input HTML element. |
 
 <a name="Input+Event_keyup"></a>
 
 ### on:keyup (event, Input)
-Event triggered at s keyboard keyup event. Created with the ```Input.on("click", function(even,Input){})``` method.
+Event triggered at input's keyboard keyup event. Created with the ```Input.on("click", function(even,Input){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 
@@ -419,8 +419,8 @@ Event triggered when the Input's mode changes. Created with the ```Input.on("onC
 | Param | Type | Description |
 | --- | --- | --- |
 | mode | <code>Boolean</code> | The set mode, |
-| $text | <code>Object</code> | JQuery reference to the displayed text. |
-| $value | <code>Object</code> | JQuery reference to the  HTML element. |
+| $text | <code>Object</code> | JQuery reference to the input displayed text. |
+| $value | <code>Object</code> | JQuery reference to the inputs input HTML element. |
 
 <a name="Input+Event_setValue"></a>
 
@@ -432,7 +432,7 @@ Event triggered when the Input's value is set. Created with the ```Input.on("set
 | Param | Type | Description |
 | --- | --- | --- |
 | value | <code>String</code> | The value entered. |
-| $value | <code>Object</code> | The JQuery instance to the HTML element. |
+| $value | <code>Object</code> | The JQuery instance to the input HTML element. |
 
 <a name="Input+Event_timer"></a>
 
@@ -443,7 +443,7 @@ Event triggered when the Input's data entry timer concludes. Created with the ``
 
 | Param | Type | Description |
 | --- | --- | --- |
-| value | <code>String</code> | The stored value. |
+| value | <code>String</code> | The input stored value. |
 | Input | <code>Object</code> | Reference to the Input. |
 
 <a name="Input+Event_validation"></a>
@@ -456,6 +456,6 @@ Event triggered when a Inputs is validated. Created with the ```Input.on("valida
 | Param | Type | Description |
 | --- | --- | --- |
 | type | <code>String</code> | The Input's type. |
-| value | <code>String</code> | The s entered value. |
+| value | <code>String</code> | The input's entered value. |
 
 
