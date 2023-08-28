@@ -63,50 +63,68 @@ To avoidd desynchronization it is adviced to enable the the upload input only bu
 </silk:Form>
 ```
 
-asdfd
+SilkBuilder does not submit the form's inputs in the regular POST or GET method. These are processed differently by the framework. When a file input is sumitted by SilkBuilder it goes like a text file and stores the file's name in the selected table's column.
 
 ## Upload Service
 
-asdfads
+SilkBuilder provides a library to help building the service receiving the uploaded file: [com.oopsclick.silk.file](https://silkbuilder.com/javadoc/com/oopsclick/silk/file/package-summary.html). 
+
+The code below is a service which gets the file and saves it in a folder with not data return.
 
 ```java
 <%@ page import="com.oopsclick.silk.file.*" %>
 <%
 	Uploaded uploaded = new Uploaded(request);
-	FormField formField = uploaded.get("profileImage");
-	int result = formField.saveFile("/folder/goes/here/");
+	FormField profileImage = uploaded.get("profileImage");
+	int result = profileImage.saveFile("/folder/goes/here/");
 %>
 ```
 
-asdfsadf
-
-## Hello
+## Extra Processing
 
 adsdsaf
 
+### Submit Extra Data
+
+The input's method *beforeUpload* is to be used to submit extra data to the upload service. The method receives the parameters input and the JavaScript **DataForm** object which will be submited to the upload service. The **DataForm**'s method *append* is used to add extra data to be submited.
+
+In the example below the *fullName* input's value is added to DataForm.
+
 ```javascript
-personForm.userImage.beforeUpload = function(input,form){
-	form.append("personID", personDP.getSelectedItem().personID);
+personForm.profileImage.beforeUpload = function(input,DataForm){
+	form.append("fullName", personDP.getSelectedItem().fullName);
 };
-        
-personForm.userImage.afterUpload = function(input,result,data){
+```
+## Service with Extra Processing
+
+The service receives the *fulName* in the *request* and it is added to the file's name before saving it. The event *getSavedFileName()* returns the name use to fave the file. The service returns a JSON structure containing new name in the property *fileName*.
+
+```java
+<%@ page import="com.oopsclick.silk.file.*" %>
+<%
+	Uploaded uploaded = new Uploaded(request);
+
+	FormField fullName = uploaded.get("fullName");
+	fullName = fullName.toLowerCase().replaceAll(" ","_");
+
+	FormField profileImage = uploaded.get("profileImage");
+	String newFileName = fullName+"_"+profileImage.getValue();
+	int result = profileImage.saveFile(newFileName, "/folder/goes/here/");
+%>
+{"fileName":"<%= profileImage.getSavedFileName() %>"}
+```
+
+If SilkBuilder finds the property *fileName* it automatically applies it to the input's value. 
+
+### Receiving Upload Service Data
+
+If other data are returned by the upload service these can be access an operated using the *afterUpload* event. This event receives as paramter the input, the result of the opeation: *true* if succesfull or *false* if failure, and the data object containing the parsed JSON data. 
+
+```javascript
+personForm.profileImage.afterUpload = function(input,result,data){
 	if( result ){
-		var dataObject = JSON.parse(data.responseText);
-		input.setValue(dataObject.value);
-		input.setPreviousValue("");
+		console.log( data.fileName );
 	}
 };
 ```
 
-asdfasdf
-
-```java
-<%@ page import="com.oopsclick.silk.file.*" %>
-<%
-	Uploaded uploaded = new Uploaded(request);
-	FormField formField = uploaded.get("profileImage");
-	int result = formField.saveFile("/folder/goes/here/");
-%>
-```
-
-asdfsadf
