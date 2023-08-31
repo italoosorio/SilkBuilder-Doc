@@ -386,6 +386,19 @@ Event triggered when input's download button is clicked. Created with the ```Inp
 Event triggered when input's preview button is clicked. Created with the ```Input.on("clickPreview", function(){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
+<a name="Input+Event_fileValidate"></a>
+
+### on:fileValidate (Input, typeError, sizeError)
+Event triggered after the file extension and size has been validated. Created with the ```Input.on("fileValidate", function(Input, typeError, sizeError){})``` method.
+
+**Kind**: event emitted by [<code>Input</code>](#Input)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| Input | <code>Object</code> | Reference to the Input. |
+| typeError | <code>Boolean</code> | True if the file extension type is not a match. |
+| sizeError | <code>Boolean</code> | True if the size is beyond set bounderies. |
+
 <a name="Input+Event_getValue"></a>
 
 ### on:getValue ($value)
