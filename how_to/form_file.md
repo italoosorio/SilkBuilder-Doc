@@ -38,7 +38,7 @@ The *silk:Input* tag has other properties related to uploading files which can h
 />
 ```
 
-In the application the form item will show in this way.
+In the application the form item or input will show in this way.
 
 ![Form Input File](../.gitbook/assets/form_file_empty.png)
 
