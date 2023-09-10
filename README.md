@@ -11,5 +11,5 @@ This documentation describes the use of SilkBuilder to develop web applications.
 * [How to](how_to/)
 * [Silk Tags](tags/)
 * [JavaScript Objects](js_object/)
-* [Java Classes](https://silkbuilder.com/javadoc/)
+* [Java Classes](https://javadoc.silkbuilder.com/)
 

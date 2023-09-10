@@ -91,8 +91,8 @@ The input's method *beforeUpload* is to be used to submit extra data to the uplo
 In the example below the *fullName* input's value is added to DataForm.
 
 ```javascript
-personForm.profileImage.beforeUpload = function(input,DataForm){
-	form.append("fullName", personDP.getSelectedItem().fullName);
+personForm.profileImage.beforeUpload = function(input,dataForm){
+	dataForm.append("fullName", personDP.getSelectedItem().fullName);
 };
 ```
 ## Service with Extra Processing
