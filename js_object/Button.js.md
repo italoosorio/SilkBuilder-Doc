@@ -14,19 +14,30 @@
 ## Methods and Event
  <a name="_new"></a>
 
-### new Button(buttonID, targetPage)
+### new Button(buttonID, options)
 Returns a Button instance.
 
 
 | Param | Type | Description |
 | --- | --- | --- |
 | buttonID | <code>String</code> | Button's name and unique identifier. |
-| targetPage | <code>String</code> | Optional. The page which wil be show when button is clicked. |
+| options | <code>Object</code> | Object containing the configuration. |
+| [option.targetPage] | <code>String</code> | The page to activate if clicked. |
+| [option.confirmTitle] | <code>String</code> | The confirmation dialog title. |
+| [option.confirmMessage] | <code>String</code> | The confirmation dialog message. |
+| [option.confirmLabel] | <code>String</code> | The confirmation dialog button's label. |
+| [option.confirmIcon] | <code>String</code> | The confirmation dialog icon. |
 
 <a name="Button+click"></a>
 
 ### click()
-Fires the click action programatically.
+Fires the click action programatically. Ignore confirmation if configured.
+
+**Kind**: instance method of [<code>Button</code>](#Button)  
+<a name="Button+confirm"></a>
+
+### confirm()
+Fires the click action programatically after triggering the confirmation dialog and getting an answer.
 
 **Kind**: instance method of [<code>Button</code>](#Button)  
 <a name="Button+disable"></a>
@@ -57,6 +68,12 @@ Enables the  Action changes based on the provided parameter.
 Gets the button's label.
 
 **Kind**: instance method of [<code>Button</code>](#Button)  
+<a name="Button+getNeedsConfirmation"></a>
+
+### getNeedsConfirmation() ⇒ <code>Boolean</code>
+Return true if the button will ask for confirmation.
+
+**Kind**: instance method of [<code>Button</code>](#Button)  
 <a name="Button+go"></a>
 
 ### go()
@@ -80,6 +97,39 @@ Extends the "on" method from the eventManager Class.
 | --- | --- | --- |
 | eventName | <code>String</code> | The event's name. |
 | eventFunction | <code>function</code> | The function to be triggered. |
+
+<a name="Button+setConfirmLabel"></a>
+
+### setConfirmLabel(label)
+Sets the confirmation button's' label
+
+**Kind**: instance method of [<code>Button</code>](#Button)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| label | <code>String</code> | The button's label |
+
+<a name="Button+setConfirmMessage"></a>
+
+### setConfirmMessage(message)
+Sets the confirmation dialog message
+
+**Kind**: instance method of [<code>Button</code>](#Button)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| message | <code>String</code> | The new message |
+
+<a name="Button+setConfirmTitle"></a>
+
+### setConfirmTitle(title)
+Sets the confirmation dialog title
+
+**Kind**: instance method of [<code>Button</code>](#Button)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| title | <code>String</code> | The new title |
 
 <a name="Button+setLabel"></a>
 
