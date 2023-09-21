@@ -39,6 +39,7 @@ Returns a Table instance.
 | [option.selectable] | <code>Boolean</code> | <code>true</code> | If true the row will change color when selected. |
 | [option.dpSearch] | <code>Boolean</code> | <code>false</code> | If false the search is done in the loaded data. If true the search leads to a dataProvider reload. It can also received the name of the DataProvider to be loaded. |
 | [option.input] | <code>Boolean</code> | <code>false</code> | If true it will create input fields for the configured columns. |
+| [option.toggleList] | <code>String</code> |  | The list of comma separated elements which will be toggle together with the component. |
 
 <a name="Table+addColumn"></a>
 
@@ -165,6 +166,12 @@ Returns the selected item object, or the column's' value if a columnName is prov
 | --- | --- | --- |
 | columnName | <code>String</code> | The column's value to return. Optional. |
 
+<a name="Table+hide"></a>
+
+### hide()
+Hides the button
+
+**Kind**: instance method of [<code>Table</code>](#Table)  
 <a name="Table+isTreeData"></a>
 
 ### isTreeData() ⇒ <code>Boolean</code>
@@ -273,6 +280,12 @@ Sets the tree icons. This overwrites the default icons.
 | close | <code>String</code> | The icon representing the close status. |
 | empty | <code>String</code> | The icon representing a final branch. |
 
+<a name="Table+show"></a>
+
+### show()
+Shows the button
+
+**Kind**: instance method of [<code>Table</code>](#Table)  
 <a name="Table+sort"></a>
 
 ### sort(column)
@@ -283,6 +296,17 @@ Sorts the data by the provided column
 | Param | Type | Description |
 | --- | --- | --- |
 | column | <code>String</code> | Column to sort |
+
+<a name="Table+toggle"></a>
+
+### toggle(status)
+Hides or shows the button based on the provided parameter.
+
+**Kind**: instance method of [<code>Table</code>](#Table)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| status | <code>boolean</code> | True shows and false hides. |
 
 <a name="Table+Event_afterLoad"></a>
 

@@ -20,6 +20,7 @@ Used standalone:
   confirmMessage=""
   confirmLabel=""
   confirmIcon=""
+  toggleList=""
 />
 ```
 Used as a container:
@@ -40,6 +41,7 @@ Used as a container:
   confirmMessage=""
   confirmLabel=""
   confirmIcon=""
+  toggleList=""
 >
    Contains: Silk:ButtonItems
 </silk:Button>
@@ -77,3 +79,5 @@ Sets the message showed in the confirmation dialog.<br>Default Value: *Empty*.
 Sets the label for the accept button in the confirmation dialog.<br>Default Value: *Empty*.
 ### confirmIcon
 Sets the confirmation dialog icon.<br>Default Value: *Empty*.
+### toggleList
+The list of comma separated elements which will be toggle together with the component.<br>The value "parent" toggles the immediate parent element.<br>Default Value: *Empty*.

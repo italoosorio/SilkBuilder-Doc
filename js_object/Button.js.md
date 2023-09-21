@@ -27,6 +27,7 @@ Returns a Button instance.
 | [option.confirmMessage] | <code>String</code> | The confirmation dialog message. |
 | [option.confirmLabel] | <code>String</code> | The confirmation dialog button's label. |
 | [option.confirmIcon] | <code>String</code> | The confirmation dialog icon. |
+| [option.toggleList] | <code>String</code> | The list of comma separated elements which will be toggle together with the component. |
 
 <a name="Button+click"></a>
 

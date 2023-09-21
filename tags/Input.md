@@ -52,6 +52,7 @@ Used standalone:
   renderIf=""
   targetPage=""
   timer=""
+  toggleList=""
 />
 ```
 
@@ -147,3 +148,5 @@ The logic expression to determine if the input will be rendered in the server si
 The *silk:Page*'s identifier which will be selected/show when the input is clicked when type is 'button'.<br>Default Value: *Empty*.
 ### timer
 Sets data entry timer which will trigger the "timer" event.<br>Default Value: *Empty*.
+### toggleList
+The list of comma separated elements which will be toggle together with the component.<br>The value "parent" toggles the immediate parent element.<br>Default Value: *Empty*.

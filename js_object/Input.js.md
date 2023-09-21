@@ -73,6 +73,7 @@ Returns an Input instance.
 | [options.fileTypeList] | <code>String</code> |  | String containing the comma separated list of accepted file extension. To use with type file. |
 | [options.fileSizeLimit] | <code>Integer</code> |  | The number of MB allowed to upload. To use with type file. |
 | [options.timer] | <code>Integer</code> | <code>0</code> | The number of milliseconds before trigerint the "timer" even when entering data. |
+| [option.toggleList] | <code>String</code> |  | The list of comma separated elements which will be toggle together with the component. |
 
 <a name="Input+cleanClasses"></a>
 
@@ -168,6 +169,12 @@ Returns if the input is visible.
 
 ### hasChanged() ⇒ <code>Boolean</code>
 Returns if the Input value has changed.
+
+**Kind**: instance method of [<code>Input</code>](#Input)  
+<a name="Input+hide"></a>
+
+### hide()
+Hides the 
 
 **Kind**: instance method of [<code>Input</code>](#Input)  
 <a name="Input+load"></a>
@@ -294,6 +301,23 @@ Sets the Input's visible status.
 | Param | Type | Description |
 | --- | --- | --- |
 | mode | <code>Boolean</code> | The visible status. |
+
+<a name="Input+show"></a>
+
+### show()
+Shows the 
+
+**Kind**: instance method of [<code>Input</code>](#Input)  
+<a name="Input+toggle"></a>
+
+### toggle(status)
+Hides or shows the input based on the provided parameter.
+
+**Kind**: instance method of [<code>Input</code>](#Input)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| status | <code>boolean</code> | True shows and false hides. |
 
 <a name="Input+validate"></a>
 
