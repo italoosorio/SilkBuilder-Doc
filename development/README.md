@@ -1,4 +1,4 @@
-# SilkBuilder Development Environment
+# Development Environment
 
 Using this guides you will learn how to set the SilkBuilder enviroment to start developing applications.
 

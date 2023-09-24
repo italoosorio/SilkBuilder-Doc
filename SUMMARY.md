@@ -2,12 +2,13 @@
 
 * [SilkBuilder](README.md)
 
-* [SilkBuilder Development Environment](development/README.md)
+* [Development Environment](development/README.md)
+  
   * [Development Environment](development/development_environment.md)
   * [System Elements](development/system_elements.md)
   * [Project, Data Model and ORM](development/project_data_model.md)
   * [Development Formats](development/silk_development_formats.md)
-
+  
 * [Silk Builder Training](training/README.md)
   * [Sample Database](training/sample_database.md)
   * [Plain Application](training/plain_application.md)
@@ -71,7 +72,7 @@
   * [Tile](js_object/Tile.js.md)
   * [Utility Functions](js_object/silkUtils.md)
 
-* [[Coding Techniques](how_to/)](how_to/README.md)
+* [Coding Techniques](how_to/README.md)
 
   * [Data Trees](how_to/tree.md)
   * [Pagination](how_to/pagination.md)
