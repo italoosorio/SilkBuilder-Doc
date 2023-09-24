@@ -11,4 +11,5 @@
 * [Sort Data Columns](sort_data_columns.md)
 * [Form Input File](form_file.md)
 * [Button with Confirmation](confirm_button.md)
+* [Toggle List](toggle_list.md)
 
