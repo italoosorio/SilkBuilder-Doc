@@ -121,6 +121,12 @@ Gets the page's ID hosting the Form
 Gets the select item in the Table or DataProvider.
 
 **Kind**: instance method of [<code>Form</code>](#Form)  
+<a name="Form+hide"></a>
+
+### hide()
+Hides the button
+
+**Kind**: instance method of [<code>Form</code>](#Form)  
 <a name="Form+load"></a>
 
 ### load()
@@ -214,6 +220,23 @@ If parameter is not provided it sets read only.
 Sets the Form an update operation
 
 **Kind**: instance method of [<code>Form</code>](#Form)  
+<a name="Form+show"></a>
+
+### show()
+Shows the button
+
+**Kind**: instance method of [<code>Form</code>](#Form)  
+<a name="Form+toggle"></a>
+
+### toggle(status)
+Hides or shows the form based on the provided parameter.
+
+**Kind**: instance method of [<code>Form</code>](#Form)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| status | <code>boolean</code> | True shows and false hides. |
+
 <a name="Form+Event_afterLoad"></a>
 
 ### on:afterLoad (action)

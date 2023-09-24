@@ -300,7 +300,7 @@ Sorts the data by the provided column
 <a name="Table+toggle"></a>
 
 ### toggle(status)
-Hides or shows the button based on the provided parameter.
+Hides or shows the table based on the provided parameter.
 
 **Kind**: instance method of [<code>Table</code>](#Table)  
 

@@ -83,7 +83,7 @@ A logic condition determining if the application should be executed. It accepted
 ### init
 Indicates if the table should initialize at creation time. This property should be set to *true* if it will be initialized programmatically.<br>Default Value: *true*.
 ### toggleList
-The list of comma separated elements which will be toggle together with the component.<br>The value "parent" toggles the immediate parent element.<br>Default Value: *Empty*.
+The list of comma separated elements which will be toggle together with the component.<br>The value "parent" toggles the immediate parent element.<br>The value "grandpa" toggles the grandparent element.<br>Default Value: *Empty*.
 ## Location
 
 The Table tag should be located as a child node of the layout tag *silk:Content*.

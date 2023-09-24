@@ -149,4 +149,4 @@ The *silk:Page*'s identifier which will be selected/show when the input is click
 ### timer
 Sets data entry timer which will trigger the "timer" event.<br>Default Value: *Empty*.
 ### toggleList
-The list of comma separated elements which will be toggle together with the component.<br>The value "parent" toggles the immediate parent element.<br>Default Value: *Empty*.
+The list of comma separated elements which will be toggle together with the component.<br>The value "parent" toggles the immediate parent element.<br>The value "grandpa" toggles the grandparent element.<br>Default Value: *Empty*.

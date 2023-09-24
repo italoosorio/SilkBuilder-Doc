@@ -1,4 +1,4 @@
-# How To
+# Coding Techniques
 
 ## Topics:
 
@@ -10,4 +10,5 @@
 * [Content Template](content_template.md)
 * [Sort Data Columns](sort_data_columns.md)
 * [Form Input File](form_file.md)
+* [Button with Confirmation](confirm_button.md)
 

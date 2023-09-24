@@ -29,6 +29,8 @@ Used as a container:
   renderIf=""
   init="true"
   cssClass=""
+  toggleList=""
+  toggleEdit=""
 >
    Contains: silk:Input and HTML components.
 </silk:Form>
@@ -80,3 +82,7 @@ A logic condition determining if the application should be executed. It accepted
 Defines if the component will be initialized after being created.<br>Default Value: *true*.
 ### cssClass
 The CSS class or classes to be added to the Form.<br>Default Value: *Empty*.
+### toggleList
+The list of comma separated elements which will be toggle together with the component.<br>The value "parent" toggles the immediate parent element.<br>The value "grandpa" toggles the grandparent element.<br>Default Value: *Empty*.
+### toggleEdit
+The list of comma separated elements which will be toggle when the form is in editing mode.<br>Default Value: *Empty*.
