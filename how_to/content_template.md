@@ -1,20 +1,20 @@
 # Content Template
 
-Some Silk Tags use thier content to define temples to show the data combine with HTML. Thes tag are:
+Some Silk Tags use their HTML content to define temples to show the data combined with HTML. The tag are:
 
-* silk:Column's content
-* silk:Tile's content
-* silk:Input using the template property
+- silk:Column's content
+- silk:Tile's content
+- silk:Input using the template property
 
-This method allow for the creation of elaborated HTML structures.
+This method allows for the creation of elaborated HTML structures.
 
 ## Data Binding
 
-Data binding is the process that establishes a connection between the app UI and the data it displays. In SilkBuilder the data is provided by the *DataProvider* object.
+Data binding is the process that establishes a connection between the app UI and the data it displays. SilkBuilder provides data values to the components by data-biding to the DataProvider object.
 
-The data biding is done in the template using curly brackets "{}", or double curly brakets "{{}}", containing the name of the property to be displayed.
+The data-biding with the HTML content is done in the template using curly brackets "{ }" or double curly brackets "{{ }}," containing the name of the property to be displayed.
 
-A simple data binding sample could be of a *silkColumn* set to display in a cell the *firstName* property of the selected record in the *DataProvider*:
+A simple data binding sample could be by using a silk:Column to display a cell containing the firstName property of the selected record in the DataProvider.
 
 ```xml
 <silk:Column>{firstName}</silk:Column>
@@ -29,9 +29,9 @@ A little more elaborated sample could include more data in the cell.
 </silk:Column>
 ```
 
-In this case the table cell will show the *firstName* and *lastName* inside a div tag and the *birthday* in a second div tag simulating internal rows.
+In this case, the table cell will show the firstName and lastName inside a div tag and the birthday in a second div tag, simulating internal rows.
 
-A more complex sample coudl be the inclusion of the *Card* Bootstrap componet in a silk:Tile. This sample will use double curly brakets.
+A more complex sample could be the inclusion of the Card Bootstrap component in a silk:Tile. This sample will use double curly brackets.
 
 ```xml
 <silk:Tile id="eventList" dataSource="eventDP" >
@@ -46,7 +46,7 @@ A more complex sample coudl be the inclusion of the *Card* Bootstrap componet in
 </silk:Tile>
 ```
 
-This template will use the properties: imageURL, eventName, description, eventID
+This template will use the properties: imageURL, eventName, description, eventID.
 
 ## Data Formating
 
@@ -75,13 +75,13 @@ Patterns can also be created manually using [this guide](https://github.com/asua
 
 ## Data Renderer
 
-If the data formating patterns fall short of what is expected then a function can be designated to create the desire effect. This is used in the following way:
+It is possible to utilize a function if the data formatting patterns fall short of expectations,  to create the desired effect. This is used in the following way:
 
 ```javascript
 {firstName|fn:formatName}
 ```
 
-In this case the function should received the property value and should return a text value.
+In this case, the function should receive the property value and return a text value.
 
 ```javascript
 /*
@@ -95,7 +95,7 @@ formatName = function(value){
 
 ## Logical Data Rendering
 
-It is possible to show/hide HTML tags in a template using JavaScrip logica statements. For this is necessary to use the CSS class *silk-if* and the the property *data-if* to set the logica criteria.
+It is possible to show/hide HTML tags in a template using JavaScrip logical statements. For this, it is necessary to use the CSS class *silk-if* and the property *data-if* to set the rational criteria.
 
 In the example below the DIV containing the *firstName* will only be rendered if the property *age* is more than 10.
 
@@ -103,4 +103,4 @@ In the example below the DIV containing the *firstName* will only be rendered if
 <div class="silk-if" data-if="{age}>10" >{firstName}<div>
 ```
 
-It is important to understand that this is only a visualization restriction and not a data access restriction. The *firstName* data is still stored in the *DataProvider* just not visualized. If the information should not be downloaded to the client then the restriction has to be apply in the server and/or SQL query.
+It is essential to understand that this is only a visualization restriction and not a data access restriction. The firstName data is still stored in the DataProvider, just not visualized. If it is crucial to refrain from downloading the information to the client, then it is essential to configure the data restriction settings in the server and SQL query.

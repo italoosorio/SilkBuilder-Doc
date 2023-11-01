@@ -220,6 +220,17 @@ Reload the data for the selected row by default, or the indicated row.
 | trIndex | <code>Integer</code> | The row index within the table row. |
 | dpIndex | <code>Integer</code> | The row index in the dataProvider. |
 
+<a name="Table+removeColumn"></a>
+
+### removeColumn(column)
+Removes a column object to the columns array. This also removes the header.
+
+**Kind**: instance method of [<code>Table</code>](#Table)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| column | <code>Object</code> | The column object |
+
 <a name="Table+selectRow"></a>
 
 ### selectRow(index)
@@ -337,6 +348,19 @@ Event triggered when a row is clicked. Created with the ```Table.on("click", fun
 
 ### on:error
 Event triggered after an error. Created with the ```Table.on("error", function(){})``` method.
+
+**Kind**: event emitted by [<code>Table</code>](#Table)  
+<a name="Table+Event_renderInput"></a>
+
+### on:renderInput
+Event triggered before input is being generated. If the event's' function returns true the input will be created. If it returns false it will no render an input.
+Created with the ```Table.on("input", function(value,index,item){})``` method.
+
+**Kind**: event emitted by [<code>Table</code>](#Table)  
+<a name="Table+Event_renderInput"></a>
+
+### on:renderInput
+Event triggered while input is being generated. Created with the ```Table.on("renderInput", function(index,item,type){})``` method.
 
 **Kind**: event emitted by [<code>Table</code>](#Table)  
 
