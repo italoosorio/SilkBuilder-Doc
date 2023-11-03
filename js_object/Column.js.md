@@ -84,6 +84,12 @@ Return the column's ordering condition.
 Returns the data provider's column use to sort the table.
 
 **Kind**: instance method of [<code>Column</code>](#Column)  
+<a name="Column+getTableID"></a>
+
+### getTableID() ⇒ <code>String</code>
+Returns column's table's id.
+
+**Kind**: instance method of [<code>Column</code>](#Column)  
 <a name="Column+getTargetPage"></a>
 
 ### getTargetPage() ⇒ <code>String</code>
@@ -166,6 +172,17 @@ Sets the column's CSS class.
 | --- | --- | --- |
 | newClass | <code>String</code> | The new CSS class. |
 
+<a name="Column+setTableID"></a>
+
+### setTableID(newTableID)
+Sets the column's table's id.
+
+**Kind**: instance method of [<code>Column</code>](#Column)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| newTableID | <code>String</code> | The table's id. |
+
 <a name="Column+setTargetPage"></a>
 
 ### setTargetPage(newTarget)
@@ -238,4 +255,11 @@ Sets the column's wrap condition. The values are "true" or "false".
 Shows a page using the "targetPage" property.
 
 **Kind**: instance method of [<code>Column</code>](#Column)  
+<a name="Column+Event_visible"></a>
+
+### on:visible
+Event triggered the column is rendered. If the event's' function returns true the column will be added. If it returns false it will not be added.
+Created with the ```Column.on("visible", function(item){})``` method.
+
+**Kind**: event emitted by [<code>Column</code>](#Column)  
 
