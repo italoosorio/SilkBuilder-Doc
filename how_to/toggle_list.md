@@ -1,12 +1,10 @@
 # Toggle Related Elements
 
-There are situation when *Silk Components* have to be shown or hidden following centain operational conditions. For cases like this the components have the methods show(), hide() and toggle(). However, many time the component is part of a HTML structure which will provide to the user the contextual explanation about when or how to use the component. In this kind of situations hidding only the component will leave the HTML structure visible but without the component.
+There are situations when *Silk Components* must be shown or hidden following certain operational conditions. For cases like this, the components have the methods show(), hide(), and toggle(). However, sometimes, the Silk component is part of an HTML structure, giving the user a contextual explanation of when and how to use the component's operation. In this situation, hiding only the Silk component will leave the HTML structure visible without the Silk component, which could lead to user confusion. To solve this situation, the developer has to add extra code to hide the HTML containing the Silk Component.
 
 ## Case Scenario
 
-The most common scenario of the cases above is when Buttons are set to trigger the chanage of status of an item. In this case the Button has to be shows or hidden depening on the status of the selected item in a Table.
-
-For a case like this the interface structure will be the following:
+A typical scenario is when *silk:Buttons* trigger the change of "status" of an item. In this case, the Button has to be shown or hidden depending on the existing record "status." The code below show an example:
 
 ```xml
 <div>
@@ -18,7 +16,7 @@ For a case like this the interface structure will be the following:
 </div>
 ```
 
-In this case the button "bt1" should only be shown when the item's status is not "published". If the item is already in the "published" status then the "bt1" button should be hidden. the code to make this happen is:
+In this case, the button "bt1" should only be shown when the records's status is not "published." If the record is already "published," then the "bt1" button has to be hidden. The code below uses the silkButton's property *toggle* to make this happen when the table row gets clicked.
 
 ```javascript
 /*
@@ -26,26 +24,32 @@ In this case the button "bt1" should only be shown when the item's status is not
  *  - 0 No Published
  *  - 1 Published
  */
-itemList.on("click",function(){
-	bt1.toggle( itemList.getSelectedItem().status==0 );
+dataList.on("click",function(){
+	bt1.toggle( dataList.getSelectedItem().status==0 );
 });
 ```
 
-The Button's method "toggle" will show or hide the button following the provided logic. When this gets executed the button will be shown of hidden. However, the HTML sorrounding the Button will be still visible which is not the ideal scenario.
+When this gets executed, the *silk:Button* will be shown or hidden, following the record's status condition. However, the HTML surrounding the silk:Button will still be visible, which is not the ideal scenario.
 
-To solve this issue some Silk Components have the property **toggleList**.
+To avoid adding extra code to hide the surrounding HTML, the Silk Components have the property **toggleList**.
 
 ## Toggle List
 
-The components with this property are: Button, Table, Form, and Input.
+The property *toggleList* is available in the Silk Components: Button, Table, Form, and Input. This property receives the comma-separated list of the elements which will "toggle" together with the component or some other keywords which are:
 
-| Name       | Function                                                     |
-| ---------- | ------------------------------------------------------------ |
-| toggleList | The list of comma separated elements which will be toggle together with the component. The values could be:<br>- A CSS class value which should inclue the dot prefix.<br>- The element's ID with the # prefix.<br>- The name of a Silk Commponent: Button, Table, Form, Input.<br>- The value "parent" toggles the immediate parent element.<br/>- The value "grandpa" toggles the grandparent element. |
+- A CSS class value that should include the dot prefix.
 
-## Toggle Parent
+- The element's ID with the # prefix.
 
-To solve the issue in provided case scenario the property ** toggleList** has to be setup with the value **parent**.
+- The name of a Silk Component: Button, Table, Form, Input.
+
+- The value "parent" toggles the immediate parent element.
+
+- The value "grandpa" toggles the grandparent element.
+
+## Toggle the Parent
+
+To toggle the parent, set the *toggleList* property with "parent." In the sample below, this will also hide the <div> element containing the silk:Button component.
 
 ```xml
 <div>
@@ -57,11 +61,9 @@ To solve the issue in provided case scenario the property ** toggleList** has to
 </div>
 ```
 
-In this case all the HTML structure embedding the button will get affected.
-
 ## Toggle by ID
 
-In this case the DIV *publishingBox* will be affected.
+To hide any HTML element, add the element's ID to the toggleList property. In the sample, when the button gets hidden, the DIV identified as "publishingBox" will also be hidden or shown.
 
 ```xml
 <div id="publishingBox" >
@@ -75,7 +77,7 @@ In this case the DIV *publishingBox* will be affected.
 
 ## Toggle by CSS Class
 
-In this case the DIV with the CSS class *publishing-box* will be affected. This CSS class could be used in multiple elements.
+Elements can also be accessible using their CSS class.
 
 ```xml
 <div class="publishing-box" >
@@ -89,7 +91,7 @@ In this case the DIV with the CSS class *publishing-box* will be affected. This 
 
 ## Toggle Another Component
 
-It is possible to include another component to the list.
+To toggle another Silk Component, add the component's identifier to the toggleList property.
 
 ```xml
 <silk:Button id="bt1" label="Set to Published" toggleList=".publishingBox" />
@@ -98,7 +100,7 @@ It is possible to include another component to the list.
 
 ## Toggle Multiple Elements.
 
-The property can also be used to toggle multiple elements.
+The *toggleList* property can target elements; these must be added as a comma-separated list.
 
 ```xml
 <h4 id="publishingBox" >Publishing</h4>
@@ -114,7 +116,7 @@ The property can also be used to toggle multiple elements.
 
 ## Toggle Negation
 
-If the objective is to show something when the component is being hidden then a exclamation mark has to be added to the element indentifier "!".
+If the objective is to invert the toggle action of the target item, the symbol "!" has to be added to the identifier.
 
 ```xml
 <silk:Button id="bt1" label="Set to Published" toggleList="!publishedMessage" />

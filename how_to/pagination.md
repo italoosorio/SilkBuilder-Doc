@@ -1,10 +1,10 @@
 # Pagination
 
-The pagination component is used communicate the pagination settings to the database, and to provide an interactive way to select which page to visualize. The component will create visual representation for each page.
+The pagination component is used to communicate the pagination settings to the database and to provide an interactive way to select which page to visualize. The component will generate the Bootstrap pagination component to interact with each generated page.
 
-## Implementation
+## The Tag
 
-Set pagination tag in the place the pagination icons will be showed. 
+To start by placing the *silk:Pagination* tag in the place in which the page's icons will be shown. The tag has the property "size," which indicates the number of rows each page will have, and the property "pages," which indicates how many pages will show in the pages selector before scrolling.
 
 ```xml
 <div>
@@ -12,9 +12,13 @@ Set pagination tag in the place the pagination icons will be showed.
 </div>
 ```
 
-Set in the table's ORM the SELECTs which are going to be used by the pagination process.
+## The ORM Selects
 
-Add to the SELECT used to extract the itesm to be display the pagination commands based on the database's specifications. 
+In the ORM,  set the SQL selects which are going to be used by the pagination process.
+
+### The Page Select
+
+Add the SELECT used to extract the items to display on the selected page. Use the database's specifications to apply pagination filters. The provided parameters are "pageStartRow" and "pageSize."
 
 ```sql
 -- MS SQL Server sample
@@ -24,7 +28,9 @@ from listTable
 offset $V{pageStartRow} rows fetch next $V{pageSize} rows only
 ```
 
-Create a SELECT which will return the number rows and the total pages to be displayed. This SELECT should have the same criteria as the SELECT listing the items. 
+### The Pages List Select
+
+Create a SELECT returning the table's total number of rows and the total number of pages to be listed. This SELECT should have the same criteria as the SELECT listing the items. 
 
 ```sql
 select
@@ -33,20 +39,24 @@ select
 from listTable
 ```
 
-Notice the use of the ```$V{}``` parameter method when setting the pagination parameters. The use to avoid setting the value's type in the ORM. If you wan tot use the ```$P{}``` then each parameter has to be setup in the ORM.
+### The $V{} parameter holder
 
-Set the DataProviders, one for the item's list and another for the pagination. The DataProvider used to display the items shoud be setup as ```autoload="false"```.
+Notice using the $V{} parameter holder when setting the pagination parameters. This method avoids adding related columns in the ORM, but these are added directly to the SQL string. Any value processed by $V{} gets validated against SQL injection threats. If a threat is found, then the provided value will be discarded. If you want to use $P{}, then each parameter has to be set up in the ORM as related columns.
+
+## The Data Provider
+
+Set two DataProviders, one for the items listed on the page and another for the pages to be listed. Set the *autoload* property to "false" for the DataProvider displaying the selected page items.
 
 ```xml
 <silk:DataProvider id="listDP" servicePath="/--/--/" autoLoad="false" />
 <silk:DataProvider id="pageDP" servicePath="/--/--/" />
 ```
 
-Set the DataProvider *pageDP* events which will interact with the database.
+### The pageDP
 
-The *beforeSelect* event has to clear the pagination component from any prevoiusly loaded data, and then send the *pageSize* parameter. The value for this is extracted from the pagination component attribute *pageSize*.
+Set the DataProvider *pageDP* events, which will interact with the database.
 
-The *afterSelect* event received the *totalRows* and *totalPages* values from the database. These are use in the *load* method to initialize the pagination component. Then the dataProvider conainting the item's list is loaded.
+The *beforeSelect* event has to clear the pagination component from any previously loaded data and then send the *pageSize* parameter. The value for this gets extracted from the pagination component attribute *pageSize*.
 
 ```javascript
 pageDP.on("beforeSelect", function(){
@@ -54,7 +64,11 @@ pageDP.on("beforeSelect", function(){
 	pagesDP.setParameter("pageSize", paginationBox.pageSize );
   // Add other paramaters required by the process
 });
+```
 
+The *afterSelect* event received the *totalRows* and *totalPages* values from the database. These are used in the *load* method to initialize the pagination component. Then the dataProvider conainting the item's list is loaded.
+
+```javascript
 pageDP.on("afterSelect", function(){
   var totalRows = pageDP.getItemAt(0,"totalRows");
   var totalPages = pageDP.getItemAt(0,"totalPages");
@@ -63,7 +77,9 @@ pageDP.on("afterSelect", function(){
 });
 ```
 
-Set the pagination component's click event. This event is triggered when the user clicks on each page icon. This shoud load the DataProvider containing the item's list which will return the requested page's items.
+### Click on Page Icon
+
+Set the pagination component's **click** event. This event is triggered when the user clicks on a page icon. This event should load the DataProvider containing the item list, which will return the requested page's items.
 
 ```javascript
 paginationBox.on("click", function(){
@@ -71,7 +87,9 @@ paginationBox.on("click", function(){
 });
 ```
 
-Set the DataProvider *listDP* events. Create of modity the *beforeSelect* event to add parameters *pageSize* and *pageStartRow*. These values are extracted from the pagination component.
+### The listDP
+
+Set the DataProvider listDP events. Create of modify the beforeSelect event to add parameters pageSize and pageStartRow. These values get extracted from the pagination component.
 
 ```javascript
 listDP.on("beforeSelect", function(){
@@ -81,13 +99,25 @@ listDP.on("beforeSelect", function(){
 });
 ```
 
-### Pagination and dpSearch
+### Text Search
 
-The Table property *dpSearch* determins how text will be search in the table. If set to "true" the search will be executed in the DataProvider. This options, by default, will load the DataProvider filling the table. However, in pagination the DataProvider to be loaded is the one holding the pagination information.
-
-The *dpSearch* property can also received the name of a *DataProvider* to load a search. For pagination the *dpSearch* properlty should received the *DataProvider* containing the pagination information.
+In a pagination setup,  if the Table's property *searchable* is "true," then the text search will only happen in the loaded items and not in the not-loaded pages.
 
 ```xml
-<silk:Table id="" dpSearch="pageDP" />
+<silk:Table id="myTable" searchable="true" />
+```
+
+If the search should affect the loaded page items and the non-loaded pages, then the *dpSearch* property has to be used.
+
+### Pagination and dpSearch
+
+The Table property *dpSearch* determines whether the text search execution is in the database. If this property is "true," after entering a search text, the *select()* method will be called to get the new data from the database filtered by the provided text. 
+
+By default, the *dpSearch* executes the *select() method* in the DataProvider connected to the table listing the page's items, **listDP** in our example. However, when using pagination, the DataProvider needed to be called is the one holding the pages list, the **pageDP** in our sample.
+
+The *dpSearch* property can also receive the name of a *DataProvider* to call when executing a search. And this is the case for pagination; the *dpSearch* property should receive the *DataProvider* containing the pagination information, the **pageDP** in our example, which, after execution, will call **listDP**.
+
+```xml
+<silk:Table id="myTable" searchable="true" dpSearch="pageDP" />
 ```
 

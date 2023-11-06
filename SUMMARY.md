@@ -78,7 +78,7 @@
   * [Pagination](how_to/pagination.md)
   * [Mark Deleted](how_to/mark_deleted.md)
   * [Record Sync](how_to/sync_record_detail.md)
-  * [Server Code Logic](how_to/server_code_logic.md)
+  * [Filtering Code](how_to/filtering_code.md)
   * [Content Template](how_to/content_template.md)
   * [Sort Data Columns](how_to/sort_data_columns.md)
   * [Form Input File](how_to/form_file.md)

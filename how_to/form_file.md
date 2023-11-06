@@ -1,10 +1,10 @@
 # Form Input File
 
-Each upload file is aparticular case.
+Each upload file is a particular case. This document explains how the silk:Input component operates with files when set to type "file."
 
-## Database Table
+## The Table Setup
 
-The table connected to the file has to containg a column in which the file's name will be stored. This could stored be the uploaded file's name or a modified file's name based on the application storage requirements. In the table below the column *profileImage* will store the file's name.
+The table connected to the file has to contain a column to store the file's name. In the example below, the column *profileImage* will keep the file's name.
 
 ```sql
 create table person (
@@ -14,13 +14,13 @@ create table person (
 )
 ```
 
-## ORM Select
+## The ORM
 
-When configuring the ORM the column storing the file's name shoud be sest as *String*. And the select should return the particular column.
+When configuring the ORM, set the column storing the file's name to data type *String*. The SQL select should contain the particular column.
 
-## Application Form
+## The Input
 
-In the application the *silkForm* a *silk:Input* tag will be setup to handle the column storing the file's name. The property **type** will be set as *"file"*. The property **uploadURL** should contain the URL to service which will operate the uploading process.
+In the application, add the silk:Input tag to handle the column storing the file's name. Set the property type to "file". The property uploadURL should contain the URL to the service operating the uploading process.
 
 ```xml
 <silk:Input id="profileImage" type="file" label="Profile Image"
@@ -28,7 +28,7 @@ In the application the *silkForm* a *silk:Input* tag will be setup to handle the
 />
 ```
 
-The *silk:Input* tag has other properties related to uploading files which can help filtering the files. The property **fileTypeList** containg a comma separted list of accepted extensions. The property **fileSizeLimit** contains the number of MB allowed to be uploaded.  These properties are processed in the client side, for precautiong these validations should be also be done in the application excuting the uploading process if consider necessary.
+The *silk:Input* tag has other properties related to the uploading files. The property **fileTypeList** receives a comma-separated list of accepted extensions. The property **fileSizeLimit** contains the number of maximum MB allowed to be uploaded. The navigator will process these restrictions on the client side. For precaution, these validations should also be done in the uploading service if necessary.
 
 ```xml
 <silk:Input id="profileImage" type="file" label="Profile Image"
@@ -38,17 +38,17 @@ The *silk:Input* tag has other properties related to uploading files which can h
 />
 ```
 
-In the application the form item or input will show in this way.
+In the application, the input will show in this way.
 
 ![Form Input File](../.gitbook/assets/form_file_empty.png)
 
-The user can drag a file into the drop area or click the area to open the file browers and the file will be uploaded.
+The user could drag a file into the drop area or click the drop area to open the file browser to select a file.
 
 ### Auto file upload Issue
 
-Once a file is selected into a file input it is automatically uploaded. **If the form's insert process is canceled the file will remain in the file storage.** This is very critical to consider if the name of the uploaded file or the folder location will change based on the data generated after an insert. As an example, if the name of the uploaded file will be change to follow the record's ID then uploaded the file during an insert operation will fail considering that the file is automatica and the record  has not been created yet.
+The file is automatically uploaded after it is dragged into the drop area or after being selected. Suppose a file is uploaded when the form operates an insert action, and the process gets canceled. In that case, the application will not create the record hosting the file's name, **but the already uploaded file will remain in the storage folder.** This becomes critical if the upload process changes the file's name using the newly created record's data. 
 
-To avoidd desynchronization it is adviced to enable the the upload input only buring an "update" operation. Setting the property **editable** helps on this functionality.
+To avoid the above situation, set the file input to be visible only during "update" operations. Use the property "**editable"** to implement this functionality.
 
 ```xml
 <silk:Form id="personForm" >
@@ -63,68 +63,107 @@ To avoidd desynchronization it is adviced to enable the the upload input only bu
 </silk:Form>
 ```
 
-SilkBuilder does not submit the form's inputs in the regular POST or GET method. These are processed differently by the framework. When a file input is sumitted by SilkBuilder it goes like a text file and stores the file's name in the selected table's column.
+SilkBuilder does not submit the form's inputs using the regular POST or GET method. These are processed differently by the framework. During the submission process, the file input will only send the file's name. This is because the file has already been uploaded and processed, as defined in the uploadURL property.
 
-## Upload Service
+## The Upload Service
 
-SilkBuilder provides a library to help building the service receiving the uploaded file: [com.oopsclick.silk.file](https://silkbuilder.com/javadoc/com/oopsclick/silk/file/package-summary.html). 
+The service to process the upload is defined using the **uploadURL** property. The developer can program the service in any way that fits the processing goals. However, to facilitate the file processing SilkBuilder provides the Java classes [Uploaded](https://javadoc.silkbuilder.com/com/oopsclick/silk/file/Uploaded.html) and [FormField](https://javadoc.silkbuilder.com/com/oopsclick/silk/file/FormField.html). The following examples use these classes to execute the uploading process. 
 
-The code below is a service which gets the file and saves it in a folder with not data return.
+The code below is a service that gets the file and saves it in a folder with no data return.
 
 ```java
 <%@ page import="com.oopsclick.silk.file.*" %>
 <%
+  /*
+   * Load the request into the an Uloaded object.
+   */
 	Uploaded uploaded = new Uploaded(request);
-	FormField profileImage = uploaded.get("profileImage");
-	int result = profileImage.saveFile("/folder/goes/here/");
+
+	/*
+	 * Extract the 'profileImage' object from 'uploaded' into a FormField object.
+	 */
+	FormField profileImageField = uploaded.get("profileImage");
+
+	/*
+	 * Saves the profileImageField data stream in the provided folder.
+	 */
+	int result = profileImageField.saveFile("/folder/goes/here/");
 %>
 ```
 
-## Extra Processing
+## Submit Extra Data
 
-adsdsaf
+Use the input method *beforeUpload* to add extra data into the upload submission process. This method receives the parameters: input, the JavaScript **DataForm** object, the file's name, and the file's size. Use the DataForm's ***append\*** method to add extra information.
 
-### Submit Extra Data
-
-The input's method *beforeUpload* is to be used to submit extra data to the upload service. The method receives the parameters input and the JavaScript **DataForm** object which will be submited to the upload service. The **DataForm**'s method *append* is used to add extra data to be submited.
-
-In the example below the *fullName* input's value is added to DataForm.
+The example below shows how to add the data "fullName" to the DataForm before submission. All this process is necessary only if the upload service will use the fullName information during the uploading process.
 
 ```javascript
-personForm.profileImage.beforeUpload = function(input,dataForm){
+personForm.profileImage.on("beforeUpload", function(input,dataForm, fileName, fileSize){
 	dataForm.append("fullName", personDP.getSelectedItem().fullName);
-};
+});
 ```
 ## Service with Extra Processing
 
-The service receives the *fulName* in the *request* and it is added to the file's name before saving it. The event *getSavedFileName()* returns the name use to fave the file. The service returns a JSON structure containing new name in the property *fileName*.
+The upload service receives the fulName in the request. This is added to the file's name before saving it. The event getSavedFileName() returns the name used to save the file. The service returns a JSON structure containing the new name in the property fileName.
 
 ```java
 <%@ page import="com.oopsclick.silk.file.*" %>
 <%
+  /*
+   * Load the request into the an Uloaded object.
+   */
 	Uploaded uploaded = new Uploaded(request);
 
-	FormField fullName = uploaded.get("fullName");
+	/*
+	 * Extracts the 'fullName' object from 'uploaded' into a FormField object.
+	 */
+	FormField fullNameField = uploaded.get("fullName");
+
+	/*
+	 * Gets the fullName value and replaces spaces with underscore.
+	 */
+	String fullName = fullNameField.getValue();
 	fullName = fullName.toLowerCase().replaceAll(" ","_");
 
-	FormField profileImage = uploaded.get("profileImage");
-	String newFileName = fullName+"_"+profileImage.getValue();
-	int result = profileImage.saveFile(newFileName, "/folder/goes/here/");
+	/*
+	 * Extract the 'profileImage' object from 'uploaded' into a FormField object.
+	 */
+	FormField profileImageField = uploaded.get("profileImage");
+
+	/*
+	 * Combines the fullName and profileImage value (the files's name) into 
+	 */
+	String newFileName = fullName+"_"+profileImageField.getValue();
+
+	/*
+	 * Saves the profileImageField stream into the selected folder
+   * using the 'newFileName' value as the file's name.
+	 */
+	int result = profileImageField.saveFile(newFileName, "/folder/goes/here/");
+
+	/*
+	 * Builds a JSON structure to return the new file name.
+	 * Uses the FormField's property 'getSavedFileName()' to retrieved the
+	 * name used when saving the file.
+	 * Using the 'newFileName' value will also work.
+	 */
 %>
-{"fileName":"<%= profileImage.getSavedFileName() %>"}
+{
+	"fileName":"<%= profileImage.getSavedFileName() %>"
+}
 ```
 
-If SilkBuilder finds the property *fileName* it automatically applies it to the input's value. 
+In the client, if SilkBuilder received the property *fileName* it automatically applies it to the input's value.
 
 ### Receiving Upload Service Data
 
-If other data are returned by the upload service these can be access an operated using the *afterUpload* event. This event receives as paramter the input, the result of the opeation: *true* if succesfull or *false* if failure, and the data object containing the parsed JSON data. 
+If the upload service returns other data, these can be accessed and operated using the afterUpload event. This event receives the parameters: the input field, the operation's result: "true" if successful or "false" if failure, and the data object containing the parsed JSON data. 
 
 ```javascript
-personForm.profileImage.afterUpload = function(input,result,data){
+personForm.profileImage.on("afterUpload", function(input,result,data){
 	if( result ){
 		console.log( data.fileName );
 	}
-};
+});
 ```
 

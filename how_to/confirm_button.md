@@ -1,6 +1,6 @@
 # Button with Confirmation
 
-To *silk:Button* component contains the option to display a confirmation dialog window before triggering the "click" event. The user will use the dialog window to confirm the button's action. The confirmation process uses the library [sweetalert2](https://sweetalert2.github.io/) to display the dialog window with two buttons to click: one button to cancel and another to confirm. By default, the confirmation button shows the "OK" label.
+The *silk:Button* component contains the option to display a confirmation dialog window before triggering the "click" event. The user will use the dialog window to confirm the button's action. The confirmation process uses the library [sweetalert2](https://sweetalert2.github.io/) to display the dialog window with two buttons to click: one button to cancel and another to confirm. By default, the confirmation button shows the "OK" label.
 
 The code below shows the silk tag using the confirmation properties.
 
