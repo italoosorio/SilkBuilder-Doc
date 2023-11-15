@@ -24,6 +24,8 @@ Used as a container:
   sortColumn=""
   idColumn=""
   renderIf=""
+  cleanIf=""
+  distinct=""
 >
    Contains: Template containing {fields} and HTML components.
 </silk:Column>
@@ -69,6 +71,10 @@ The column to sort the dataProvider. This does not work if the dataProvider is s
 The input identifier which will be used to extract the entered data.<br>Default Value: *Empty*.
 ### renderIf
 A logic condition determining if the application should be executed. It accepted model variables. The explanation on how to use the logic statement is found in <a href="how_to/server_code_logic.md">Server Code Logic</a> documentation.<br>Default Value: *Empty*.
+### cleanIf
+Logic statement indicating the condition in which the column cell should show empty.<br>Keywords: empty.<br>Default Value: *Empty*.
+### distinct
+The column which will determine the distinct condition.<br>If the column's value of the previous row is equals to the current row the value will not be rendered.<br>Default Value: *Empty*.
 
 ## Location
 The Column tag should be located as a child node of the *silk:Table* tag.

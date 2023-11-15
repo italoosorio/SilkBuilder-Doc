@@ -34,6 +34,12 @@ Returns the cell text.
 | index | <code>Integer</code> | The data provider index. |
 | item | <code>Object</code> | The object with the row structure. |
 
+<a name="Column+getDistinct"></a>
+
+### getDistinct()
+Return the column used to check the distict condition.
+
+**Kind**: instance method of [<code>Column</code>](#Column)  
 <a name="Column+getDraggable"></a>
 
 ### getDraggable() ⇒ <code>Booelan</code>
@@ -171,6 +177,17 @@ Sets the column's CSS class.
 | Param | Type | Description |
 | --- | --- | --- |
 | newClass | <code>String</code> | The new CSS class. |
+
+<a name="Column+setDistinct"></a>
+
+### setDistinct(columm)
+Sets the column to check distinct condition.
+
+**Kind**: instance method of [<code>Column</code>](#Column)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| columm | <code>String</code> | The column to check. |
 
 <a name="Column+setTableID"></a>
 

@@ -80,6 +80,12 @@ Returns the HEX value of ransom color.
 
 ## getTemplateData(template, index, item, renderer) ⇒ <code>String</code>
 Replaces the columns, enclosed with "{" or ""{{", found in a provided template with the attributes found in the the provided item. Then apply a renderer if provided.
+Some templates:
+- {row-index} - Renders the row number starting with 1. Usually use to display the row number in a table.
+- {dp-inded} - Renders the data provider index used when building the row.
+- {ms-value} - Render the current milliseconds. Usually used as a unique variable when displaying images.
+- {column|fn:function} - Sends the column's value to the provided function.
+- {column|dp:DataProvider:dpColumn} - Retrieves the dpColumn's value from the DataProvider searching for the column's value.
 
 **Kind**: global function  
 

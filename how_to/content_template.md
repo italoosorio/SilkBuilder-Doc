@@ -1,6 +1,6 @@
 # Content Template
 
-Some Silk Tags use their HTML content to define temples to show the data combined with HTML. The tag are:
+Some Silk Tags use their HTML content to define temples to show the data combined with HTML. The tags are:
 
 - silk:Column's content
 - silk:Tile's content
@@ -14,13 +14,13 @@ Data binding is the process that establishes a connection between the app UI and
 
 The data-biding with the HTML content is done in the template using curly brackets "{ }" or double curly brackets "{{ }}," containing the name of the property to be displayed.
 
-A simple data binding sample could be by using a silk:Column to display a cell containing the firstName property of the selected record in the DataProvider.
+A simple data binding sample could be by using silk:Column to display a cell containing the firstName property of the selected record in the DataProvider.
 
 ```xml
 <silk:Column>{firstName}</silk:Column>
 ```
 
-A little more elaborated sample could include more data in the cell.
+A slightly more elaborate sample could include more data in the cell.
 
 ```xml
 <silk:Column>
@@ -50,57 +50,75 @@ This template will use the properties: imageURL, eventName, description, eventID
 
 ## Data Formating
 
-The data extracted from the *DataProvider* during the data binding process can received formating. This is done adding the formating pattern after the property name separaated by a pipe symbol "|".
+The data extracted from the *DataProvider* during the data binding process can receive a formatting pattern added to the data binding template after a pipe symbol separating the property name "|."
 
 ```xml
 {startDate|<formating-pattern>}
 ```
 
-Silk Builder provides common patterns to help formating during development:
+Silk Builder provides common patterns to help data formatting during development:
+
+- {column|date} - Renders the date as MM/dd/yyy
+- {column|numeric} - Renders number as ##'###,###
+- {column|number} - Renders number as ##'###,###
+- {column|integer} - Renders number as ##'###,###
+- {column|decimal} - Renders decimal number as ##'###,###.00
+- {column|byte} - Renders as ###KB or ###MB 
+
+Patterns can also created manually using [this guide](https://github.com/asual/jquery-format). An example found below.
 
 ```
-{startDate|date} - Renders the date as MM/dd/yyy
-{totalStudent|numeric} - Renders number as ##'###,###
-{totalStudent|number} - Renders number as ##'###,###
-{totalStudent|integer} - Renders number as ##'###,###
-{salary|decimal} - Renders decimal number as ##'###,###.00
-{fileZize|byte} - Renders as ##MB
-```
-
-Patterns can also be created manually using [this guide](https://github.com/asual/jquery-format).
-
-```
-{startDate|MM/dd/yyy} {salary|##'###,###.00}
+{column|MM/dd/yyy} {salary|##'###,###.00}
 ```
 
 ## Data Renderer
 
-It is possible to utilize a function if the data formatting patterns fall short of expectations,  to create the desired effect. This is used in the following way:
+If formatting patterns fall short of expectations, a function can be used to create the desired effect. This pattern is used in the following way:
+
+```javascript
+{column|fn:<function>}
+```
+
+This example sends the *firstName*'s value to the function *formatName*.
 
 ```javascript
 {firstName|fn:formatName}
 ```
 
-In this case, the function should receive the property value and return a text value.
+The function should receive the property value and return a text value.
 
 ```javascript
 /*
  * Function will wrap the firstName in bold if the name is "Mary".
  */
-formatName = function(value){
+formatName = function(value, index, item){
   if( value=="Mary" ) return "<b>"+value+"</b>";
   return value;
 }
 ```
 
-## Logical Data Rendering
+## DataProvider Query
 
-It is possible to show/hide HTML tags in a template using JavaScrip logical statements. For this, it is necessary to use the CSS class *silk-if* and the property *data-if* to set the rational criteria.
+If the column's value is the primary key of a *DataProvider*, this can be used to query the *DataProvider* and extract a desired column's value using this pattern.
 
-In the example below the DIV containing the *firstName* will only be rendered if the property *age* is more than 10.
-
-```xml
-<div class="silk-if" data-if="{age}>10" >{firstName}<div>
+```javascript
+{column|dp:DataProvider:dpColumn}
 ```
 
-It is essential to understand that this is only a visualization restriction and not a data access restriction. The firstName data is still stored in the DataProvider, just not visualized. If it is crucial to refrain from downloading the information to the client, then it is essential to configure the data restriction settings in the server and SQL query.
+This example will query the DataProvider *countryDP* using the *countryID* column and will render the found country's name.
+
+```
+{countryID|dp:countryDP:countryName}
+```
+
+## Logical Data Rendering
+
+HTML tags used in the template can be filtered using JavaScript logical statements. For this, adding the property "*renderIf" to the HTML tag and* setting the rational criteria is necessary.
+
+In the example below, the DIV containing the *firstName* column will render if the property *age* exceeds 10.
+
+```xml
+<div renderIf="{age}>10" >{firstName}<div>
+```
+
+It is essential to understand that this is only a visualization restriction, not a data access restriction. The *firstName* column exists in the *DataProvider* and can be accessed using JavaScript. If it is crucial to refrain from downloading the information to the client, then it is essential to configure the data restriction settings in the SQL query.
