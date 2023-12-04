@@ -23,10 +23,10 @@ Extra steps in the *DataProvider* and the *ORM*'s are required to use sorting in
 
 ### The DataProvider
 
-In the *DataProvider* set the *dbSort* property to *true*.
+In the *DataProvider* set the *dpSort* property to *true*.
 
 ```xml
-<silk:DataProvider id="personDP" servicePath="" dbSort="true" />
+<silk:DataProvider id="personDP" servicePath="" dpSort="true" />
 ```
 
 Use the *DataProvider*'s setSortColumn( ) method to set the initial sorting column submitted to the *DataProvider*. Then, using the *beforeSelect* event, set the sorting column as a parameter used by the *ORM's* select. The method *getSQLSortColumn()* returns the *sortColumn* selected by the user with the SQL sorting keywords "asc" or "desc" added depending on the sorting action. If that is not desirable, then the method *getSortColumn*() can be used.
