@@ -344,6 +344,41 @@ Event triggered when a row is clicked. Created with the ```Table.on("click", fun
 | dbIndex | <code>Integer</code> | The dataProvider index of the selected row. |
 | mouseEvent | <code>Object</code> | The mouse click even object. |
 
+<a name="Table+Event_dragDrop"></a>
+
+### on:dragDrop
+Event triggered when a dragged row is dropped over a row area. It returns the column index, row index, data provider item, and the mouse event.
+Created with the ```Table.on("dragStart", function(columnIndex, rowIndex, dpItem, event ){})``` method.
+
+**Kind**: event emitted by [<code>Table</code>](#Table)  
+<a name="Table+Event_dragEnter"></a>
+
+### on:dragEnter
+Event triggered when a dragged row enters another row area. It returns the column index, row index, data provider item, and the mouse event.
+Created with the ```Table.on("dragStart", function(columnIndex, rowIndex, dpItem, event ){})``` method.
+
+**Kind**: event emitted by [<code>Table</code>](#Table)  
+<a name="Table+Event_dragLeave"></a>
+
+### on:dragLeave
+Event triggered when a dragged row leaves a row area. It returns the column index, row index, data provider item, and the mouse event.
+Created with the ```Table.on("dragStart", function(columnIndex, rowIndex, dpItem, event ){})``` method.
+
+**Kind**: event emitted by [<code>Table</code>](#Table)  
+<a name="Table+Event_dragOver"></a>
+
+### on:dragOver
+Event triggered when a dragged row is over another row area. It returns the column index, row index, data provider item, and the mouse event.
+Created with the ```Table.on("dragStart", function(columnIndex, rowIndex, dpItem, event ){})``` method.
+
+**Kind**: event emitted by [<code>Table</code>](#Table)  
+<a name="Table+Event_dragStart"></a>
+
+### on:dragStart
+Event triggered when a row starts being dragged. It returns the column index, row index, data provider item, and the mouse event.
+Created with the ```Table.on("dragStart", function(columnIndex, rowIndex, dpItem, event ){})``` method.
+
+**Kind**: event emitted by [<code>Table</code>](#Table)  
 <a name="Table+Event_error"></a>
 
 ### on:error
