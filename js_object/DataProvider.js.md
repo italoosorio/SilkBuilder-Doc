@@ -381,14 +381,16 @@ Set a new selectName value
 
 <a name="DataProvider+setSortColumn"></a>
 
-### setSortColumn(column)
-Sets sorting column
+### setSortColumn(column, direction)
+Sets the sorting column and direction. The direction is optional.
+If the sorting happens in the database then before execting a select the sort column has to be setup.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | column | <code>String</code> | Column name |
+| direction | <code>Integer</code> | Sorting directionn. 1 - accedant, -1 is descendant |
 
 <a name="DataProvider+setTimeout"></a>
 
