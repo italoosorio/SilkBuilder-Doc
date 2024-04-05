@@ -68,7 +68,7 @@ The name of the columns used as primary key if the DataProvider has been created
 ### detailDP
 The *DataProvider* which will be loaded when clicking on an associated *silk:Table* row.<br>Default Value: *Empty*.
 ### recordSync
-If _true_ if will load a ORM select containing extra columns for the selected record.<br>Default Value: *Empty*.
+If _true_ if will load a ORM select containing extra columns for the selected record.<br>This will trigger a second click in the connected component after the synchronization process completed.<br>Default Value: *Empty*.
 ### dpSort
 Determines if the sorting process will run in the database. This does not work if the dataProvider is set to treeData="true".<br>Default Value: *Empty*.
 ### timeout

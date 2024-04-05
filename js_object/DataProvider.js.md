@@ -23,6 +23,8 @@ Returns a DataProvider instance.
 | [options.debugLevel] | <code>Integer</code> | <code>0</code> | Define the debuging level. Currently only level 4 is avaialable. |
 | [options.pkColumn] | <code>String</code> |  | The primary key column of the table accesed. |
 | [option.detailDP] | <code>String</code> |  | The name of the DataProvider which contains the detail data of the selected record. |
+| [option.recordSync] | <code>Boolan</code> |  | Indicates if the dataProvider will sync the records with the data from a recordsync data providers. The execution of a record sync triggers a second click event in the table. |
+| [option.dpSort] | <code>Boolean</code> |  | Indicates if the sorting will happen in the data provider. |
 
 <a name="DataProvider+addComponent"></a>
 
