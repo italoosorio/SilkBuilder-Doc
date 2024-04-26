@@ -385,9 +385,9 @@ Created with the ```Table.on("dragStart", function(columnIndex, rowIndex, dpItem
 Event triggered after an error. Created with the ```Table.on("error", function(){})``` method.
 
 **Kind**: event emitted by [<code>Table</code>](#Table)  
-<a name="Table+Event_renderInput"></a>
+<a name="Table+Event_input"></a>
 
-### on:renderInput
+### on:input
 Event triggered before input is being generated. If the event's' function returns true the input will be created. If it returns false it will no render an input.
 Created with the ```Table.on("input", function(value,index,item){})``` method.
 
