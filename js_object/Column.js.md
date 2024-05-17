@@ -275,7 +275,7 @@ Shows a page using the "targetPage" property.
 <a name="Column+Event_visible"></a>
 
 ### on:visible
-Event triggered the column is rendered. If the event's' function returns true the column will be added. If it returns false it will not be added.
+Event triggered when the column is rendered. If the event's' function returns true the column will be added. If it returns false it will not be added.
 Created with the ```Column.on("visible", function(item){})``` method.
 
 **Kind**: event emitted by [<code>Column</code>](#Column)  

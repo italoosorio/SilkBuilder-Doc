@@ -7,7 +7,6 @@
 | Name | Type | Description |
 | --- | --- | --- |
 | $button | <code>Object</code> | jQuery object referencing to the button HTML tag. |
-| validationFunction | <code>funtion</code> | A function to be executed to validate if the click event should be triggered. Undefined by default. |
 
 
 
@@ -160,6 +159,12 @@ Hides or shows the button based on the provided parameter.
 | --- | --- | --- |
 | status | <code>boolean</code> | True shows and false hides. |
 
+<a name="Button+Event_beforeClick"></a>
+
+### on:beforeClick
+Event triggered before the Button is clicked. Created with the ```Button.on("beforeClick", function(){})``` method.
+
+**Kind**: event emitted by [<code>Button</code>](#Button)  
 <a name="Button+Event_click"></a>
 
 ### on:click

@@ -70,6 +70,12 @@ Activates the tab related to the provided page's name.
 | --- | --- | --- |
 | pageName | <code>String</code> | Page's name or unique identifier. |
 
+<a name="TabsNav+setBarWidth"></a>
+
+### setBarWidth()
+Syncs the TabsNav widh to the host header.
+
+**Kind**: instance method of [<code>TabsNav</code>](#TabsNav)  
 <a name="TabsNav+show"></a>
 
 ### show()

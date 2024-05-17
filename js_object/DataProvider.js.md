@@ -18,13 +18,13 @@ Returns a DataProvider instance.
 | [opsions.servicePath] | <code>String</code> |  | The url to the service providing the data. |
 | [options.selectName] | <code>String</code> |  | The ORM's selectName used to extract the data. |
 | [options.treeData] | <code>Boolean</code> | <code>false</code> | Indicates if the data will be treated as a hirargical structure. |
-| [options.markDeleted] | <code>Boolean</code> | <code>flase</code> | Indicated that records will display like a deletion but marked deleted in the database. |
+| [options.markDeleted] | <code>Boolean</code> | <code>false</code> | Indicated that records will display like a deletion but marked deleted in the database. |
 | [options.isPublic] | <code>Integer</code> | <code>0</code> | Indicates if the service is publicly available. |
 | [options.debugLevel] | <code>Integer</code> | <code>0</code> | Define the debuging level. Currently only level 4 is avaialable. |
 | [options.pkColumn] | <code>String</code> |  | The primary key column of the table accesed. |
 | [option.detailDP] | <code>String</code> |  | The name of the DataProvider which contains the detail data of the selected record. |
-| [option.recordSync] | <code>Boolan</code> |  | Indicates if the dataProvider will sync the records with the data from a recordsync data providers. The execution of a record sync triggers a second click event in the table. |
-| [option.dpSort] | <code>Boolean</code> |  | Indicates if the sorting will happen in the data provider. |
+| [option.recordSync] | <code>Boolan</code> | <code>false</code> | Indicates if the dataProvider will sync the records with the data from a recordsync data providers. The execution of a record sync triggers a second click event in the table. |
+| [option.dpSort] | <code>Boolean</code> | <code>false</code> | Indicates if the sorting will happen in the data provider. |
 
 <a name="DataProvider+addComponent"></a>
 
@@ -94,6 +94,12 @@ Executes a ORM Operation. If this required parameters these should be added in t
 ### getComponents()
 Returns the array containing the components which will be notify of changes in the data provider.<br>
 The component must have a load() function.
+
+**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
+<a name="DataProvider+getID"></a>
+
+### getID()
+Returns the component's' unique identifier.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
 <a name="DataProvider+getIndex"></a>
@@ -408,7 +414,7 @@ Returns the number of records in the data array.
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
 <a name="DataProvider+sort"></a>
 
-### sort(column)
+### sort(column, changeOrder)
 Sorts the data by the provided column. This does not work if the dataProvider is set to treeData="true".
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
@@ -416,6 +422,7 @@ Sorts the data by the provided column. This does not work if the dataProvider is
 | Param | Type | Description |
 | --- | --- | --- |
 | column | <code>String</code> | Column to sort |
+| changeOrder | <code>Boolean</code> | Optional. If set to false cancels order switch. |
 
 <a name="DataProvider+sourceType"></a>
 
@@ -498,19 +505,19 @@ Event triggered after the update action is executed. Created with the ```DataPro
 <a name="DataProvider+Event_beforeBatch"></a>
 
 ### on:beforeBatch
-Event triggered before the batch action is executed. Created with the ```DataProvider.on("beforeBatch", function(){})``` method.
+Event triggered before the batch action is executed. If the event function returns false the process is canceled. Created with the ```DataProvider.on("beforeBatch", function(){})``` method.
 
 **Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
 <a name="DataProvider+Event_beforeDelete"></a>
 
 ### on:beforeDelete
-Event triggered before the delete action is executed. Created with the ```DataProvider.on("beforeDelete", function(){})``` method.
+Event triggered before the delete action is executed. If the event function returns false the process is canceled. Created with the ```DataProvider.on("beforeDelete", function(){})``` method.
 
 **Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
 <a name="DataProvider+Event_beforeExec"></a>
 
 ### on:beforeExec ([operation])
-Event triggered before the exec action is executed. Created with the ```DataProvider.on("beforeExec", function(){})``` method.
+Event triggered before the exec action is executed. If the event function returns false the process is canceled. Created with the ```DataProvider.on("beforeExec", function(){})``` method.
 
 **Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
 
@@ -521,13 +528,13 @@ Event triggered before the exec action is executed. Created with the ```DataProv
 <a name="DataProvider+Event_beforeInsert"></a>
 
 ### on:beforeInsert
-Event triggered before the insert action is executed. Created with the ```DataProvider.on("beforeInsert", function(){})``` method.
+Event triggered before the insert action is executed. If the event function returns false the process is canceled. Created with the ```DataProvider.on("beforeInsert", function(){})``` method.
 
 **Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
 <a name="DataProvider+Event_beforeLoad"></a>
 
 ### on:beforeLoad ([action], [operation])
-Event triggered before the load action is executed. Created with the ```DataProvider.on("beforeLoad", function(action,operation){})``` method.
+Event triggered before the load action is executed. If the event function returns false the process is canceled. Created with the ```DataProvider.on("beforeLoad", function(action,operation){})``` method.
 
 **Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
 
@@ -539,7 +546,7 @@ Event triggered before the load action is executed. Created with the ```DataProv
 <a name="DataProvider+Event_beforeRecordSync"></a>
 
 ### on:beforeRecordSync ([selectName])
-Event triggered before the record sync action is executed. Created with the ```DataProvider.on("beforeRecordSync", function(selectName){})``` method.
+Event triggered before the record sync action is executed. If the event function returns false the process is canceled. Created with the ```DataProvider.on("beforeRecordSync", function(selectName){})``` method.
 
 **Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
 
@@ -550,7 +557,7 @@ Event triggered before the record sync action is executed. Created with the ```D
 <a name="DataProvider+Event_beforeSelect"></a>
 
 ### on:beforeSelect ([selectName])
-Event triggered before the select action is executed. Created with the ```DataProvider.on("beforeSelect", function(selectName){})``` method.
+Event triggered before the select action is executed. If the event function returns false the process is canceled. Created with the ```DataProvider.on("beforeSelect", function(selectName){})``` method.
 
 **Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
 
@@ -561,7 +568,7 @@ Event triggered before the select action is executed. Created with the ```DataPr
 <a name="DataProvider+Event_beforeUpdate"></a>
 
 ### on:beforeUpdate
-Event triggered before the update action is executed. Created with the ```DataProvider.on("beforeUpdate", function(){})``` method.
+Event triggered before the update action is executed. If the event function returns false the process is canceled. Created with the ```DataProvider.on("beforeUpdate", function(){})``` method.
 
 **Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
 <a name="DataProvider+Event_error"></a>
@@ -575,6 +582,18 @@ If the event returns an object this will replaced the existing returnObject.
 | Param | Type | Description |
 | --- | --- | --- |
 | error | <code>Object</code> | The returned error object. |
+
+<a name="DataProvider+Event_markDeleted"></a>
+
+### on:markDeleted (requestObject)
+Event triggered before a delete action get be processed. Created with the ```DataProvider.on("markDeleted", function(requestObject){})``` method.
+This event is triggered before the "beforeDelete" method so the operations and data changes are considered part of the initial process to not be affected by other internal actions.
+
+**Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| requestObject | <code>Object</code> | The return objected to be operated. |
 
 <a name="DataProvider+Event_processLoadedData"></a>
 

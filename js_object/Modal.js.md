@@ -88,6 +88,12 @@ Sets the header title of the modal dialog.
 Shows or opens the modal dialog.
 
 **Kind**: instance method of [<code>Modal</code>](#Modal)  
+<a name="Modal+Event_beforeClose"></a>
+
+### on:beforeClose
+Event triggered before the Modal is closed. Created with the ```Modal.on("beforeClose", function(){})``` method. If function return false the modal will not closed.
+
+**Kind**: event emitted by [<code>Modal</code>](#Modal)  
 <a name="Modal+Event_beforeShow"></a>
 
 ### on:beforeShow

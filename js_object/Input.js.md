@@ -26,14 +26,15 @@ Returns an Input instance.
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | id | <code>String</code> |  | Unique identifier. |
-| type | <code>String</code> |  | The input type: text, textarea, code, html, date, time, datetime, select, numeric, integer, decimal, checkbox, button, options, radio, password, file, email, hidden. |
+| type | <code>String</code> |  | The input type: text, textarea, code, sql, js, css, xml, xhtml, html, date, time, datetime, select, numeric, integer, decimal, checkbox, button, options, radio, password, file, email, hidden. |
 | label | <code>String</code> |  | The text used as input's label. |
 | options | <code>Object</code> |  | Object containing the Input configuration options. |
 | initValue | <code>String</code> |  | The value which the Input will hold when created. |
 | [options.columnID] | <code>String</code> |  | The dataSource column name if different from the id parameter. |
 | [options.description] | <code>String</code> |  | The input's description only show at editing mode. |
+| [options.descriptionPlace] | <code>String</code> |  | The input's description's position: top or button. |
 | [options.width] | <code>String</code> |  | The width of the component in pixels or percentage. |
-| [options.height] | <code>String</code> | <code>200px</code> | THe heigth of the component in case of the types: textarea, code, and html. |
+| [options.height] | <code>String</code> | <code>200px</code> | THe heigth of the component in case of the types: textarea, code, sql, js, css, xml, xhtml and html. |
 | [options.scrollHeight] | <code>String</code> |  | The height limit of the component in read mode before the content needs scrolling. |
 | [options.dataSource] | <code>String</code> |  | The dataProvider id in case of types: Select, options, and radio. |
 | [options.required] | <code>Boolean</code> | <code>false</code> | The logic value or expression to determine if the component should be required before data submission. |
@@ -46,7 +47,7 @@ Returns an Input instance.
 | [options.mask] | <code>String</code> |  | The input's entry mask or character filter. (http://igorescobar.github.io/jQuery-Mask-Plugin/) |
 | [options.mode] | <code>Boolean</code> | <code>false</code> | True if editing, or false if read only. |
 | [options.placeholder] | <code>String</code> |  | The input's place holder or helping text showed inside the  |
-| [options.form] | <code>String</code> |  | The Form ID the input will operate with. |
+| [options.form] | <code>String</code> |  | The parent Form. Undefined if operating stand alone. |
 | [options.block] | <code>Boolean</code> | <code>false</code> | If the component is the end of a block. Next Inputs will start in a new line. |
 | [options.cssClass] | <code>String</code> |  | The extra CSS classes to use with the input element. |
 | [options.inputClass] | <code>String</code> |  | Extra CSS classes affecting the component. |
@@ -91,6 +92,12 @@ The method to focused the input when in editable mode.
 
 ### getEditable() ⇒ <code>Boolean</code>
 Returns if the Input is editable.
+
+**Kind**: instance method of [<code>Input</code>](#Input)  
+<a name="Input+getID"></a>
+
+### getID()
+Returns the component's' unique identifier.
 
 **Kind**: instance method of [<code>Input</code>](#Input)  
 <a name="Input+getInputID"></a>
@@ -339,7 +346,7 @@ Event triggered after the Input element has been initialized. Created with the `
 <a name="Input+Event_afterLoad"></a>
 
 ### on:afterLoad ($value)
-Event triggered when the Input's value has been loaded from the dataSource. Created with the ```Input.on("afterLoad", function($value){})``` method.
+Event triggered when the Input's value has been loaded from the dataSource. Created with the ```Input.on("afterLoad", function(){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 
@@ -426,7 +433,7 @@ Event triggered after the file extension and size has been validated. Created wi
 <a name="Input+Event_getValue"></a>
 
 ### on:getValue ($value)
-Event triggered when the Input's value is requested. Created with the ```Input.on("getValue", function($value){})``` method.
+Event triggered when the Input's value is requested. If the event function returns a value this will become the returned value by the getValue method. Created with the ```Input.on("getValue", function($value){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 
@@ -434,10 +441,22 @@ Event triggered when the Input's value is requested. Created with the ```Input.o
 | --- | --- | --- |
 | $value | <code>Object</code> | The JQuery instance to the input HTML element. |
 
+<a name="Input+Event_keydown"></a>
+
+### on:keydown (event, Input)
+Event triggered at input's keyboard keydown event. Created with the ```Input.on("keydown", function(even,Input){})``` method.
+
+**Kind**: event emitted by [<code>Input</code>](#Input)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>Object</code> | The Keyboard event. |
+| Input | <code>Object</code> | Reference to the Input. |
+
 <a name="Input+Event_keyup"></a>
 
 ### on:keyup (event, Input)
-Event triggered at input's keyboard keyup event. Created with the ```Input.on("click", function(even,Input){})``` method.
+Event triggered at input's keyboard keyup event. Created with the ```Input.on("keyup", function(even,Input){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 
@@ -449,7 +468,7 @@ Event triggered at input's keyboard keyup event. Created with the ```Input.on("c
 <a name="Input+Event_modeChange"></a>
 
 ### on:modeChange (mode, $text, $value)
-Event triggered when the Input's mode changes. Created with the ```Input.on("onChange", function(mode,$text,$vale){})``` method.
+Event triggered when the Input's mode changes. Created with the ```Input.on("modeChange", function(mode,$text,$vale){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 
@@ -486,7 +505,7 @@ Event triggered when the Input's data entry timer concludes. Created with the ``
 <a name="Input+Event_validation"></a>
 
 ### on:validation (type, value)
-Event triggered when a Inputs is validated. Created with the ```Input.on("validation", function(type,value){})``` method.
+Event triggered when a Inputs is validated. If the event function returns false the input will be marked an "invalid". Created with the ```Input.on("validation", function(type,value){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 

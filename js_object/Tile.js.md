@@ -27,6 +27,17 @@ Returns a Tile instance.
 | [option.content] | <code>String</code> | The HTML template used to generate the  |
 | [option.rendererFn] | <code>String</code> | The function which re-process the generated tile's HTML. |
 
+<a name="Tile+appendCell"></a>
+
+### appendCell(id)
+Add a new cell to the end of the 
+
+**Kind**: instance method of [<code>Tile</code>](#Tile)  
+
+| Param | Description |
+| --- | --- |
+| id | The ID of the element to be added. |
+
 <a name="Tile+filterLoad"></a>
 
 ### filterLoad(index, item)
@@ -40,6 +51,12 @@ If true is returned the row is added, false ignores the row.
 | index | The record index. |
 | item | The row object. |
 
+<a name="Tile+getID"></a>
+
+### getID()
+Returns the component's' unique identifier.
+
+**Kind**: instance method of [<code>Tile</code>](#Tile)  
 <a name="Tile+load"></a>
 
 ### load()
@@ -58,30 +75,29 @@ Extends the "on" method from the eventManager Class.
 | eventName | <code>String</code> | The event's name. |
 | eventFunction | <code>function</code> | The function to be triggered. |
 
+<a name="Tile+prependCell"></a>
+
+### prependCell(id)
+Add a new cell to the beggining of the 
+
+**Kind**: instance method of [<code>Tile</code>](#Tile)  
+
+| Param | Description |
+| --- | --- |
+| id | The ID of the element to be added. |
+
 <a name="Tile+Event_afterLoad"></a>
 
-### on:afterLoad (action, operationIndex)
-Event triggered before the table content is loaded. Created with the ```Table.on("beforeLoad", function(){})``` method.
+### on:afterLoad
+Event triggered after the table content is loaded. Created with the ```Tile.on("afterLoad", function(){})``` method.
 
 **Kind**: event emitted by [<code>Tile</code>](#Tile)  
-
-| Param | Description |
-| --- | --- |
-| action | The executed action. |
-| operationIndex | The index affecting the dataProvider. |
-
 <a name="Tile+Event_beforeLoad"></a>
 
-### on:beforeLoad (action, operationIndex)
-Event triggered before the table content is loaded. Created with the ```Table.on("beforeLoad", function(){})``` method.
+### on:beforeLoad
+Event triggered before the table content is loaded. Created with the ```Tile.on("beforeLoad", function(){})``` method.
 
 **Kind**: event emitted by [<code>Tile</code>](#Tile)  
-
-| Param | Description |
-| --- | --- |
-| action | The executed action. |
-| operationIndex | The index affecting the dataProvider. |
-
 <a name="Tile+Event_click"></a>
 
 ### on:click (item, $content, dpIndex, rowIndex, event)
@@ -96,5 +112,20 @@ Event triggered when a tile cell is clicked. Created with the ```Tile.on("click"
 | dpIndex | <code>Integer</code> | The dataProvider index. |
 | rowIndex | <code>Integer</code> | The cell Index. |
 | event | <code>Object</code> | The click javascrit event object. |
+
+<a name="Tile+Event_click"></a>
+
+### on:click (item, $content, dpIndex, cellIndex, event)
+Event triggered when a tile is clicked. Created with the ```Tile.on("click", function(colIndex, dpIndex, mouseEvent){})``` method.
+
+**Kind**: event emitted by [<code>Tile</code>](#Tile)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| item | <code>Object</code> | The item rendering a tile |
+| $content | <code>JQuery</code> | The JQuery object of the selected  |
+| dpIndex | <code>Integer</code> | The DataProvider index of the selected  |
+| cellIndex | <code>integer</code> | The cell index of the selected  |
+| event | <code>Object</code> | The mouse event object. |
 
 

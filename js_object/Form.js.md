@@ -11,10 +11,6 @@
 | insertBt | <code>Object</code> | The Button object to initiate an insert if provided. |
 | updateBt | <code>Object</code> | The Button object to initiate an update if provided. |
 | deleteBt | <code>Object</code> | The Button object to initiate a delete if provided. |
-| insertBtVisible | <code>function</code> | Function defining if the insert button shoudl be visible. The function should return true or false. |
-| updateBtVisible | <code>function</code> | Function defining if the update button shoudl be visible. The function should return true or false. |
-| deleteBtVisible | <code>function</code> | Function defining if the delete button shoudl be visible. The function should return true or false. |
-| submitBtValidation | <code>function</code> | Function to to decide if the submit button should be active. This should return a boolean. |
 
 
 
@@ -68,6 +64,17 @@ Method used by Inputs to trigger the parent Form's change event.
 Operates a cancel operation.
 
 **Kind**: instance method of [<code>Form</code>](#Form)  
+<a name="Form+doSubmit"></a>
+
+### doSubmit(action)
+Operates the data submittion process/
+
+**Kind**: instance method of [<code>Form</code>](#Form)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| action | <code>String</code> | The action to be executed. |
+
 <a name="Form+fillInputValues"></a>
 
 ### fillInputValues()
@@ -86,10 +93,22 @@ Gets the set form's action.
 Returns the list of event loaded.
 
 **Kind**: instance method of [<code>Form</code>](#Form)  
+<a name="Form+getID"></a>
+
+### getID()
+Returns the component's' unique identifier.
+
+**Kind**: instance method of [<code>Form</code>](#Form)  
 <a name="Form+getInputs"></a>
 
 ### getInputs() ⇒ <code>Array</code>
 Gets input array.
+
+**Kind**: instance method of [<code>Form</code>](#Form)  
+<a name="Form+getItem"></a>
+
+### getItem()
+Gets the item loaded by the 
 
 **Kind**: instance method of [<code>Form</code>](#Form)  
 <a name="Form+getMode"></a>
@@ -301,9 +320,9 @@ Event triggered before the Form is set for a delete. If function return false th
 Event triggered after an error loading the data. Created with the ```Form.on("error", function(){})``` method.
 
 **Kind**: event emitted by [<code>Form</code>](#Form)  
-<a name="Form+Event_FormErrors"></a>
+<a name="Form+Event_formErrors"></a>
 
-### on:FormErrors (inputList)
+### on:formErrors (inputList)
 Event triggered when Form's inputs have errors.  Created with the ```Form.on("formErrors", function(){})``` method.
 
 **Kind**: event emitted by [<code>Form</code>](#Form)  
@@ -328,6 +347,24 @@ Event triggered before the Form is set for a submit. If function return false th
 
 ### on:update
 Event triggered before the Form is set for an update. If function return false the process is canceled. Created with the ```Form.on("update", function(){})``` method.
+
+**Kind**: event emitted by [<code>Form</code>](#Form)  
+<a name="Form+event_insertBtVisible"></a>
+
+### "insertBtVisible"
+Event triggered before the insert button's visibility changes. Created with the ```Form.on("showInsertBt", function(){})``` method.
+
+**Kind**: event emitted by [<code>Form</code>](#Form)  
+<a name="Form+event_insertBtVisible"></a>
+
+### "insertBtVisible"
+Event triggered before the delete button' visibility changes. Created with the ```Form.on("showDeleteBt", function(){})``` method.
+
+**Kind**: event emitted by [<code>Form</code>](#Form)  
+<a name="Form+event_showUdatetBt"></a>
+
+### "showUdatetBt"
+Event triggered before the update button's visibility changes. Created with the ```Form.on("showUdatetBt", function(){})``` method.
 
 **Kind**: event emitted by [<code>Form</code>](#Form)  
 

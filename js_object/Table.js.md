@@ -26,7 +26,7 @@ Returns a Table instance.
 | [option.dataSource] | <code>String</code> |  | Unique identifier of the dataProvider used to fill the  |
 | [option.autoSelect] | <code>Boolean</code> | <code>true</code> | If true the table will automatically load the data from the dataProvider. If false is will wait for the load command. |
 | [option. targetPage] | <code>String</code> |  | Unique identifier of the page which will become active when a row is selected. |
-| [option.header] | <code>String</code> | <code>fixed</code> | Defines the header location:  `fixed` Attaches the header to the top of the page. `inline` Attaches the header to the top of the table location. `none` No header. |
+| [option.header] | <code>String</code> | <code>fixed</code> | Defines the header location: `fixed` Attaches the header to the top of the page. `inline` Attaches the header to the top of the table location. `none` No header. |
 | [option.treeData] | <code>Boolean</code> | <code>false</code> | Indicates if the data should be treated as a tree structure. If the dataProvider is selected as treeData=true then the table inherets the value. |
 | [option.rootLabel] | <code>String</code> |  | The label used to display in the root row. |
 | [option.noRoot] | <code>Boolean</code> | <code>false</code> | Defines if the Root will be an editable row. Default is NO. |
@@ -116,6 +116,12 @@ Gets the loaded component array.
 
 ### getDataSource()
 Gets a reference to the dataSource.
+
+**Kind**: instance method of [<code>Table</code>](#Table)  
+<a name="Table+getID"></a>
+
+### getID()
+Returns the component's' unique identifier.
 
 **Kind**: instance method of [<code>Table</code>](#Table)  
 <a name="Table+getInputs"></a>
@@ -297,6 +303,12 @@ Sets the tree icons. This overwrites the default icons.
 Shows the button
 
 **Kind**: instance method of [<code>Table</code>](#Table)  
+<a name="Table+size"></a>
+
+### size() ⇒ <code>Integer</code>
+Returns the number of tabler rows.
+
+**Kind**: instance method of [<code>Table</code>](#Table)  
 <a name="Table+sort"></a>
 
 ### sort(column)
@@ -333,7 +345,7 @@ Event triggered before the table content is loaded. Created with the ```Table.on
 **Kind**: event emitted by [<code>Table</code>](#Table)  
 <a name="Table+Event_click"></a>
 
-### on:click (coldIndex, dbIndex, mouseEvent)
+### on:click (coldIndex, dbIndex, realClick, mouseEvent)
 Event triggered when a row is clicked. Created with the ```Table.on("click", function(colIndex, dpIndex, mouseEvent){})``` method.
 
 **Kind**: event emitted by [<code>Table</code>](#Table)  
@@ -342,6 +354,7 @@ Event triggered when a row is clicked. Created with the ```Table.on("click", fun
 | --- | --- | --- |
 | coldIndex | <code>Integer</code> | The column clicked. The first one is 0. |
 | dbIndex | <code>Integer</code> | The dataProvider index of the selected row. |
+| realClick | <code>Boolean</code> | Returns true if the "click" has been triggered by a physical click. |
 | mouseEvent | <code>Object</code> | The mouse click even object. |
 
 <a name="Table+Event_dragDrop"></a>
@@ -398,4 +411,15 @@ Created with the ```Table.on("input", function(value,index,item){})``` method.
 Event triggered while input is being generated. Created with the ```Table.on("renderInput", function(index,item,type){})``` method.
 
 **Kind**: event emitted by [<code>Table</code>](#Table)  
+<a name="Table+Event_searchText"></a>
+
+### on:searchText (text)
+Event use to evaluate the text entered in the serch input. If the event function returns a value will replace the search value. Created with the ```DataProvider.on("searchText", function(){})``` method.
+
+**Kind**: event emitted by [<code>Table</code>](#Table)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| text | <code>String</code> | The entered text. |
+
 

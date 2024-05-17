@@ -51,7 +51,7 @@ Adds an event object to the event array. An event can be added multiple times.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| eventName | <code>String</code> | The event's name |
+| eventName | <code>String</code> | The event's name. This could be multiple events separated by commas. |
 | eventFunction | <code>function</code> | The function to be triggered |
 
 
