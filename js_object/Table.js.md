@@ -7,8 +7,7 @@
 | Name | Type | Description |
 | --- | --- | --- |
 | $table | <code>Object</code> | jQuery object referencing to the table HTML tag. |
-| $tableSearchInput | <code>Object</code> | jQuery object referencing the search text input element. |
-| filterLoad | <code>function</code> | Function which evaluates if a row should be included in the  If true is returned the row is added, false ignores the row. Get the paramters `index` and `item`. |
+| $tableSearchInput | <code>Object</code> | jQuery object referencing the search text input element. Get the parameters `index` and `item`. |
 
 
 
@@ -87,19 +86,6 @@ Clean the headers from
 Clears the content of the search text input.
 
 **Kind**: instance method of [<code>Table</code>](#Table)  
-<a name="Table+filterLoad"></a>
-
-### filterLoad(index, item)
-Function which evaluates if a row should be included in the 
-If true is returned the row is added, false ignores the row.
-
-**Kind**: instance method of [<code>Table</code>](#Table)  
-
-| Param | Description |
-| --- | --- |
-| index | The record index. |
-| item | The row object. |
-
 <a name="Table+getColumns"></a>
 
 ### getColumns() ⇒ <code>Array</code>
@@ -357,6 +343,13 @@ Event triggered when a row is clicked. Created with the ```Table.on("click", fun
 | realClick | <code>Boolean</code> | Returns true if the "click" has been triggered by a physical click. |
 | mouseEvent | <code>Object</code> | The mouse click even object. |
 
+<a name="Table+Event_dataInput"></a>
+
+### on:dataInput
+Event triggered while input is being generated. Created with the ```Table.on("dataInput", function(index,item,type){})``` method.
+If the event's function returns an object this will be saved as a JSON String in the input's property 'data-json' to be used during data post operation.
+
+**Kind**: event emitted by [<code>Table</code>](#Table)  
 <a name="Table+Event_dragDrop"></a>
 
 ### on:dragDrop
@@ -398,17 +391,20 @@ Created with the ```Table.on("dragStart", function(columnIndex, rowIndex, dpItem
 Event triggered after an error. Created with the ```Table.on("error", function(){})``` method.
 
 **Kind**: event emitted by [<code>Table</code>](#Table)  
-<a name="Table+Event_input"></a>
+<a name="Table+Event_filterLoad"></a>
 
-### on:input
-Event triggered before input is being generated. If the event's' function returns true the input will be created. If it returns false it will no render an input.
-Created with the ```Table.on("input", function(value,index,item){})``` method.
+### on:filterLoad
+Event triggered before a row item is added to the  If the function returns false the item is ignored.
+Created with the ```Table.on("filterLoad", function(index,item){})``` method.
 
 **Kind**: event emitted by [<code>Table</code>](#Table)  
 <a name="Table+Event_renderInput"></a>
 
 ### on:renderInput
-Event triggered while input is being generated. Created with the ```Table.on("renderInput", function(index,item,type){})``` method.
+Event triggered before each input is being generated. If the event's' function returns true the input will be created. If it returns false it will no render an input.
+If the event returns a text value this is used to define the input's' type and the input is generated. The text can contain an added mask separated by a pipe symbol.
+If the event returns undefined the input is generated.
+Created with the ```Table.on("renderInput", function(value,index,item){})``` method.
 
 **Kind**: event emitted by [<code>Table</code>](#Table)  
 <a name="Table+Event_searchText"></a>

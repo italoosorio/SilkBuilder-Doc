@@ -13,6 +13,7 @@ Used standalone:
   form=""
   label=""
   description=""
+  descriptionPlace=""
   width=""
   height="200px"
   scrollHeight=""
@@ -37,6 +38,8 @@ Used standalone:
   prompt=""
   promptValue=""
   template=""
+  direction=""
+  itemsDirection=""
   filePreview="false"
   fileDownload="false"
   filePreviewLabel="Preview"
@@ -61,7 +64,7 @@ Used standalone:
 ### id<sup>*</sup>
 If used with a *silk:Form* the unique identifier is the name of the data column to be view or edited.<br>Default Value: *Empty*.
 ### type<sup>*</sup>
-The input type: text, textarea, code, html, date, time, datetime, select, numeric, integer, decimal, checkbox, button, options, radio, password, file, email, hidden.<br>Default Value: *Empty*.
+The input type: text, textarea, code, sql, xml, js, xhtml, css html, date, time, datetime, select, numeric, integer, decimal, checkbox, button, options, radio, password, file, email, hidden.<br>Default Value: *Empty*.
 ### name
 The "name" of the input if used under a regular form HTML tag.<br>Default Value: *Empty*.
 ### form
@@ -70,10 +73,12 @@ The *silk:Form* the input will operate with.<br>Default Value: *Empty*.
 The text used as input's label.<br>Default Value: *Empty*.
 ### description
 The input's description only show at editing mode.<br>Default Value: *Empty*.
+### descriptionPlace
+The input's description's placement.<br>Default Value: *Empty*.
 ### width
 The width of the component in pixels or percentage.<br>Default Value: *Empty*.
 ### height
-THe height of the component in case of the types: textarea, code, and html.<br>Default Value: *200px*.
+THe height of the component in case of the types: textarea, code, sql, xml, js, xhtml, and html.<br>Default Value: *200px*.
 ### scrollHeight
 The height limit of the component in read mode before the content needs scrolling.<br>Default Value: *Empty*.
 ### block
@@ -118,6 +123,10 @@ Adds an extra options to the select usually use to request a value selection.<br
 The value return by the select "prompt" if the user selects it.<br>Default Value: *Empty*.
 ### template
 A HTML schema defining the component read view. Contains data columns encapsulated in {} and also HTML elements.<br>Default Value: *Empty*.
+### direction
+Defines the distribution direction between the label and the input.<br>Default Value: *Empty*.
+### itemsDirection
+Defines the distribution direction input items. This is use for the type 'options' and 'ratio'.<br>Default Value: *Empty*.
 ### filePreview
 If the component will show a button to preview an uploaded file. To use with type file.<br>Default Value: *false*.
 ### fileDownload

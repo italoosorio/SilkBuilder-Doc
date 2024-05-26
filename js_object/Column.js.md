@@ -66,6 +66,12 @@ Returns the Input's HTML to be rendered in the cell.
 | type | <code>String</code> | The input type |
 | object | <code>Object</code> | An object with custom properties to be stored in the input. |
 
+<a name="Column+getInputMask"></a>
+
+### getInputMask() ⇒ <code>String</code>
+Returns the column's input mask.
+
+**Kind**: instance method of [<code>Column</code>](#Column)  
 <a name="Column+getInputType"></a>
 
 ### getInputType() ⇒ <code>String</code>
@@ -130,6 +136,12 @@ Returns the data provider's column holding the input's value.
 
 ### getVisible() ⇒ <code>Boolean</code>
 Returns the the column's visible condition. This triggers the "visible" event.
+
+**Kind**: instance method of [<code>Column</code>](#Column)  
+<a name="Column+getVisibleColumn"></a>
+
+### getVisibleColumn() ⇒ <code>String</code>
+Returns the data provider's column holding the input's visibility.
 
 **Kind**: instance method of [<code>Column</code>](#Column)  
 <a name="Column+getWidth"></a>

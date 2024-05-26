@@ -4,7 +4,17 @@ This tag is used to add JavaScript code in the application.  SilkBuilder will co
 ## Tag Use
 Used as a container:
 ```xml
-<silk:JScode>
+<silk:JScode
+  renderIf=""
+  desc=""
+>
    Contains: JavaScript code.
 </silk:JScode>
 ```
+
+## Properties 
+<sup>*</sup>Required property.
+### renderIf
+The logic sentence which will define if the button should be rendered. The explanation on how to use the logic statement is found in <a href="how_to/server_code_logic.md">Server Code Logic</a> documentation.<br>Default Value: *Empty*.
+### desc
+Default Value: *Empty*.

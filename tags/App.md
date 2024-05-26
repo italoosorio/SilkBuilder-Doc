@@ -8,7 +8,7 @@ Used as a container:
 ```xml
 <silk:App
   title=""
-  template="default"
+  theme="default"
   timeout="true"
   role=""
   ipFilter=""
@@ -24,8 +24,8 @@ Used as a container:
 <sup>*</sup>Required property.
 ### title
 Used to define the web page title which will be displayed by the navigator.<br>Default Value: *Empty*.
-### template
-The name of the template defining the styles use by the components. This property is only necessary if the application will use a different template from the "default" one which define globally and automatically loaded by the application.<br>Default Value: *default*.
+### theme
+The name of the theme defining the styles use by the components. This property is only necessary if the application will use a different template from the "default" one which define globally the session's variable 'silkTheme' and automatically loaded by the application.<br>Default Value: *default*.
 ### timeout
 Defines if the application will timeout and request for authentication. The default value is "true" and it can be disable by setting property to "false". It is only required if the value will be set to "false".<br>Default Value: *true*.
 ### role

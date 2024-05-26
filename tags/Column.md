@@ -19,8 +19,10 @@ Used as a container:
   ordering="false"
   icon=""
   inputType=""
+  inputMask=""
   valueColumn=""
   labelColumn=""
+  visibleColumn=""
   sortColumn=""
   idColumn=""
   renderIf=""
@@ -60,11 +62,15 @@ When set to "true" this will set the column to show the "menu" icon.<br>Default 
 ### icon
 Defines the Font Awesome icon class to show together with the column's content.<br>Default Value: *Empty*.
 ### inputType
-The input type use when the *silk:Table* is in "input" status. The values are: text, integer, decimal(x).<br>Default Value: *Empty*.
+The terminates the input's type. This property is used when the table's inputs are being built.<br>The values can be set as text, textarea, html,  integer, decimal(x), or the name of the Data Provider property that contains the type to be used.<br>Default Value: *Empty*.
+### inputMask
+This property determines determines the input's mask. It is used when the table's inputs are being built.<br>Usually, the mask is determined by the type of input selected. This property should be used if a different input mask is required.<br>The mask uses the (JQuery Mask)[https://igorescobar.github.io/jQuery-Mask-Plugin/] library patterns, with the addition that if using a decimal mask, an extra "D" has to be added to the end of the mask.<br>Default Value: *Empty*.
 ### valueColumn
 The name of the data column which will filled the input.<br>Default Value: *Empty*.
 ### labelColumn
 The name of the data column use as input label.<br>Default Value: *Empty*.
+### visibleColumn
+This property determines the input's visibility. It is used when the table's inputs are being built.<br>The value is the DataProvider's property, which will decide whether the input should be rendered. The value should be numeric. If it is one (1), the input will be rendered, if zero(0) the input will not be rendered.<br>Default Value: *Empty*.
 ### sortColumn
 The column to sort the dataProvider. This does not work if the dataProvider is set to treeData="true".<br>Default Value: *Empty*.
 ### idColumn

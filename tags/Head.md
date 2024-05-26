@@ -23,6 +23,6 @@ Will add a button with a "home" icon to the top left of the header.<br>Default V
 ### logoutButton
 Will add a button with a "lock" icon to the top left of the header.<br>Default Value: *false*.
 ### helpButton
-Will add a help icon to display interface explanation.<br>Default Value: *false*.
+Will disable the help icon used to display interface explanations.<br>Default Value: *false*.
 ### cssClass
 To add extra  classes to the header "DIV" wrapper to change it default appearance.<br>Default Value: *Empty*.

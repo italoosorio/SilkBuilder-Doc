@@ -26,9 +26,9 @@ The modal's unique identifier.<br>Default Value: *Empty*.
 ### title
 The text which will be used as the modal's title. if not included the modal is displayed without the top header bar.<br>Default Value: *Empty*.
 ### closeButton
-Set the "X" icon in the top right corner of the modal's header bar. The modal is rendered without the "X" close icon, it is expected that the close action will be programmed.<br>Default Value: *false*.
+Set the "X" icon in the top right corner of the modal's header bar. The modal is rendered without the "X" close icon.<br>Default Value: *false*.
 ### helpButton
-Sets an "?" icon which the user can click to get extra help. It uses a Font Awesome "fas fa-question-circle fa-sm" icon class.<br>Default Value: *false*.
+Will disable the help icon used to display interface explanations.<br>Default Value: *false*.
 ### size
 Defines the modal size. The values are: small, large, width, and full.<br>The "width" value will create a model contained in the width of the page.<br>The "full" modal will complete cover the screen width and height.<br>Default Value: *Empty*.
 ### centered

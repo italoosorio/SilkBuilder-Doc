@@ -6,7 +6,7 @@ Used as a container:
 ```xml
 <silk:HelpBox
   id=""
-  cssClass="alert-info"
+  cssClass=""
   icon="fas fa-question-circle"
 >
    Contains: Help text or/or HTML.
@@ -15,9 +15,9 @@ Used as a container:
 
 ## Properties 
 <sup>*</sup>Required property.
-### id<sup>*</sup>
-The helpBox's unique identifier.<br>Default Value: *Empty*.
+### id
+The helpBox's unique identifier. Use it if post identification is required.<br>Default Value: *Empty*.
 ### cssClass
-The Bootstrap class defining the type of alert.<br>Default Value: *alert-info*.
+The Bootstrap class defining the type of alert.<br>Default Value: *Empty*.
 ### icon
 Icon class name (fontawesom.com)<br>Default Value: *fas fa-question-circle*.

@@ -16,6 +16,7 @@ Used standalone:
   renderIf=""
   extraProperties=""
   group="false"
+  disabled="false"
   confirmTitle=""
   confirmMessage=""
   confirmLabel=""
@@ -37,6 +38,7 @@ Used as a container:
   renderIf=""
   extraProperties=""
   group="false"
+  disabled="false"
   confirmTitle=""
   confirmMessage=""
   confirmLabel=""
@@ -70,6 +72,8 @@ The logic sentence which will define if the button should be rendered. The expla
 ### extraProperties
 To add extra HTML properties not defined by the *silk:Button* component.<br>Default Value: *Empty*.
 ### group
+Adds Bootstrap classes to group the button.<br>Default Value: *false*.
+### disabled
 Adds Bootstrap classes to group the button.<br>Default Value: *false*.
 ### confirmTitle
 Sets the title of the confirmation dialog.<br>Default Value: *Empty*.
