@@ -84,6 +84,7 @@
   * [Form Input File](how_to/form_file.md)
   * [Button with Confirmation](how_to/confirm_button.md)
   * [Toggle List](how_to/toggle_list.md)
+  * [Table Inputs](how_to/table_input.md)
   
   
   

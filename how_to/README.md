@@ -12,5 +12,5 @@
 * [Form Input File](form_file.md)
 * [Button with Confirmation](confirm_button.md)
 * [Toggle List](toggle_list.md)
-* [Table Input](table_input.md)
+* [Table Inputs](table_input.md)
 
