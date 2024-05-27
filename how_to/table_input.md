@@ -56,24 +56,24 @@ The returned array contains a list of objects with a property for each input col
 [
 	{
 		income: {
-      action: "update",
-      hasChanged: true,
-      index: 0,
-      item: {},
-      type: "decimal(2)"
-      oldValue: "325.45",
-      value: "89.45"
+			action: "update",
+			hasChanged: true,
+			index: 0,
+			item: {},
+			type: "decimal(2)"
+			oldValue: "325.45",
+			value: "89.45"
     }
 	},
 	{
 		income: {
-      action: "update",
-      hasChanged: false,
-      index: 1,
-      item: {},
-      type: "decimal(2)"
-      oldValue: "325.45",
-      value: "325.45"
+			action: "none",
+			hasChanged: false,
+			index: 1,
+			item: {},
+			type: "decimal(2)"
+			oldValue: "325.45",
+			value: "325.45"
     }
 	}
 ]
