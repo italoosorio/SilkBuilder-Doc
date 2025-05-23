@@ -27,7 +27,7 @@
 
 * [Silk Tags](tags)
   
-  * App](tags/App.md)
+  * [App](tags/App.md)
   * [AppHeader](tags/AppHeader.md)
   * [Button](tags/Button.md)
   * [ButtonItem](tags/ButtonItem.md)
