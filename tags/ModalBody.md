@@ -1,10 +1,10 @@
-# silk:ModalBody Tag
-This tag defines the *silk:Modal* body content. Not necessary if the *silk:Footer* will not be used in the modal.
+# silk:ModalBody
+This tag defines the **silk:Modal** body content; it is a child of **silk:Modal**. It is not necessary if the **silk:Footer** will not be used in the modal.
 
-## Tag Use
+## Tag Definition
 Used as a container:
 ```xml
 <silk:ModalBody>
-   Contains: Silk components and/or HTML elements.
+   Contains: SilkBuilder components and/or HTML elements.
 </silk:ModalBody>
 ```

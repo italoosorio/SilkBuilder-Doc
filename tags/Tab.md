@@ -1,7 +1,7 @@
-# silk:Tab Tag
+# silk:Tab
 This tag defines a Silk Tab component which will be used host TabItem tags.
 
-## Tag Use
+## Tag Definition
 Used as a container:
 ```xml
 <silk:Tab

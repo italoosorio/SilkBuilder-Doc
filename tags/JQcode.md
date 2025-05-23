@@ -1,7 +1,16 @@
-# silk:JQcode Tag
-This tag is use to add code using JQuery methods and events in the application. SilkBuilder will collect all the JQuery code and put them together regardless of where these had been defined. The Silk Components uses JQuery to interact with HTML elements. Code to interact with the SILK Components should be define under this tag.
+# silk:JQcode
+This tag adds code using JavaScript, jQuery methods, and events in the application. SilkBuilder will collect the code in a JQcode component and put it together regardless of where it has been defined. This code will load after a ```$(document).ready()``` event, waiting for the JavaScript object to be initialized.
 
-## Tag Use
+The Silk Components use jQuery to interact with HTML elements. The code interacting with the SILK Components should be specified under this tag.
+
+## Tag Definition
+Used standalone:
+```xml
+<silk:JQcode
+  renderIf=""
+  desc=""
+/>
+```
 Used as a container:
 ```xml
 <silk:JQcode
@@ -13,8 +22,7 @@ Used as a container:
 ```
 
 ## Properties 
-<sup>*</sup>Required property.
 ### renderIf
-The logic sentence which will define if the button should be rendered. The explanation on how to use the logic statement is found in <a href="how_to/server_code_logic.md">Server Code Logic</a> documentation.<br>Default Value: *Empty*.
+It contains the logic sentence defining whether the component should be rendered.<br>The logic statement's explanation is in the  <a href="how_to/server_code_logic.md">Server Code Logic</a> documentation.<br>Default Value: *Empty*.
 ### desc
-Default Value: *Empty*.
+Defines a title of description used only for documentation or code categorization purposes.<br>Default Value: *Empty*.

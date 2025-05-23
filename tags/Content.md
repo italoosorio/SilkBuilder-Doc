@@ -1,7 +1,11 @@
-# silk:Content Tag
-The *silk:Content* tag determine the area in which the silk components are going to be located to provide data visualization and  user interaction.
+# silk:Content
+The *silk:Content* tag determines the area where the silk components will be located, allowing for data visualization and user interaction.
 
-## Tag Use
+## Tag Definition
+Used standalone:
+```xml
+<silk:Content/>
+```
 Used as a container:
 ```xml
 <silk:Content>

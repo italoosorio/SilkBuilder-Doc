@@ -1,12 +1,11 @@
-# silk:App Tag
-This tag defines a Silk Application and its used is required. This tag loads the application's environment which is necessary for the other Silk Components to operate.
+# silk:App
+This tag defines a SilkBuilder Application and is required. It loads the application's environment, which is necessary for the other Silk Components to operate.
 
-If it does not contains the the tag *silk:Screen* the application will work as one page layout.
-
-## Tag Use
-Used as a container:
+## Tag Definition
+Used standalone:
 ```xml
 <silk:App
+  id=""
   title=""
   theme="default"
   timeout="true"
@@ -14,27 +13,39 @@ Used as a container:
   ipFilter=""
   loader="true"
   renderIf=""
-  tagService=""
+/>
+```
+Used as a container:
+```xml
+<silk:App
+  id=""
+  title=""
+  theme="default"
+  timeout="true"
+  role=""
+  ipFilter=""
+  loader="true"
+  renderIf=""
 >
-   Contains: Other HTML and/or Silk components.
+   Contains: Other HTML and/or Silk components. *
 </silk:App>
 ```
 
 ## Properties 
 <sup>*</sup>Required property.
+### id
+The app's unique identifier.<br>This is added during SilkBuilder's code rendering.<br>Default Value: *Empty*.
 ### title
-Used to define the web page title which will be displayed by the navigator.<br>Default Value: *Empty*.
+Used to define the web page title that the navigator will display.<br>Default Value: *Empty*.
 ### theme
-The name of the theme defining the styles use by the components. This property is only necessary if the application will use a different template from the "default" one which define globally the session's variable 'silkTheme' and automatically loaded by the application.<br>Default Value: *default*.
+The name of the theme defines the styles used by the components. This property is only necessary if the application uses a different template from the "default". The theme value is defined as the session variable 'silkTheme' and is automatically loaded.<br>Default Value: *default*.
 ### timeout
-Defines if the application will timeout and request for authentication. The default value is "true" and it can be disable by setting property to "false". It is only required if the value will be set to "false".<br>Default Value: *true*.
+Defines if the application will timeout and request authentication. The default value is "true" and can be disabled by setting the property to "false". It is only required if the value will be set to "false".<br>Default Value: *true*.
 ### role
-Set the roles which are authorize to run the application. It should contain a list of string values separated by commas. These roles will be checked against the user's roles loaded at authentication time. By default it is empty which allows access to anyone log in. The validation process only happens if a value is provided.<br>Default Value: *Empty*.
+Set the roles that are authorized to run the application. It should contain a list of string values separated by commas. These roles will be checked against the user's roles loaded at authentication time. By default, it is empty, allowing access to any logged-in user. The validation process only happens if a value is provided.<br>Default Value: *Empty*.
 ### ipFilter
 Will restrict the application use to the provided IP filter.<br>Default Value: *Empty*.
 ### loader
-Defines if the loader .gif image will be displayed. By default it is set to true.<br>Default Value: *true*.
+Defines if the loader image (.gif) will be displayed. The default value is "true".<br>Default Value: *true*.
 ### renderIf
-A logic condition determining if the application should be executed. It accepted model variables. The explanation on how to use the logic statement is found in <a href="how_to/server_code_logic.md">Server Code Logic</a> documentation.<br>Default Value: *Empty*.
-### tagService
-Sets the service id use on the translation process.<br>Default Value: *Empty*.
+It contains the logic sentence defining whether the component should be rendered.<br>The logic statement's explanation is in the <a href="how_to/server_code_logic.md">Server Code Logic</a> documentation.<br>Default Value: *Empty*.

@@ -173,6 +173,12 @@ If column is not provided returns the object a the provided position.
 | index | <code>Integer</code> | Data index position to be returned |
 | column | <code>String</code> | (optional) Column name which value will be returned |
 
+<a name="DataProvider+getLangID"></a>
+
+### getLangID() ⇒ <code>String</code>
+Get the langID if replaced
+
+**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
 <a name="DataProvider+getOperationItem"></a>
 
 ### getOperationItem()
@@ -248,12 +254,6 @@ Executes an INSERT request. Operation items should be added before calling this 
 Return a boolean indicating if the data is set to be tree structured
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
-<a name="DataProvider+langID"></a>
-
-### langID
-The langID is use to overwrite the session loaded langID.
-
-**Kind**: instance property of [<code>DataProvider</code>](#DataProvider)  
 <a name="DataProvider+length"></a>
 
 ### length()
@@ -337,6 +337,17 @@ Sets the column's value of the array item defind by the index position.
 | index | <code>Integer</code> | Array index target. |
 | column | <code>String</code> | The target column. |
 | value | <code>Stting</code> | The value. |
+
+<a name="DataProvider+setLangID"></a>
+
+### setLangID((String})
+Set the langID, it is use to overwrite the session loaded langID.
+
+**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
+
+| Param | Description |
+| --- | --- |
+| (String} | newLangID - The new langID |
 
 <a name="DataProvider+setOperationAction"></a>
 
@@ -484,6 +495,17 @@ Event triggered after the load action is executed. Created with the ```DataProvi
 | --- | --- | --- |
 | [action] | <code>String</code> | The action to be executed. |
 | [operation] | <code>String</code> | The operation to be executed. |
+
+<a name="DataProvider+Event_afterRecordSync"></a>
+
+### on:afterRecordSync ([selectName])
+Event triggered after the record sync action is executed. Created with the ```DataProvider.on("afterRecordSync", function(selectName){})``` method.
+
+**Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [selectName] | <code>String</code> | The name of the select with in the ORM to be executed. |
 
 <a name="DataProvider+Event_afterSelect"></a>
 

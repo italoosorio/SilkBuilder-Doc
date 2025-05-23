@@ -40,28 +40,6 @@ Fires the click action programatically. Ignore confirmation if configured.
 Fires the click action programatically after triggering the confirmation dialog and getting an answer.
 
 **Kind**: instance method of [<code>Button</code>](#Button)  
-<a name="Button+disable"></a>
-
-### disable(mode)
-Disables the  Action changes based on the provided parameter.
-
-**Kind**: instance method of [<code>Button</code>](#Button)  
-
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| mode | <code>boolean</code> | <code>true</code> | True disables and false enables. |
-
-<a name="Button+enable"></a>
-
-### enable(mode)
-Enables the  Action changes based on the provided parameter.
-
-**Kind**: instance method of [<code>Button</code>](#Button)  
-
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| mode | <code>boolean</code> | <code>true</code> | True enables and false disables |
-
 <a name="Button+getLabel"></a>
 
 ### getLabel() ⇒ <code>String</code>
@@ -98,21 +76,32 @@ Extends the "on" method from the eventManager Class.
 | eventName | <code>String</code> | The event's name. |
 | eventFunction | <code>function</code> | The function to be triggered. |
 
-<a name="Button+setConfirmLabel"></a>
+<a name="Button+setConfirmIcon"></a>
 
-### setConfirmLabel(label)
-Sets the confirmation button's' label
+### setConfirmIcon(icon)
+Sets the icon for the confirmation dialog
 
 **Kind**: instance method of [<code>Button</code>](#Button)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| label | <code>String</code> | The button's label |
+| icon | <code>String</code> | The new icon |
+
+<a name="Button+setConfirmLabel"></a>
+
+### setConfirmLabel(label)
+Sets the button's label for the confirmation dialog
+
+**Kind**: instance method of [<code>Button</code>](#Button)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| label | <code>String</code> | The new label |
 
 <a name="Button+setConfirmMessage"></a>
 
 ### setConfirmMessage(message)
-Sets the confirmation dialog message
+Sets the message for the confirmation dialog
 
 **Kind**: instance method of [<code>Button</code>](#Button)  
 
@@ -123,13 +112,35 @@ Sets the confirmation dialog message
 <a name="Button+setConfirmTitle"></a>
 
 ### setConfirmTitle(title)
-Sets the confirmation dialog title
+Sets the title for the confirmation dialog
 
 **Kind**: instance method of [<code>Button</code>](#Button)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | title | <code>String</code> | The new title |
+
+<a name="Button+setDisable"></a>
+
+### setDisable(mode)
+Disables the  Action changes based on the provided parameter.
+
+**Kind**: instance method of [<code>Button</code>](#Button)  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| mode | <code>boolean</code> | <code>true</code> | True disables and false enables. |
+
+<a name="Button+setEnable"></a>
+
+### setEnable(mode)
+Enables the  Action changes based on the provided parameter.
+
+**Kind**: instance method of [<code>Button</code>](#Button)  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| mode | <code>boolean</code> | <code>true</code> | True enables and false disables |
 
 <a name="Button+setLabel"></a>
 
@@ -163,6 +174,15 @@ Hides or shows the button based on the provided parameter.
 
 ### on:beforeClick
 Event triggered before the Button is clicked. Created with the ```Button.on("beforeClick", function(){})``` method.
+
+**Kind**: event emitted by [<code>Button</code>](#Button)  
+<a name="Button+Event_beforeClick"></a>
+
+### on:beforeClick
+Event triggered before before calling the button's confirmation dialog.
+If it return's false the dialog will not show. If it return true or not value the dialog is shown.
+This event can be also used to change the dialog properties before being displayed.
+Created with the ```Button.on("validateConfirm", function(){})``` method.
 
 **Kind**: event emitted by [<code>Button</code>](#Button)  
 <a name="Button+Event_click"></a>

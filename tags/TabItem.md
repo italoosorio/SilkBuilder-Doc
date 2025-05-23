@@ -1,14 +1,14 @@
-# silk:TabItem Tag
+# silk:TabItem
 This tag defines a Silk TabItem component. It is a child of the silk:Tab tag and defines the tabs and its content.
 
-## Tag Use
+## Tag Definition
 Used as a container:
 ```xml
 <silk:TabItem
   id=""
   title=""
 >
-   Contains: text, HTML, and components
+   Contains: SilkBuilder components and HTML
 </silk:TabItem>
 ```
 

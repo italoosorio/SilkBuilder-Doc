@@ -38,19 +38,6 @@ Add a new cell to the end of the
 | --- | --- |
 | id | The ID of the element to be added. |
 
-<a name="Tile+filterLoad"></a>
-
-### filterLoad(index, item)
-Function which evaluates if a row should be included in the table.
-If true is returned the row is added, false ignores the row.
-
-**Kind**: instance method of [<code>Tile</code>](#Tile)  
-
-| Param | Description |
-| --- | --- |
-| index | The record index. |
-| item | The row object. |
-
 <a name="Tile+getID"></a>
 
 ### getID()
@@ -128,4 +115,11 @@ Event triggered when a tile is clicked. Created with the ```Tile.on("click", fun
 | cellIndex | <code>integer</code> | The cell index of the selected  |
 | event | <code>Object</code> | The mouse event object. |
 
+<a name="Tile+Event_filterLoad"></a>
+
+### on:filterLoad
+Event triggered before a cell item is added to the  If the function returns false the item is ignored.
+Created with the ```Tile.on("filterLoad", function(index,item){})``` method.
+
+**Kind**: event emitted by [<code>Tile</code>](#Tile)  
 

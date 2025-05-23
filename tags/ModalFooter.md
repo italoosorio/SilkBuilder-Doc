@@ -1,10 +1,10 @@
-# silk:ModalFooter Tag
-This tag defines the *silk:Modal* footer content. Has to be used with the *silk:ModalBody* content.
+# silk:ModalFooter
+The **silk:ModalFooter** defines the **silk:Modal** footer content. Must be used in conjunction with the **silk:ModalBody** component.
 
-## Tag Use
+## Tag Definition
 Used as a container:
 ```xml
 <silk:ModalFooter>
-   Contains: Silk components and/or HTML elements.
+   Contains: SilkBuilder components and/or HTML elements.
 </silk:ModalFooter>
 ```

@@ -1,7 +1,15 @@
-# silk:HelpBox Tag
+# silk:HelpBox
 This tag defines a Silk HelpBox component to display user interface help.
 
-## Tag Use
+## Tag Definition
+Used standalone:
+```xml
+<silk:HelpBox
+  id=""
+  cssClass=""
+  icon="fas fa-question-circle"
+/>
+```
 Used as a container:
 ```xml
 <silk:HelpBox

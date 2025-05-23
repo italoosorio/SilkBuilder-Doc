@@ -76,6 +76,14 @@ After setting the property *recordSync* and the method *beforeRecordSync*, the s
 
 > **The syncronization updates any componect connected to the *dataProvider* like Tables, Forms, and Inputs.**
 
+The record syncronization method will trigger the "afterRecordSync" event each time a records is syncronized. When the silk:DataProvider loads for the first time the events "afterSelect" and "afterRecordSync" will be triggered together. After this only the "afterRecordSync" event will be triggered.
+
+```javascript
+personDP.on("afterRecordSync",function(){
+  // Operation
+});
+```
+
 ### Manual record syncronization
 
 If the desire is not to synchronize automatically, the property *recordSync* should not be set in the silk:DataProvider, but the event beforeRecordSync has to be set up. Then, the synchronization process can be executed manually, calling the silk:DataProvider's method recordSync().

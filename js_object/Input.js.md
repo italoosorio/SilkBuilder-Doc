@@ -11,8 +11,6 @@
 | $filePreviewBt | <code>Object</code> | The JQuery reference to the preview button. |
 | $fileDownloadBt | <code>Object</code> | The JQuery reference to the donwload button. |
 | selectedIndex | <code>Integer</code> | The index of the last dataProvider's item in the case of types select and radio. |
-| validation | <code>function</code> | Function to validate the entered value. The function parameters are: type and entered value. |
-| loadFilter | <code>funciton</code> | Function to decide which item from dataSource should be loaded into a Select, radio, or options. Returns a boolean. |
 
 
 
@@ -40,6 +38,7 @@ Returns an Input instance.
 | [options.required] | <code>Boolean</code> | <code>false</code> | The logic value or expression to determine if the component should be required before data submission. |
 | [options.editable] | <code>Boolean</code> | <code>true</code> | The logic value or JavaScript expression to determine if the component should be visible. |
 | [options.visible] | <code>Boolean</code> | <code>true</code> | Expression to evaluate if the component should be visible. |
+| [options.hideEmpty] | <code>Boolean</code> | <code>false</code> | Expression to evaluate if the component should be hidden when in read mode. |
 | [options.maxLength] | <code>Integer</code> |  | The number of characters the input will allow. |
 | [options.name] | <code>String</code> |  | The "name" of the input if used under a regular <form> html tag. |
 | [options.scriptValue] | <code>String</code> |  | Javascript expression returning the input's value. |
@@ -226,6 +225,17 @@ Extends the "on" method from the eventManager Class.
 Method to programatically open a HTML Select input element
 
 **Kind**: instance method of [<code>Input</code>](#Input)  
+<a name="Input+setEnable"></a>
+
+### setEnable(status)
+Enables a disable Input.
+
+**Kind**: instance method of [<code>Input</code>](#Input)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| status | <code>Boolean</code> | Optional boolean value; |
+
 <a name="Input+setLabel"></a>
 
 ### setLabel(label)
@@ -300,14 +310,14 @@ Changes the Input's stored value.
 
 <a name="Input+setVisible"></a>
 
-### setVisible(mode)
+### setVisible(visibleMode)
 Sets the Input's visible status.
 
 **Kind**: instance method of [<code>Input</code>](#Input)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| mode | <code>Boolean</code> | The visible status. |
+| visibleMode | <code>Boolean</code> | The visible status. |
 
 <a name="Input+show"></a>
 
@@ -430,6 +440,14 @@ Event triggered after the file extension and size has been validated. Created wi
 | typeError | <code>Boolean</code> | True if the file extension type is not a match. |
 | sizeError | <code>Boolean</code> | True if the size is beyond set bounderies. |
 
+<a name="Input+Event_filterLoad"></a>
+
+### on:filterLoad
+Event triggered before a row item is added to  If the function returns false the item is ignored.
+This works for types select, options, ratio.
+Created with the ```Input.on("filterLoad", function(index,item){})``` method.
+
+**Kind**: event emitted by [<code>Input</code>](#Input)  
 <a name="Input+Event_getValue"></a>
 
 ### on:getValue ($value)

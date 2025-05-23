@@ -86,6 +86,14 @@ Clean the headers from
 Clears the content of the search text input.
 
 **Kind**: instance method of [<code>Table</code>](#Table)  
+<a name="Table+filterData"></a>
+
+### filterData()
+Executes data filterig based on the provided text.
+In the case of dpSearch="true" the dataProvider shoudl received the search text in a parameter.
+The search input functionality activated by searchable="true" uses this method.
+
+**Kind**: instance method of [<code>Table</code>](#Table)  
 <a name="Table+getColumns"></a>
 
 ### getColumns() ⇒ <code>Array</code>
@@ -102,6 +110,13 @@ Gets the loaded component array.
 
 ### getDataSource()
 Gets a reference to the dataSource.
+
+**Kind**: instance method of [<code>Table</code>](#Table)  
+<a name="Table+getDeleteBranch"></a>
+
+### getDeleteBranch() ⇒ <code>Boolean</code>
+Returns if the tree will allow a branch to be deleted. By default only leaves are to be deleted.
+It is the developers responsibility to program the children branches or leaves deletion.
 
 **Kind**: instance method of [<code>Table</code>](#Table)  
 <a name="Table+getID"></a>
@@ -260,10 +275,15 @@ Sets the root label if treeData is true;
 **Kind**: instance method of [<code>Table</code>](#Table)  
 <a name="Table+setSearchText"></a>
 
-### setSearchText()
+### setSearchText(text)
 Sets the text of the search text input.
 
 **Kind**: instance method of [<code>Table</code>](#Table)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| text | <code>String</code> | The new input text. |
+
 <a name="Table+setSelectedItem"></a>
 
 ### setSelectedItem()
@@ -317,6 +337,18 @@ Hides or shows the table based on the provided parameter.
 | --- | --- | --- |
 | status | <code>boolean</code> | True shows and false hides. |
 
+<a name="Table+toggleSearch"></a>
+
+### toggleSearch(mode, reload)
+Toogles the seach input from visible to hiden. It requires the property searchable="true".
+
+**Kind**: instance method of [<code>Table</code>](#Table)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| mode | <code>Boolean</code> | The logic condition. True shows and false hides. |
+| reload | <code>Boolean</code> | If true it clears filtering if the search iput is hidden. |
+
 <a name="Table+Event_afterLoad"></a>
 
 ### on:afterLoad
@@ -346,7 +378,7 @@ Event triggered when a row is clicked. Created with the ```Table.on("click", fun
 <a name="Table+Event_dataInput"></a>
 
 ### on:dataInput
-Event triggered while input is being generated. Created with the ```Table.on("dataInput", function(index,item,type){})``` method.
+Event triggered while input is being generated. Created with the ```Table.on("dataInput", function(dpIndex,pdItem,inputType){})``` method.
 If the event's function returns an object this will be saved as a JSON String in the input's property 'data-json' to be used during data post operation.
 
 **Kind**: event emitted by [<code>Table</code>](#Table)  
@@ -404,7 +436,7 @@ Created with the ```Table.on("filterLoad", function(index,item){})``` method.
 Event triggered before each input is being generated. If the event's' function returns true the input will be created. If it returns false it will no render an input.
 If the event returns a text value this is used to define the input's' type and the input is generated. The text can contain an added mask separated by a pipe symbol.
 If the event returns undefined the input is generated.
-Created with the ```Table.on("renderInput", function(value,index,item){})``` method.
+Created with the ```Table.on("renderInput", function(value,pdIndex,dpItem){})``` method.
 
 **Kind**: event emitted by [<code>Table</code>](#Table)  
 <a name="Table+Event_searchText"></a>
@@ -418,4 +450,12 @@ Event use to evaluate the text entered in the serch input. If the event function
 | --- | --- | --- |
 | text | <code>String</code> | The entered text. |
 
+<a name="Table+Event_toggle"></a>
+
+### on:toggle
+Event triggered when the table's visible property is being changed. Created with the ```Table.on("goggle", function(toogleStatus){})``` method.
+It is trigger on meethods show, hide, toggle.
+If the event returns true of false it overwrites the toggle requested. Not returning a value preserves the original status.
+
+**Kind**: event emitted by [<code>Table</code>](#Table)  
 

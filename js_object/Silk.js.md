@@ -21,10 +21,10 @@ Returns a Silk instance. **Do not instantiate manually.**
 
 <a name="Silk+alert"></a>
 
-### alert
+### alert(title, message, icon, configuration)
 Extends the [SweetAlert2](https://sweetalert2.github.io/) dialog object. Use it by calling alert.fire();
 
-**Kind**: instance property of [<code>Silk</code>](#Silk)  
+**Kind**: instance method of [<code>Silk</code>](#Silk)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -66,10 +66,10 @@ Extends the "on" method from the eventManager Class.
 
 <a name="Silk+toast"></a>
 
-### toast
+### toast(title, message, icon, configuration)
 Extends the [SweetAlert2](https://sweetalert2.github.io/) toas object. Use it by calling alert.toast();
 
-**Kind**: instance property of [<code>Silk</code>](#Silk)  
+**Kind**: instance method of [<code>Silk</code>](#Silk)  
 
 | Param | Type | Description |
 | --- | --- | --- |

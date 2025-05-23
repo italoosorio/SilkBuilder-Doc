@@ -1,7 +1,9 @@
-# silk:Pagination Tag
-This tag defines a Silk Pagination component which will be used to navigate between pages of data.
+# silk:Pagination
+This component **silk:Pagination** renders a page counter to navigate between data groups.
 
-## Tag Use
+This class works standalone and is not a container.
+
+## Tag Definition
 Used standalone:
 ```xml
 <silk:Pagination

@@ -1,7 +1,7 @@
-# silk:Screen Tag
-This tag is used to defined the use of *sik:Page* tags to organize the application's Silk Components using responsive panels. This is called "multi page" format. Without this tag the application will work as a "single page" format.
+# silk:Screen
+The component **silk:Screen** defines a multi-page application and is expected to host the **silk:Page** components. A multi-page application provides responsible behavior to the hosted pages.
 
-## Tag Use
+## Tag Definition
 Used as a container:
 ```xml
 <silk:Screen>

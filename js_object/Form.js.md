@@ -40,6 +40,11 @@ Returns a DataProvider instance.
 | [options.insertMessage] | <code>String</code> |  | The message for the insert action. |
 | [options.updateMessage] | <code>String</code> |  | The message for the update action. |
 | [options.deleteMessage] | <code>String</code> |  | The message for the delete action. |
+| [option.confirmTitle] | <code>String</code> |  | The confirmation dialog title. |
+| [option.confirmMessage] | <code>String</code> |  | The confirmation dialog message. |
+| [option.confirmLabel] | <code>String</code> |  | The confirmation dialog button's label. |
+| [option.confirmIcon] | <code>String</code> |  | The confirmation dialog icon. |
+| [option.confirmTarget] | <code>String</code> |  | Sets which actions will trigger the confirmation dialog. |
 
 <a name="Form+clean"></a>
 
@@ -203,6 +208,17 @@ Sets the dialog title
 | --- | --- | --- |
 | title | <code>String</code> | The title text |
 
+<a name="Form+setEnable"></a>
+
+### setEnable(status)
+Enables a disable Input.
+
+**Kind**: instance method of [<code>Form</code>](#Form)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| status | <code>Boolean</code> | Optional boolean value; |
+
 <a name="Form+setInputMode"></a>
 
 ### setInputMode(mode, [setPreviousData])
@@ -270,7 +286,9 @@ Event triggered after the Form load the data from dataSource. Created with the `
 <a name="Form+Event_afterModeChange"></a>
 
 ### on:afterModeChange
-Event triggered before the mode (editing, reading) changes. Created with the ```Form.on("afterModeChange", function(){})``` method.
+Event triggered after the mode has changed. Created with the ```Form.on("afterModeChange", function(mode){})``` method.
+The mode changes between read-only (false), and editable (true);
+This even is the same as "modeChange" which is added for coding and reference convenience.
 
 **Kind**: event emitted by [<code>Form</code>](#Form)  
 <a name="Form+Event_beforeLoad"></a>
@@ -287,13 +305,16 @@ Event triggered before the Form load the data from dataSource. Created with the 
 <a name="Form+Event_beforeModeChange"></a>
 
 ### on:beforeModeChange
-Event triggered before the mode (editing, reading) changes. Created with the ```Form.on("beforeModeChange", function(){})``` method.
+Event triggered before the mode changes are applied. Created with the ```Form.on("beforeModeChange", function(mode){})``` method.
+The mode changes between read-only (false), and editable (true);
 
 **Kind**: event emitted by [<code>Form</code>](#Form)  
 <a name="Form+Event_beforeSubmit"></a>
 
 ### on:beforeSubmit
-Event triggered before data is submited. If it return false the process is canceled. Created with the ```Form.on("beforeSubmit", function(){})``` method.
+Event triggered before the form's data is validated for submittion.
+Used this event to apply changes or run operations before the form's input validation.
+If it return false the process is canceled. Created with the ```Form.on("beforeSubmit", function(){})``` method.
 
 **Kind**: event emitted by [<code>Form</code>](#Form)  
 <a name="Form+Event_cancel"></a>
@@ -337,10 +358,26 @@ Event triggered when Form's inputs have errors.  Created with the ```Form.on("fo
 Event triggered before the Form is set for an insert. If function return false the process is canceled. Created with the ```Form.on("insert", function(){})``` method.
 
 **Kind**: event emitted by [<code>Form</code>](#Form)  
+<a name="Form+Event_modeChange"></a>
+
+### on:modeChange
+Event triggered after the mode has changed. Created with the ```Form.on("modeChange", function(mode){})``` method.
+The mode changes between read-only (false), and editable (true);
+This even is the same as "afterModeChange" which is added for coding and reference convenience.
+
+**Kind**: event emitted by [<code>Form</code>](#Form)  
 <a name="Form+Event_submit"></a>
 
 ### on:submit
-Event triggered before the Form is set for a submit. If function return false the process is canceled. Created with the ```Form.on("submit", function(){})``` method.
+Event triggered before the Form data is submitted for processing.
+The form's inputs had been validated.
+If function return false the process is canceled. Created with the ```Form.on("submit", function(){})``` method.
+
+**Kind**: event emitted by [<code>Form</code>](#Form)  
+<a name="Form+Event_submitBtActivation"></a>
+
+### on:submitBtActivation
+Event triggered before the submit button's activation changes. Created with the ```Form.on("submitBtActivation", function(){})``` method.
 
 **Kind**: event emitted by [<code>Form</code>](#Form)  
 <a name="Form+Event_update"></a>
@@ -349,16 +386,16 @@ Event triggered before the Form is set for a submit. If function return false th
 Event triggered before the Form is set for an update. If function return false the process is canceled. Created with the ```Form.on("update", function(){})``` method.
 
 **Kind**: event emitted by [<code>Form</code>](#Form)  
-<a name="Form+event_insertBtVisible"></a>
+<a name="Form+event_showDeleteBt"></a>
 
-### "insertBtVisible"
-Event triggered before the insert button's visibility changes. Created with the ```Form.on("showInsertBt", function(){})``` method.
+### "showDeleteBt"
+Event triggered before the delete button' visibility changes. Created with the ```Form.on("showDeleteBt", function(){})``` method.
 
 **Kind**: event emitted by [<code>Form</code>](#Form)  
-<a name="Form+event_insertBtVisible"></a>
+<a name="Form+event_showInsertBt"></a>
 
-### "insertBtVisible"
-Event triggered before the delete button' visibility changes. Created with the ```Form.on("showDeleteBt", function(){})``` method.
+### "showInsertBt"
+Event triggered before the insert button's visibility changes. Created with the ```Form.on("showInsertBt", function(){})``` method.
 
 **Kind**: event emitted by [<code>Form</code>](#Form)  
 <a name="Form+event_showUdatetBt"></a>

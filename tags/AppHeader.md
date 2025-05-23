@@ -1,7 +1,11 @@
-# silk:AppHeader Tag
-This tag should be used only if it becomes necessary to add data into the  `<header>` part of the HTML page for a particular application use. If the code will apply for all applications then this should be added in the default system's template.
+# silk:AppHeader
+This tag should be used only if data needs to be added to the 'header' part of the HTML page for a particular application. The code should be added to the default system template if it applies to all applications.
 
-## Tag Use
+## Tag Definition
+Used standalone:
+```xml
+<silk:AppHeader/>
+```
 Used as a container:
 ```xml
 <silk:AppHeader>

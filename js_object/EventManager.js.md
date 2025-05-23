@@ -13,7 +13,9 @@ Returns an instance of EventManager.
 <a name="EventManager+dispatch"></a>
 
 ### dispatch(eventName, paramX) ⇒ <code>Object</code>
-Triggers or executes the function of the provided event's name. It received up to 10 parameters. If the event has been entered multiple times these are executed in the order or entrance.
+Triggers or executes the function of the provided event's name. It received up to 10 parameters.
+If the event has been entered multiple times these are executed in the order or entrance.
+If the provided function can return a value. In case of multiple functions generating values the value of the last one is returned.
 
 **Kind**: instance method of [<code>EventManager</code>](#EventManager)  
 **Returns**: <code>Object</code> - The result Objec returned after executing the event's function.  

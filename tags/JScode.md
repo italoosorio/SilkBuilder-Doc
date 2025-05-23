@@ -1,7 +1,16 @@
-# silk:JScode Tag
-This tag is used to add JavaScript code in the application.  SilkBuilder will collect all the JavaScript code and put them together regardless of where these had been defined. This is the code which has to be executed  before JQuery is active and accessible by the application. These can be setting global variables and/or functions.
+# silk:JScode
+This tag adds code using JavaScript events in the application. SilkBuilder will collect the code in a JScode component and put it together regardless of where it has been defined.
 
-## Tag Use
+The code in JScode is executed immediately after being loaded and is usually used to define JavaScript objects.  When this code is executed, Silk Components may not be available or initialized.
+
+## Tag Definition
+Used standalone:
+```xml
+<silk:JScode
+  renderIf=""
+  desc=""
+/>
+```
 Used as a container:
 ```xml
 <silk:JScode
@@ -13,8 +22,7 @@ Used as a container:
 ```
 
 ## Properties 
-<sup>*</sup>Required property.
 ### renderIf
-The logic sentence which will define if the button should be rendered. The explanation on how to use the logic statement is found in <a href="how_to/server_code_logic.md">Server Code Logic</a> documentation.<br>Default Value: *Empty*.
+It contains the logic sentence defining whether the component should be rendered.<br>The logic statement's explanation is in the  <a href="how_to/server_code_logic.md">Server Code Logic</a> documentation.<br>Default Value: *Empty*.
 ### desc
-Default Value: *Empty*.
+Defines a title of description used only for documentation or code categorization purposes.<br>Default Value: *Empty*.

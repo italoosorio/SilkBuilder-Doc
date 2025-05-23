@@ -35,6 +35,12 @@ Verifies is the URL of a resource file exist or is accesible in host server.
 | --- | --- |
 | urlToFile | The file' URL. |
 
+<a name="downloadText"></a>
+
+## downloadText()
+Function to download the provided text into a file.
+
+**Kind**: global function  
 <a name="getFormattedValue"></a>
 
 ## getFormattedValue(value, formatter) ⇒ <code>String</code>

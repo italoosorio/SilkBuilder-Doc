@@ -1,28 +1,30 @@
-# silk:If Tag
-The *silk:If* component is use to encapsulate code which should be rendered in the server under a logic condition.
+# silk:If
+The **silk:If** the component encapsulates code. Using the **renderIf** property logic, the code would be included or excluded at run time.
 
-This tag executes at server time during the HTML generation of the application before delivering it to the client. This does not have an effect when the application is in the client using JavaScript.
-
-## Tag Use
+## Tag Definition
+Used standalone:
+```xml
+<silk:If
+  renderIf=""
+  negation=""
+  debug=""
+/>
+```
 Used as a container:
 ```xml
 <silk:If
   renderIf=""
-  renderIf=""
-  test=""
   negation=""
+  debug=""
 >
    Contains: Other HTML and/or Silk components.
 </silk:If>
 ```
 
 ## Properties 
-<sup>*</sup>Required property.
 ### renderIf
-The logic statement use to restrict access to this code. The explanation on how to use the logic statement is found in <a href="how_to/server_code_logic.md">Server Code Logic</a> documentation.<br>Default Value: *Empty*.
-### renderIf
-Default Value: *Empty*.
-### test
-Default Value: *Empty*.
+It contains the logic sentence defining whether the component should be rendered.<br>The logic statement's explanation is in the <a href="how_to/server_code_logic.md">Server Code Logic</a> documentation.<br>Default Value: *Empty*.
 ### negation
-If set to true the logic statement result from the *renderIf* property will be negated. This is like saying "not renderIf".<br>Default Value: *Empty*.
+If set to true, the logic statement result from the *renderIf* property will be negated. This is like saying "not renderIf".<br>Default Value: *Empty*.
+### debug
+Activates debug messages<br>Default Value: *Empty*.
