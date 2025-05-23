@@ -4,7 +4,7 @@ The SilkBuilder Tags are JSP Custom tags that can be used together with HTML tag
 
 ## Tag List:
 
-* [App](App.md) Defines a SilkBuilder Application.
+* [App](App.md)
 * [AppHeader](AppHeader.md)
 * [Button](Button.md)
 * [ButtonItem](ButtonItem.md)
