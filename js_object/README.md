@@ -13,7 +13,7 @@ The SilkBuilder JavaScript Objects are companion objects use to extent the funct
 * [Modal](Modal.js.md)
 * [Pagination](Pagination.js.md)
 * [Page](Page.js.md)
-* [Silk](Silk.js.md) (Auto instantiated)
+* [Silk](Silk.js.md)
 * [Table](Table.js.md)
 * [TabsNav](TabsNav.js.md)
 * [Tile](Tile.js.md)
