@@ -69,17 +69,19 @@
   * [ChartJS](js_object/ChartJS.js.md)
   * [Column](js_object/Column.js.md)
   * [DataProvider](js_object/DataProvider.js.md)
-  * [EventManager](js_object/EventManager.js.md)
   * [Form](js_object/Form.js.md)
   * [Input](js_object/Input.js.md)
+  * [LogicGrid](js_object/LogicGrid.js.md)
   * [Modal](js_object/Modal.js.md)
+  * [Page](js_object/Page.js.md)
   * [Pagination](js_object/Pagination.js.md)
-  * [SilkPage](js_object/SilkPage.js.md)
+  * [Silk](js_object/Silk.js.md)
+  * [Tab](js_object/Tab.js.md)
   * [Table](js_object/Table.js.md)
   * [TabsNav](js_object/TabsNav.js.md)
   * [Tile](js_object/Tile.js.md)
   * [Utility Functions](js_object/silkUtils.md)
-
+  
 * [Coding Techniques](how_to/README.md)
 
   * [Data Trees](how_to/tree.md)
