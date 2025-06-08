@@ -6,30 +6,31 @@
 
 | Name | Type | Description |
 | --- | --- | --- |
-| id | <code>String</code> | The page's name and unique dentifier. |
-| $page | <code>Object</code> | jQuery object referencing to the page HTML tag. |
-| $content | <code>Object</code> | jQuery object referencing to the page HTML tag. |
-| isSingle | <code>Boolean</code> | Indicates if the page is being display alone. |
+| id | <code>String</code> | The page's name and unique identifier. |
+| $page | <code>Object</code> | jQuery object referencing the page HTML tag. |
+| $content | <code>Object</code> | jQuery object referencing the page HTML tag. |
+| isSingle | <code>Boolean</code> | Indicates if the page is being displayed alone. |
 
 
 
-## Methods and Event
+## Constructor
  <a name="_new"></a>
 
 ### new Page(id, stage, width, screenSetup, returnPage, tabsNav)
-Returns a Page isntance.
+Returns a Page instance.
 
 
 | Param | Type | Description |
 | --- | --- | --- |
 | id | <code>String</code> | Unique identifier. |
-| stage | <code>String</code> | The stages code to be used in the layout scheme. |
+| stage | <code>String</code> | The stage's code to be used in the layout scheme. |
 | width | <code>Integer</code> | Deprecated. |
 | screenSetup | <code>String</code> | The layout scheme. |
 | returnPage | <code>String</code> | The name of the page to return when clicking the back button. |
 | tabsNav | <code>String</code> | The name of the TabsNav object holding the page |
 
-<a name="Page+getID"></a>
+## Methods
+ <a name="+getID"></a>
 
 ### getID() ⇒ <code>String</code>
 Returns the page's name or unique identifier.
@@ -65,12 +66,12 @@ Executes the page masking. The masking process isolates the page from other page
 
 | Param | Type | Description |
 | --- | --- | --- |
-| mode | <code>boolean</code> | If true the page is maked, if false the page is unmasked. |
+| mode | <code>boolean</code> | If true, the page is masked; if false, the page is unmasked. |
 
 <a name="Page+on"></a>
 
 ### on(eventName, eventFunction)
-Extends the "on" method from the eventManager Class.
+Load events to respond to the page's interactions. To set an event, use this code: ```Page.on(<eventName>, function(){<code>})```.
 
 **Kind**: instance method of [<code>Page</code>](#Page)  
 
@@ -82,7 +83,7 @@ Extends the "on" method from the eventManager Class.
 <a name="Page+resize"></a>
 
 ### resize()
-Executes the resize of pages in reference to the active one.
+Executes the resizing of pages referencing the currently active 
 
 **Kind**: instance method of [<code>Page</code>](#Page)  
 <a name="Page+setTitle"></a>
@@ -104,8 +105,9 @@ Makes a page visible and the active one.
 **Kind**: instance method of [<code>Page</code>](#Page)  
 <a name="Page+Event_show"></a>
 
+## Events
 ### on:show
-Event triggered when the page becomes active. Created with the ```Page.on("show", function(){})``` method.
+The event is triggered when the page becomes active. Created with the ```Page.on("show", function(){})``` method.
 
 **Kind**: event emitted by [<code>Page</code>](#Page)  
 

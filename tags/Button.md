@@ -1,7 +1,7 @@
 # silk:Button
-The *silk:Button* tag generates a button stylized with Bootstrap.
+The <silk:Button> component generates an HTML button element styled with Bootstrap classes.
 
-The button primarily operates standalone, but can also work as a button container.
+The button primarily operates standalone
 
 ## Tag Definition
 Used standalone:
@@ -29,33 +29,27 @@ Used standalone:
   criteria=""
 />
 ```
-Used as a container:
+### JavaScript Object
+SilkBuilder also creates a companion JavaScript object using the [Button](..\js_object\Button.js.md) class to provide JavaScript programmatic interaction. This object will have the same name as the component's ID.
 ```xml
-<silk:Button
-  id=""
-  label=""
-  targetPage=""
-  icon=""
-  dock=""
-  width=""
-  cssClass="btn-primary"
-  cssStyle=""
-  renderIf=""
-  extraProperties=""
-  group="false"
-  disabled="false"
-  hidden="false"
-  confirmTitle=""
-  confirmMessage=""
-  confirmLabel=""
-  confirmIcon=""
-  toggleList=""
-  logicGrid=""
-  criteria=""
->
-   Contains: Silk:ButtonItems
+<silk:Button id="bt1" label="Click Me" />
+<silk:JQcode>
+  bt1.on("click", function(){
+    silk.alert("I have been clicked!");
+  });
+</silk:JQcode>
+```
+
+### Dropdown Button
+The component can host **silk:ButtonItem** components to be used as a dropdown button. The host button and the button items are treated like separate button entities.
+
+```xml
+<silk:Button id="parentBt" label="Options">
+  <silk:ButtonItem id="bt1" label="Save" />
+  <silk:ButtonItem id="bt2" label="Delete" />
 </silk:Button>
 ```
+
 
 ## Properties 
 ### id

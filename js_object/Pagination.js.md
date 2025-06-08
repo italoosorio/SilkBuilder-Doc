@@ -7,8 +7,8 @@
 | Name | Type | Description |
 | --- | --- | --- |
 | $pagination | <code>Object</code> | jQuery object referencing the pagination HTML tag. |
-| currentPage | <code>Integer</code> | The index of selected page |
-| totalRows | <code>Integer</code> | The total rows return by the query. |
+| currentPage | <code>Integer</code> | The index of the selected page |
+| totalRows | <code>Integer</code> | The total rows returned by the query. |
 | totalPages | <code>Integer</code> | The total generated pages. |
 | $pageStartRow | <code>Integer</code> | The page starting the pages list view. |
 | $pageSize | <code>Integer</code> | The number of items per page. |
@@ -18,7 +18,7 @@
 
 
 
-## Methods and Event
+## Constructor
  <a name="_new"></a>
 
 ### new Pagination(id, size, pages, label)
@@ -28,11 +28,12 @@ Returns a Pagination instance.
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | id | <code>String</code> |  | Unique identifier. |
-| size | <code>Integer</code> | <code>500</code> | The number of garget items per page. |
+| size | <code>Integer</code> | <code>500</code> | The number of target items per page. |
 | pages | <code>Integer</code> | <code>10</code> | The number of pages listed in the pagination bar. |
 | label | <code>String</code> | <code>Records</code> | Optional pagination label. |
 
-<a name="Pagination+clean"></a>
+## Methods
+ <a name="+clean"></a>
 
 ### clean()
 Method to clean the pagination container.
@@ -41,7 +42,7 @@ Method to clean the pagination container.
 <a name="Pagination+on"></a>
 
 ### on
-Extends the "on" method from the eventManager Class.
+Load events to respond to the pagination's interactions. To set an event, use this code: ```Pagination.on(<eventName>, function(){<code>})```.
 
 **Kind**: instance property of [<code>Pagination</code>](#Pagination)  
 
@@ -52,8 +53,9 @@ Extends the "on" method from the eventManager Class.
 
 <a name="Pagination+Event_click"></a>
 
+## Events
 ### on:click
-Event triggered when a page button is clicked. Created with the ```Pagination.on("click", function(){})``` method.
+The event is triggered when a page button is clicked. Created with the ```Pagination.on("click", function(){})``` method.
 
 **Kind**: event emitted by [<code>Pagination</code>](#Pagination)  
 

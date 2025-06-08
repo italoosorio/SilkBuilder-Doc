@@ -6,15 +6,15 @@
 
 | Name | Type | Description |
 | --- | --- | --- |
-| columnID | <code>String</code> | The input's' unique identifier. This woudl be the name of the dataProvider coulumn if part of a Form tag. |
+| columnID | <code>String</code> | The input's unique identifier. This would be the name of the dataProvider column if part of a Form tag. |
 | $input | <code>Object</code> | The JQuery reference to the SILK Input HTML structure. |
 | $filePreviewBt | <code>Object</code> | The JQuery reference to the preview button. |
 | $fileDownloadBt | <code>Object</code> | The JQuery reference to the donwload button. |
-| selectedIndex | <code>Integer</code> | The index of the last dataProvider's item in the case of types select and radio. |
+| selectedIndex | <code>Integer</code> | The index of the last dataProvider's item in the case of type select and radio. |
 
 
 
-## Methods and Event
+## Constructor
  <a name="_new"></a>
 
 ### new Input(id, type, label, options, initValue)
@@ -25,14 +25,14 @@ Returns an Input instance.
 | --- | --- | --- | --- |
 | id | <code>String</code> |  | Unique identifier. |
 | type | <code>String</code> |  | The input type: text, textarea, code, sql, js, css, xml, xhtml, html, date, time, datetime, select, numeric, integer, decimal, checkbox, button, options, radio, password, file, email, hidden. |
-| label | <code>String</code> |  | The text used as input's label. |
+| label | <code>String</code> |  | The text used as the input's label. |
 | options | <code>Object</code> |  | Object containing the Input configuration options. |
-| initValue | <code>String</code> |  | The value which the Input will hold when created. |
+| initValue | <code>String</code> |  | The value that the Input will hold when created. |
 | [options.columnID] | <code>String</code> |  | The dataSource column name if different from the id parameter. |
-| [options.description] | <code>String</code> |  | The input's description only show at editing mode. |
-| [options.descriptionPlace] | <code>String</code> |  | The input's description's position: top or button. |
+| [options.description] | <code>String</code> |  | The input's description only shows in editing mode. |
+| [options.descriptionPlace] | <code>String</code> |  | The input's description position: top or bottom. |
 | [options.width] | <code>String</code> |  | The width of the component in pixels or percentage. |
-| [options.height] | <code>String</code> | <code>200px</code> | THe heigth of the component in case of the types: textarea, code, sql, js, css, xml, xhtml and html. |
+| [options.height] | <code>String</code> | <code>200px</code> | The input's height in case of the types: textarea, code, sql, js, css, xml, xhtml, and html. |
 | [options.scrollHeight] | <code>String</code> |  | The height limit of the component in read mode before the content needs scrolling. |
 | [options.dataSource] | <code>String</code> |  | The dataProvider id in case of types: Select, options, and radio. |
 | [options.required] | <code>Boolean</code> | <code>false</code> | The logic value or expression to determine if the component should be required before data submission. |
@@ -40,42 +40,43 @@ Returns an Input instance.
 | [options.visible] | <code>Boolean</code> | <code>true</code> | Expression to evaluate if the component should be visible. |
 | [options.hideEmpty] | <code>Boolean</code> | <code>false</code> | Expression to evaluate if the component should be hidden when in read mode. |
 | [options.maxLength] | <code>Integer</code> |  | The number of characters the input will allow. |
-| [options.name] | <code>String</code> |  | The "name" of the input if used under a regular <form> html tag. |
+| [options.name] | <code>String</code> |  | The "name" of the input if used under a regular <form> HTML tag, if different than the ID. |
 | [options.scriptValue] | <code>String</code> |  | Javascript expression returning the input's value. |
 | [options.scope] | <code>String</code> | <code>1</code> | The component end target. Check the setScope() method for values. |
 | [options.mask] | <code>String</code> |  | The input's entry mask or character filter. (http://igorescobar.github.io/jQuery-Mask-Plugin/) |
 | [options.mode] | <code>Boolean</code> | <code>false</code> | True if editing, or false if read only. |
-| [options.placeholder] | <code>String</code> |  | The input's place holder or helping text showed inside the  |
-| [options.form] | <code>String</code> |  | The parent Form. Undefined if operating stand alone. |
+| [options.placeholder] | <code>String</code> |  | The input's placeholder text, the helping text shown inside the text  |
+| [options.form] | <code>String</code> |  | The parent Form. Undefined if operating standalone. |
 | [options.block] | <code>Boolean</code> | <code>false</code> | If the component is the end of a block. Next Inputs will start in a new line. |
 | [options.cssClass] | <code>String</code> |  | The extra CSS classes to use with the input element. |
 | [options.inputClass] | <code>String</code> |  | Extra CSS classes affecting the component. |
 | [options.valueColumn] | <code>String</code> |  | Indicates the dataProvider's column containing the value to use in select, options, and radio. |
 | [options.labelColumn] | <code>String</code> | <code>label</code> | Indicates the dataProvider's column containing the label to use in select, options, and radio. |
-| [options.linkColumns] | <code>String</code> |  | Indicates the dataProvider's columns which will be updated in the dataSource. To use in select, options,and radio. |
+| [options.linkColumns] | <code>String</code> |  | Indicates the dataProvider's columns that will be updated in the dataSource. To use in select, options, and radio. |
 | [options.template] | <code>String</code> |  | A HTML schema defining the component read view. |
 | [options.target] | <code>String</code> |  | The HTML element in which the component will be rendered. |
 | [options.extraProperties] | <code>String</code> |  | To add extra HTML properties to the  |
 | [options.htmlConfigFile] | <code>String</code> | <code>/ckeditor-conf/bar-simple.js</code> | The JavaScript file containing the custom configuration for CKEditor. To be used with type "html". |
-| [options.stringList] | <code>String</code> |  | A JSON array which will serve as dataProvider for select, options, and radio. This array should contain objects with the properties value and label. |
-| [options.prompt] | <code>String</code> |  | Adds an extra options to the select usually use to request a value selection. |
-| [options.promptValue] | <code>String</code> |  | The value return by the select "prompt" if the user selects it. |
-| [options.filePreview] | <code>String</code> | <code>false</code> | If the component will show a button to preview an uploaded file. To use with type file. |
-| [options.fileDownload] | <code>String</code> | <code>false</code> | If the component will show a button to download an uploaded file. To use with type file. |
-| [options.filePreviewLabel] | <code>String</code> | <code>Preview</code> | The label of the preview button. To use with type file. |
-| [options.fileDownloadLabel] | <code>String</code> | <code>Download</code> | The label of the download button. To use with type file. |
-| [options.fileUploadLabel] | <code>String</code> | <code>Drag and drop file here, or click to select file.</code> | The label of the upload button. To use with type file. |
-| [options.filePreviewClass] | <code>String</code> | <code>btn-primary</code> | The preview button Bootstrap class. To use with type file. |
-| [options.fileDownloadClass] | <code>String</code> | <code>btn-primary</code> | The download button Bootstrap class. To use with type file. |
-| [options.filePreviewIcon] | <code>String</code> | <code>fas fa-file</code> | The preview button Font Awesome icon class. To use with type file. |
-| [options.fileDownloadIcon] | <code>String</code> | <code>fas fa-file-download</code> | The download button Font Awesome icon class. To use with type file. |
+| [options.stringList] | <code>String</code> |  | A JSON array which will serve as dataProvider for select, options, and radio. This array should contain objects with the properties' value and label. |
+| [options.prompt] | <code>String</code> |  | The provided text will be added as an extra option to the select usually used to request a value selection. |
+| [options.promptValue] | <code>String</code> |  | The value returned by the select "prompt" if the user selects it. |
+| [options.filePreview] | <code>String</code> | <code>false</code> | If the component will show a button to preview an uploaded file. To use with a input type file. |
+| [options.fileDownload] | <code>String</code> | <code>false</code> | If the component will show a button to download an uploaded file. To use with a input type file. |
+| [options.filePreviewLabel] | <code>String</code> | <code>Preview</code> | The label of the preview button. To use with a input type file. |
+| [options.fileDownloadLabel] | <code>String</code> | <code>Download</code> | The label of the download button. To use with a input type file. |
+| [options.fileUploadLabel] | <code>String</code> | <code>Drag and drop file here, or click to select file.</code> | The label of the upload button. To use with a input type file. |
+| [options.filePreviewClass] | <code>String</code> | <code>btn-primary</code> | The preview button Bootstrap class. To use with a input type file. |
+| [options.fileDownloadClass] | <code>String</code> | <code>btn-primary</code> | The download button Bootstrap class. To use with a input type file. |
+| [options.filePreviewIcon] | <code>String</code> | <code>fas fa-file</code> | The preview button Font Awesome icon class. To use with a input type file. |
+| [options.fileDownloadIcon] | <code>String</code> | <code>fas fa-file-download</code> | The download button Font Awesome icon class. To use with a input type file. |
 | [options.uploadURL] | <code>String</code> |  | The URL of the service uploading the file. To use with type file. |
-| [options.fileTypeList] | <code>String</code> |  | String containing the comma separated list of accepted file extension. To use with type file. |
-| [options.fileSizeLimit] | <code>Integer</code> |  | The number of MB allowed to upload. To use with type file. |
-| [options.timer] | <code>Integer</code> | <code>0</code> | The number of milliseconds before trigerint the "timer" even when entering data. |
-| [option.toggleList] | <code>String</code> |  | The list of comma separated elements which will be toggle together with the component. |
+| [options.fileTypeList] | <code>String</code> |  | String containing the comma-separated list of accepted file extensions. To use with a input type file. |
+| [options.fileSizeLimit] | <code>Integer</code> |  | The number of MB allowed to upload. To use with a input type file. |
+| [options.timer] | <code>Integer</code> | <code>0</code> | The number of milliseconds before triggering the "timer" event when entering data. |
+| [option.toggleList] | <code>String</code> |  | The list of comma-separated elements that will be toggled together with the component. |
 
-<a name="Input+cleanClasses"></a>
+## Methods
+ <a name="+cleanClasses"></a>
 
 ### cleanClasses()
 Cleans the Input from markers like required, missing, and error.
@@ -84,7 +85,7 @@ Cleans the Input from markers like required, missing, and error.
 <a name="Input+focus"></a>
 
 ### focus()
-The method to focused the input when in editable mode.
+The method to focus the input when in editable mode.
 
 **Kind**: instance method of [<code>Input</code>](#Input)  
 <a name="Input+getEditable"></a>
@@ -96,7 +97,7 @@ Returns if the Input is editable.
 <a name="Input+getID"></a>
 
 ### getID()
-Returns the component's' unique identifier.
+Returns the component's unique identifier.
 
 **Kind**: instance method of [<code>Input</code>](#Input)  
 <a name="Input+getInputID"></a>
@@ -120,7 +121,7 @@ Returns the Input's displayed label.
 <a name="Input+getLinkedColumns"></a>
 
 ### getLinkedColumns() ⇒ <code>String</code>
-Return the linked columns. These are the columns which will be updated into the Form's target dataSource.
+Return the linked columns. These are the columns that will be updated into the Form's target dataSource.
 
 **Kind**: instance method of [<code>Input</code>](#Input)  
 <a name="Input+getMode"></a>
@@ -186,7 +187,7 @@ Hides the
 <a name="Input+load"></a>
 
 ### load()
-Executes loding of data from the dataSource into the Input.
+Executes the loading of data from the dataSource into the Input.
 
 **Kind**: instance method of [<code>Input</code>](#Input)  
 <a name="Input+markMissing"></a>
@@ -204,13 +205,13 @@ Marks the Input as required
 <a name="Input+markValidationError"></a>
 
 ### markValidationError()
-Marks the Input as entry error.
+Marks the Input as an entry error.
 
 **Kind**: instance method of [<code>Input</code>](#Input)  
 <a name="Input+on"></a>
 
 ### on
-Extends the "on" method from the eventManager Class.
+Load events to respond to the input's interactions. To set an event, use this code: ```Input.on(<eventName>, function(){<code>})```.
 
 **Kind**: instance property of [<code>Input</code>](#Input)  
 
@@ -228,7 +229,7 @@ Method to programatically open a HTML Select input element
 <a name="Input+setEnable"></a>
 
 ### setEnable(status)
-Enables a disable Input.
+Enables a disabled Input. If a parameter is provided, true enables it, and false disables it.
 
 **Kind**: instance method of [<code>Input</code>](#Input)  
 
@@ -255,7 +256,7 @@ Sets Input's mask method following http://igorescobar.github.io/jQuery-Mask-Plug
 **Kind**: instance method of [<code>Input</code>](#Input)  
 <a name="Input+setMode"></a>
 
-### setMode(viewMode, setPreviusValue)
+### setMode(viewMode, setPreviousValue)
 Sets the Input's interaction mode.
 
 **Kind**: instance method of [<code>Input</code>](#Input)  
@@ -263,7 +264,7 @@ Sets the Input's interaction mode.
 | Param | Type | Description |
 | --- | --- | --- |
 | viewMode | <code>Boolean</code> | True sets the input to editing, false sets the input tas read only. |
-| setPreviusValue | <code>Boolean</code> | If true (default) will set the previous value. |
+| setPreviousValue | <code>Boolean</code> | If true (default) will set the previous value. |
 
 <a name="Input+setPreviousValue"></a>
 
@@ -280,16 +281,16 @@ Method to set the Input's value before editing.
 
 ### setScope()
 Sets the Input's operational scope. The values are:
-0 : Force send
-1 : if changed go to DB (default)
-2 : if changed go to DataProvider only
-3 : Stay in form
+0: Force send
+1: If changed, go to DB (default)
+2: If changed, go to DataProvider only
+3: Stay in form
 
 **Kind**: instance method of [<code>Input</code>](#Input)  
 <a name="Input+setStringList"></a>
 
 ### setStringList(newList)
-sets the Input's dataSource using a JSON structure.The JSON's items shoudl have the value and label properties.
+Sets the Input's dataSource using a JSON structure. The JSON's items should have at least the 'value' and 'label' properties.
 
 **Kind**: instance method of [<code>Input</code>](#Input)  
 
@@ -339,13 +340,14 @@ Hides or shows the input based on the provided parameter.
 <a name="Input+validate"></a>
 
 ### validate() ⇒ <code>Integer</code>
-Executes a validation process. Returns 0 if no errors and 1 if found errors.
+Executes a validation process. Returns 0 if no errors and 1 if errors are found.
 
 **Kind**: instance method of [<code>Input</code>](#Input)  
 <a name="Input+Event_afterInit"></a>
 
+## Events
 ### on:afterInit (Input)
-Event triggered after the Input element has been initialized. Created with the ```Input.on("afterInit", function(Input){})``` method.
+This event is triggered after the Input element has been initialized. Created with the ```Input.on("afterInit", function(Input){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 
@@ -356,33 +358,33 @@ Event triggered after the Input element has been initialized. Created with the `
 <a name="Input+Event_afterLoad"></a>
 
 ### on:afterLoad ($value)
-Event triggered when the Input's value has been loaded from the dataSource. Created with the ```Input.on("afterLoad", function(){})``` method.
+This event is triggered after the Input's value has been loaded from the dataSource. Created with the ```Input.on("afterLoad", function(){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| $value | <code>Object</code> | The JQuery instance to the input HTML element. |
+| $value | <code>Object</code> | The jQuery instance to the input HTML element. |
 
 <a name="Input+Event_afterUpload"></a>
 
 ### on:afterUpload (Input, status, response)
-Event triggered after a file is uploaded. Created with the ```Input.on("afterUpload", function(Input, status, response){})``` method.
-Returnning false will cancel the update process.
+This event is triggered after a file is uploaded. Created with the ```Input.on("afterUpload", function(Input, status, response){})``` method.
+If the function returns false it will cancel the update process.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | Input | <code>Object</code> | Reference to the Input. |
-| status | <code>Boolean</code> | The upload process status: true is success and fasle is failure. |
-| response | <code>Object</code> | If the operation was a success it coudl return the reponse text or an object if the reponse is a JSON structure. If the operation returns an error then this will contain the operation javascript object. |
+| status | <code>Boolean</code> | The upload process status: true is success and false is failure. |
+| response | <code>Object</code> | If the operation was a success, it could return the response text or an object if the response is a JSON structure. If the operation returns an error, then this will contain the operation JavaScript object. |
 
 <a name="Input+Event_beforeUpload"></a>
 
 ### on:beforeUpload (Input, formData, fileName, fileSize)
-Event triggered before a file is uploaded. Created with the ```Input.on("beforeUpload", function(Input, formData, fileName, fileSize){})``` method.
-Returnning false will cancel the update process.
+This event is triggered before a file is uploaded. Created with the ```Input.on("beforeUpload", function(Input, formData, fileName, fileSize){})``` method.
+If the function returns false it will cancel the update process.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 
@@ -396,7 +398,7 @@ Returnning false will cancel the update process.
 <a name="Input+Event_change"></a>
 
 ### on:change (Input)
-Event triggered when the Input's value has changed. Created with the ```Input.on("change", function(Input){})``` method.
+This event is triggered when the Input's value has changed. Created with the ```Input.on("change", function(Input){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 
@@ -407,7 +409,7 @@ Event triggered when the Input's value has changed. Created with the ```Input.on
 <a name="Input+Event_click"></a>
 
 ### on:click (Input)
-Event triggered when a Button Input is clicked in data entry mode. Created with the ```Input.on("click", function(Input){})``` method.
+This event is triggered when a input type 'button' is clicked in data entry mode. Created with the ```Input.on("click", function(Input){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 
@@ -418,19 +420,19 @@ Event triggered when a Button Input is clicked in data entry mode. Created with 
 <a name="Input+Event_clickDownload"></a>
 
 ### on:clickDownload
-Event triggered when input's download button is clicked. Created with the ```Input.on("clickDownload", function(){})``` method.
+This event is triggered when input's download button is clicked. Created with the ```Input.on("clickDownload", function(){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 <a name="Input+Event_clickPreview"></a>
 
 ### on:clickPreview
-Event triggered when input's preview button is clicked. Created with the ```Input.on("clickPreview", function(){})``` method.
+This event is triggered when input's preview button is clicked. Created with the ```Input.on("clickPreview", function(){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 <a name="Input+Event_fileValidate"></a>
 
 ### on:fileValidate (Input, typeError, sizeError)
-Event triggered after the file extension and size has been validated. Created with the ```Input.on("fileValidate", function(Input, typeError, sizeError){})``` method.
+This event is triggered after the file extension and size has been validated. Created with the ```Input.on("fileValidate", function(Input, typeError, sizeError){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 
@@ -443,26 +445,26 @@ Event triggered after the file extension and size has been validated. Created wi
 <a name="Input+Event_filterLoad"></a>
 
 ### on:filterLoad
-Event triggered before a row item is added to  If the function returns false the item is ignored.
-This works for types select, options, ratio.
+This event is triggered before a row item is added to a list. If the function returns false, the item is ignored.
+This works for type select, options, and ratio.
 Created with the ```Input.on("filterLoad", function(index,item){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 <a name="Input+Event_getValue"></a>
 
 ### on:getValue ($value)
-Event triggered when the Input's value is requested. If the event function returns a value this will become the returned value by the getValue method. Created with the ```Input.on("getValue", function($value){})``` method.
+This event is triggered when the input's value is requested. If the event function returns a value this will become the returned value by the getValue method. Created with the ```Input.on("getValue", function($value){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| $value | <code>Object</code> | The JQuery instance to the input HTML element. |
+| $value | <code>Object</code> | The jQuery instance to the input HTML element. |
 
 <a name="Input+Event_keydown"></a>
 
 ### on:keydown (event, Input)
-Event triggered at input's keyboard keydown event. Created with the ```Input.on("keydown", function(even,Input){})``` method.
+This event is triggered at input's keyboard keydown event. Created with the ```Input.on("keydown", function(even,Input){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 
@@ -474,7 +476,7 @@ Event triggered at input's keyboard keydown event. Created with the ```Input.on(
 <a name="Input+Event_keyup"></a>
 
 ### on:keyup (event, Input)
-Event triggered at input's keyboard keyup event. Created with the ```Input.on("keyup", function(even,Input){})``` method.
+This event is triggered at input's keyboard keyup event. Created with the ```Input.on("keyup", function(even,Input){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 
@@ -486,7 +488,7 @@ Event triggered at input's keyboard keyup event. Created with the ```Input.on("k
 <a name="Input+Event_modeChange"></a>
 
 ### on:modeChange (mode, $text, $value)
-Event triggered when the Input's mode changes. Created with the ```Input.on("modeChange", function(mode,$text,$vale){})``` method.
+This event is triggered when the Input's mode changes. Created with the ```Input.on("modeChange", function(mode,$text,$vale){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 
@@ -499,7 +501,7 @@ Event triggered when the Input's mode changes. Created with the ```Input.on("mod
 <a name="Input+Event_setValue"></a>
 
 ### on:setValue (value, $value)
-Event triggered when the Input's value is set. Created with the ```Input.on("setValue", function(value, $value){})``` method.
+This event is triggered when the input's value is set. Created with the ```Input.on("setValue", function(value, $value){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 
@@ -511,7 +513,7 @@ Event triggered when the Input's value is set. Created with the ```Input.on("set
 <a name="Input+Event_timer"></a>
 
 ### on:timer (value, Input)
-Event triggered when the Input's data entry timer concludes. Created with the ```Input.on("timer", function(value, Input){})``` method.
+This event triggered when the input's data entry timer concludes. Created with the ```Input.on("timer", function(value, Input){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 
@@ -523,7 +525,7 @@ Event triggered when the Input's data entry timer concludes. Created with the ``
 <a name="Input+Event_validation"></a>
 
 ### on:validation (type, value)
-Event triggered when a Inputs is validated. If the event function returns false the input will be marked an "invalid". Created with the ```Input.on("validation", function(type,value){})``` method.
+This event is triggered when an input is validated. If the event function returns false, the input will be marked an "invalid". Created with the ```Input.on("validation", function(type,value){})``` method.
 
 **Kind**: event emitted by [<code>Input</code>](#Input)  
 

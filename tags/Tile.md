@@ -20,11 +20,10 @@ Used as a container:
 
 ## Properties 
 <sup>*</sup>Required property.
-
 ### id<sup>*</sup>
 The tile's unique identifier.<br>Default Value: *Empty*.
 ### tag
-The HTML tag used as the Tail wrapper. If not provided, it uses "div"<br>Default Value: *div*.
+The HTML tag used as the Tail wrapper. If not provided, it uses "div".<br>Default Value: *div*.
 ### dataSource
 Set the name of the **silk:DataProvider** providing the data to render the tail's content.<br>Default Value: *Empty*.
 ### parentList

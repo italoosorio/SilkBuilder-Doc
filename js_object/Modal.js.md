@@ -6,14 +6,14 @@
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $modal | <code>Object</code> | jQuery object referencing to the modal HTML tag. |
-| $header | <code>Object</code> | jQuery object referencing to the modal's header HTML tag. |
-| $body | <code>Object</code> | jQuery object referencing to the modal's body HTML tag. |
-| $footer | <code>Object</code> | jQuery object referencing to the modal's footer HTML tag. |
+| $modal | <code>Object</code> | jQuery object referencing the modal HTML tag. |
+| $header | <code>Object</code> | jQuery object referencing the modal's header HTML tag. |
+| $body | <code>Object</code> | jQuery object referencing the modal's body HTML tag. |
+| $footer | <code>Object</code> | jQuery object referencing the modal's footer HTML tag. |
 
 
 
-## Methods and Event
+## Constructor
  <a name="_new"></a>
 
 ### new Modal(id)
@@ -24,7 +24,8 @@ Returns a Modal instance.
 | --- | --- | --- |
 | id | <code>String</code> | Modal's name or unique identifier. |
 
-<a name="Modal+close"></a>
+## Methods
+ <a name="+close"></a>
 
 ### close()
 Closes the modal dialgo. Similar to hide.
@@ -45,7 +46,7 @@ Hides the modal dialog.
 <a name="Modal+on"></a>
 
 ### on
-Extends the "on" method from the eventManager Class.
+Load events to respond to the Modal's interactions. To set an event, use this code: ```Modal.on(<eventName>, function(){<code>})```.
 
 **Kind**: instance property of [<code>Modal</code>](#Modal)  
 
@@ -57,7 +58,7 @@ Extends the "on" method from the eventManager Class.
 <a name="Modal+open"></a>
 
 ### open()
-Opens the modal dialgo. Similar to show.
+Opens the modal dialog. Similar to show.
 
 **Kind**: instance method of [<code>Modal</code>](#Modal)  
 <a name="Modal+setBody"></a>
@@ -88,28 +89,41 @@ Sets the header title of the modal dialog.
 Shows or opens the modal dialog.
 
 **Kind**: instance method of [<code>Modal</code>](#Modal)  
+<a name="Modal+Event_afterClose"></a>
+
+## Events
+### on:afterClose
+The event is triggered when the Modal is hidden or closed. Created with the ```Modal.on("afterClose", function(){})``` method.
+
+**Kind**: event emitted by [<code>Modal</code>](#Modal)  
+<a name="Modal+Event_afterShow"></a>
+
+### on:afterShow
+The event is triggered when the Modal is shown. Created with the ```Modal.on("afterShow", function(){})``` method.
+
+**Kind**: event emitted by [<code>Modal</code>](#Modal)  
 <a name="Modal+Event_beforeClose"></a>
 
 ### on:beforeClose
-Event triggered before the Modal is closed. Created with the ```Modal.on("beforeClose", function(){})``` method. If function return false the modal will not closed.
+The event is triggered before the Modal is closed. Created with the ```Modal.on("beforeClose", function(){})``` method. If the function returns *false*, the modal will not close.
 
 **Kind**: event emitted by [<code>Modal</code>](#Modal)  
 <a name="Modal+Event_beforeShow"></a>
 
 ### on:beforeShow
-Event triggered before the Modal is showed. Created with the ```Modal.on("beforeShow", function(){})``` method.
+This event is triggered before the Modal is shown. If the function returns 'false', the modal is not shown. Created with the ```Modal.on("beforeShow", function(){})``` method.
 
 **Kind**: event emitted by [<code>Modal</code>](#Modal)  
 <a name="Modal+Event_close"></a>
 
 ### on:close
-Event triggered when the Modal is hide or closed. Created with the ```Modal.on("close", function(){})``` method.
+The event is triggered when the Modal is hidden or closed. This is similar to the *beforeClose* event. Created with the ```Modal.on("close", function(){})``` method.
 
 **Kind**: event emitted by [<code>Modal</code>](#Modal)  
 <a name="Modal+Event_show"></a>
 
 ### on:show
-Event triggered when the Modal is showed. Created with the ```Modal.on("show", function(){})``` method.
+The event is triggered when the Modal is shown. This is similar to the event *afterShow*. Created with the ```Modal.on("show", function(){})``` method.
 
 **Kind**: event emitted by [<code>Modal</code>](#Modal)  
 

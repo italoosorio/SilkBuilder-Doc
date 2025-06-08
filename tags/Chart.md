@@ -1,7 +1,7 @@
 # silk:Chart
 This tag defines a Silk Chart component that implements the ChartJS object from https://www.chartjs.org.
 
-This class works standalone and not as a container.
+This class works standalone and is not a container.
 
 ## Tag Definition
 Used standalone:
@@ -24,6 +24,26 @@ Used standalone:
   dataLabels="true"
 />
 ```
+### Data Source
+
+The data is provided by a **silk:DataProvider**, which should contain two columns: one with labels and another with values.
+
+```xml
+<silk:Chart id="chart" dataSource="dataDP" labelColumn="state" dataColumn="population" />
+<silk:DataProvider id="dataDP" servicePath="..." />
+```
+
+### JavaScript Object
+
+SilkBuilder also creates a companion JavaScript object using the [ChartJS](..\js_object\ChartJS.js.md) class to provide JavaScript programmatic interaction. This object will have the same name as the component's ID.
+
+```xml
+<silk:JQcode>
+chart.on("click", function(index, value, label){
+  silk.alert(label+":"+value);
+  });
+</silk:JQcode>
+```
 
 ## Properties 
 <sup>*</sup>Required property.
@@ -34,7 +54,7 @@ Used to define the chart title.<br>Default Value: *Empty*.
 ### titlePlace
 Sets the title's position<br>Default Value: *top*.
 ### type
-Sets the chart's type using values from https://www.chartjs.org/docs/latest/charts/area.html.<br>Default Value: *bar*.
+Sets the chart's type. The values can be: bar, line, pie, and doughnut. Uses values from https://www.chartjs.org/docs/latest/charts/.<br>Default Value: *bar*.
 ### dataSource<sup>*</sup>
 Sets the dataSource providing the data to be used to populate the chart.<br>Default Value: *Empty*.
 ### labelColumn<sup>*</sup>
