@@ -1,8 +1,8 @@
-# SilkBuilder JavaScript Object
+# SilkBuilder JavaScript Objects
 
 The SilkBuilder JavaScript Objects are companion objects used to extend the functionality of SilkBuilder Tags. The objects, or JavaScript Classes, contain methods and events that can be used to interact with the component created by the SilkBuilder Tags. This documentation describes the use of SilkBuilder JavaScript Objects to develop web applications.
 
-## Topics:
+## Objects:
 * [Button](Button.js.md)
 * [ChartJS](ChartJS.js.md)
 * [Column](Column.js.md)

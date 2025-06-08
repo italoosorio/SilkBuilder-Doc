@@ -1,8 +1,8 @@
 # Sample Database
 
-The sample applications included on this documentation uses the tables *Person* and *Category*. The tables structure are configured using the ORM Element which you can check [here](project_data_model.md#creating-the-orm-elements).
+The sample applications included in this documentation use the tables *Person* and *Category*. The table structure is configured using the ORM Element, which can be checked [here](project_data_model.md#creating-the-orm-elements).
 
-For the sample the tables are configured for the MSQL database server data types. You can modify these to other databases data types. The structures below is for referential purposes.
+For the sample, the tables are configured for the MySQL database server data types. You can modify these to other database data types. The structures below are for referential purposes.
 
 ```sql
 create table Category (
@@ -31,11 +31,11 @@ create index Person_categoryID on Person(categoryID)
 
 ## MySQL Database Dump
 
-Click on this [link](https://raw.githubusercontent.com/italoosorio/SilkBuilder-Doc/master/development/sample-tables.sql) to download a MySQL dump file which you can use to create and pre-populate these tables.
+Click on this [link](https://raw.githubusercontent.com/italoosorio/SilkBuilder-Doc/master/development/sample-tables.sql) to download a MySQL dump file, which you can use to create and pre-populate these tables.
 
 ## ORMs JSON String
 
-If you wan to pre-populate the ORMs for the tables Category and Person use the "Imp" option with these JSON strings.
+To pre-populate the ORMs for the Category and Person tables, use the "Imp" option with the following JSON strings.
 
 **Category ORM JSON String**
 

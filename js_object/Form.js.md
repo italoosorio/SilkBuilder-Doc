@@ -28,7 +28,7 @@ Returns a DataProvider instance.
 | id | <code>String</code> |  | Unique identifier. |
 | options | <code>Object</code> |  | Object containing the DataProvider configuration options. |
 | [options.startMode] | <code>Boolean</code> | <code>false</code> | Starting mode. True is editing, and false is read-only. |
-| [options.dialog] | <code>Boolean</code> | <code>true</code> | Sets the dialog used. If *false, the automatic generation of the submit button is disabled. |
+| [options.dialog] | <code>Boolean</code> | <code>true</code> | Sets the dialog used. If *false*, the automatic generation of the submit button is disabled. |
 | [opsions.dataSource] | <code>String</code> |  | The name of the Table or DataProvider. |
 | [options.insertBt] | <code>String</code> |  | The name of the button used to activate an insert action. |
 | [options.updateBt] | <code>String</code> |  | The name of the button used to activate an update action. |
@@ -42,11 +42,11 @@ Returns a DataProvider instance.
 | [options.insertMessage] | <code>String</code> |  | The message for the insert action. |
 | [options.updateMessage] | <code>String</code> |  | The message for the update action. |
 | [options.deleteMessage] | <code>String</code> |  | The message for the delete action. |
-| [option.confirmTitle] | <code>String</code> |  | The confirmation dialog title. |
-| [option.confirmMessage] | <code>String</code> |  | The confirmation dialog message. |
-| [option.confirmLabel] | <code>String</code> |  | The confirmation dialog button's label. |
-| [option.confirmIcon] | <code>String</code> |  | The confirmation dialog icon. |
-| [option.confirmTarget] | <code>String</code> |  | Sets which actions will trigger the confirmation dialog. |
+| [options.confirmTitle] | <code>String</code> |  | The confirmation dialog title. |
+| [options.confirmMessage] | <code>String</code> |  | The confirmation dialog message. |
+| [options.confirmLabel] | <code>String</code> |  | The confirmation dialog button's label. |
+| [options.confirmIcon] | <code>String</code> |  | The confirmation dialog icon. |
+| [options.confirmTarget] | <code>String</code> |  | Sets which actions will trigger the confirmation dialog. |
 
 ## Methods
  <a name="+clean"></a>
