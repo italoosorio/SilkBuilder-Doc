@@ -14,12 +14,15 @@ Used standalone:
   dock=""
   width=""
   cssClass="btn-primary"
+  groupClass=""
   cssStyle=""
   renderIf=""
   extraProperties=""
   group="false"
   disabled="false"
   hidden="false"
+  singleClick="true"
+  autoEnable="true"
   confirmTitle=""
   confirmMessage=""
   confirmLabel=""
@@ -66,6 +69,8 @@ Defines the button's location if it is contained in a *silk:header* component. T
 Sets the button's fixed width. By default, the button's width will be changed based on its content.<br>Default Value: *Empty*.
 ### cssClass
 The classes to stylize the button. It expects Bootstrap classes. The button already has the "btn" class and is initialized with "btn-primary".<br>Default Value: *btn-primary*.
+### groupClass
+The classes to stylize the button group. It expects Bootstrap classes."<br>Default Value: *Empty*.
 ### cssStyle
 To add extra styling using CSS styling elements.<br>Default Value: *Empty*.
 ### renderIf
@@ -78,6 +83,10 @@ Adds Bootstrap classes to group the button.<br>Default Value: *false*.
 Adds Bootstrap classes to group the button.<br>Default Value: *false*.
 ### hidden
 Initializes the button as hidden. Uses the CSS style ```display: none;```.<br>Default Value: *false*.
+### singleClick
+Initializes the button as single click if set to true. False will allow multiple consecutive clicks.<br>Default Value: *true*.
+### autoEnable
+Sets the button to auto enable after a click. Only valid if singleClick is **true**.<br>Default Value: *true*.
 ### confirmTitle
 Sets the title of the confirmation dialog.<br>Default Value: *Empty*.
 ### confirmMessage

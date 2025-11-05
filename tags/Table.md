@@ -114,7 +114,7 @@ The ID of the *silk:DataProvider* used to fill the table content.<br>Default Val
 ### autoSelect
 Defines if the first row will be auto-selected. This is set to *true* by default.<br>Default Value: *true*.
 ### selectable
-Determines if the rows will change their background when selected.<br>Default Value: *true*.
+Determines if the rows will change their background when selected. The values are true, false.<br>By default, a table row is not visually selected; change the row color if the host page is the only one visible. If the desire is to have the chosen row always marked selected, then the values should be set to "always."<br>Default Value: *true*.
 ### targetPage
 This indicates how the header will be placed. The values are:<br>- fixed: Attaches the top header and table header to the page's top.<br>- inline: Attaches the header and table header to the top of the table's location.<br>- none: No top header or table header.<br>- top-fixed: Attached top header to the page's top, no table header.<br>Default Value: *Empty*.
 ### header

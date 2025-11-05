@@ -31,6 +31,8 @@ Returns a Button instance.
 | buttonID | <code>String</code> | Button's name and unique identifier. |
 | options | <code>Object</code> | Object containing the configuration. |
 | [option.targetPage] | <code>String</code> | The page to activate if clicked. |
+| [option.singleClick] | <code>Boolean</code> | The single click behavior. It is true by default |
+| [option.autoEnable] | <code>Boolean</code> | The auto enable status after a click. It is true by default. |
 | [option.confirmTitle] | <code>String</code> | The confirmation dialog title. |
 | [option.confirmMessage] | <code>String</code> | The confirmation dialog message. |
 | [option.confirmLabel] | <code>String</code> | The confirmation dialog button's label. |
@@ -48,6 +50,24 @@ Executes the click event programmatically. This method will ignore the confirmat
 
 ### confirm()
 Opens the confirmation dialog programmatically and waits for a response. A positive answer will execute the click event.
+
+**Kind**: instance method of [<code>Button</code>](#Button)  
+<a name="Button+getConfirmLabel"></a>
+
+### getConfirmLabel() ⇒ <code>String</code>
+gets the button's label from the confirmation dialog.
+
+**Kind**: instance method of [<code>Button</code>](#Button)  
+<a name="Button+getConfirmMessage"></a>
+
+### getConfirmMessage() ⇒ <code>String</code>
+Get the message for the confirmation dialog.
+
+**Kind**: instance method of [<code>Button</code>](#Button)  
+<a name="Button+getConfirmTitle"></a>
+
+### getConfirmTitle() ⇒ <code>String</code>
+Get the title of the confirmation dialog.
 
 **Kind**: instance method of [<code>Button</code>](#Button)  
 <a name="Button+getLabel"></a>
@@ -100,7 +120,7 @@ Sets the icon for the confirmation dialog
 <a name="Button+setConfirmLabel"></a>
 
 ### setConfirmLabel(label)
-Sets the button's label for the confirmation dialog
+Sets the button's label for the confirmation dialog.
 
 **Kind**: instance method of [<code>Button</code>](#Button)  
 
@@ -111,7 +131,7 @@ Sets the button's label for the confirmation dialog
 <a name="Button+setConfirmMessage"></a>
 
 ### setConfirmMessage(message)
-Sets the message for the confirmation dialog
+Sets the message for the confirmation dialog.
 
 **Kind**: instance method of [<code>Button</code>](#Button)  
 

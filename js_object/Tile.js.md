@@ -123,4 +123,15 @@ This event is triggered when a tile cell is clicked. Created with the ```Tile.on
 This event is triggered before a cell item is added to the tile's elements.  If the function returns *false*, the item is ignored. Created with the ```Tile.on("filterLoad", function(index,item){})``` method.
 
 **Kind**: event emitted by [<code>Tile</code>](#Tile)  
+<a name="Tile+Event_textSelection"></a>
+
+### on:textSelection (text)
+Triggered when a text has been selected in a table row. Created with the ```Tile.on("textSelection", function(text){})``` method.
+
+**Kind**: event emitted by [<code>Tile</code>](#Tile)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| text | <code>String</code> | The selected text. |
+
 

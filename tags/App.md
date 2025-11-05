@@ -13,6 +13,7 @@ Used standalone:
   ipFilter=""
   loader="true"
   renderIf=""
+  jsLib=""
 />
 ```
 Used as a container:
@@ -26,6 +27,7 @@ Used as a container:
   ipFilter=""
   loader="true"
   renderIf=""
+  jsLib=""
 >
    Contains: Other HTML and/or Silk components. *
 </silk:App>
@@ -49,3 +51,5 @@ Will restrict the application use to the provided IP filter.<br>Default Value: *
 Defines if the loader image (.gif) will be displayed. The default value is "true".<br>Default Value: *true*.
 ### renderIf
 It contains the logic sentence defining whether the component should be rendered.<br>The logic statement's explanation is in the <a href="how_to/server_code_logic.md">Server Code Logic</a> documentation.<br>Default Value: *Empty*.
+### jsLib
+Default Value: *Empty*.

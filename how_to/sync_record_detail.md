@@ -1,70 +1,73 @@
 # Record Sync
 
-The silk:DataProvider component retrieves records from an SQL Select command configured in an ORM. Then, the silk:Table and silk:Column components visually list the received records and columns. Finally, the silk:Form and silk:Input components display the column's values, which include editing functionality. The diagram below shows the data interaction.
+SilkBuilder offers the Record Sync process, utilizing two related but separate SELECT queries to enhance data loading efficiency.
+
+### Default Loading Process
+
+The regular process to retrieve information follows the following logic. The DataProvider component retrieves records from a SELECT query configured in an ORM and Data Outlet. This data is listed using the Table and Column components. If necessary, the Form and Input components will format the values in a form. The diagram below shows the data interaction.
 
 ![Bulk Loading](../.gitbook/assets/recordsync_bulk.png)
 
-## Data Loading Considerations
+### Data Loading Considerations
 
-Considering an SQL select returning 400 records with six columns. The data will contain a grid of 2,400 cells. If the *silk:Table* and the *silk:Form* will display the six columns*,* then extracting all the data at once is reasonable. 
+Consider a SELECT query that retrieves 800 records, each with 12 columns. This produces a data grid of 9,600 cells, which must undergo several steps: querying the database, transferring over the network, storing locally, and finally, presenting in the application.
 
-However, if the *silk:Table* only shows two columns, there may be better scenarios than extracting the 2,400 cells. To display a *silk:Table* with only two columns, 800 cells are needed (400 rows x 2 columns), which is 60% less data. At any given time, only some rows will become selected for column viewing and possibly editing using the *silk:Form*. The extra columns needed by the *silk:Form* could be loaded when needed.
+All of this data will be stored in the DataProvider object as an array. The Table may display only 4 columns, while the other 8 columns will be shown in the Form each time a row is selected from the Table. In this case, the Table would display only 3,200 data cells (800 x 4), and the Form would display just 8 data cells at a time. This means only 33% of the data is presented to the user, while 67% remains stored in the array and may never be shown. This is not an efficient loading transaction.
 
-A sample of 400 records may be a minor example of optimization. However, if the process requires retrieving 2,500 records with 30 columns, then any optimization processe is welcomed.
+Although 800 records may be considered a small data set, the need to retrieve 2,500 records with 30 columns each (totalling 75,000 data cells) makes optimization beneficial.
 
-## Optimized Data Loading
+### Optimized Data Loading
 
-Two *silk:DataProvider components* are required to operate an optimized data loading. One silk:DataProvider to load records for the table with only the columns to be listed, and another loading only the selected record's property. The second silk:DataProvider will have to load each time a row is selected in the table.
+The Records Sync functionality optimizes data loading by using two SELECT queries: one to retrieve data for the Table, and another to load the data of a selected row, which is then used in the Form. Only one DataProvider component is required.
 
 ![Multiple Loading](../.gitbook/assets/recordsync_multiple.png)
 
-Under this configuration, the select method in the second silk:DataProvider will execute after the Table's on-click event. Under this configuration, the select method in the second silk:DataProvider will execute after the Table's on-click event. Even though this will work, it requires adding an extra silk:DataProvider, and the loading logic into the on-click event code.
+With Record Sync enabled, clicking on a Table row triggers a select event in the DataProvider. This event then queries and extracts the necessary data for the Form.
 
-## Record Sync Process
+## Setup
 
-SilkBuilder provides the **record sync** process, which uses two distinct but related SQL *select*s to optimize data loading. In the ORM, one SQL *select* is set to fill the table and another to sync extra records needed in a form. All this without adding a different silk:DataProvider in the application code.
+Setting up Record Sync requires changes to the ORM, Data Outlet, and DataProvider.
 
-### The ORM Configuration
+### ORM changes
 
-To support record syncing, an extra SQL *select* has to be added to the ORM. This new select should have a name starting with the name of the SQL *select* used to fill the table and ending with the text "-recordSync." 
+Prepare a SELECT statement to only return the columns needed to be displayed in the Table. Let's call this select "list".
 
-Add these using the SilkBuilder development interface or editing the ORM XML. Below is an example showing the SQL select in the ORM XML structure.
-
-```XML
-<sqlSelect name="list" >
-	<![CDATA[
-		select
-			personID,
-			name,
-			email
-		from testPerson
-	]]>
-</sqlSelect>
-
-<sqlSelect name="list-recordSync" >
-	<![CDATA[
-		select
-			personID,
-			address,
-			phone,
-			monthlyIncome
-		from testPerson
-		where personID = $P{personID}
-	]]>
-</sqlSelect>
+```sql
+select
+	personID,
+	name,
+	email
+from testPerson
 ```
+Use a separate SELECT statement to retrieve additional columns for a specified row, using its primary key as a parameter. The query should return the record's primary key and only one record. Let's call this select "record-data"
 
-The SQL select used for the recordSync process should return the table's primary key and the extra columns to synchronize, which will inserted into the selected table's record object.
+```sql
+select
+	personID, -- Returning the primary key is required
+	address,
+	phone,
+	age,
+	monthlyIncome
+from testPerson
+where personID = $P{personID}
+```
+The returned primary key is used to locate and synchronize the retrieved columns in the DataProvider data array.
 
-### The silk:DataProvider tag
+### Data Outlet
 
-The silk:DataProvider component provides the property recordSync, which activates the record sync process when set to "true."
+Make both SELECT statements available to the Data Outlet; otherwise, no data will be retrieved.
+
+### DataProvider tag
+
+In the DataProvider tag, the "selectName" property should be set to the select name that retrieves the data for the Table. The 'recordSync' property is assigned to the selected name that retrieves the record's data.
 
 ```xml
-<silk:DataProvider id="personDP" servicePath="/--/--/outlet" selectName="list" recordSync="true" />
+<silk:DataProvider id="personDP" servicePath="/--/--/outlet" selectName="list" recordSync="record-data" />
 ```
 
-Before calling the synchronization process, the silk:DataProvider triggers the "beforeRecordSync" event, which should send the parameter containing the record's primary key or any other necessary data to the SQL select.
+### Set Parameters
+
+Utilize the "beforeRecordSync" event to specify primary keys and, if needed, other parameters for the "recordSync" SELECT statement.
 
 ```javascript
 personDP.on("beforeRecordSync",function(){
@@ -72,32 +75,40 @@ personDP.on("beforeRecordSync",function(){
 });
 ```
 
-After setting the property *recordSync* and the method *beforeRecordSync*, the synchronization process will be triggered each time a table's record is selected.
+### Event
 
-> **The syncronization updates any componect connected to the *dataProvider* like Tables, Forms, and Inputs.**
-
-The record syncronization method will trigger the "afterRecordSync" event each time a records is syncronized. When the silk:DataProvider loads for the first time the events "afterSelect" and "afterRecordSync" will be triggered together. After this only the "afterRecordSync" event will be triggered.
+Each time the Record Sync method runs, it triggers the "afterRecordSync" event as a record is synchronized. If you call the DataProvider’s "select" method, both the "afterSelect" and "afterRecordSync" events are triggered at the same time. After this initial trigger, only the "afterRecordSync" event is subsequently fired as records are synchronized.
 
 ```javascript
 personDP.on("afterRecordSync",function(){
-  // Operation
+  // Operation after syncronization
 });
 ```
 
-### Manual record syncronization
+## Execution
 
-If the desire is not to synchronize automatically, the property *recordSync* should not be set in the silk:DataProvider, but the event beforeRecordSync has to be set up. Then, the synchronization process can be executed manually, calling the silk:DataProvider's method recordSync().
+Clicking a Table row triggers the "recordSync" method, adding any needed extra query columns to the DataProvider’s array and displaying them in the form if required.
+
+> *The recordSync process updates all components connected to the DataProvider, including Tables, Forms, and Inputs.*
+
+Once set up, the Record Sync functionality runs transparently to the developer and the end user.
+
+## Manual Synchronization
+
+If the desire is not to synchronize automatically, the property "recordSync" should not be set in the DataProvider. All other changes remain.
+
+The DataProvider's "recordSync()" method is used to execute the synchronization manually. This method takes as a parameter the SELECT name querying the extra columns data. 
 
 ```javascript
-personDP.recordSync();
+personDP.recordSync("record-data");
 ```
 
 ## No Components
 
-If the silk:DataProvider is being used alone without connecting to other components, then before using the method recordSync, the selectedIndex property has to be set with the index of the affected row.
+When the DataProvider is used independently and not connected to other components, set the selectedIndex property to indicate the index of the affected row. After doing so, execute the "recordSync" method.
 
 ```javascript
 personDP.selectedIndex = 10;
-personDP.recordSync();
+personDP.recordSync("list-record");
 ```
 

@@ -84,6 +84,12 @@ Extends the [SweetAlert2](https://sweetalert2.github.io/) toas object. The toast
 This event is triggered after the DataProviders marked with *autoLoad=true* have finished loading for the first time. Created with the ```on("afterDPLoad", function(){})``` method.
 
 **Kind**: event emitted by [<code>Silk</code>](#Silk)  
+<a name="Silk+event_beforeDPLoad"></a>
+
+### "event:beforeDPLoad"
+This event is triggered before the DataProviders marked with *autoLoad=true* are loaded for the first time. Created with the ```on("beforeDPLoad", function(){})``` method.
+
+**Kind**: event emitted by [<code>Silk</code>](#Silk)  
 <a name="Silk+Event_resize"></a>
 
 ## Events

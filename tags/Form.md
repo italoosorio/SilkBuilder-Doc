@@ -21,6 +21,7 @@ Used standalone:
   mode="false"
   buttonTarget=""
   buttonTest=""
+  autoFocus=""
   insertTitle="Adding"
   updateTitle="Editing"
   deleteTitle="Deleting"
@@ -56,6 +57,7 @@ Used as a container:
   mode="false"
   buttonTarget=""
   buttonTest=""
+  autoFocus=""
   insertTitle="Adding"
   updateTitle="Editing"
   deleteTitle="Deleting"
@@ -107,6 +109,8 @@ Defines the initial status of the Form. If *true,* it will initialize as editabl
 A comma-separated list of pages used to place the auto-generated action buttons. These buttons will be placed in the page's header.<br>The order is the page for the insert button, the page for the edit button, and the page for the delete button.<br>Only including the insert page will default this page for the other buttons.<br>Including the insert and edit page will default the edit page as the target for the delete button.<br>Sending the value *none* or *null* for any page will not generate that button.<br>This example will only generate the edit button: *buttonTarget="none,formPage,none"*.<br>Default Value: *Empty*.
 ### buttonTest
 Receives the logical sentences defining whether the action buttons will be added at render time. The explanation on how to use the logic statement is found in <a href="how_to/server_code_logic.md">Server Code Logic</a> documentation.<br>This follows the same order as the *buttonTarget* property but separated by a pipe symbol: "|".<br>Default Value: *Empty*.
+### autoFocus
+Enables or disables the first input auto focus. True by default.<br>Default Value: *Empty*.
 ### insertTitle
 The text to show in the dialog bar when performing an update.<br>Default Value: *Adding*.
 ### updateTitle

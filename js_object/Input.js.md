@@ -368,7 +368,7 @@ This event is triggered after the Input's value has been loaded from the dataSou
 
 <a name="Input+Event_afterUpload"></a>
 
-### on:afterUpload (Input, status, response)
+### on:afterUpload (input, status, response)
 This event is triggered after a file is uploaded. Created with the ```Input.on("afterUpload", function(Input, status, response){})``` method.
 If the function returns false it will cancel the update process.
 
@@ -376,13 +376,13 @@ If the function returns false it will cancel the update process.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| Input | <code>Object</code> | Reference to the Input. |
+| input | <code>Object</code> | Reference to the Input. |
 | status | <code>Boolean</code> | The upload process status: true is success and false is failure. |
 | response | <code>Object</code> | If the operation was a success, it could return the response text or an object if the response is a JSON structure. If the operation returns an error, then this will contain the operation JavaScript object. |
 
 <a name="Input+Event_beforeUpload"></a>
 
-### on:beforeUpload (Input, formData, fileName, fileSize)
+### on:beforeUpload (input, formData, fileName, fileSize)
 This event is triggered before a file is uploaded. Created with the ```Input.on("beforeUpload", function(Input, formData, fileName, fileSize){})``` method.
 If the function returns false it will cancel the update process.
 
@@ -390,7 +390,7 @@ If the function returns false it will cancel the update process.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| Input | <code>Object</code> | Reference to the Input. |
+| input | <code>Object</code> | Reference to the Input. |
 | formData | <code>Object</code> | The form used to upload the file. |
 | fileName | <code>String</code> | The name of the file to be uploaded. |
 | fileSize | <code>Integer</code> | The file's size. |

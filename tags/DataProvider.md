@@ -19,7 +19,7 @@ Used standalone:
   debugLevel="0"
   isPublic="false"
   pkColumn=""
-  detailDP=""
+  linkedDP=""
   recordSync=""
   dpSort=""
   timeout=""
@@ -39,7 +39,7 @@ Used as a container:
   debugLevel="0"
   isPublic="false"
   pkColumn=""
-  detailDP=""
+  linkedDP=""
   recordSync=""
   dpSort=""
   timeout=""
@@ -92,7 +92,7 @@ In cases when a **silk:DataProvider** has to access different Data Outlets based
 ### id<sup>*</sup>
 Unique component identifier.<br>Default Value: *Empty*.
 ### servicePath
-Sets the path to the outlet service providing access to the data.<br>If the value is "silkVariable" it will load the flag variables as a JSON string. The selectName should indicate the variable group.<br>If the value is silkLang" it will load the languages list as a JSON string.<br>Default Value: *Empty*.
+Sets the path to the outlet service providing access to the data.<br>If the value is "silkVariable" it will load the flag variables as a JSON string. The selectName should indicate the variable group.<br>If the value is "silkLang" it will load the languages list as a JSON string.<br>Default Value: *Empty*.
 ### selectName
 The name of the Select tag in the ORM file.<br>Default Value: *Empty*.
 ### autoLoad
@@ -109,8 +109,8 @@ A numeric value indicating the level of debugging to be displayed.<br>Default Va
 If true the data will be served from a public outlet service. *This is only necessary when a private application will use a public data outlet.*<br>Default Value: *false*.
 ### pkColumn
 Sets the name of the columns used as the primary key when different from the DataProvider.  Should be used when the DataProvider has been created using static JSON data.<br>Default Value: *Empty*.
-### detailDP
-Defines a *DataProvider* that will be loaded when clicking on an associated *silk:Table* row.<br>Default Value: *Empty*.
+### linkedDP
+Defines a *DataProvider* that will be loaded after the data provider is loaded. This could be a list of data providers separated by commas.<br>Default Value: *Empty*.
 ### recordSync
 If _true_, it will load an ORM select containing extra columns for the selected record.<br>This will trigger a second click event in the connected component after the synchronization process is completed.<br>Default Value: *Empty*.
 ### dpSort

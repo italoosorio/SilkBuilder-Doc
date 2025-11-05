@@ -87,7 +87,7 @@ The column's vertical alignment: top, middle, bottom.<br>Default Value: *middle*
 ### width
 The column's predefine fixed width.<br>Default Value: *Empty*.
 ### wrap
-Defines if the column's content will be wrapped in narrow columns.<br>Default Value: *false*.
+Defines if the column's content will be wrapped in narrow columns. If the value is "full" it will force wrap long words and URLs.<br>Default Value: *false*.
 ### renderer
 The name of the  JavaScript function that can be used to render the column content. The function receives three parameters: the row index, the record item, and the column's content. The function should return a text value.<br>Default Value: *Empty*.
 ### targetPage

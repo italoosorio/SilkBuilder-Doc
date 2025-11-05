@@ -1,4 +1,4 @@
-# SilkBuilder - SQL's Missing Friend
+# SilkBuilder™: SQL's Missing Friend
 
 SilkBuilder is SQL's Missing Friend, an innovative, opinionated development framework designed to streamline the creation of dynamic, data-driven web applications by serving as a seamless companion to SQL. It bridges the gap between robust database interactions and intuitive user interface development, offering developers a cohesive and efficient environment for building modern web solutions.
 

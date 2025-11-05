@@ -37,8 +37,21 @@ Verifies is the URL of a resource file exist or is accesible in host server.
 
 <a name="downloadText"></a>
 
-## downloadText()
+## downloadText(content, contentType, fileName)
 Function to download the provided text into a file.
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| content | <code>String</code> | The text to download |
+| contentType | <code>String</code> | The content type to download |
+| fileName | <code>String</code> | Name of the file |
+
+<a name="escapeHtml"></a>
+
+## escapeHtml()
+Escapes HTML to be displayed with in a div.
 
 **Kind**: global function  
 <a name="getFormattedValue"></a>
@@ -198,6 +211,19 @@ Returns a string with the provided number of characters starting from the left.
 | --- | --- |
 | str | The string to operate |
 | n | The number of character to return |
+
+<a name="postToService"></a>
+
+## postToService(serviceURL, data, handleFunction)
+Excutes a jQuery ajax post/json call to the provided URL. The handle function received the parameter result, which can be true or false, and the response data.
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| serviceURL | <code>String</code> | The URL to the target service |
+| data | <code>Object</code> | The data to be submited |
+| handleFunction | <code>function</code> | The functin which will received the response. |
 
 <a name="renderCode"></a>
 

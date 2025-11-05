@@ -98,6 +98,17 @@ Filters the table's rows based on the provided text. In the case of `dpSearch="t
 | --- | --- | --- |
 | searchText | <code>String</code> | The text used to filter the table rows |
 
+<a name="Table+getChildren"></a>
+
+### getChildren(pkValue) ⇒ <code>Array</code>
+Returns an array containing the generational children of a record.
+
+**Kind**: instance method of [<code>Table</code>](#Table)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| pkValue | <code>pkValue</code> | The primary key value to evaluate. |
+
 <a name="Table+getColumns"></a>
 
 ### getColumns() ⇒ <code>Array</code>
@@ -456,7 +467,7 @@ Created with the ```Table.on("renderInput", function(value,pdIndex,dpItem){})```
 <a name="Table+Event_searchText"></a>
 
 ### on:searchText (text)
-This event is triggered when the search input text changes.  It is used to evaluate the text entered in the search input. If the event function returns a value, it will be used to replace the original search value. Created with the ```DataProvider.on("searchText", function(){})``` method.
+This event is triggered when the search input text changes.  It is used to evaluate the text entered in the search input. If the event function returns a value, it will be used to replace the original search value. Created with the ```Table.on("searchText", function(){})``` method.
 
 **Kind**: event emitted by [<code>Table</code>](#Table)  
 
@@ -464,10 +475,35 @@ This event is triggered when the search input text changes.  It is used to evalu
 | --- | --- | --- |
 | text | <code>String</code> | The entered text. |
 
+<a name="Table+Event_textSelection"></a>
+
+### on:textSelection (text)
+Triggered when a text has been selected in a table row. Created with the ```Table.on("textSelection", function(text){})``` method.
+
+**Kind**: event emitted by [<code>Table</code>](#Table)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| text | <code>String</code> | The selected text. |
+
 <a name="Table+Event_toggle"></a>
 
 ### on:toggle
 This event is triggered when the table's visibility changes. Created with the ```Table.on("toggle", function(toogleStatus){})``` method. This event is triggered when the methods show, hide, and toggle are used. If the event function returns true or false, it will overwrite the toggle requested. Not returning a value preserves the original requested status.
 
 **Kind**: event emitted by [<code>Table</code>](#Table)  
+<a name="Table+Event_visualSelection"></a>
+
+### on:visualSelection (coldIndex, dbIndex, realClick, mouseEvent)
+This event is triggered when a row is clicked and will be marked selected. Created with the ```Table.on("visualSelection", function(colIndex, dpIndex, mouseEvent){})``` method.
+
+**Kind**: event emitted by [<code>Table</code>](#Table)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| coldIndex | <code>Integer</code> | The column clicked. The first one is 0. |
+| dbIndex | <code>Integer</code> | The dataProvider index of the selected row. |
+| realClick | <code>Boolean</code> | Returns true if the "click" has been triggered by a physical click. |
+| mouseEvent | <code>Object</code> | The mouse click even object. |
+
 

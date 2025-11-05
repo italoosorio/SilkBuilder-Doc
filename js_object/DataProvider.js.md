@@ -29,8 +29,8 @@ Returns a DataProvider instance.
 | [options.isPublic] | <code>Integer</code> | <code>0</code> | Indicates if the service is publicly available. Use when accessing public Outlets from a private environment. |
 | [options.debugLevel] | <code>Integer</code> | <code>0</code> | Defines the debugging level. |
 | [options.pkColumn] | <code>String</code> |  | The primary key column of the table accessed. |
-| [option.detailDP] | <code>String</code> |  | The name of a related DataProvider that contains extra information to the selected item. |
-| [option.recordSync] | <code>Boolan</code> | <code>false</code> | Indicates if the DataProvider will sync the records using the data from a recordsync DataProvider. The execution of a record sync triggers a second click event in the table. |
+| [option.linkedDP] | <code>String</code> |  | The name of a related DataProvider that will be loaded after the local loading process ends. This could be a list of DataProvider’s names separated by commas. |
+| [option.recordSync] | <code>Boolan</code> |  | The SELECT name used during the record sync process. If provided, it indicates that the DataProvider will automatically trigger the record sync method when a row is selected in a table component. |
 | [option.dpSort] | <code>Boolean</code> | <code>false</code> | Indicates if the sorting will happen in the data provider. |
 
 ## Methods
@@ -97,6 +97,17 @@ Executes an ORM's SQL Operation. If the operation requires parameters that are n
 | Param | Type | Description |
 | --- | --- | --- |
 | operation | <code>String</code> | The operation name from the ORM. |
+
+<a name="DataProvider+getChildren"></a>
+
+### getChildren(pkValue) ⇒ <code>Array</code>
+Returns an array containing the generational children of a record.
+
+**Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| pkValue | <code>pkValue</code> | The primary key value to evaluate. |
 
 <a name="DataProvider+getComponents"></a>
 
@@ -321,11 +332,17 @@ An object containing the returned Outlet Service data after insert, update, dele
 **Kind**: instance property of [<code>DataProvider</code>](#DataProvider)  
 <a name="DataProvider+recordSync"></a>
 
-### recordSync()
-Executes the SELECT used to sync the loaded record with the new database record data. This will only affect the selected item.
+### recordSync(syncSelectName)
+Executes the SELECT name provided in the recordSync intialization parameter to sync the loaded record with the new database record data. This will only affect the selected item.
+If the parameter syncSelectName is provided it overwrites the default select.
 If the SELECT requires query parameters, these should be added using the "beforeRecordSync" event.
 
 **Kind**: instance method of [<code>DataProvider</code>](#DataProvider)  
+
+| Param | Type |
+| --- | --- |
+| syncSelectName | <code>String</code> | 
+
 <a name="DataProvider+select"></a>
 
 ### select(selectName)
@@ -639,7 +656,8 @@ This event is triggered before the update action is executed. If the event funct
 <a name="DataProvider+Event_error"></a>
 
 ### on:error (error)
-This Event is triggered when an error has occurred. It is created with the ```DataProvider.on("error", function(errorObject){})``` method. If the event returns an object, this will replace the existing operationObject.
+This Event is triggered when an error has occurred. It is created with the ```DataProvider.on("error", function(errorObject){})``` method.
+If the event returns an object, this will replace the existing operationObject.
 
 **Kind**: event emitted by [<code>DataProvider</code>](#DataProvider)  
 

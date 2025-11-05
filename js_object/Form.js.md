@@ -9,7 +9,7 @@
 | $form | <code>Object</code> | jQuery object referencing the form HTML tag. |
 | mask | <code>Boolean</code> | Indicates if the form's mask is active. |
 | insertBt | <code>Object</code> | The name of the Button object to initiate an insert if provided. |
-| updateBt | <code>Object</code> | The name of the  Button object to initiate an update if provided. |
+| updateBt | <code>Object</code> | The name of the Button object to initiate an update if provided. |
 | deleteBt | <code>Object</code> | The name of the Button object to initiate a delete if provided. |
 | cancelBt | <code>Object</code> | The name of the Button object to initiate a cancel if provided. |
 | submitBt | <code>Object</code> | The name of the Button object to initiate a submit if provided. |
@@ -47,6 +47,7 @@ Returns a DataProvider instance.
 | [options.confirmLabel] | <code>String</code> |  | The confirmation dialog button's label. |
 | [options.confirmIcon] | <code>String</code> |  | The confirmation dialog icon. |
 | [options.confirmTarget] | <code>String</code> |  | Sets which actions will trigger the confirmation dialog. |
+| [options.autoFocus] | <code>String</code> |  | Set if the first input will be auto focused. |
 
 ## Methods
  <a name="+clean"></a>
@@ -57,10 +58,15 @@ Cleans the form's input values
 **Kind**: instance method of [<code>Form</code>](#Form)  
 <a name="Form+doCancel"></a>
 
-### doCancel()
+### doCancel(buttonClicked)
 Operates a cancel operation. This operation is executed when clicking the form's cancel button, if set.
 
 **Kind**: instance method of [<code>Form</code>](#Form)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| buttonClicked | <code>Boolean</code> | Indicates that the call is from a button being clicked. Only use interanlly. |
+
 <a name="Form+doSubmit"></a>
 
 ### doSubmit(action)
@@ -114,12 +120,26 @@ Returns the component's unique identifier.
 Returns array containing the form's inputs added using the method *puchInput*.
 
 **Kind**: instance method of [<code>Form</code>](#Form)  
+<a name="Form+getJSON"></a>
+
+### getJSON() ⇒ <code>JSON</code>
+Return the form input's values as a JSON String.
+
+**Kind**: instance method of [<code>Form</code>](#Form)  
+**Returns**: <code>JSON</code> - - A JSON String  
 <a name="Form+getMode"></a>
 
 ### getMode() ⇒ <code>Boolean</code>
 Returns the form's mode.
 
 **Kind**: instance method of [<code>Form</code>](#Form)  
+<a name="Form+getObject"></a>
+
+### getObject() ⇒ <code>Object</code>
+Retursn the form inputs' values as an JavaScript Object's properties.
+
+**Kind**: instance method of [<code>Form</code>](#Form)  
+**Returns**: <code>Object</code> - - An Oject with the form's inputs as properties  
 <a name="Form+getOperationList"></a>
 
 ### getOperationList(action) ⇒ <code>Object</code>
@@ -166,6 +186,18 @@ Load events to respond to the Form's interactions. To set an event, use this cod
 | --- | --- | --- |
 | eventName | <code>String</code> | The event's name. |
 | eventFunction | <code>function</code> | The function to be triggered. |
+
+<a name="Form+post"></a>
+
+### post(serviceURL, handleFunction)
+Excutes a jQuesr ajax post/json call to the provided URL. The handle function received the parameter result, which can be true or false, and the response data.
+
+**Kind**: instance method of [<code>Form</code>](#Form)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| serviceURL | <code>String</code> | The URL to the target service |
+| handleFunction | <code>function</code> | The functin which will received the response. |
 
 <a name="Form+pushInput"></a>
 

@@ -132,6 +132,12 @@ Show a tab item that is being hidden.
 | --- | --- | --- |
 | Tab | <code>Integer</code> \| <code>String</code> | index or id. If not provided uses the selected  |
 
+<a name="Tab+size"></a>
+
+### size() ⇒ <code>Integer</code>
+Returns the number of tabs
+
+**Kind**: instance method of [<code>Tab</code>](#Tab)  
 <a name="Tab+toggle"></a>
 
 ### toggle(value)

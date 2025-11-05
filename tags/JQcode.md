@@ -8,6 +8,8 @@ Used standalone:
 ```xml
 <silk:JQcode
   renderIf=""
+  id=""
+  group=""
   desc=""
 />
 ```
@@ -15,6 +17,8 @@ Used as a container:
 ```xml
 <silk:JQcode
   renderIf=""
+  id=""
+  group=""
   desc=""
 >
    Contains: JQuery and Silk component's object interaction code
@@ -24,5 +28,9 @@ Used as a container:
 ## Properties 
 ### renderIf
 It contains the logic sentence defining whether the component should be rendered.<br>The logic statement's explanation is in the  <a href="how_to/server_code_logic.md">Server Code Logic</a> documentation.<br>Default Value: *Empty*.
+### id
+Defines an id used only for documentation or code categorization purposes.<br>Default Value: *Empty*.
+### group
+Defines an group used only for documentation or code categorization purposes.<br>Default Value: *Empty*.
 ### desc
 Defines a title of description used only for documentation or code categorization purposes.<br>Default Value: *Empty*.

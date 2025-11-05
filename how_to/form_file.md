@@ -72,22 +72,18 @@ The service to process the upload is defined using the **uploadURL** property. T
 The code below is a service that gets the file and saves it in a folder with no data return.
 
 ```java
-<%@ page import="com.oopsclick.silk.file.*" %>
+<%@ page import="com.oopsclick.silk.utils.Form" %>
 <%
   /*
-   * Load the request into the an Uloaded object.
+   * Load the request into the an Form object.
    */
-	Uploaded uploaded = new Uploaded(request);
+	Form form = new Form(request);
 
 	/*
-	 * Extract the 'profileImage' object from 'uploaded' into a FormField object.
+	 * Saves the document data stream in the provided folder.
 	 */
-	FormField profileImageField = uploaded.get("profileImage");
+	boolean result = form.saveFile("document","/files/data/");
 
-	/*
-	 * Saves the profileImageField data stream in the provided folder.
-	 */
-	int result = profileImageField.saveFile("/folder/goes/here/");
 %>
 ```
 
@@ -107,22 +103,17 @@ personForm.profileImage.on("beforeUpload", function(input,dataForm, fileName, fi
 The upload service receives the fulName in the request. This is added to the file's name before saving it. The event getSavedFileName() returns the name used to save the file. The service returns a JSON structure containing the new name in the property fileName.
 
 ```java
-<%@ page import="com.oopsclick.silk.file.*" %>
+<%@ page import="com.oopsclick.silk.utils.Form" %>
 <%
   /*
-   * Load the request into the an Uloaded object.
+   * Load the request into the an Form object.
    */
-	Uploaded uploaded = new Uploaded(request);
-
-	/*
-	 * Extracts the 'fullName' object from 'uploaded' into a FormField object.
-	 */
-	FormField fullNameField = uploaded.get("fullName");
+	Form form = new Form(request);
 
 	/*
 	 * Gets the fullName value and replaces spaces with underscore.
 	 */
-	String fullName = fullNameField.getValue();
+	String fullName = form.getValue();
 	fullName = fullName.toLowerCase().replaceAll(" ","_");
 
 	/*
