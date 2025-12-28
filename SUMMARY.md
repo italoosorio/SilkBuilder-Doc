@@ -19,7 +19,8 @@
   * [System Environment](training/system_environment.md)
 
 * [Docs](docs/README.md)
-  * [The ORM Structure](docs/the_orm_structure.md)
+  * [ORM XML Structure](docs/orm_xml_structure.md)
+  * [ORM JSON Structure](docs/orm_json_structure.md)
   * [SilkBuilder](docs/silk_builder.md)
   * [Silk Service](docs/silk_service.md)
   * [Java Database Class](docs/java_database_class.md)
