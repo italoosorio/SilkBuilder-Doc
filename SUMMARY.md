@@ -1,33 +1,27 @@
 # Table of contents
 
 * [SilkBuilder](README.md)
-
 * [Development Environment](development/README.md)
-  
   * [Development Environment](development/development_environment.md)
   * [System Elements](development/system_elements.md)
   * [Project, Data Model and ORM](development/project_data_model.md)
   * [Development Formats](development/silk_development_formats.md)
-  
 * [Silk Builder Training](training/README.md)
   * [Sample Database](training/sample_database.md)
   * [Plain Application](training/plain_application.md)
   * [Easy Application](training/easy_application.md)
   * [Simple Application](training/simple_application.md)
   * [Complex Application](training/complex_application.md)
-  * [Report Application](training/report_application.md)
-  * [System Environment](training/system_environment.md)
-
+  * [Report Application](training/report-application.md)
+  * [System Environment](training/system-environment.md)
 * [Docs](docs/README.md)
   * [ORM XML Structure](docs/orm_xml_structure.md)
   * [ORM JSON Structure](docs/orm_json_structure.md)
   * [SilkBuilder](docs/silk_builder.md)
   * [Silk Service](docs/silk_service.md)
   * [Java Database Class](docs/java_database_class.md)
-  * [Report](docs/the_silk_report.md)
-
-* [Silk Tags](tags)
-  
+  * [Report](docs/report.md)
+* [Silk Tags](tags/README.md)
   * [App](tags/App.md)
   * [AppHeader](tags/AppHeader.md)
   * [Button](tags/Button.md)
@@ -64,8 +58,7 @@
   * [TableHeader](tags/TableHeader.md)
   * [TabsNav](tags/TabsNav.md)
   * [Tile](tags/Tile.md)
-  
-* [JavaScript Objects](js_object)
+* [JavaScript Objects](js_object/README.md)
   * [Button](js_object/Button.js.md)
   * [ChartJS](js_object/ChartJS.js.md)
   * [Column](js_object/Column.js.md)
@@ -82,9 +75,7 @@
   * [TabsNav](js_object/TabsNav.js.md)
   * [Tile](js_object/Tile.js.md)
   * [Utility Functions](js_object/silkUtils.md)
-  
 * [Coding Techniques](how_to/README.md)
-
   * [Data Trees](how_to/tree.md)
   * [Pagination](how_to/pagination.md)
   * [Mark Deleted](how_to/mark_deleted.md)
@@ -96,10 +87,3 @@
   * [Button with Confirmation](how_to/confirm_button.md)
   * [Toggle List](how_to/toggle_list.md)
   * [Table Inputs](how_to/table_input.md)
-  
-  
-  
-  
-
-
-
